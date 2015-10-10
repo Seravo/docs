@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        <title>WP-Palvelu.fi Docs : WP-Palvelu Developer Docs</title>
+        <meta name="description" content="Documentation for Developers">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div id="header" class="col-sm-12">
+                    <h4><a class="brand" href="/"><img class="logo" src="/images/wp-palvelu-logo.png"> - Docs</a>
+    <small>Documentation for Developers</small>
+</h4>
+
+                </div>
+            </div>
+
+            <div class="row">
+                
+                
+                    <div id="navigation" class="col-sm-2">
+                        <ul class="nav nav-list">
+    <li><a href="/">Home</a></li>
+    
+        
+        
+
+        
+            
+                <li class="nav-header">Documentation</li>
+            
+            <li data-order=""><a href="/doc/getting-started.html">Get started</a></li>
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+<!-- List additional links. It is recommended to add a divider
+    e.g. <li class="divider"></li> first to break up the content. -->
+</ul>
+
+                    </div>
+
+                    <div id="content" class="col-sm-10">
+                        <h3 id="wp-palvelu-fi-developer-guide">WP-Palvelu.fi Developer Guide</h3>
+
+<p>All WP-Palvelu.fi instances are preconfigured for git development workflow. We have tried our best to deliver you pleasent time while developing your WordPress site, but you don&#39;t have use git or anything else included. Please develop your pages like you feel is best for you!</p>
+
+<p>All instances have sftp/ssh access and you can develop your site like you have done in the past. Continue reading if you want to enhance your workflow and start using modern dev tools.</p>
+
+<h3 id="short-guide">Short guide</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Clone your site to your computer</span>
+git clone ssh://<span class="nv">$SSH_USER</span>@<span class="nv">$SITE</span>.wp-palvelu.fi:<span class="o">[</span><span class="nv">$SSH_PORT</span><span class="o">]</span>/data/wordpress ~/Projects/<span class="nv">$SITE</span>
+
+<span class="c"># Start developing your site with vagrant</span>
+<span class="nb">cd</span> ~/Projects/<span class="nv">$SITE</span>
+vagrant up
+</code></pre></div>
+<p><a href="/doc/getting-started.html">Read more about getting started</a></p>
+
+                    </div>
+                
+            </div>
+
+            
+
+            <div class="row">
+                <div id="footer" class="col-sm-12">
+                    Developer Documentation for <a href="https://wp-palvelu.fi">WP-Palvelu.fi</a>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function orderNav() {
+                var list,
+                    section,
+                    header,
+                    sections = [],
+                    lists = {},
+                    headers = {};
+
+                var navUl = document.querySelectorAll('#navigation ul')[0],
+                    navLis = document.querySelectorAll('#navigation ul li');
+
+                if (!navUl) return;
+
+                for (var i = 0; i < navLis.length; i++) {
+                    var order, li = navLis[i];
+
+                    if (li.classList.contains('nav-header')) {
+                        section = li.textContent || li.innerText;
+                        sections.push(section);
+                        headers[section] = li;
+                        continue;
+                    }
+
+                    if (!lists[section]) {
+                        lists[section] = [];
+                    }
+
+                    order = parseFloat(li.getAttribute('data-order'))
+                    lists[section].push([order, li]);
+                }
+
+                for (var i = 0; i < sections.length; i++) {
+                    section = sections[i];
+                    list = lists[section].sort(function(a, b) {
+                        return a[0] - b[0];
+                    });
+
+                    if (header = headers[section]) {
+                        navUl.appendChild(header);
+                    }
+                    for (var j = 0; j < list.length; j++) {
+                        navUl.appendChild(list[j][1]);
+                    }
+                }
+            }
+
+            if (document.querySelectorAll) orderNav();
+        </script>
+        
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53086901-9', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </body>
+</html>

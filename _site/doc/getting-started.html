@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        <title>WP-Palvelu.fi Docs : Get started</title>
+        <meta name="description" content="Documentation for Developers">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div id="header" class="col-sm-12">
+                    <h4><a class="brand" href="/"><img class="logo" src="/images/wp-palvelu-logo.png"> - Docs</a>
+    <small>Documentation for Developers</small>
+</h4>
+
+                </div>
+            </div>
+
+            <div class="row">
+                
+                
+                    <div id="navigation" class="col-sm-2">
+                        <ul class="nav nav-list">
+    <li><a href="/">Home</a></li>
+    
+        
+        
+
+        
+            
+                <li class="nav-header">Documentation</li>
+            
+            <li data-order=""><a href="/doc/getting-started.html">Get started</a></li>
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+<!-- List additional links. It is recommended to add a divider
+    e.g. <li class="divider"></li> first to break up the content. -->
+</ul>
+
+                    </div>
+
+                    <div id="content" class="col-sm-10">
+                        <div class="page-header">
+    <h2>Get started
+        
+    </h2>
+</div>
+
+<h3 id="obtaining-your-credentials">Obtaining your Credentials</h3>
+
+<p>After ordering your instance from <a href="https://wp-palvelu.fi">WP-Palvelu.fi</a> you&#39;ll get email which consists your credentials:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">SSH/SFTP:
+Host: example-site.wp-palvelu.fi
+Port: 12345
+User: example-site
+Pass: 123456abcdefgh
+</code></pre></div>
+<p><strong>Note: Use your own credentials instead of these. These won&#39;t work!</strong></p>
+
+<h3 id="configuring-ssh">Configuring SSH</h3>
+
+<p>We advice you to use <code>.ssh/config</code> file for easier ssh management. Add following lines to your config:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Host example-site
+  HostName example-site.wp-palvelu.fi
+  User example-site
+  Port 12345
+  ForwardAgent yes
+</code></pre></div>
+<h3 id="using-ssh-key-authentication">Using SSH-key authentication</h3>
+
+<p>We advice you to use ssh key instead of password for accessing your site. <a href="https://help.github.com/articles/generating-ssh-keys/">More about generating ssh keys</a></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># This will install your ssh-key into your WP-Palvelu instance.</span>
+<span class="c"># Remember we set your credentials in the last step and the name of your site won&#39;t be example-site</span>
+<span class="nv">$ </span>ssh-copy-id example-site
+
+
+ __    __   ___           ___      _           _           ___
+/ / /<span class="se">\ \ \ </span>/ _ <span class="se">\ </span>        / _ <span class="se">\_</span>_ _<span class="p">|</span> <span class="p">|</span>_   _____<span class="p">|</span> <span class="p">|</span>_   _    /  _<span class="p">|</span> _
+<span class="se">\ \/</span>  <span class="se">\/</span> // /_<span class="o">)</span>/  ___   / /_<span class="o">)</span>/ _<span class="sb">`</span> <span class="p">|</span> <span class="se">\ \ </span>/ / _ <span class="se">\ </span><span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>_ <span class="p">|</span>_<span class="p">|</span>
+ <span class="se">\ </span> /<span class="se">\ </span> // ___/  <span class="p">|</span>___<span class="p">|</span> / ___/ <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span><span class="se">\ </span>V /  __/ <span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span> _ <span class="p">|</span>  _<span class="o">||</span> <span class="p">|</span>
+  <span class="se">\/</span>  <span class="se">\/</span>/_/            <span class="se">\/</span>    <span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span> <span class="se">\_</span>/ <span class="se">\_</span>__<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_,_<span class="o">||</span>_<span class="o">||</span>_<span class="p">|</span>  <span class="p">|</span>_<span class="p">|</span>
+
+
+The authenticity of host <span class="s1">&#39;[example-site.wp-palvelu.fi]:12345 ([185.26.50.24]:12345)&#39;</span> cant be established.
+RSA key fingerprint is xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy.
+Are you sure you want to <span class="k">continue</span> connecting <span class="o">(</span>yes/no<span class="o">)</span>? yes
+Warning: Permanently added <span class="s1">&#39;[example-site.wp-palvelu.fi]:12345&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
+example-site@example-site.wp-palvelu.fi<span class="err">&#39;</span>s password:
+
+<span class="c"># Now you have installed your ssh key into the server and can login to the site by:</span>
+<span class="nv">$ </span>ssh example-site
+</code></pre></div>
+<p><strong>Note for OS X users:</strong> You need to install <em>ssh-copy-id</em> by <code>$ brew install ssh-copy-id</code></p>
+
+
+                    </div>
+                
+            </div>
+
+            
+
+            <div class="row">
+                <div id="footer" class="col-sm-12">
+                    Developer Documentation for <a href="https://wp-palvelu.fi">WP-Palvelu.fi</a>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function orderNav() {
+                var list,
+                    section,
+                    header,
+                    sections = [],
+                    lists = {},
+                    headers = {};
+
+                var navUl = document.querySelectorAll('#navigation ul')[0],
+                    navLis = document.querySelectorAll('#navigation ul li');
+
+                if (!navUl) return;
+
+                for (var i = 0; i < navLis.length; i++) {
+                    var order, li = navLis[i];
+
+                    if (li.classList.contains('nav-header')) {
+                        section = li.textContent || li.innerText;
+                        sections.push(section);
+                        headers[section] = li;
+                        continue;
+                    }
+
+                    if (!lists[section]) {
+                        lists[section] = [];
+                    }
+
+                    order = parseFloat(li.getAttribute('data-order'))
+                    lists[section].push([order, li]);
+                }
+
+                for (var i = 0; i < sections.length; i++) {
+                    section = sections[i];
+                    list = lists[section].sort(function(a, b) {
+                        return a[0] - b[0];
+                    });
+
+                    if (header = headers[section]) {
+                        navUl.appendChild(header);
+                    }
+                    for (var j = 0; j < list.length; j++) {
+                        navUl.appendChild(list[j][1]);
+                    }
+                }
+            }
+
+            if (document.querySelectorAll) orderNav();
+        </script>
+        
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53086901-9', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </body>
+</html>
