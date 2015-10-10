@@ -7,6 +7,7 @@ This is just the jekyll code which generates the documentation.
 
 You can add new pages by:
 
+For example and SSH page to get started
 ```bash
-ruby bin/jekyll-page "Some Page Title" ref
+ruby bin/jekyll-page "Configure SSH" get-started
 ```

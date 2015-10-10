@@ -21,11 +21,10 @@ codeurl: 'https://wp-palvelu.fi'
 
 # Default categories (in order) to appear in the navigation
 sections: [
-    ['doc', 'Documentation'],
-    ['tut', 'Tutorial'],
-    ['ref', 'Reference'],
-    ['dev', 'Developers'],
-    ['post', 'Posts']
+    ['get-started', 'Get Started'],
+    ['tests', 'Testing'],
+    ['development', 'Develop'],
+    ['deployment', 'Deploy'],
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Get started"
-category: doc
-date: 2015-10-10 20:15:25
+title: "Configure SSH"
+category: get-started
+date: 2015-10-10 22:20:23
 ---
 
 ### Obtaining your Credentials
