@@ -2,7 +2,12 @@
 title: 'WP-Palvelu.fi Docs'
 subtitle: 'Documentation for Developers'
 
+# Titile to show in footer
 footer_title: WP-Palvelu.fi
+
+# Link to Github repo
+# This is used in editing links
+github_url: https://github.com/WP-Palvelu/developer-documentation
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
