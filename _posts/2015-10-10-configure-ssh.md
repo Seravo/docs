@@ -7,7 +7,7 @@ date: 2015-10-10 22:20:23
 
 ### Obtaining your Credentials
 
-After ordering your instance from [WP-Palvelu.fi](https://wp-palvelu.fi) you'll get email which consists your credentials:
+After ordering your instance from [WP-Palvelu.fi](https://wp-palvelu.fi) you'll get email which consists your credentials. It looks something like this:
 
     SSH/SFTP:
     Host: example-site.wp-palvelu.fi
@@ -15,7 +15,7 @@ After ordering your instance from [WP-Palvelu.fi](https://wp-palvelu.fi) you'll 
     User: example-site
     Pass: 123456abcdefgh
 
-**Note: Use your own credentials instead of these. These won't work!**
+**Note: Use your own credentials instead of these. These are just an example and won't work!**
 ### Configuring SSH
 
 We advice you to use ```.ssh/config``` file for easier ssh management. Add following lines to your config:
@@ -27,10 +27,11 @@ We advice you to use ```.ssh/config``` file for easier ssh management. Add follo
       ForwardAgent yes
 
 ### Using SSH-key authentication
-We advice you to use ssh key instead of password for accessing your site. [More about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/). After the following step you have succesfully installed your ssh key into your WP instance.
+We advice you to use ssh key instead of password for accessing your site. [Read more about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/). After the following step you have succesfully installed your ssh key into your WP instance.
 
-**Note for OS X users:** You need to install *ssh-copy-id* by ```$ brew install ssh-copy-id```
-**Note Windows users: Install your ssh key through putty**
+**OS X users:** You need to install *ssh-copy-id* by ```$ brew install ssh-copy-id```
+
+**Windows users:** Install your ssh key through **Putty** instead
 
 ```bash
 # This will install your ssh-key into your WP-Palvelu instance.
@@ -51,7 +52,8 @@ Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added '[example-site.wp-palvelu.fi]:12345' (RSA) to the list of known hosts.
 example-site@example-site.wp-palvelu.fi's password:
 
-# Now you have installed your ssh key into the server and can login to the site by:
+# After you enter your password you have installed your ssh key.
+# After this setup you can login to your instance by:
 $ ssh example-site
 ```
 
