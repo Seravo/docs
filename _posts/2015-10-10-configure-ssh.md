@@ -27,7 +27,10 @@ We advice you to use ```.ssh/config``` file for easier ssh management. Add follo
       ForwardAgent yes
 
 ### Using SSH-key authentication
-We advice you to use ssh key instead of password for accessing your site. [More about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/)
+We advice you to use ssh key instead of password for accessing your site. [More about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/). After the following step you have succesfully installed your ssh key into your WP instance.
+
+**Note for OS X users:** You need to install *ssh-copy-id* by ```$ brew install ssh-copy-id```
+**Note Windows users: Install your ssh key through putty**
 
 ```bash
 # This will install your ssh-key into your WP-Palvelu instance.
@@ -51,6 +54,4 @@ example-site@example-site.wp-palvelu.fi's password:
 # Now you have installed your ssh key into the server and can login to the site by:
 $ ssh example-site
 ```
-
-**Note for OS X users:** You need to install *ssh-copy-id* by ```$ brew install ssh-copy-id```
 
