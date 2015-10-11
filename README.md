@@ -11,3 +11,5 @@ For example and SSH page to get started
 ```bash
 ruby bin/jekyll-page "Configure SSH" get-started
 ```
+
+This is based on template: http://bruth.github.io/jekyll-docs-template

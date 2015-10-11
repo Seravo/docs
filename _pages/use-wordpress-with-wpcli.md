@@ -1,0 +1,1 @@
+../_posts/2015-10-11-use-wordpress-with-wpcli.md

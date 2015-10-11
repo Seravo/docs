@@ -3,6 +3,7 @@ layout: page
 title: "Configure SSH"
 category: get-started
 date: 2015-10-10 22:20:23
+order: 1
 ---
 
 ### Obtaining your Credentials
