@@ -65,6 +65,10 @@ body {
     font-size: 16px;
 }
 
+#content p strong {
+    font-size: 17px;   
+}
+
 #content h2,#content h3 {
     margin-top: 25px;
     margin-bottom: 20px;
