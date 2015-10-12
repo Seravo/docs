@@ -18,10 +18,13 @@ code {
     color: inherit;
 }
 
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 #header {
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 #header a:hover {
@@ -57,6 +60,10 @@ code {
     margin-top: 0;
 }
 
+#content p {
+    line-height: 30px;
+    font-size: 16px;
+}
 
 #navigation {
     font-size: 0.9em;
@@ -91,4 +98,11 @@ body.rtl .row-fluid [class*="span"]:first-child {
 
 body.rtl ul, body.rtl ol {
     margin: 0 25px 10px 0;
+}
+
+/*
+ * Github edit button
+ */
+.button.edit.github {
+    margin-bottom: 10px;
 }

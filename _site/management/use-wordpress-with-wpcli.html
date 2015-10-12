@@ -15,7 +15,7 @@
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     </head>
     <body>
-    <a href="https://github.com/WP-Palvelu/developer-documentation"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Edit me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+    <a class="fork-me-in-github" href="https://github.com/WP-Palvelu/developer-documentation"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
         <div class="container">
             <div class="row">
@@ -121,9 +121,34 @@
         
     </h2>
 </div>
-<a href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-use-wordpress-with-wpcli.md" class="button icon edit">Edit this page in GitHub</a>
+<a href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-use-wordpress-with-wpcli.md" class="button icon edit github">Edit this page in GitHub</a>
 
+<h2 id="basics">Basics</h2>
 
+<p>You can use wp-cli in Vagrant and Production. Just run run this to see all commands:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>wp --help
+</code></pre></div>
+<p>More information about wp-cli can be found in <a href="http://wp-cli.org">wp-cli.org</a></p>
+
+<h2 id="useful-commands">Useful commands</h2>
+
+<h3 id="database-export-import-dumping-db">Database export/import (dumping db)</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Dumps the database to a provided filename</span>
+<span class="nv">$ </span>wp db <span class="nb">export </span>your-dump-filename.sql
+
+<span class="c"># Imports the dump file from file</span>
+<span class="nv">$ </span>wp db import your-dump-filename.sql
+</code></pre></div>
+<h3 id="create-user">Create user</h3>
+
+<p>This creates new administrator user <strong>&#39;admin&#39;</strong> with password <strong>&#39;admin&#39;</strong>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>wp user create admin admin@wordpress.dev --user_role<span class="o">=</span>administrator --user_pass<span class="o">=</span>admin
+</code></pre></div>
+<h3 id="search-replace-database-contents">Search-Replace database contents</h3>
+
+<p>After you have pulled database from production it&#39;s useful to regex replace urls:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>wp search-replace http://original.com http://original.dev
+</code></pre></div>
 
                     </div>
                 
