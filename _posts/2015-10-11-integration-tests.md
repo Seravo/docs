@@ -182,11 +182,8 @@ WP.user.email       # Test user email - by default: testbotuser@{your-site}
   locate("//*[@id='overlay'").find("//h1").click
   all('a').each { |a| a[:href] }
 
-#Scripting #
+# Scripting
   result = page.evaluate_script('4 + 4');
-
-# Debugging
-  save_and_open_page
 
 # Asynchronous JavaScript
   click_link('foo')

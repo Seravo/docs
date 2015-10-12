@@ -1,2 +1,6 @@
 # Github won't need compiled site here
-_site/*
+_site/
+
+# Ignore cache
+.sass-cache/
+.jekyll-metadata
