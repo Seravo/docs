@@ -3,7 +3,7 @@ layout: page
 title: "Configure SSH"
 category: get-started
 date: 2015-10-10 22:20:23
-order: 1
+order: 2
 ---
 
 ### Obtaining your Credentials
@@ -19,13 +19,17 @@ After ordering your instance from [WP-Palvelu.fi](https://wp-palvelu.fi) you'll 
 **Note: Use your own credentials instead of these. These are just an example and won't work!**
 ### Configuring SSH
 
-We advice you to use ```.ssh/config``` file for easier ssh management. Add following lines to your config:
+We advice you to use ```~/.ssh/config``` file for easier ssh management.
+
+Add following lines to your config:
 
     Host example-site
       HostName example-site.wp-palvelu.fi
       User example-site
       Port 12345
       ForwardAgent yes
+
+**ForwardAgent yes -** allows you to use your ssh credentials in the production machine to pull/push private code from/to Github/Bitbucket.
 
 ### Using SSH-key authentication
 We advice you to use ssh key instead of password for accessing your site. [Read more about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/). After the following step you have succesfully installed your ssh key into your WP instance.

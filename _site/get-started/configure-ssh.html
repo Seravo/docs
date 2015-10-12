@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
+        <link rel="icon" href="/images/favicon.png">
+
         <title>WP-Palvelu.fi Docs : Configure SSH</title>
         <meta name="description" content="Documentation for Developers">
 
@@ -41,10 +43,10 @@
             
                 <li class="nav-header">Get Started</li>
             
-            <li data-order="2"><a href="/get-started/project-layout.html">Project Layout</a></li>
+            <li data-order="1"><a href="/get-started/whats-included.html">Basics and Paths</a></li>
         
             
-            <li data-order="1"><a href="/get-started/configure-ssh.html">Configure SSH</a></li>
+            <li data-order="2"><a href="/get-started/configure-ssh.html">Configure SSH</a></li>
         
     
         
@@ -57,7 +59,7 @@
             <li data-order=""><a href="/configuration/composer.html">Composer</a></li>
         
             
-            <li data-order=""><a href="/configuration/nginx.html">Web server - nginx</a></li>
+            <li data-order=""><a href="/configuration/nginx.html">Web server - Nginx</a></li>
         
     
         
@@ -77,7 +79,10 @@
             
                 <li class="nav-header">Development</li>
             
-            <li data-order=""><a href="/development/intro.html">Intro</a></li>
+            <li data-order="5"><a href="/development/using-git-hooks.html">Using Git hooks</a></li>
+        
+            
+            <li data-order="1"><a href="/development/intro.html">Intro</a></li>
         
             
             <li data-order=""><a href="/development/gulp.html">Compile assets & automate with Gulp</a></li>
@@ -121,7 +126,7 @@
         
     </h2>
 </div>
-<a href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-10-configure-ssh.md" class="button icon edit github">Edit this page in GitHub</a>
+<a id="edit-this-page" href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-10-configure-ssh.md" class="button icon edit github">Edit this page in GitHub</a>
 
 <h3 id="obtaining-your-credentials">Obtaining your Credentials</h3>
 
@@ -136,13 +141,17 @@ Pass: 123456abcdefgh
 
 <h3 id="configuring-ssh">Configuring SSH</h3>
 
-<p>We advice you to use <code>.ssh/config</code> file for easier ssh management. Add following lines to your config:</p>
+<p>We advice you to use <code>~/.ssh/config</code> file for easier ssh management.</p>
+
+<p>Add following lines to your config:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">Host example-site
   HostName example-site.wp-palvelu.fi
   User example-site
   Port 12345
   ForwardAgent yes
 </code></pre></div>
+<p><strong>ForwardAgent yes -</strong> allows you to use your ssh credentials in the production machine to pull/push private code from/to Github/Bitbucket.</p>
+
 <h3 id="using-ssh-key-authentication">Using SSH-key authentication</h3>
 
 <p>We advice you to use ssh key instead of password for accessing your site. <a href="https://help.github.com/articles/generating-ssh-keys/">Read more about generating ssh keys</a>. After the following step you have succesfully installed your ssh key into your WP instance.</p>

@@ -65,6 +65,16 @@ body {
     font-size: 16px;
 }
 
+#content h2,#content h3 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#content h4 {
+    margin-top: 10px;
+    font-size: 19px;
+}
+
 #navigation {
     font-size: 0.9em;
 }

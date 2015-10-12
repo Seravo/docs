@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
+        <link rel="icon" href="/images/favicon.png">
+
         <title>WP-Palvelu.fi Docs : Composer</title>
         <meta name="description" content="Documentation for Developers">
 
@@ -41,10 +43,10 @@
             
                 <li class="nav-header">Get Started</li>
             
-            <li data-order="2"><a href="/get-started/project-layout.html">Project Layout</a></li>
+            <li data-order="1"><a href="/get-started/whats-included.html">Basics and Paths</a></li>
         
             
-            <li data-order="1"><a href="/get-started/configure-ssh.html">Configure SSH</a></li>
+            <li data-order="2"><a href="/get-started/configure-ssh.html">Configure SSH</a></li>
         
     
         
@@ -57,7 +59,7 @@
             <li data-order=""><a href="/configuration/composer.html">Composer</a></li>
         
             
-            <li data-order=""><a href="/configuration/nginx.html">Web server - nginx</a></li>
+            <li data-order=""><a href="/configuration/nginx.html">Web server - Nginx</a></li>
         
     
         
@@ -77,7 +79,10 @@
             
                 <li class="nav-header">Development</li>
             
-            <li data-order=""><a href="/development/intro.html">Intro</a></li>
+            <li data-order="5"><a href="/development/using-git-hooks.html">Using Git hooks</a></li>
+        
+            
+            <li data-order="1"><a href="/development/intro.html">Intro</a></li>
         
             
             <li data-order=""><a href="/development/gulp.html">Compile assets & automate with Gulp</a></li>
@@ -121,8 +126,127 @@
         
     </h2>
 </div>
-<a href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-composer.md" class="button icon edit github">Edit this page in GitHub</a>
+<a id="edit-this-page" href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-composer.md" class="button icon edit github">Edit this page in GitHub</a>
 
+<h2 id="what-is-it">What is it?</h2>
+
+<blockquote>
+<p>Composer is a dependency manager for PHP that has been gaining steam lately. Your first question is most likely “what is a dependency manager and why do I need one?”. Almost any code you write probably ends up depending on 3rd party libraries. All of these libraries (projects, frameworks, files, etc) become dependencies of your project. Composer lets you declare the dependencies for a project and it will install and manage them.</p>
+
+<p>Source: <a href="https://roots.io/using-composer-with-wordpress/">roots.io</a></p>
+</blockquote>
+
+<h2 id="how-to-use-composer-with-wordpress">How to use composer with wordpress</h2>
+
+<h3 id="example">Example</h3>
+
+<p>Let&#39;s look at simplified version of our composer.json as an example over here:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://wpackagist.org&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;=5.3.2&quot;</span><span class="p">,</span>
+
+    <span class="nt">&quot;johnpbloch/wordpress&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+
+    <span class="nt">&quot;wpackagist-plugin/wordpress-seo&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+
+    <span class="nt">&quot;wpackagist-theme/twentyfifteen&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;installer-paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;htdocs/wp-content/plugins/{$name}/&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;type:wordpress-plugin&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;htdocs/wp-content/mu-plugins/{$name}/&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;type:wordpress-muplugin&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;htdocs/wp-content/themes/{$name}&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;type:wordpress-theme&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;wordpress-install-dir&quot;</span><span class="p">:</span> <span class="s2">&quot;htdocs/wordpress&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="explanation">Explanation</h3>
+
+<h4 id="repositories-section">Repositories section:</h4>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://wpackagist.org&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Repositories</strong> section tells composer directions of where to look for your packages. In order for composer to find your beloved plugins and themes you&#39;ll need to point it to <a href="http://wpackagist.org">wpackagist.org</a> which is mirror of all plugins and themes which you can download from <a href="http://wordpress.org/plugins/">wordpress.org</a>. You can add any custom repositories you have here, but for Wordpress you&#39;ll need to use wpackagist.</p>
+
+<h4 id="require-section">Require section:</h4>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;=5.3.2&quot;</span><span class="p">,</span>
+
+    <span class="nt">&quot;johnpbloch/wordpress&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+
+    <span class="nt">&quot;wpackagist-plugin/wordpress-seo&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+
+    <span class="nt">&quot;wpackagist-theme/twentyfifteen&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Require</strong> section tells composer our minimum needed PHP version and packages to install.</p>
+
+<p><code>&quot;johnpbloch/wordpress&quot;: &quot;*&quot;</code> means newest available version of WordPress.</p>
+
+<p><code>&quot;wpackagist-plugin/wordpress-seo&quot;: &quot;*&quot;</code> means that we need plugin <a href="http://wordpress.org/plugins/wordpress-seo">WordPress Seo</a></p>
+
+<p><code>&quot;wpackagist-theme/twentyfifteen&quot;: &quot;*&quot;</code> means that we need theme <a href="http://wordpress.org/themes/twentyfifteen">Twentyfifteen</a></p>
+
+<h4 id="extra-section">Extra section:</h4>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;installer-paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;htdocs/wp-content/plugins/{$name}/&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;type:wordpress-plugin&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;htdocs/wp-content/mu-plugins/{$name}/&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;type:wordpress-muplugin&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;htdocs/wp-content/themes/{$name}&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;type:wordpress-theme&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;wordpress-install-dir&quot;</span><span class="p">:</span> <span class="s2">&quot;htdocs/wordpress&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>By default composer installs everything to <strong>vendor</strong> directory in the root of your project. Luckily for us wpackagist uses clever plugin <a href="https://packagist.org/packages/composer/installers">composer/installers</a> which allows us to have custom installation path. In <strong>Extra</strong> section we can define installation paths for different types of packages.</p>
+
+<h2 id="adding-your-own-plugins-and-themes">Adding your own plugins and themes</h2>
+
+<p>Best way to develop custom plugins and themes is to add them into their own repositories and install them by composer.</p>
+
+<p>You can do this by adding <code>composer.json</code> file for into your plugin/theme repo:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-name/custom-plugin&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wordpress-plugin&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;GPLv3&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Plugin description&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;homepage&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/your-name/custom-plugin&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>then requiring it in your project like:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;vcs&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/your-name/custom-plugin.git&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;your-name/custom-plugin&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This way you can use plugins and themes from Github or Bitbucket.</p>
+
+<h2 id="more-information">More information</h2>
+
+<p>You can find more documentation on <a href="https://getcomposer.org/">getcomposer.org</a></p>
 
 
                     </div>

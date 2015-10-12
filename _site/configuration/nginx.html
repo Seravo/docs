@@ -5,7 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
-        <title>WP-Palvelu.fi Docs : Web server - nginx</title>
+        <link rel="icon" href="/images/favicon.png">
+
+        <title>WP-Palvelu.fi Docs : Web server - Nginx</title>
         <meta name="description" content="Documentation for Developers">
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -41,10 +43,10 @@
             
                 <li class="nav-header">Get Started</li>
             
-            <li data-order="2"><a href="/get-started/project-layout.html">Project Layout</a></li>
+            <li data-order="1"><a href="/get-started/whats-included.html">Basics and Paths</a></li>
         
             
-            <li data-order="1"><a href="/get-started/configure-ssh.html">Configure SSH</a></li>
+            <li data-order="2"><a href="/get-started/configure-ssh.html">Configure SSH</a></li>
         
     
         
@@ -57,7 +59,7 @@
             <li data-order=""><a href="/configuration/composer.html">Composer</a></li>
         
             
-            <li data-order=""><a href="/configuration/nginx.html">Web server - nginx</a></li>
+            <li data-order=""><a href="/configuration/nginx.html">Web server - Nginx</a></li>
         
     
         
@@ -77,7 +79,10 @@
             
                 <li class="nav-header">Development</li>
             
-            <li data-order=""><a href="/development/intro.html">Intro</a></li>
+            <li data-order="5"><a href="/development/using-git-hooks.html">Using Git hooks</a></li>
+        
+            
+            <li data-order="1"><a href="/development/intro.html">Intro</a></li>
         
             
             <li data-order=""><a href="/development/gulp.html">Compile assets & automate with Gulp</a></li>
@@ -117,13 +122,92 @@
 
                     <div id="content" class="col-sm-10">
                         <div class="page-header">
-    <h2>Web server - nginx
+    <h2>Web server - Nginx
         
     </h2>
 </div>
-<a href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-nginx.md" class="button icon edit github">Edit this page in GitHub</a>
+<a id="edit-this-page" href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-nginx.md" class="button icon edit github">Edit this page in GitHub</a>
 
+<h2 id="background">Background</h2>
 
+<p>Traditionally php hosting sites (and WordPress) have been using Apache as a Web Server. In the last few years many have migrated from Apache to <a href="http://nginx.org/en/docs/">Nginx</a>. Nginx is faster and in our opinion even easier to configure than Apache is.</p>
+
+<h2 id="default-settings">Default settings</h2>
+
+<p>We have already done the configuration for you so usually you don&#39;t need to do anything. By default we have included:</p>
+
+<ul>
+<li>Strong https settings (<a href="https://www.ssllabs.com/ssltest/analyze.html?d=wp-palvelu.fi&amp;s=185.26.50.22">see example</a>)</li>
+<li>Proxy cache with <a href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_use_stale">stale cache</a></li>
+<li>Gzipping all contents</li>
+<li>Long expiration headers for static content</li>
+<li>Option to use <a href="https://developers.google.com/speed/pagespeed/module/">pagespeed</a> module. (But you have to turn it on)</li>
+</ul>
+
+<p>These alone will make your site more secure and multiple times faster than typical hosting.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>In Apache you had <strong>.htaccess</strong> file for adding custom rules to your web server. This was slow and error prone because the same rules we&#39;re loaded in apache for every pageview. Your project includes nginx customisation file in:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/data/wordpress/nginx/custom.conf
+</code></pre></div>
+<p>These additions are included in nginx <strong>server</strong> block:</p>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+  <span class="kn">listen</span> <span class="mi">80</span> <span class="s">default_server</span><span class="p">;</span>
+  <span class="kn">server_name</span> <span class="s">your-site.com</span><span class="p">;</span>
+  <span class="kn">...</span>
+
+  <span class="s">include</span> <span class="s">/data/wordpress/nginx/*.conf</span><span class="p">;</span>
+
+  <span class="kn">...</span>
+<span class="err">}</span>
+</code></pre></div>
+<p>If you don&#39;t need these additions it&#39;s safe to delete them.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>The default file: <code>/data/wordpress/nginx/custom.conf</code> includes some examples to start with which have just been commented out. If you can&#39;t find what&#39;s your looking for please contact the support. <a href="#edit-this-page">Or edit this page</a>.</p>
+
+<h3 id="how-to-force-https">How to force https</h3>
+
+<p>Because we are using cache proxy which does the ssl termination the default nginx rules won&#39;t work here.</p>
+
+<p>Instead use our custom variable:</p>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="c1"># Force redirect http-&gt;https</span>
+<span class="k">set</span> <span class="nv">$force_https</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Note:</strong> You need purchase ssl certificate from WP-Palvelu in order to do this. We&#39;ll install and configure it for you.</p>
+
+<h3 id="redirects">Redirects</h3>
+
+<h4 id="basic-redirect">Basic redirect</h4>
+
+<p>Redirects from <a href="http://your-site.com/original">http://your-site.com/original</a> -&gt; <a href="http://example.com/new/url/">http://example.com/new/url/</a></p>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">rewrite</span> <span class="s">^/original</span> <span class="s">http://example.com/new/url/</span> <span class="s">permanent</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="redirect-only-certain-domains">Redirect only certain domains</h4>
+
+<p>If you have multiple domains for your site and want to only use one of them:</p>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">if</span> <span class="s">(</span><span class="nv">$host</span> <span class="p">~</span> <span class="sr">&quot;old-subdomain.your-old-site.com&quot;)</span> <span class="p">{</span>
+  <span class="kn">rewrite</span> <span class="s">^</span> <span class="s">http://your-site.com</span><span class="nv">$request_uri</span> <span class="s">permanent</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="redirect-subdomain-to-subdirectory">Redirect subdomain to subdirectory</h4>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">if</span> <span class="s">(</span><span class="nv">$host</span> <span class="p">~</span> <span class="sr">&#39;subdomain.your-site.com&#39;)</span> <span class="p">{</span>
+  <span class="kn">rewrite</span> <span class="s">^</span> <span class="s">http://your-site.com/subdirectory/another-directory/</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="pagespeed-module">Pagespeed module</h3>
+
+<p>Pagespeed enhances sniffs your html documents and rewrites them to be faster. This is very site dependent so test everything carefully before putting it into production. You can find all filters in <a href="https://developers.google.com/speed/pagespeed/module/filters">Google documentation</a>.</p>
+
+<h4 id="turn-pagespeed-on">Turn pagespeed on</h4>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">pagespeed</span> <span class="no">on</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="add-some-pagespeed-filters">Add some pagespeed filters</h4>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="c1"># This does a lot so test which of these you really need</span>
+<span class="k">pagespeed</span> <span class="s">EnableFilters</span> <span class="s">rewrite_css,sprite_images,combine_css,inline_css,flatten_css_imports,inline_javascript,combine_javascript,inline_google_font_css,canonicalize_javascript_libraries,rewrite_images,recompress_images</span><span class="p">;</span>
+</code></pre></div>
 
                     </div>
                 

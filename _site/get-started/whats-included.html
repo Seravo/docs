@@ -7,7 +7,7 @@
 
         <link rel="icon" href="/images/favicon.png">
 
-        <title>WP-Palvelu.fi Docs : Integration tests using Rspec</title>
+        <title>WP-Palvelu.fi Docs : Basics and Paths</title>
         <meta name="description" content="Documentation for Developers">
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -122,13 +122,77 @@
 
                     <div id="content" class="col-sm-10">
                         <div class="page-header">
-    <h2>Integration tests using Rspec
+    <h2>Basics and Paths
         
     </h2>
 </div>
-<a id="edit-this-page" href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-11-integration-tests.md" class="button icon edit github">Edit this page in GitHub</a>
+<a id="edit-this-page" href="https://github.com/WP-Palvelu/developer-documentation/edit/gh-pages/_posts/2015-10-12-whats-included.md" class="button icon edit github">Edit this page in GitHub</a>
 
+<h2 id="base-installation">Base installation</h2>
 
+<p>WP-Palvelu uses <a href="https://github.com/Seravo/wordpress">https://github.com/Seravo/wordpress</a> as base installation for all sites. If you have any problems with the template please add <a href="https://github.com/Seravo/wordpress/issues">issue to Github</a>.</p>
+
+<h2 id="data-locations">Data locations</h2>
+
+<p>All of your data is held under path: <code>/data/</code>. During the updates of your site we will wipe away all unneccessary files and only preserve things in <code>/data/</code> directory. But don&#39;t worry because for example we have moved your home folder into <code>/data/home/$USER/</code> and made correct symlinks so you won&#39;t even notice it&#39;s elsewhere.</p>
+
+<h3 id="web-root-htdocs">Web root (htdocs)</h3>
+
+<p>Your content is served from: <code>/data/wordpress/htdocs/</code></p>
+
+<h3 id="wordpress-installation-path">WordPress installation path</h3>
+
+<p>WordPress is installed in: <code>/data/wordpress/htdocs/wordpress/</code></p>
+
+<h3 id="wp-content">WP-content</h3>
+
+<p>WP-content is moved outside of wordpress directory into: <code>/data/wordpress/htdocs/wp-content/</code></p>
+
+<h3 id="log-files">Log files</h3>
+
+<p>All logs are saved in: <code>/data/log/</code></p>
+
+<h2 id="project-structure">Project Structure</h2>
+
+<p>WP-Palvelu uses custom directory layout which is derived from <a href="https://github.com/roots/bedrock">Bedrock</a>. Bedrock is WordPress layout which uses composer for package management. It&#39;s not advised to modify WP core files so usually your application is only what&#39;s included in <strong>wp-content</strong> -directory. When we use version control is much better if we have separated it to a folder which is outside of core installation. This template also includes tests, composer.json, custom nginx rules and files for local development (Vagrantfile). Let&#39;s take a closer look at the Project directory:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">├── config.yml # See about Configuration above
+├── composer.json # Use composer for package handling
+├── composer.lock
+├── gulpfile.js # Example for using gulp
+├── Vagrantfile # Advanced vagrant environment and scripts packaged in Vagrantfile
+│
+├── tests # Here you can include tests for your wordpress instance
+│   └── rspec
+│       └── test.rb # Our default tests use rspec/poltergeist/phantomjs since we have found them very effective.
+│
+├── nginx # Here you can have your custom modifications to nginx which are also used in production
+│   └── custom.conf # Default file with few examples to get started
+│
+├── scripts
+│   ├── hooks # Git hooks for your project
+│   │   ├── pre-commit # This is run after every commit
+│   │   └──
+│   │
+│   ├── Wordpress
+│   │   └── Installer.php #Additional composer scripts
+│   │
+│   └── run-tests # Bash-script as an interface for your tests in WP-Palvelu Production and Dev environment
+│
+├── vendor # Composer packages go here
+└── htdocs # This is the web root of your site
+    ├── wp-content # wp-content is moved out of core
+    │   ├── mu-plugins
+    │   ├── plugins
+    │   ├── themes
+    │   └── languages
+    ├── wp-config.php
+    ├── index.php
+    └── wordpress # Wordpress Core installed by composer
+        ├── wp-admin
+        ├── index.php
+        ├── wp-load.php
+        └── ...
+</code></pre></div>
 
                     </div>
                 
