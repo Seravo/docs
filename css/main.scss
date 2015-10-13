@@ -1,0 +1,181 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+// Imports
+@import "gh-buttons";
+@import "syntax";
+
+// Highlight color
+$highlight: rgb(25,157,213);
+
+body {
+    font-weight: 400;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+pre, code {
+    border: none;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    font-size: 0.85em;
+}
+
+pre {
+    font-size: 1em;
+}
+
+code {
+    color: inherit;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+
+    a:hover {
+        text-decoration: none;
+    }
+    a {
+        font-size: 27px;
+        color: $highlight;
+        text-decoration: none;
+    }
+    .logo {
+        max-height: 33px;
+    }
+    small {
+        margin-left: 10px;
+    }
+}
+
+#footer {
+    margin: 20px 0;
+    font-size: 0.85em;
+    color: #999;
+    text-align: center;
+}
+
+#content {
+    img {
+      max-width: 95%;
+    }
+    > .page-header:first-child {
+        margin-top: 0;
+    }
+
+    > .page-header:first-child h2 {
+        margin-top: 0;
+    }
+
+    p {
+        line-height: 30px;
+        font-size: 16px;
+
+        strong {
+            font-size: 17px;   
+        }
+    }
+
+    h2, h3 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+       margin-top: 10px;
+       font-size: 19px; 
+    }
+}
+
+#navigation {
+    font-size: 0.9em;
+
+    li a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/*
+ * Github edit button
+ */
+.button.edit.github {
+    margin-bottom: 10px;
+}
+
+/*
+ * Make things responsive for mobile
+ */
+@media(max-width:767px){
+    .hide-mobile {
+        display: none;
+    }
+
+    #header {
+        text-align: center;
+    }
+
+    #header .brand {
+        display: block;
+        margin: 20px 20px 10px 20px;
+    }
+}
+
+/*
+ * Tables
+ */
+
+#content {
+    table {
+            margin-bottom: 20px;
+            border-collapse:collapse;
+            font-family: 'Lato', Calibri, Arial, sans-serif;
+            border: none;
+                    border-radius: 3px;
+                   -webkit-border-radius: 3px;
+                   -moz-border-radius: 3px;
+        }
+    table th, table td {
+        box-shadow: inset 0 -1px rgba(0,0,0,0.25), 
+            inset 0 1px rgba(0,0,0,0.25);
+    }
+    table th {
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+        padding: 1em;
+        color: #f7f7f7;
+        text-shadow: 0 0 1px rgba(0,0,0,0.1);
+        font-size: 1.5em;
+    }
+    table td {
+        color: #f7f7f7;
+        padding: 0.7em 1em 0.7em 1.15em;
+        text-shadow: 0 0 1px rgba(255,255,255,0.1);
+        font-size: 1.4em;
+    }
+    table tr {
+        -webkit-transition: background 0.3s, box-shadow 0.3s;
+        -moz-transition: background 0.3s, box-shadow 0.3s;
+        transition: background 0.3s, box-shadow 0.3s;
+    }
+    table {
+        background: rgb(170,170,170);
+    }
+    table tr:hover {
+        background: rgba(0,0,0,0.19);
+    }
+
+    table code {
+      background: inherit;
+    }
+}

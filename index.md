@@ -14,7 +14,7 @@ All instances have sftp/ssh access and you can develop your site like you are us
 ### Really minimal guide for developing your site:
 Read the other topics to really understand what's happening over here.
 
-```bash
+```
 # Clone your site to your computer and name the git remote as 'production'
 $ git clone ssh://$SSH_USER@$SITE.wp-palvelu.fi:[$SSH_PORT]/data/wordpress ~/Projects/$SITE --origin production
 

@@ -153,7 +153,7 @@ uncheck('A Checkbox')
 attach_file('Image', '/path/to/image.jpg')
 select('Option', :from => 'Select Box')
 
-# scoping
+# Scoping
 within("//li[@id='employee']") do
   fill_in 'Name', :with => 'Jimmy'
 end
