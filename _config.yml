@@ -107,10 +107,6 @@ prose:
         field:
           element: "hidden"
           value: "page"
-      - name: "date"
-        field:
-          element: "hidden"
-          value: "page"
       - name: "category"
         field:
           element: "select"
