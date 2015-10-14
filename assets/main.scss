@@ -97,6 +97,10 @@ body {
         margin-top: 0;
     }
 
+    > .page-header .edit-buttons a {
+        margin-left: 10px;
+    }
+
     p {
         line-height: 30px;
         font-size: 16px;
@@ -139,7 +143,7 @@ body {
     .pull-left-sm {
         float: left;
     }
-    .edit-this-in-github {
+    .page-header .edit-buttons {
         margin-top: 10px;
     }
     

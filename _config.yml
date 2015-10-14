@@ -7,7 +7,8 @@ footer_title: WP-Palvelu.fi
 
 # Link to Github repo
 # This is used in editing links
-github_url: https://github.com/WP-Palvelu/developer-documentation
+github:
+    repo: WP-Palvelu/developer-documentation
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
@@ -41,15 +42,17 @@ sections: [
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: ''
 
-url: http://docs.wp-palvelu.fi
+# This is used in <meta> og fields
+siteurl: http://docs.wp-palvelu.fi
 
 # Use sass from assets folder
 sass:
   sass_dir: /assets/_sass
   style: :compressed
 
+# Additional gems to use
 gems:
-  - jekyll-sitemap
+  - jekyll-sitemap # Generates sitemaps for Google
 
 # Dates are not included in permalinks
 permalink: /:categories/:title/
@@ -76,3 +79,47 @@ redcarpet:
         'tables',
         'hardwrap'
     ]
+
+##
+# Prose settings
+##
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://docs.wp-palvelu.fi'
+  media: 'media'
+  ignore:
+    - _config.yml
+    - /_layouts
+    - /_includes
+    - assets
+    - /bin
+    - /_pages
+    - CNAME
+    - search.json
+    - bower.json
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "blog"
+      - name: "tags"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          options:
+            - name: "Apples"
+              value: "apples"
+            - name: "Bananas"
+              value: "bananas"
+    _posts/static:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: ""
