@@ -38,6 +38,11 @@ sections: [
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: ''
 
+# Use sass from assets folder
+sass:
+  sass_dir: /assets/_sass
+  style: :compressed
+
 # Dates are not included in permalinks
 permalink: none
 

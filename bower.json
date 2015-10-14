@@ -1,0 +1,22 @@
+{
+  "name": "wp-palvelu/developer-documentation",
+  "version": "0.0.0",
+  "homepage": "https://github.com/WP-Palvelu/developer-documentation",
+  "authors": [
+    "Onni Hakala <onni@seravo.fi>"
+  ],
+  "description": "Developer documentation for WP-Palvelu.fi",
+  "main": "",
+  "moduleType": [],
+  "license": "GPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "require": [
+    "simple-jekyll-search"
+  ]
+}

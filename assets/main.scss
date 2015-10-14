@@ -51,6 +51,26 @@ body {
     small {
         margin-left: 10px;
     }
+    #search-container {
+        margin: 10px;
+        input {
+            padding: 5px;     
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#search-results-box {
+    h2 {
+        color: $highlight;
+    }
+    border: 1px solid $highlight;
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 20px; 
 }
 
 #footer {
