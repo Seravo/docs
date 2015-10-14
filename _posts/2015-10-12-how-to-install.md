@@ -1,11 +1,12 @@
 ---
 layout: page
-title: "How to install Vagrant"
+title: How to install Vagrant
 category: development
-date: 2015-10-12 19:16:16
+date: {}
 order: 2
 published: true
 ---
+
 
 ## Installation
 
@@ -19,6 +20,7 @@ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 ```
 
 If you want to have PHP Composer locally installed run:
+
 ```
 sudo apt-add-repository -y ppa:duggan/composer
 sudo apt-get update
@@ -68,5 +70,3 @@ You might need to disable ```hyper-v``` in order to use virtualbox.
 ```bash
 vagrant plugin install vagrant-hostsupdater vagrant-triggers
 ```
-
-
