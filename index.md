@@ -1,7 +1,9 @@
 ---
 layout: page
 title: "WP-Palvelu Developer Guide"
+published: true
 ---
+
 
 
 We have tried our best to deliver you pleasent time while developing your WordPress site in our platform.
@@ -11,7 +13,7 @@ All WP-Palvelu.fi instances are preconfigured for git development workflow. Soun
 All instances have sftp/ssh access and you can develop your site like you are used to. Continue reading if you want to enhance your workflow and start using modern dev tools.
 
 ### Really minimal guide for developing your site:
-Read the other topics to really understand what's happening over here.
+This is for the developer who wants just really general guidelines.
 
 ```
 # Clone your site to your computer and name the git remote as 'production'
