@@ -48,6 +48,9 @@ sass:
   sass_dir: /assets/_sass
   style: :compressed
 
+gems:
+  - jekyll-sitemap
+
 # Dates are not included in permalinks
 permalink: none
 
