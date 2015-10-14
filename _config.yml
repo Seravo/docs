@@ -90,6 +90,7 @@ prose:
   ignore:
     - _config.yml
     - /_layouts
+    - /_posts/.gitkeep
     - /_includes
     - assets
     - /bin
