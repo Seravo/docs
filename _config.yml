@@ -83,7 +83,6 @@ redcarpet:
 ##
 # Prose settings
 ##
-
 prose:
   rooturl: '_posts'
   siteurl: 'http://docs.wp-palvelu.fi'
@@ -113,20 +112,28 @@ prose:
           element: "select"
           label: "Add Category"
           placeholder: "Pick a category"
-          options:
-            - name:'Get Started'
-              value: 'get-started'
-            - name:'Configuration'
-              value: 'configuration'
-            - name:'Testing'
-              value: 'tests'
-            - name:'Development'
-              value: 'development'
-            - name:'Deployment'
-              value: 'deployment'
-            - name:'Management
-              value: 'management'
+          options: 
+            - 
+              name: "Get Started"
+              value: get-started
+            - 
+              name: "Configuration"
+              value: configuration
+            - 
+              name: "Testing"
+              value: tests
+            - 
+              name: "Development"
+              value: development
+            - 
+              name: "Deployment"
+              value: deployment
+            - 
+              name: "Management"
+              value: management
+              
       - name: "Order"
+        field:
           element: "number"
           label: Page order in the category
           help: You can order pages with this
