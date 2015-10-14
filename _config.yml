@@ -83,6 +83,7 @@ redcarpet:
 ##
 # Prose settings
 ##
+
 prose:
   rooturl: '_posts'
   siteurl: 'http://docs.wp-palvelu.fi'
@@ -99,27 +100,35 @@ prose:
     - bower.json
   metadata:
     _posts:
-      - name: "layout"
+      - name: "title"
         field:
-          element: "hidden"
-          value: "blog"
-      - name: "tags"
-        field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          options:
-            - name: "Apples"
-              value: "apples"
-            - name: "Bananas"
-              value: "bananas"
-    _posts/static:
+          element: "text"
+          label: "title"
       - name: "layout"
         field:
           element: "hidden"
           value: "page"
-      - name: "permalink"
+      - name: "category"
         field:
-          element: "text"
-          label: "Permalink"
-          value: ""
+          element: "select"
+          label: "Add Category"
+          placeholder: "Pick a category"
+          options:
+            - name:'Get Started'
+              value: 'get-started'
+            - name:'Configuration'
+              value: 'configuration'
+            - name:'Testing'
+              value: 'tests'
+            - name:'Development'
+              value: 'development'
+            - name:'Deployment'
+              value: 'deployment'
+            - name:'Management
+              value: 'management'
+      - name: "Order"
+          element: "number"
+          label: Page order in the category
+          help: You can order pages with this
+          value: 1
+          type: "number"
