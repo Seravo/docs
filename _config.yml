@@ -107,11 +107,16 @@ prose:
         field:
           element: "hidden"
           value: "page"
+      - name: "date"
+        field:
+          element: "hidden"
+          value: "page"
       - name: "category"
         field:
           element: "select"
           label: "Add Category"
           placeholder: "Pick a category"
+          alterable: true # User can add new categories
           options: 
             - 
               name: "Get Started"
@@ -132,7 +137,7 @@ prose:
               name: "Management"
               value: management
               
-      - name: "Order"
+      - name: "order"
         field:
           element: "number"
           label: Page order in the category
