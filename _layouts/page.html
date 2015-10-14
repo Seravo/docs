@@ -3,10 +3,16 @@ layout: default
 ---
 
 <div class="page-header">
-    <h2>{{ page.title }}
-        {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
-    </h2>
+      <div class="row">
+        <div class="col-md-9">
+          <h1>{{ page.title }}
+              {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
+          </h1>
+        </div>
+        <div class="col-md-3">
+          <a href="{{site.github_url}}/edit/gh-pages/{{page.path}}" class="edit-this-in-github btn btn-default pull-right-md pull-left-sm"><i class="glyphicon glyphicon-wrench"></i> &nbsp;Edit this page in GitHub</a>
+        </div>
+      </div>      
 </div>
-<a id="edit-this-page" href="{{site.github_url}}/edit/gh-pages/{{page.path}}" class="button icon edit github">Edit this page in GitHub</a>
 
 {{ content }}

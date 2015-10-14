@@ -3,7 +3,6 @@
 ---
 
 // Imports
-@import "gh-buttons";
 @import "syntax";
 
 // Highlight color
@@ -53,8 +52,12 @@ body {
     }
     #search-container {
         margin: 10px;
+        margin-right: 0px;
         input {
-            padding: 5px;     
+            margin-top: -15px;
+        }
+        a {
+            margin-top: 7px;
         }
     }
 }
@@ -64,8 +67,10 @@ body {
 }
 
 #search-results-box {
-    h2 {
+    h3 {
+        padding-bottom: 5px;
         color: $highlight;
+        border-bottom: 1px solid #eee
     }
     border: 1px solid $highlight;
     display: inline-block;
@@ -110,6 +115,41 @@ body {
        margin-top: 10px;
        font-size: 19px; 
     }
+    .page-header {
+        padding-top: 20px; 
+        padding-bottom: 20px;
+    }
+    .page-header h1 {
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .pull-right-md {
+        float: right;
+    }
+    .pull-left-md {
+        float: left;
+    }
+}
+@media (max-width: 991px) {
+    .pull-right-sm {
+        float: left;
+    }
+    .pull-left-sm {
+        float: left;
+    }
+    .edit-this-in-github {
+        margin-top: 10px;
+    }
+    
+    #search-results-box {
+        margin: auto;
+        width: 100%;
+    }
+}
+.edit-this-in-github {
+    min-width: 202px;
 }
 
 #navigation {
@@ -137,10 +177,6 @@ body {
  * Make things responsive for mobile
  */
 @media(max-width:767px){
-    .hide-mobile {
-        display: none;
-    }
-
     #header {
         text-align: center;
     }
@@ -148,6 +184,15 @@ body {
     #header .brand {
         display: block;
         margin: 20px 20px 10px 20px;
+    }
+}
+
+/*
+ * Only show something for desktop
+ */
+@media(max-width:1350px) {
+    .show-in-fullscreen {
+        display: none;
     }
 }
 

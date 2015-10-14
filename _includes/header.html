@@ -1,12 +1,14 @@
 <div class="row header-bar">
-  <div class="col-md-8">
+  <div class="col-md-8 col-sm-8">
     <h4><a class="brand" href="{{ site.baseurl }}/"><img class="logo" src="{{ site.url }}/images/wp-palvelu-logo.png"> - Docs</a>
         {% if site.subtitle %}<small>{{ site.subtitle }}</small>{% endif %}
     </h4>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-4">
     <!-- Html Elements for Search -->
-    <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search...">
+    <div id="search-container" class="pull-right-md">
+      <input type="text" id="search-input" class="btn btn-default" placeholder="Search...">
+      <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+    </div>
   </div>
 </div>

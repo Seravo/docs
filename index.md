@@ -1,9 +1,8 @@
 ---
-layout: default
-title: "WP-Palvelu Developer Docs"
+layout: page
+title: "WP-Palvelu Developer Guide"
 ---
 
-### WP-Palvelu.fi Developer Guide
 
 We have tried our best to deliver you pleasent time while developing your WordPress site in our platform.
 

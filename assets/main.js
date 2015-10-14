@@ -11,6 +11,11 @@
         $("#search-results-box").hide();
       }
     });
+    // Allo focusing in search while clicking search
+    $('#search-container a').click(function (evt){
+      $('#search-container input').focus();
+      evt.preventDefault();
+    });
     SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
