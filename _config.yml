@@ -110,7 +110,7 @@ prose:
           value: "page"
       - name: "date"
         field:
-          element: "text"
+          element: "hidden"
           value: CURRENT_DATETIME
       - name: "category"
         field:
