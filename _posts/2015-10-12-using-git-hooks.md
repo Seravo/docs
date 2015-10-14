@@ -22,6 +22,6 @@ You can customize the tests by editing `scripts/run-tests`. It's in bash but you
 ## Skipping pre-commit hook
 You can use **-n** flag to skip hooks.
 
-```
-git commit -nm "commit message"
+```bash
+$ git commit -n -m "commit message"
 ```

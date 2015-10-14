@@ -52,7 +52,7 @@ gems:
   - jekyll-sitemap
 
 # Dates are not included in permalinks
-permalink: none
+permalink: /:categories/:title/
 
 # Syntax highlighting
 highlighter: pygments
