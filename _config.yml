@@ -38,6 +38,8 @@ sections: [
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: ''
 
+url: http://docs.wp-palvelu.fi
+
 # Use sass from assets folder
 sass:
   sass_dir: /assets/_sass

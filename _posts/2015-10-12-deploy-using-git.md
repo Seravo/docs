@@ -44,7 +44,7 @@ remote: Loading composer repositories with package information
 remote: Installing dependencies from lock file
 remote: Nothing to install or update
 remote: Generating autoload files
-remote: > Wordpress\\Installer::symlinkWPContent
+remote: > Wordpress/Installer::symlinkWPContent
 remote: WP-Palvelu: Nginx configs were changed, reloading nginx...
 remote: testing nginx configuration...
 remote: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
