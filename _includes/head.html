@@ -14,6 +14,10 @@
     {% if site.google_site_verification %}
     <meta name="google-site-verification" content="{{site.google_site_verification}}" />
     {% endif %}
+
+    {% if site.google_analytics_id %}
+    {% include google_analytics.html %}
+    {% endif%}
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
