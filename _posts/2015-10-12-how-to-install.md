@@ -4,7 +4,9 @@ title: "How to install Vagrant"
 category: development
 date: 2015-10-12 19:16:16
 order: 2
+published: true
 ---
+
 ## Installation
 
 ### Linux (Debian)

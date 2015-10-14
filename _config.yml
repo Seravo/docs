@@ -139,5 +139,5 @@ prose:
           element: "number"
           label: Page order in the category
           help: You can order pages with this
-          value: 1
+          value: 10
           type: "number"

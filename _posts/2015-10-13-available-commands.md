@@ -4,6 +4,7 @@ title: "Available commands"
 category: development
 date: 2015-10-13 14:25:15
 order: 5
+published: true
 ---
 
 ## Commands inside Vagrant box

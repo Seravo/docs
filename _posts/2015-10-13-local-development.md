@@ -4,6 +4,7 @@ title: "Local development"
 category: development
 date: 2015-10-13 14:26:53
 order: 3
+published: true
 ---
 
 ## Start fresh project

@@ -4,7 +4,9 @@ title: "Basics and Paths"
 category: get-started
 date: 2015-10-12 11:29:39
 order: 1
+published: true
 ---
+
 ## Base installation
 WP-Palvelu uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as base installation for all sites. If you have any problems with the template please add [issue to Github](https://github.com/Seravo/wordpress/issues).
 

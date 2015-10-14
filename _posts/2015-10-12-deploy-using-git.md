@@ -3,7 +3,9 @@ layout: page
 title: "Deploy using Git"
 category: deployment
 date: 2015-10-12 18:05:02
+published: true
 ---
+
 ## Requirements
 1. You need to [setup your ssh settings]({% post_url 2015-10-10-configure-ssh %}) first.
 2. Go to your git directory: `$ cd ~/Projects/your-site/`

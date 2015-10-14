@@ -4,6 +4,7 @@ title: "Configure Vagrant Box"
 category: development
 date: 2015-10-12 19:12:17
 order: 4
+published: true
 ---
 
 ## Example configuration of config.yml
