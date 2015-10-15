@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Developer Guide
+title: Developer Documentation
 published: true
 ---
 
