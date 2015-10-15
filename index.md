@@ -1,8 +1,9 @@
 ---
 layout: page
-title: "WP-Palvelu Developer Guide"
+title: Developer Guide
 published: true
 ---
+
 
 
 
