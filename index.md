@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Developer Guide
+title: Developer Documentation
 published: true
 ---
+
 
 
 We hope you enjoy developing your WordPress site in our platform. Here you can find guides and documentation to help you in the process.
