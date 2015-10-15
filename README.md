@@ -5,9 +5,9 @@ This is just the jekyll code which generates the documentation.
 
 ## Using jekyll with this repo
 
-You can add new pages by:
+You can add new pages using included ```bin/jekyll-page```
 
-For example and SSH page to get started
+For example add SSH page to get started
 ```bash
 ruby bin/jekyll-page "Configure SSH" get-started
 ```
