@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Available commands"
+title: "List of commands"
 category: get-started
 date: 2015-10-13 14:25:15
 order: 5
