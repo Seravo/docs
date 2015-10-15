@@ -13,7 +13,7 @@ All WP-palvelu.fi sites are preconfigured for Git development workflow. Sounds t
 All sites have SFTP/SSH access and you can develop your site like you are used to. Continue reading if you want to enhance your workflow and start using modern development tools.
 
 ### Really minimal guide for developing your site:
-Hint: Read the other topics to have better understand what's happening over here.
+>**Hint:** Read the other topics to have better understanding what's happening over here.
 
 ```
 # Clone your site to your computer and name the git remote as 'production'
