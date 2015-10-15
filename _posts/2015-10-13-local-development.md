@@ -1,11 +1,12 @@
 ---
+date: 2015-10-13T14:26:53.000Z
 layout: page
-title: "Local development"
+title: Local development
 category: development
-date: 2015-10-13 14:26:53
 order: 3
 published: true
 ---
+
 
 ## Start fresh project
 You can start fresh project by cloning our WordPress template to your machine.
@@ -45,4 +46,3 @@ $ vagrant ssh
 # If you want to you can pull the production database
 $ wp-pull-production-db
 ```
-
