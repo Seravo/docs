@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Available commands"
-category: development
+category: get-started
 date: 2015-10-13 14:25:15
 order: 5
 published: true
