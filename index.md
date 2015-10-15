@@ -5,16 +5,14 @@ published: true
 ---
 
 
+We hope you enjoy developing your WordPress site in our platform. Here you can find guides and documentation to help you in the process.
 
+All WP-palvelu.fi instances are preconfigured for Git development workflow. Sounds too much to handle? Don't worry, you don't have to use Git or anything else included. Please develop your pages like you feel is best for you!
 
-We have tried our best to deliver you pleasent time while developing your WordPress site in our platform.
-
-All WP-Palvelu.fi instances are preconfigured for git development workflow. Sounds too much to handle? Don't worry you don't have use git or anything else included. Please develop your pages like you feel is best for you!
-
-All instances have sftp/ssh access and you can develop your site like you are used to. Continue reading if you want to enhance your workflow and start using modern dev tools.
+All sites have SFTP/SSH access and you can develop your site like you are used to. Continue reading if you want to enhance your workflow and start using modern development tools.
 
 ### Really minimal guide for developing your site:
-This is for the developer who wants just really general guidelines.
+Hint: Read the other topics to have better understand what's happening over here.
 
 ```
 # Clone your site to your computer and name the git remote as 'production'
