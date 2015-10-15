@@ -5,13 +5,21 @@ category: development
 date: 2015-10-13 14:25:15
 order: 5
 published: true
+summary: "WP-palvelu contains bunchful of additional commands for helping the developer with basic tasks"
 ---
 
-## Commands inside Vagrant box
 Vagrant box contains plenty of helpers for developing your site and migrating data to/from production.
 
-Here's list of the useful ones:
+Production contains most of these and also command for purging cache.
+
+## List of commands
+
 ### Developer helpers
+#### wp-list-env
+```$ wp-list-env ``` - Prints list of defined ENVs. Vagrant & Production contain unix ENVs which define ports and credentials for WordPress. With this command you can debug things.
+
+#### wp-purge-cache
+```$ wp-purge-cache ``` - Removes everything for nginx proxy server cache. This is called stale-cache in WP-palvelu.
 
 #### wp-restart-nginx
 ```$ wp-restart-nginx``` - Restarts the web server and uses new configuration of ```/data/wordpress/nginx/*.conf```
@@ -19,14 +27,17 @@ Here's list of the useful ones:
 #### wp-test
 `$ wp-test` - Runs [Rspec tests]({% post_url 2015-10-11-integration-tests %}) from ```/data/wordpress/tests/rspec/*.rb```
 
+
+### Vagrant commands
+> **Note:** These are only available inside of Vagrant box.
+
 #### wp-ssh-production
 ```$ wp-ssh-production``` - If your config.yml is setupped with production details you can ssh into your production instance.
 
 #### wp-pull-production-db
-`$ wp-pull-production-db` - Copies production database into this vagrant box and does replaces siteurls.
+`$ wp-pull-production-db` - Copies production database into this vagrant box and replaces siteurls.
 
 #### wp-push-production-db
-
 <div class="bs-callout bs-callout-danger">
   <strong>Warning</strong>: This will replace the production database. Be careful with this. 
 </div>
@@ -34,7 +45,7 @@ Here's list of the useful ones:
 `$ wp-push-production-db` - Copies your development database into production and replaces siteurls.
 
 
-### Internal commands (good to know, but developers won't need to use these.)
+### Vagrant internal commands (good to know, but developers won't need to use these.)
 
 <div class="bs-callout bs-callout-info">
   <strong>Note</strong>: These commands are used in <code>vagrantfile</code> by default.
