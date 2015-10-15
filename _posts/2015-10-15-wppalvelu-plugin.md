@@ -1,11 +1,13 @@
 ---
+date: 2015-10-15T17:51:38.000Z
 layout: page
 title: "WP-palvelu plugin - Mustuse plugin"
 category: configuration
-date: 2015-10-15 17:51:38
 order: 3
 summary: "WP-palvelu sites contain a mustuse plugin which is installed in all sites by default. It adds small WordPress fixes, new features and helps WP-palvelu to inform clients about service outages."
+published: true
 ---
+
 ## How to get
 Plugin is available in [Github](https://github.com/Seravo/wp-palvelu-plugin) so all users can see it's open development and even pull request features.
 
@@ -22,7 +24,7 @@ These are used only for informing about service outages.
 This is used for more relevant logging.
 
 ### Hides update nagging
-Updates are handled by WP-palvelu so your clients need to worry.
+Updates are handled by WP-palvelu so your clients don't need to worry about them.
 
 ### Uses nocache headers if the site is in development mode
 Makes development with clients so much easier.
