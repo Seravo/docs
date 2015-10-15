@@ -20,4 +20,10 @@ layout: default
       </div>      
 </div>
 
+{% if page.summary %}
+<div class="bs-callout bs-callout-primary">
+  <p><strong>Summary: </strong>{{ page.summary | markdownify | | remove: '<p>' | remove: '</p>' | replace:'. ','.<br>' }}</p>
+</div>
+{% endif %}
+
 {{ content }}

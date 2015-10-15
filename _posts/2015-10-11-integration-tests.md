@@ -4,6 +4,7 @@ title: "Integration tests using Rspec"
 category: tests
 date: 2015-10-11 03:28:22
 published: true
+summary: "WP-Palvelu uses Rspec tests as integration tests for all sites. Here you can find examples and documentation of available functions."
 ---
 
 ## What are integration tests?
@@ -26,10 +27,24 @@ We use headless browser [Phantomjs](http://phantomjs.org/) with ruby driver [Pol
 
 Using ruby for testing php application like WordPress may sound overwhelming but in our opinion it's quite fun and effective. Our latest WordPress test template can be found in [Github](https://github.com/Seravo/wordpress/blob/master/tests/rspec/). It consists as a good starting point for your own unique tests.
 
-**These tests are used (if available) in your production system as well.** This way we can figure out if the site is still working after updates so that we can alarm you when something breaks and hand the updating process to be manually by the owner.
+> **Note:** These tests are used in your production system as well *(if available)*.
+>
+> This way we can figure out if the site is still working after updates so that we can alarm you when something breaks and hand the updating process to be manually by the owner.
+
+## How to run these tests
+You can use this [command]({% post_url 2015-10-13-available-commands %}#wp-test) in **Production** and **Vagrant box**:
+
+```bash
+# Runs all tests in /data/wordpress/tests/rspec/*.rb
+$ wp-test
+```
 
 ## Example tests
-The following test suite consists of 2 ```describe``` blocks. The first one tests that the frontpage is loaded correctly and has css styles. Then it clicks link in frontpage and expects the following page to contain text **Archives**. The second one tests the usecase mentioned in the top of this page.
+The following test suite consists of 2 ```describe``` blocks.
+
+The first one tests that the frontpage is loaded correctly and has css styles. Then it clicks link in frontpage and expects the following page to contain text **Archives**.
+
+The second one tests the usecase mentioned in the top of this page.
 
 
 ```ruby
@@ -89,14 +104,6 @@ describe "wordpress: #{WP.host} - ", :type => :request, :js => true do
 end
 ```
 
-## How to run these tests
-You can use this command in **Production** and **Vagrant box**:
-
-```bash
-# Runs all tests in /data/wordpress/tests/rspec/*.rb
-$ wp-test
-```
-
 ## List of Helper functions
 
 ### **WP** Helper module
@@ -125,7 +132,7 @@ WP.user
 WP.user.username    # Username for the WordPress
 WP.user.password    # Password for the WordPress
 WP.user.firstname   # Test user firstname - by default: Test
-WP.user.lastname    # Test user lastname - by default: WP-Palvelu
+WP.user.lastname    # Test user lastname - by default: WP-palvelu
 WP.user.email       # Test user email - by default: testbotuser@{your-site}
 
 ```
@@ -201,5 +208,6 @@ Capybara.default_selector = :css
 within('ul li') { ... }
 find('ul li').text
 locate('input#name').value
+
+# Source: https://gist.github.com/zhengjia/428105.
 ```
-Source: https://gist.github.com/zhengjia/428105.

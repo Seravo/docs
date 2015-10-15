@@ -1,3 +1,4 @@
+
 ---
 layout: page
 title: "Using Git hooks"
@@ -14,7 +15,7 @@ They exists in your repository `.git/hooks/` and are not copied when pulling/pus
 Git hooks are explained really well in [git documentation](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks).
 
 ## What's included?
-WP-Palvelu template contains one custom git hook: `pre-commit`.
+WP-palvelu template contains one custom git hook: `pre-commit`.
 
 By default it runs your [Rspec tests]({% post_url 2015-10-11-integration-tests %}) before a new commit is allowed.
 

@@ -1,4 +1,4 @@
-# Developer Documentation for WP-Palvelu.fi
+# Developer Documentation for WP-palvelu.fi
 Read the documentation here: [http://docs.wp-palvelu.fi](http://docs.wp-palvelu.fi)
 
 This is just the jekyll code which generates the documentation.

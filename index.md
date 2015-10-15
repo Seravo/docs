@@ -4,10 +4,11 @@ title: Developer Guide
 published: true
 ---
 
+> **Note:** This documentation is directed mainly to customers of [WP-palvelu.fi](https://wp-palvelu.fi) but you can use our [Project structure & Vagrant box](https://github.com/Seravo/wordpress) for your WordPress development freely. This includes personal and commercial usage as stated in [LICENSE (MIT)](https://github.com/Seravo/wordpress/blob/master/LICENSE.md). 
 
-We hope you enjoy developing your WordPress site in our platform. Here you can find guides and documentation to help you in the process.
+Here you can find guides and documentation to help you develop sites with WP-palvelu platform.
 
-All WP-palvelu.fi instances are preconfigured for Git development workflow. Sounds too much to handle? Don't worry, you don't have to use Git or anything else included. Please develop your pages like you feel is best for you!
+All WP-palvelu.fi sites are preconfigured for Git development workflow. Sounds too much to handle? Don't worry, you don't have to use Git or anything else included. Please develop your pages like you feel is best for you!
 
 All sites have SFTP/SSH access and you can develop your site like you are used to. Continue reading if you want to enhance your workflow and start using modern development tools.
 
@@ -48,13 +49,13 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 317 bytes | 0 bytes/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
-remote: WP-Palvelu: composer.json was updated, installing...
+remote: WP-palvelu: composer.json was updated, installing...
 remote: Loading composer repositories with package information
 remote: Installing dependencies from lock file
 remote: Nothing to install or update
 remote: Generating autoload files
 remote: > Wordpress\Installer::symlinkWPContent
-remote: WP-Palvelu: Nginx configs were changed, reloading nginx...
+remote: WP-palvelu: Nginx configs were changed, reloading nginx...
 remote: testing nginx configuration...
 remote: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 remote: nginx: configuration file /etc/nginx/nginx.conf test is successful

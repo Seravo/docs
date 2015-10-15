@@ -1,14 +1,15 @@
 ---
 layout: page
-title: "Basics and Paths"
+title: "Data locations"
 category: get-started
 date: 2015-10-12 11:29:39
 order: 1
 published: true
+summary: "This page includes all default data paths for WP-Palvelu site. This includes paths to log files and htdocs."
 ---
 
 ## Base installation
-WP-Palvelu uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as base installation for all sites. If you have any problems with the template please add [issue to Github](https://github.com/Seravo/wordpress/issues).
+WP-palvelu uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as base installation for all sites. If you have any problems with the template please add [issue to Github](https://github.com/Seravo/wordpress/issues).
 
 ## Data locations
 All of your data is held under path: ```/data/```. During the updates of your site we will wipe away all unneccessary files and only preserve things in ```/data/``` directory. But don't worry because for example we have moved your home folder into ```/data/home/$USER/``` and made correct symlinks so you won't even notice it's elsewhere.
@@ -29,7 +30,7 @@ WP-content is moved outside of wordpress directory into: ```/data/wordpress/htdo
 All logs are saved in: ```/data/log/```
 
 ## Project Structure
-WP-Palvelu uses custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is WordPress layout which uses composer for package management. It's not advised to modify WP core files so usually your application is only what's included in **wp-content** -directory. When we use version control is much better if we have separated it to a folder which is outside of core installation. This template also includes tests, composer.json, custom nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
+WP-palvelu uses custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is WordPress layout which uses composer for package management. It's not advised to modify WP core files so usually your application is only what's included in **wp-content** -directory. When we use version control is much better if we have separated it to a folder which is outside of core installation. This template also includes tests, composer.json, custom nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
 
 ```
 ├── config.yml # See about Configuration above
@@ -53,7 +54,7 @@ WP-Palvelu uses custom directory layout which is derived from [Bedrock](https://
 │   ├── Wordpress
 │   │   └── Installer.php #Additional composer scripts
 │   │
-│   └── run-tests # Bash-script as an interface for your tests in WP-Palvelu Production and Dev environment
+│   └── run-tests # Bash-script as an interface for your tests in WP-palvelu Production and Dev environment
 │
 ├── vendor # Composer packages go here
 └── htdocs # This is the web root of your site

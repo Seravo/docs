@@ -4,6 +4,7 @@
 
 // Imports
 @import "syntax";
+@import "bs-callout";
 
 // Highlight color
 $highlight: rgb(25,157,213);
@@ -16,7 +17,7 @@ body {
 pre, code {
     border: none;
     border-radius: 0;
-    background-color: #ededed;
+    background-color: #F3F3F3;
     font-size: 0.85em;
 }
 
@@ -133,6 +134,11 @@ body {
         margin-top: 25px;
         margin-bottom: 20px;
     }
+    .bs-callout {
+        h2,h3,h4,h5 {
+            margin: 0px 0px 5px 0px;
+        }
+    }
 
     h4 {
        margin-top: 10px;
@@ -144,6 +150,15 @@ body {
     }
     .page-header h1 {
         margin: 0;
+    }
+    blockquote {
+        @extend .bs-callout;
+        @extend .bs-callout-info;
+
+        /* Code blocks will be too big inside blockquotes */
+        pre code {
+            font-size: 14px;
+        }
     }
 }
 

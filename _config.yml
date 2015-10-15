@@ -1,14 +1,14 @@
 # Site title and subtitle. This is used in _includes/header.html
-title: 'WP-Palvelu.fi Docs'
+title: 'WP-palvelu.fi Docs'
 subtitle: 'Documentation for Developers'
 
 # Titile to show in footer
-name: WP-Palvelu.fi
+name: WP-palvelu.fi
 
 # Link to Github repo
 # This is used in editing links
 github:
-    repo: WP-Palvelu/developer-documentation
+    repo: WP-palvelu/developer-documentation
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''

@@ -19,7 +19,7 @@ $ vagrant up
 
 ## Copy your site from production with git
 
-If you already have an instance in [WP-Palvelu.fi](https://wp-palvelu.fi) you can use ```git``` to copy your site to local environment.
+If you already have an instance in [WP-palvelu.fi](https://wp-palvelu.fi) you can use ```git``` to copy your site to local environment.
 
 You need to use your unique credentials but for this example we are using following:
 

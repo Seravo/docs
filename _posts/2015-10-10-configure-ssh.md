@@ -9,7 +9,7 @@ published: true
 
 ### Obtaining your Credentials
 
-After ordering your instance from [WP-Palvelu.fi](https://wp-palvelu.fi) you'll get email which consists your credentials. It looks something like this:
+After ordering your instance from [WP-palvelu.fi](https://wp-palvelu.fi) you'll get email which consists your credentials. It looks something like this:
 
     SSH/SFTP:
     Host: example-site.wp-palvelu.fi
@@ -40,7 +40,7 @@ We advice you to use ssh key instead of password for accessing your site. [Read 
 **Windows users:** Install your ssh key through **Putty** instead
 
 ```bash
-# This will install your ssh-key into your WP-Palvelu instance.
+# This will install your ssh-key into your WP-palvelu instance.
 # Remember we set your credentials in the last step and the name of your site won't be example-site
 $ ssh-copy-id example-site
 

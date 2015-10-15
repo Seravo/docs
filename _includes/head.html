@@ -14,7 +14,10 @@
     <meta property='og:site_name' content="{{ site.name }}">
     <meta property="og:type" content="website" />
     
-    {% if page.excerpt %}
+    {% if page.summary%}
+        <meta property='og:description' content="{{ page.summary | markdownify | strip_html }}"/>
+        <meta name='twitter:description' content="{{ page.summary | markdownify | strip_html }}"/>
+    {% else if page.excerpt %}
         <meta property='og:description' content="{{ page.excerpt | strip_html | escape }}"/>
         <meta name='twitter:description' content="{{ page.excerpt | strip_html | escape }}"/>
     {% else %}
