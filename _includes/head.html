@@ -6,11 +6,13 @@
     <link rel="icon" href="/images/favicon.png">
 
     <meta property='og:image' content="{{ site.siteurl }}/images/wp-palvelu-logo.png"/>
-    <meta property='og:url' content="{{site.siteurl}}{% if page.siteurl %}{{page.siteurl}}{% endif%}">
+    <meta property='og:url' content="{{site.siteurl}}{% if page.url %}{{page.url}}{% endif%}">
     <link rel="image_src" href="{{ site.siteurl }}/images/wp-palvelu-logo.png" / >
 
     <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
     <meta property='og:title' content="{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}"/>
+    <meta property='og:site_name' content="{{ site.name }}">
+    <meta property="og:type" content="website" />
     
     {% if page.excerpt %}
         <meta property='og:description' content="{{ page.excerpt | strip_html | escape }}"/>
