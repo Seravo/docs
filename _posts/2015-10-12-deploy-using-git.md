@@ -1,15 +1,18 @@
 ---
+date: 2015-10-12T18:05:02.000Z
 layout: page
-title: "Deploy using Git"
+title: Deploy using Git
 category: deployment
-date: 2015-10-12 18:05:02
 published: true
+order: 2
 ---
+
 
 ## Requirements
 1. You need to [setup your ssh settings]({% post_url 2015-10-10-configure-ssh %}) first.
-2. Go to your git directory: `$ cd ~/Projects/your-site/`
-3. You need to have production set as git remote:
+2. Your production needs to use git in `/data/wordpress/.git` so that we can push over there. (By default it is already there)
+3. Go to your project directory: `$ cd ~/Projects/your-site/`
+4. You need to have production set as git remote:
 
 ```bash
 # Here we are using custom alias 'your-site' in ~/.ssh/config
@@ -56,9 +59,3 @@ remote: nginx restarted!
 To your-site:/data/wordpress/.git
    01b9b80..9b3d006  master -> master
 ```
-
-
-
-
-
-
