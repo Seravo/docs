@@ -29,7 +29,7 @@ Updates are handled by WP-palvelu so your clients don't need to worry about them
 ### Uses nocache headers if the site is in development mode
 Makes development with clients so much easier.
 
-Imagine situation where send link for your client and then the client doesn't know how to empty browser cache later on.
+Imagine situation where your client sees the page in development and then the client doesn't know how to empty the browser cache later on.
 
 ### Adds Purge Cache button in adminbar
 This helps you to empty your cached pages.
