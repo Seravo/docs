@@ -55,6 +55,11 @@ body {
         margin-right: 0px;
         input {
             margin-top: -15px;
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
         }
         a {
             margin-top: 7px;
