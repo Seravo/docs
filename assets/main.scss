@@ -16,7 +16,7 @@ body {
 pre, code {
     border: none;
     border-radius: 0;
-    background-color: #f9f9f9;
+    background-color: #ededed;
     font-size: 0.85em;
 }
 
@@ -71,7 +71,21 @@ body {
     display: none;
 }
 
+@keyframes slideInUp {
+    from {
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+}
+
 #search-results-box {
+
+    animation-name: slideInUp;
+    transition: 1s;
     h3 {
         padding-bottom: 5px;
         color: $highlight;
