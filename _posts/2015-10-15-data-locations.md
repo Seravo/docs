@@ -21,7 +21,7 @@ Your content is served from: ```/data/wordpress/htdocs/```
 
 WordPress is installed in: ```/data/wordpress/htdocs/wordpress/```
 
-### WP-content 
+### WP-content
 
 WP-content is moved outside of wordpress directory into: ```/data/wordpress/htdocs/wp-content/```
 
@@ -51,7 +51,7 @@ WP-palvelu uses custom directory layout which is derived from [Bedrock](https://
 │   │   ├── pre-commit # This is run after every commit
 │   │   └──
 │   │
-│   ├── Wordpress
+│   ├── wordpress
 │   │   └── Installer.php #Additional composer scripts
 │   │
 │   └── run-tests # Bash-script as an interface for your tests in WP-palvelu Production and Dev environment
@@ -65,10 +65,9 @@ WP-palvelu uses custom directory layout which is derived from [Bedrock](https://
     │   └── languages
     ├── wp-config.php
     ├── index.php
-    └── wordpress # Wordpress Core installed by composer
+    └── wordpress # WordPress Core installed by composer
         ├── wp-admin
         ├── index.php
         ├── wp-load.php
         └── ...
 ```
-

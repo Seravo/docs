@@ -10,7 +10,7 @@ summary: "WP-Palvelu uses Rspec tests as integration tests for all sites. Here y
 ## What are integration tests?
 Integration tests make sure that certain features of your site work as they should work.
 
-So for example if we have a following **usecase**:
+So for example if we have a following **use case**:
 
 > User visits your-site.com/wp-login.php and sees login form.
 
@@ -18,7 +18,7 @@ So for example if we have a following **usecase**:
 
 So when the project is functional we have the feature described above and we want it to work always.
 
-Integration tests make sure that this feature works as described in usecase.
+Integration tests make sure that this feature works as described in the use case.
 
 ## Testing with Rspec & Capybara
 Our integration tests use ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](http://jnicklas.github.io/capybara/).
@@ -53,7 +53,7 @@ require_relative 'lib/config.rb'
 
 ### Begin tests ###
 
-describe "wordpress: #{WP.host} - ", :type => :request, :js => true do 
+describe "wordpress: #{WP.host} - ", :type => :request, :js => true do
 
   subject { page }
 
@@ -112,7 +112,7 @@ These tests use helper module **WP** which is included in the project.
 ```ruby
 # Returns url to your site for the following {path}
 # @return string - url to your site
-WP.siteurl(path) 
+WP.siteurl(path)
 WP.url(path)
 
 # Returns the hostname/domain which is defined for WordPress

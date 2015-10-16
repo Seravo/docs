@@ -20,7 +20,7 @@ $ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 ```
 
 > **Optional:** If you want to have PHP Composer locally installed run:
-> 
+>
 > ```bash
 > $ sudo apt-add-repository -y ppa:duggan/composer
 > $ sudo apt-get update
@@ -32,7 +32,7 @@ $ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 Add RPMFusion repositories. See  [RpmFusion](http://rpmfusion.org/). Repository is
 needed for Virtualbox.
 
-Clone the wordpress Git repo and run following commands:
+Clone the WordPress Git repo and run following commands:
 
 ```bash
 $ sudo yum update
@@ -44,7 +44,7 @@ $ sudo gem install hittimes -v '1.2.2'
 $ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 
 # Needed to load the kernel module for virtualbox, you may want to load it automatically on boot...
-$ sudo modprobe vboxdrv 
+$ sudo modprobe vboxdrv
 $ vagrant up
 ```
 

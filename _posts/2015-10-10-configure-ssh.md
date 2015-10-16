@@ -9,7 +9,7 @@ published: true
 
 ### Obtaining your Credentials
 
-After ordering your instance from [WP-palvelu.fi](https://wp-palvelu.fi) you'll get email which consists your credentials. It looks something like this:
+After ordering your instance from [WP-palvelu.fi](https://wp-palvelu.fi) you'll get email which include your credentials. It looks something like this:
 
     SSH/SFTP:
     Host: example-site.wp-palvelu.fi
@@ -62,4 +62,3 @@ example-site@example-site.wp-palvelu.fi's password:
 # After this setup you can login to your instance by:
 $ ssh example-site
 ```
-

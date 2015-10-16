@@ -4,15 +4,16 @@ title: Developer Documentation
 published: true
 ---
 
-> **Note:** This documentation is directed mainly to customers of [WP-palvelu.fi](https://wp-palvelu.fi) but you can use our [Project structure & Vagrant box](https://github.com/Seravo/wordpress) for your WordPress development freely. This includes personal and commercial usage as stated in [LICENSE (MIT)](https://github.com/Seravo/wordpress/blob/master/LICENSE.md). 
+> **Note:** This documentation is primairly intended for [WP-palvelu.fi](https://wp-palvelu.fi) customers. You are can however use our [project structure & Vagrant box](https://github.com/Seravo/wordpress) for any WordPress development no matter where you decide to deploy, host or maintain it. As stated in [LICENSE (MIT)](https://github.com/Seravo/wordpress/blob/master/LICENSE.md), the provides software and documentation is open source and can be used freely anywhere, including also commercial use.
 
-Here you can find guides and documentation to help you develop sites with WP-palvelu platform.
+This contains guides and tips for developers who might want to enhance their workflow and use the best modern development tools. Feel free to pick the parts that fit your style of development best!
 
-All WP-palvelu.fi sites are preconfigured for Git development workflow. Sounds too much to handle? Don't worry, you don't have to use Git or anything else included. Please develop your pages like you feel is best for you!
+All WP-palvelu.fi sites are preconfigured for optimal development workflow, but the workflow in general or any part of it is not mandatory. You don't have to use Git, Composer or the others if you don't want. Or you can use them, but follow your own workflow. All sites have SFTP/SSH access so all sites support even the most traditional FTP-your-suff-to-the-server-workflow. But if you like the idea of a really optimized workflow, please keep on reading!
 
-All sites have SFTP/SSH access and you can develop your site like you are used to. Continue reading if you want to enhance your workflow and start using modern development tools.
+This documentation is maintained in a [public git](https://github.com/wp-palvelu/developer-documentation) repository. If you find any errors or you want to extend the documentation, feel free to contribute!
 
-### Really minimal guide for developing your site:
+
+### Fast-track guide for developing your site:
 >**Hint:** Read the other topics to have better understanding what's happening over here.
 
 ```
@@ -36,7 +37,7 @@ $ git commit -am "Made some superb changes"
 ...
 
 # Push your changes to production
-$ git push production master 
+$ git push production master
 
  __    __   ___           ___      _           _           ___
 / / /\ \ \ / _ \         / _ \__ _| |_   _____| |_   _    /  _| _

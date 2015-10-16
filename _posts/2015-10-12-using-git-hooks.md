@@ -8,7 +8,7 @@ published: true
 ---
 
 ## Git hooks
-Basically they are scripts which allow you to run custom scripts triggered by git commands.
+Basically they are scripts which allow you to run custom actions automatically on every git commit.
 They exists in your repository `.git/hooks/` and are not copied when pulling/pushing.
 
 Git hooks are explained really well in [git documentation](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks).

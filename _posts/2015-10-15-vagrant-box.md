@@ -14,7 +14,7 @@ You can do development for your site locally in your own computer. This is done 
 
 All of our sites are preconfigured with Vagrantfile so you can just clone your site to your computer and start developing locally. We have mimicked the production environment as much as possible and bundled many development tools into the Vagrant image.
 
-The virtual machine image is Ubuntu and it can be downloaded from [Hashicorp Atlas](https://vagrantcloud.com/seravo/boxes/wordpress).
+The virtual machine image is based on Ubuntu and it can be downloaded from [Hashicorp Atlas](https://vagrantcloud.com/seravo/boxes/wordpress).
 
 ## Contributing to Vagrant image
 
