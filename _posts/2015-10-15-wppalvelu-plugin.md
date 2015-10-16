@@ -4,7 +4,7 @@ layout: page
 title: "WP-palvelu plugin - Mustuse plugin"
 category: configuration
 order: 3
-summary: "WP-palvelu sites contain a mustuse plugin which is installed in all sites by default. It adds small WordPress fixes, new features and helps WP-palvelu to inform clients about service outages."
+summary: "WP-palvelu sites contain a mustuse plugin which is installed in all sites by default. \nIt adds small WordPress fixes, new features and helps WP-palvelu to inform clients about service outages."
 published: true
 ---
 

@@ -22,7 +22,7 @@ layout: default
 
 {% if page.summary %}
 <div class="bs-callout bs-callout-primary">
-  <p><strong>Summary: </strong>{{ page.summary | markdownify | | remove: '<p>' | remove: '</p>' | replace:'. ','.<br>' }}</p>
+  <p><strong>Summary: </strong>{{ page.summary | newline_to_br | markdownify | remove: '<p>' | remove: '</p>' }}</p>
 </div>
 {% endif %}
 

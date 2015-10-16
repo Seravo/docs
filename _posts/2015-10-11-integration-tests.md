@@ -4,7 +4,7 @@ title: "Integration tests using Rspec"
 category: tests
 date: 2015-10-11 03:28:22
 published: true
-summary: "WP-Palvelu uses Rspec tests as integration tests for all sites. Here you can find examples and documentation of available functions."
+summary: "WP-Palvelu uses Rspec tests as integration tests for all sites. \nHere you can find examples and documentation of available functions."
 ---
 
 ## What are integration tests?
