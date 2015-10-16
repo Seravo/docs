@@ -8,7 +8,7 @@ summary: "All WP-palvelu sites come with wp-cli preinstalled and configured for 
 ---
 
 ## Basics
-You can use wp-cli in Vagrant and Production. Just run run this to see all commands:
+You can use wp-cli in **Vagrant box** and **Production**. Just run this to see all commands:
 
 ```bash
 $ wp --help
