@@ -22,8 +22,8 @@ production  your-site:/data/wordpress/.git (push)
 
 # This is the output if project was cloned without ssh alias
 $ git remote -v
-production  ssh://your-site@your-site.wp-palvelu.fi:10290/data/wordpress (fetch)
-production  ssh://your-site@your-site.wp-palvelu.fi:10290/data/wordpress (push)
+production  ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress (fetch)
+production  ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress (push)
 ```
 
 ## Deploy using git
@@ -58,4 +58,39 @@ remote: restarting nginx...
 remote: nginx restarted!
 To your-site:/data/wordpress/.git
    01b9b80..9b3d006  master -> master
+```
+
+## Tutorials
+### If you have working site in Vagrant box and want to deploy it
+#### Step 1 - Getting credentials
+First you need to order a site from [wp-palvelu.fi](https://wp-palvelu.fi/).
+
+Afterwise you'll get ssh credentials, which are described in [Configuring SSH]({% post_url 2015-10-10-configure-ssh %}) section.
+
+#### Step 2 - Setting credentials
+
+```bash
+# Go to your project folder
+$ cd Projects/your-site
+
+# Add new remote to git
+$ git remote add production ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress
+```
+
+> **Note:** This is just an example. Use the real credentials for your site.
+
+#### Step 3 - Deploying code, database and assets
+
+```bash
+# First push doesn't share anything with the fresh site so you need to force push it
+$ git push production master --force
+
+# Log in to vagrant to use our migration helpers
+$ vagrant ssh
+
+# Deploy database to production
+$ wp-push-production-db
+
+# Deploy wp-content/uploads into production
+$ wp-push-production-uploads
 ```
