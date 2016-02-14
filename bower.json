@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/WP-palvelu/developer-documentation",
   "authors": [
+    "Otto Kekäläinen <otto@seravo.fi>",
     "Onni Hakala <onni@seravo.fi>"
   ],
   "description": "Developer documentation for WP-palvelu.fi",
