@@ -48,7 +48,7 @@ See [config-sample.yml](https://github.com/Seravo/wordpress/blob/master/config-s
 
 ## Using dotenv
 
-The `wp-config.php` uses by default [Dotenv](https://github.com/vlucas/phpdotenv) so you can create a file `.env` to override default environment variables.
+The `wp-config.php` file uses [Dotenv](https://github.com/vlucas/phpdotenv) by default which enables you to create a file called `.env` in the root of your project to override default environment variables.
 
 Example:
 ```
@@ -63,4 +63,4 @@ $ ll .env
 lrwxrwxrwx 1 otto otto .env -> .env.development
 ```
 
-You can have template files like `.env.development` tracked in version control, and then per location make a symbolic link from `.env` to the correct file. By default the `.env` file is in gitignore.
+You can have template files like `.env.development` tracked in version control, and then per location make a symbolic link from `.env` to the correct file. By default the `.env` file is and should be ignored by git via gitignore.

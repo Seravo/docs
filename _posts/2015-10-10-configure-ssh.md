@@ -40,7 +40,7 @@ We advice you to use ssh key instead of password for accessing your site. [Read 
 
 ### Using Vagrant SSH
 
-Keep in mind that is you use the command ```vagrant ssh``` to enter your Vagrant box, then SSH ForwardAgent is automatically enabled and your personal keys are used to access the production environment when you inside Vagrant run ```wp-ssh-production``` or ```wp-pull-production-uploads```. The Vagrant image itself does not contain any private SSH keys.
+Keep in mind when using use the `vagrant ssh` command to enter your Vagrant box, SSH ForwardAgent is automatically enabled and your personal keys are used to access the production environment. These are used for `wp-ssh-production` or `wp-pull-production-uploads`. The Vagrant image itself does not contain any private SSH keys.
 
 > **OS X users:** You can install *ssh-copy-id* with homebrew:
 
