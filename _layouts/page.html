@@ -10,14 +10,16 @@ layout: default
           </h1>
         </div>
         <div class="col-md-5 edit-buttons">
-          <a href="http://prose.io/#{{site.github.repo}}/edit/gh-pages/{{page.path}}" class="btn btn-default pull-right-md pull-left-sm">
+          <!-- Hide Prose.io: it allows edits but result cannot be saved in any way (message "Error connecting to Github") so it is
+               more annoying than useful. Actually not useful at all, but misleading. Fix the whole process before enabling again. -->
+          <!-- a href="http://prose.io/#{{site.github.repo}}/edit/gh-pages/{{page.path}}" class="btn btn-default pull-right-md pull-left-sm">
             <i class="glyphicon glyphicon-edit"></i> Edit in Prose.io
-          </a>
+          </a -->
           <a href="https://github.com/{{site.github.repo}}/edit/gh-pages/{{page.path}}" class="btn btn-default pull-right-md pull-left-sm">
-            <i class="glyphicon glyphicon-file"></i> Edit in GitHub.com
+            <i class="glyphicon glyphicon-file"></i> Edit on GitHub.com
           </a>
         </div>
-      </div>      
+      </div>
 </div>
 
 {% if page.summary %}

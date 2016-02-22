@@ -17,6 +17,23 @@ $ cd ~Projects/new-wordpress-site
 $ vagrant up
 ```
 
+### Alternative: start from repo on server
+```bash
+$ git clone ssh://$SSH_USER@$SITE.wp-palvelu.fi:[$SSH_PORT]/data/wordpress ~/Projects/$SITE --origin production
+```
+
+### Tip: you can have multiple git remotes:
+```bash
+$ git remote add github git@github.com:ottok/example-site.git
+$ git remote -v
+github	git@github.com:ottok/example-site.git (fetch)
+github	git@github.com:ottok/example-site.git (push)
+production ssh://example@example.wp-palvelu.fi:12345/data/wordpress (fetch)
+production ssh://example@example.wp-palvelu.fi:12345/data/wordpress (fetch)
+upstream	https://github.com/Seravo/wordpress (fetch)
+upstream	https://github.com/Seravo/wordpress (push)
+```
+
 ## Copy your site from production with git
 
 If you already have an instance in [WP-palvelu.fi](https://wp-palvelu.fi) you can use ```git``` to copy your site to local environment.
@@ -43,6 +60,11 @@ $ vagrant up
 # You can connect into vagrant
 $ vagrant ssh
 
-# If you want to you can pull the production database
+# You can pull the production database
 $ wp-pull-production-db
+
+# You can pull the production uploaded files
+$ wp-pull-production-uploads
 ```
+
+Now you can open in a browser http://wordpress.local/ and edit the files in you project and see the result immediately.
