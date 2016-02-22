@@ -19,7 +19,7 @@ After ordering your instance from [WP-palvelu.fi](https://wp-palvelu.fi) you'll 
     Pass: 123456abcdefgh
 
 <div class="bs-callout bs-callout-warning">
-  <strong>Important</strong>: Use your own credentials instead of these. These are just an example and won't work! 
+  <strong>Important</strong>: Use your own credentials instead of these. These are just an example and won't work!
 </div>
 ### Configuring SSH
 
@@ -37,6 +37,10 @@ Add following lines to your config:
 
 ### Using SSH-key authentication
 We advice you to use ssh key instead of password for accessing your site. [Read more about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/).
+
+### Using Vagrant SSH
+
+Keep in mind that is you use the command ```vagrant ssh``` to enter your Vagrant box, then SSH ForwardAgent is automatically enabled and your personal keys are used to access the production environment when you inside Vagrant run ```wp-ssh-production``` or ```wp-pull-production-uploads```. The Vagrant image itself does not contain any private SSH keys.
 
 > **OS X users:** You can install *ssh-copy-id* with homebrew:
 
