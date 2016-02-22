@@ -43,3 +43,22 @@ Add `domain` and `ssh_port` to sync with your production instance.
 Add new domains under `domains` before first vagrant up to have extra domains.
 
 See [config-sample.yml](https://github.com/Seravo/wordpress/blob/master/config-sample.yml) for more.
+
+## Using dotenv
+
+The `wp-config.php` uses by default [Dotenv](https://github.com/vlucas/phpdotenv) so you can create a file `.env` to override default environment variables.
+
+Example:
+```
+$ cat .env.development
+# Run 'ln -s .env.development .env' in project root to activate this
+WP_TEST_URL=https://example.dev
+DOMAIN_CURRENT_SITE=example.dev
+NOBLOGREDIRECT=https://example.dev
+COOKIE_DOMAIN=.example.dev
+
+$ ll .env
+lrwxrwxrwx 1 otto otto .env -> .env.development
+```
+
+You can have template files like `.env.development` tracked in version control, and then per location make a symbolic link from `.env` to the correct file. By default the `.env` file is in gitignore.
