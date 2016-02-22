@@ -16,13 +16,10 @@ Production contains most of these and also command for purging cache.
 
 ### Developer helpers
 #### wp-list-env
-```$ wp-list-env ``` - Prints list of defined ENVs. Vagrant & Production contain unix ENVs which define ports and credentials for WordPress. With this command you can debug things.
-
-#### wp-purge-cache
-```$ wp-purge-cache ``` - Cleans up everything from the http server cache. After this all pages that get loaded are guarenteed to have fresh contents.
+```$ wp-list-env ``` - Prints list of defined environment variables. Both the Vagrant image end the production server contain ENVs which define ports and credentials for WordPress. With this command you can debug what settings you have.
 
 #### wp-restart-nginx
-```$ wp-restart-nginx``` - Restarts the web server and readloads any configuration at  ```/data/wordpress/nginx/*.conf```
+```$ wp-restart-nginx``` - Restarts the web server and reloads any configuration at  ```/data/wordpress/nginx/*.conf```
 
 #### wp-test
 `$ wp-test` - Runs [Rspec tests]({% post_url 2015-10-11-integration-tests %}) from ```/data/wordpress/tests/rspec/*.rb```
