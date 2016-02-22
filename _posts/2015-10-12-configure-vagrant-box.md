@@ -15,7 +15,7 @@ published: true
 ###
 
 # This is used for domain mapping
-name: example
+name: wordpress
 
 # These are used for migrating database and uploads back and forth with production
 # Comment these out if you don't want this integration
@@ -26,7 +26,9 @@ production:
 # Domains are automatically mapped to Vagrant with /etc/hosts modifications
 development:
   domains:
-    - custom.domain
+    - wordpress.local
+    - example.dev
+    - www.example.dev
 ```
 
 ### Changing config.yml
