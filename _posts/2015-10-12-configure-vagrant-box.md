@@ -51,7 +51,8 @@ See [config-sample.yml](https://github.com/Seravo/wordpress/blob/master/config-s
 The `wp-config.php` file uses [Dotenv](https://github.com/vlucas/phpdotenv) by default which enables you to create a file called `.env` in the root of your project to override default environment variables.
 
 Example:
-```
+
+```bash
 $ cat .env.development
 # Run 'ln -s .env.development .env' in project root to activate this
 WP_TEST_URL=https://example.dev
