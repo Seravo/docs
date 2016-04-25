@@ -18,6 +18,21 @@ $ vagrant up
 ```
 
 ### Alternative: start from repo on server
+
+If you haven't already done so, initialise your repository on the server by logging in via ssh first and running `git init` first.
+
+Example:
+
+```bash
+ssh my-site.wp-palvelu.fi -p <port>
+cd /data/wordpress/
+git config --global user.name "<Full Name>"
+git config --global user.email <email>
+git init && git commit -am "Initial commit"
+```
+
+Now you can just clone the remote git repository to your machine and start working.
+
 ```bash
 $ git clone ssh://$SSH_USER@$SITE.wp-palvelu.fi:[$SSH_PORT]/data/wordpress ~/Projects/$SITE --origin production
 ```
