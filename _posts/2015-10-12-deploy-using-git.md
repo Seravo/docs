@@ -4,7 +4,7 @@ layout: page
 title: Deploy using Git
 category: deployment
 published: true
-order: 2
+order: 1
 ---
 
 
@@ -30,7 +30,7 @@ production  ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress (push)
 **Note:** This doesn't deploy database or uploads. We recommend that you don't include these in git.
 
 ```bash
-$ git push production master 
+$ git push production master
 
  __    __   ___           ___      _           _           ___
 / / /\ \ \ / _ \         / _ \__ _| |_   _____| |_   _    /  _| _

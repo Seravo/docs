@@ -4,3 +4,5 @@ _site/
 # Ignore cache
 .sass-cache/
 .jekyll-metadata
+
+.DS_Store
