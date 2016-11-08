@@ -58,27 +58,14 @@ gems:
 permalink: /:categories/:title/
 
 # Syntax highlighting
-highlighter: pygments
-
-# Since these are pages, it doesn't really matter
-future: true
+highlighter: rouge
 
 # Exclude non-site files
 exclude: ['bin','CNAME', 'README.md']
 
-# Use the redcarpet Markdown renderer
-markdown: redcarpet
-redcarpet:
-    extensions: [
-        'no_intra_emphasis',
-        'fenced_code_blocks',
-        'autolink',
-        'strikethrough',
-        'superscript',
-        'with_toc_data',
-        'tables',
-        'hardwrap'
-    ]
+# Must use kramdown as redcarpet is deprecated
+# http://blog.virtuacreative.com.br/upgrade-jekyll-2-to-3-gh-pages.html
+markdown: kramdown
 
 ##
 # Prose settings
@@ -118,26 +105,26 @@ prose:
           label: "Add Category"
           placeholder: "Pick a category"
           alterable: true # User can add new categories
-          options: 
-            - 
+          options:
+            -
               name: "Get Started"
               value: get-started
-            - 
+            -
               name: "Configuration"
               value: configuration
-            - 
+            -
               name: "Testing"
               value: tests
-            - 
+            -
               name: "Development"
               value: development
-            - 
+            -
               name: "Deployment"
               value: deployment
-            - 
+            -
               name: "Management"
               value: management
-              
+
       - name: "order"
         field:
           element: "number"
