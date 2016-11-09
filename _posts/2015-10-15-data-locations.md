@@ -77,4 +77,4 @@ WP-palvelu uses custom directory layout which is derived from [Bedrock](https://
 
 ## Git repository locations
 
-It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details see [Local development]({% post_url 2015-10-15-local-development %}).
+It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details see [Local development]({% post_url 2015-10-13-local-development %}).

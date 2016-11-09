@@ -14,7 +14,7 @@ This documentation is maintained in a [public git](https://github.com/wp-palvelu
 
 
 ### Fast-track guide for developing your site:
->**Hint:** Read the other topics to have better understanding what's happening over here. The git repository must be initialized as described in [Local development]({% post_url 2015-10-15-local-development %}).
+>**Hint:** Read the other topics to have better understanding what's happening over here. The git repository must be initialized as described in [Local development]({% post_url 2015-10-13-local-development %}).
 
 ```
 # Clone your site to your computer and name the git remote as 'production'
