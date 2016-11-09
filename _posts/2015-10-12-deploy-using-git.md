@@ -10,8 +10,8 @@ order: 1
 
 ## Requirements
 1. You need to [setup your ssh settings]({% post_url 2015-10-10-configure-ssh %}) first.
-2. Your production needs to use git in `/data/wordpress/.git` so that we can push over there. (By default it is already there)
-3. Go to your project directory: `$ cd ~/Projects/your-site/`
+2. You need to have a git repository initialized on the server and a local copy of it as described in [Local development]({% post_url 2015-10-15-local-development %}).
+3. You need to be in your project directory: `cd ~/Projects/your-site/`
 4. You need to have production set as git remote:
 
 ```bash

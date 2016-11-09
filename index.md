@@ -14,11 +14,13 @@ This documentation is maintained in a [public git](https://github.com/wp-palvelu
 
 
 ### Fast-track guide for developing your site:
->**Hint:** Read the other topics to have better understanding what's happening over here.
+>**Hint:** Read the other topics to have better understanding what's happening over here. The git repository must be initialized as described in [Local development]({% post_url 2015-10-15-local-development %}).
 
 ```
 # Clone your site to your computer and name the git remote as 'production'
 $ git clone ssh://$SSH_USER@$SITE.wp-palvelu.fi:[$SSH_PORT]/data/wordpress ~/Projects/$SITE --origin production
+
+# (Alternatively clone github.com/Seravo/wordpress and use it as your project template)
 
 # Start developing your site with Vagrant
 $ cd ~/Projects/$SITE

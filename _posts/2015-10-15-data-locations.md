@@ -9,9 +9,11 @@ summary: "This page includes all default data paths for WP-Palvelu site. This in
 ---
 
 ## Base installation
+
 WP-palvelu uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as base installation for all sites. If you have any problems with the template please add [issue to Github](https://github.com/Seravo/wordpress/issues).
 
 ## Data locations
+
 All of your data is held under path: ```/data/```. During the updates of your site we will wipe away all unneccessary files and only preserve things in ```/data/``` directory. But don't worry because for example we have moved your home folder into ```/data/home/$USER/``` and made correct symlinks so you won't even notice it's elsewhere.
 
 ### Web root (htdocs)
@@ -30,6 +32,7 @@ WP-content is moved outside of wordpress directory into: ```/data/wordpress/htdo
 All logs are saved in: ```/data/log/```
 
 ## Project Structure
+
 WP-palvelu uses custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is WordPress layout which uses composer for package management. It's not advised to modify WP core files so usually your application is only what's included in **wp-content** -directory. When we use version control is much better if we have separated it to a folder which is outside of core installation. This template also includes tests, composer.json, custom nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
 
 ```
@@ -71,3 +74,7 @@ WP-palvelu uses custom directory layout which is derived from [Bedrock](https://
         ├── wp-load.php
         └── ...
 ```
+
+## Git repository locations
+
+It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details see [Local development]({% post_url 2015-10-15-local-development %}).
