@@ -19,7 +19,7 @@
     SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
-      json: '/search.json',
+      json: '/docs/search.json',
       fuzzy: false,
       searchResultTemplate: '<li><a href="{url}">{title}</a><small> in <strong>{category}</strong></small<div class="search-content" data-content={content}></div></li>',
       noResultsText: 'No results found, Sorry! Please try again or add an issue <a href="{{site.github_url}}/issues/">in Github</a>.'
