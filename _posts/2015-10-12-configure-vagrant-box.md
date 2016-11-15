@@ -20,7 +20,7 @@ name: wordpress
 # These are used for migrating database and uploads back and forth with production
 # Comment these out if you don't want this integration
 production:
-  domain: example.wp-palvelu.fi
+  domain: example.seravo.com
   ssh_port: 12345
 
 # Domains are automatically mapped to Vagrant with /etc/hosts modifications

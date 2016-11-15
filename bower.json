@@ -1,12 +1,13 @@
 {
-  "name": "wp-palvelu/developer-documentation",
+  "name": "seravo/docs",
   "version": "0.0.0",
-  "homepage": "https://github.com/WP-palvelu/developer-documentation",
+  "homepage": "https://github.com/Seravo/docs",
   "authors": [
-    "Otto Kekäläinen <otto@seravo.fi>",
-    "Onni Hakala <onni@seravo.fi>"
+    "Otto Kekäläinen <otto@seravo.com>",
+    "Antti Kuosmanen <antti@seravo.com>",
+    "Onni Hakala <onni@seravo.com>"
   ],
-  "description": "Developer documentation for WP-palvelu.fi",
+  "description": "Developer documentation for Seravo.com",
   "main": "",
   "moduleType": [],
   "license": "GPLv3",

@@ -10,10 +10,10 @@ summary: "This page contains information for connecting into your site using **S
 
 ### Obtaining your Credentials
 
-After ordering your instance from [WP-palvelu.fi](https://wp-palvelu.fi) you'll get email which include your credentials. It looks something like this:
+After ordering your instance from [Seravo.com](https://seravo.com) you'll get email which include your credentials. It looks something like this:
 
     SSH/SFTP:
-    Host: example-site.wp-palvelu.fi
+    Host: example-site.seravo.com
     Port: 12345
     User: example-site
     Pass: 123456abcdefgh
@@ -28,7 +28,7 @@ We advice you to use ```~/.ssh/config``` file for easier ssh management.
 Add following lines to your config:
 
     Host example-site
-      HostName example-site.wp-palvelu.fi
+      HostName example-site.seravo.com
       User example-site
       Port 12345
       ForwardAgent yes
@@ -53,7 +53,7 @@ $ brew install ssh-copy-id
  After the following step you have succesfully installed your ssh key into your WP instance:
 
 ```bash
-# This will install your ssh-key into your WP-palvelu instance.
+# This will install your ssh-key into your Seravo instance.
 # Remember we set your credentials in the last step and the name of your site won't be example-site
 $ ssh-copy-id example-site
 
@@ -65,11 +65,11 @@ $ ssh-copy-id example-site
   \/  \//_/            \/    \__,_|_| \_/ \___|_|\__,_||_||_|  |_|
 
 
-The authenticity of host '[example-site.wp-palvelu.fi]:12345 ([185.26.50.24]:12345)' cant be established.
+The authenticity of host '[example-site.seravo.com]:12345 ([185.26.50.24]:12345)' cant be established.
 RSA key fingerprint is xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy.
 Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '[example-site.wp-palvelu.fi]:12345' (RSA) to the list of known hosts.
-example-site@example-site.wp-palvelu.fi's password:
+Warning: Permanently added '[example-site.seravo.com]:12345' (RSA) to the list of known hosts.
+example-site@example-site.seravo.com's password:
 
 # After you enter your password you have installed your ssh key.
 # After this setup you can login to your instance by:

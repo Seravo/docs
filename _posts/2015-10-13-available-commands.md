@@ -5,7 +5,7 @@ category: get-started
 date: 2015-10-13 14:25:15
 order: 5
 published: true
-summary: "WP-palvelu.fi contains a handful of additional commands for helping the developer with basic tasks"
+summary: "Seravo.com contains a handful of additional commands for helping the developer with basic tasks"
 ---
 
 Vagrant box contains plenty of helpers for developing your site and migrating data to/from production.

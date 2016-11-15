@@ -4,7 +4,7 @@ title: "Integration tests using Rspec"
 category: tests
 date: 2015-10-11 03:28:22
 published: true
-summary: "WP-Palvelu uses Rspec tests as integration tests for all sites. \nHere you can find examples and documentation of available functions."
+summary: "Seravo uses Rspec tests as integration tests for all sites. \nHere you can find examples and documentation of available functions."
 ---
 
 ## What are integration tests?
@@ -132,7 +132,7 @@ WP.user
 WP.user.username    # Username for the WordPress
 WP.user.password    # Password for the WordPress
 WP.user.firstname   # Test user firstname - by default: Test
-WP.user.lastname    # Test user lastname - by default: WP-palvelu
+WP.user.lastname    # Test user lastname - by default: Seravo
 WP.user.email       # Test user email - by default: testbotuser@{your-site}
 
 ```

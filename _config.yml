@@ -1,20 +1,20 @@
 # Site title and subtitle. This is used in _includes/header.html
-title: 'WP-palvelu.fi Docs'
-subtitle: 'Documentation for Developers'
+title: 'Seravo.com Docs'
+subtitle: 'Documentation for WordPress Developers'
 
 # Titile to show in footer
-name: WP-palvelu.fi
+name: Seravo.com
 
 # Link to Github repo
 # This is used in editing links
 github:
-    repo: WP-palvelu/developer-documentation
+    repo: Seravo/docs
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
 
 # if you use google analytics, add your tracking id here
-google_analytics_id: 'UA-53086901-9'
+google_analytics_id: 'UA-53086901-13'
 
 # Site verification for webmasters
 google_site_verification: "urAsJ1u3OTw8C7-KQnc2GxU7rJb7i4DAbbPxUv-eT9k"
@@ -26,7 +26,7 @@ google_site_verification: "urAsJ1u3OTw8C7-KQnc2GxU7rJb7i4DAbbPxUv-eT9k"
 navigation: 1
 
 # URL to source code, used in _includes/footer.html
-codeurl: 'https://wp-palvelu.fi'
+codeurl: 'https://seravo.com'
 
 # Default categories (in order) to appear in the navigation
 sections: [
@@ -43,7 +43,7 @@ sections: [
 baseurl: ''
 
 # This is used in <meta> og fields
-siteurl: http://docs.wp-palvelu.fi
+siteurl: https://seravo.com/docs
 
 # Use sass from assets folder
 sass:
@@ -85,7 +85,7 @@ redcarpet:
 ##
 prose:
   rooturl: '_posts'
-  siteurl: 'http://docs.wp-palvelu.fi'
+  siteurl: 'https://seravo.com/docs'
   media: 'media'
   ignore:
     - _config.yml
@@ -118,26 +118,26 @@ prose:
           label: "Add Category"
           placeholder: "Pick a category"
           alterable: true # User can add new categories
-          options: 
-            - 
+          options:
+            -
               name: "Get Started"
               value: get-started
-            - 
+            -
               name: "Configuration"
               value: configuration
-            - 
+            -
               name: "Testing"
               value: tests
-            - 
+            -
               name: "Development"
               value: development
-            - 
+            -
               name: "Deployment"
               value: deployment
-            - 
+            -
               name: "Management"
               value: management
-              
+
       - name: "order"
         field:
           element: "number"

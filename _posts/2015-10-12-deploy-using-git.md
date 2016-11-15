@@ -22,8 +22,8 @@ production  your-site:/data/wordpress/.git (push)
 
 # This is the output if project was cloned without ssh alias
 $ git remote -v
-production  ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress (fetch)
-production  ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress (push)
+production  ssh://your-site@your-site.seravo.com:12345/data/wordpress (fetch)
+production  ssh://your-site@your-site.seravo.com:12345/data/wordpress (push)
 ```
 
 ## Deploy using git
@@ -44,13 +44,13 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 317 bytes | 0 bytes/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
-remote: WP-palvelu: composer.json was updated, installing...
+remote: Seravo: composer.json was updated, installing...
 remote: Loading composer repositories with package information
 remote: Installing dependencies from lock file
 remote: Nothing to install or update
 remote: Generating autoload files
 remote: > Wordpress/Installer::symlinkWPContent
-remote: WP-palvelu: Nginx configs were changed, reloading nginx...
+remote: Seravo: Nginx configs were changed, reloading nginx...
 remote: testing nginx configuration...
 remote: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 remote: nginx: configuration file /etc/nginx/nginx.conf test is successful
@@ -63,7 +63,7 @@ To your-site:/data/wordpress/.git
 ## Tutorials
 ### If you have working site in Vagrant box and want to deploy it
 #### Step 1 - Getting credentials
-First you need to order a site from [wp-palvelu.fi](https://wp-palvelu.fi/).
+First you need to order a site from [seravo.com](https://seravo.com/).
 
 Afterwise you'll get ssh credentials, which are described in [Configuring SSH]({% post_url 2015-10-10-configure-ssh %}) section.
 
@@ -74,7 +74,7 @@ Afterwise you'll get ssh credentials, which are described in [Configuring SSH]({
 $ cd Projects/your-site
 
 # Add new remote to git
-$ git remote add production ssh://your-site@your-site.wp-palvelu.fi:12345/data/wordpress
+$ git remote add production ssh://your-site@your-site.seravo.com:12345/data/wordpress
 ```
 
 > **Note:** This is just an example. Use the real credentials for your site.

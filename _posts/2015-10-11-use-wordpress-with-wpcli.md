@@ -4,7 +4,7 @@ title: "Manage with wp-cli"
 category: management
 date: 2015-10-11 03:39:48
 published: true
-summary: "All WP-palvelu sites come with wp-cli preinstalled and configured for easier commandline management."
+summary: "All Seravo sites come with wp-cli preinstalled and configured for easier commandline management."
 ---
 
 ## Basics
