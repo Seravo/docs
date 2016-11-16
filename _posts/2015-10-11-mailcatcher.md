@@ -7,7 +7,7 @@ published: true
 ---
 
 ## MailCatcher
-![mailcatcher in Vagrant]({{site.base_url}}/images/mailcatcher-example.png)
+![mailcatcher in Vagrant]({{site.baseurl}}/images/mailcatcher-example.png)
 
 MailCatcher is web app which can be used to mimic real mail server. It's used in Vagrant to prevent WP from sending mail out of the system to actual recipients. It just tells WordPress that mail was sended successfully and saves the contents for the developer to see.
 
