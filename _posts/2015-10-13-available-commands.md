@@ -22,7 +22,7 @@ Production contains most of these and also command for purging cache.
 ```$ wp-restart-nginx``` - Restarts the web server and reloads any configuration at  ```/data/wordpress/nginx/*.conf```
 
 #### wp-test
-`$ wp-test` - Runs [Rspec tests]({% post_url 2015-10-11-integration-tests %}) from ```/data/wordpress/tests/rspec/*.rb```
+`$ wp-test` - Runs [Rspec tests]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %}) from ```/data/wordpress/tests/rspec/*.rb```
 
 
 ### Vagrant commands

@@ -36,7 +36,7 @@ development:
 
 Change `name` in config.yml to change your site name. This is used in quite some places in development environment.
 
-For example with the above config.yml [mailcatcher]({% post_url 2015-10-11-mailcatcher %}) is setupped in address: mailcatcher.**example**.local.
+For example with the above config.yml [mailcatcher]({{ site.baseurl }}{% post_url 2015-10-11-mailcatcher %}) is setupped in address: mailcatcher.**example**.local.
 
 #### production
 Add `domain` and `ssh_port` to sync with your production instance.

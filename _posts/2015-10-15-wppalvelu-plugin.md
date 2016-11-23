@@ -34,7 +34,7 @@ Imagine situation where your client sees the page in development and then the cl
 ### Adds Purge Cache button in adminbar
 This helps you to empty your cached pages.
 
-This is also available as command: ``` $ wp-purge-cache ``` as seen in [commands]({% post_url 2015-10-13-available-commands %}).
+This is also available as command: ``` $ wp-purge-cache ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
 
 ### Make urls content relative
 This makes migration easier and helps when you need to switch your siteurl when publishing your site.

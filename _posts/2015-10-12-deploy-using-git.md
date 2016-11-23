@@ -9,8 +9,8 @@ order: 1
 
 
 ## Requirements
-1. You need to [setup your ssh settings]({% post_url 2015-10-10-configure-ssh %}) first.
-2. You need to have a git repository initialized on the server and a local copy of it as described in [Local development]({% post_url 2015-10-13-local-development %}).
+1. You need to [setup your ssh settings]({{ site.baseurl }}{% post_url 2015-10-10-configure-ssh %}) first.
+2. You need to have a git repository initialized on the server and a local copy of it as described in [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
 3. You need to be in your project directory: `cd ~/Projects/your-site/`
 4. You need to have production set as git remote:
 
@@ -65,7 +65,7 @@ To your-site:/data/wordpress/.git
 #### Step 1 - Getting credentials
 First you need to order a site from [seravo.com](https://seravo.com/).
 
-Afterwise you'll get ssh credentials, which are described in [Configuring SSH]({% post_url 2015-10-10-configure-ssh %}) section.
+Afterwise you'll get ssh credentials, which are described in [Configuring SSH]({{ site.baseurl }}{% post_url 2015-10-10-configure-ssh %}) section.
 
 #### Step 2 - Setting credentials
 

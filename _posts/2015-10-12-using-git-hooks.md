@@ -16,10 +16,10 @@ Git hooks are explained really well in [git documentation](https://git-scm.com/b
 ## What's included?
 Seravo template contains one custom git hook: `pre-commit`.
 
-By default it runs your [Rspec tests]({% post_url 2015-10-11-integration-tests %}) before a new commit is allowed.
+By default it runs your [Rspec tests]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %}) before a new commit is allowed.
 
 ### Server hooks
-Note that we also have on the server a post-receive hook, but it is not included in the project template as it is useless (and even harmful) to have in your local copy. For details see [Deploy using git]({% post_url 2015-10-12-deploy-using-git %}).
+Note that we also have on the server a post-receive hook, but it is not included in the project template as it is useless (and even harmful) to have in your local copy. For details see [Deploy using git]({{ site.baseurl }}{% post_url 2015-10-12-deploy-using-git %}).
 
 ## Customizing
 You can customize the tests by editing `scripts/run-tests`. It's in bash but you can use any langauge you want to. Only important thing is the return value of your script. If you return `true` the git commit will continue and if you return `false` it will reject your commit.

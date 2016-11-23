@@ -32,7 +32,7 @@ Using ruby for testing php application like WordPress may sound overwhelming but
 > This way we can figure out if the site is still working after updates so that we can alarm you when something breaks and hand the updating process to be manually by the owner.
 
 ## How to run these tests
-You can use this [command]({% post_url 2015-10-13-available-commands %}#wp-test) in **Production** and **Vagrant box**:
+You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test) in **Production** and **Vagrant box**:
 
 ```bash
 # Runs all tests in /data/wordpress/tests/rspec/*.rb
