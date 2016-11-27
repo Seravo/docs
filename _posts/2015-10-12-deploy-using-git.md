@@ -32,13 +32,6 @@ production  ssh://your-site@your-site.seravo.com:12345/data/wordpress (push)
 ```bash
 $ git push production master
 
- __    __   ___           ___      _           _           ___
-/ / /\ \ \ / _ \         / _ \__ _| |_   _____| |_   _    /  _| _
-\ \/  \/ // /_)/  ___   / /_)/ _` | \ \ / / _ \ | | | |   | |_ |_|
- \  /\  // ___/  |___| / ___/ (_| | |\ V /  __/ | |_| | _ |  _|| |
-  \/  \//_/            \/    \__,_|_| \_/ \___|_|\__,_||_||_|  |_|
-
-
 Counting objects: 3, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.

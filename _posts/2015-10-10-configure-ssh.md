@@ -57,14 +57,6 @@ $ brew install ssh-copy-id
 # Remember we set your credentials in the last step and the name of your site won't be example-site
 $ ssh-copy-id example-site
 
-
- __    __   ___           ___      _           _           ___
-/ / /\ \ \ / _ \         / _ \__ _| |_   _____| |_   _    /  _| _
-\ \/  \/ // /_)/  ___   / /_)/ _` | \ \ / / _ \ | | | |   | |_ |_|
- \  /\  // ___/  |___| / ___/ (_| | |\ V /  __/ | |_| | _ |  _|| |
-  \/  \//_/            \/    \__,_|_| \_/ \___|_|\__,_||_||_|  |_|
-
-
 The authenticity of host '[example-site.seravo.com]:12345 ([185.26.50.24]:12345)' cant be established.
 RSA key fingerprint is xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy:xy.
 Are you sure you want to continue connecting (yes/no)? yes
