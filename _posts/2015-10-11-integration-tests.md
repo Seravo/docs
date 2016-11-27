@@ -21,11 +21,11 @@ So when the project is functional we have the feature described above and we wan
 Integration tests make sure that this feature works as described in the use case.
 
 ## Testing with Rspec & Capybara
-Our integration tests use ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](http://jnicklas.github.io/capybara/).
+Our integration tests use Ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](http://jnicklas.github.io/capybara/).
 
-We use headless browser [Phantomjs](http://phantomjs.org/) with ruby driver [Poltergeist](https://github.com/teampoltergeist/poltergeist).
+We use headless browser [PhantomJS](http://phantomjs.org/) with Ruby driver [Poltergeist](https://github.com/teampoltergeist/poltergeist).
 
-Using ruby for testing php application like WordPress may sound overwhelming but in our opinion it's quite fun and effective. Our latest WordPress test template can be found in [Github](https://github.com/Seravo/wordpress/blob/master/tests/rspec/). It consists as a good starting point for your own unique tests.
+Using Ruby for testing a PHP application like WordPress may sound overwhelming but in our opinion it's quite fun and effective. Our latest WordPress baseline template can be found in [Github](https://github.com/Seravo/wordpress/blob/master/tests/rspec/). It consists as a example for your own unique tests.
 
 > **Note:** These tests are used in your production system as well *(if available)*.
 >
@@ -42,18 +42,18 @@ $ wp-test
 ## Example tests
 The following test suite consists of 2 ```describe``` blocks.
 
-The first one tests that the frontpage is loaded correctly and has css styles. Then it clicks link in frontpage and expects the following page to contain text **Archives**.
+The first one tests that the frontpage is loaded correctly and has CSS styles. Then it clicks link in frontpage and expects the following page to contain text **Archives**.
 
 The second one tests the usecase mentioned in the top of this page.
 
 
 ```ruby
-# Use preconfigured poltergeist/phantomjs rules and load WP class
+# Use preconfigured Poltergeist/PhantomJS rules and load WP class
 require_relative 'lib/config.rb'
 
 ### Begin tests ###
 
-describe "wordpress: #{WP.host} - ", :type => :request, :js => true do
+describe "WordPress: #{WP.host} - ", :type => :request, :js => true do
 
   subject { page }
 
@@ -103,6 +103,10 @@ describe "wordpress: #{WP.host} - ", :type => :request, :js => true do
 
 end
 ```
+
+## How to extend the tests
+
+All files in the path `tests/rspec/*.rb` are executed. Instead of editing the existing baseline test, we recommend creating new files for your tests. Group tests of the same features in the same files and name the test files logically, so it is easy for your collaborators to extend debug or extend the tests later.
 
 ## List of Helper functions
 
