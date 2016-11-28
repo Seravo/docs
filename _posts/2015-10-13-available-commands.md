@@ -41,9 +41,6 @@ Production contains most of these and also command for purging cache.
 
 `$ wp-push-production-db` - Copies your development database into production and replaces siteurls.
 
-#### wp-pull-production-uploads
-`$ wp-pull-production-uploads` - Copies production uploads into your local Vagrant box.
-
 #### wp-push-production-uploads
 `$ wp-push-production-uploads` - Copies your development uploads into production and replaces siteurls. Doesn't overwrite newer files.
 
