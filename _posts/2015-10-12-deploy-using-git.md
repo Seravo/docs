@@ -72,16 +72,14 @@ $ git remote add production ssh://your-site@your-site.seravo.com:12345/data/word
 
 > **Note:** This is just an example. Use the real credentials for your site.
 
-#### Step 3 - Deploying code, database and assets
+#### Step 3 - Push into production
 
 ```bash
 # First push doesn't share anything with the fresh site so you need to force push it
 $ git push production master --force
-
-# Log in to vagrant to use our migration helpers
-$ vagrant ssh
 ```
 
-##### Note on wp-push-* commands
+For deploying the database contents or the uploads folder you need to roll your own solution which is safe enough to not overwrite any data created in production.
 
-In Seravo Vagrant images created before [October 5th, 2016](https://github.com/Seravo/wp-palvelu-vagrant/commit/792d6741bb734cea6fa739c7808f59eed05e991a), there used to be the commands `wp-push-production-db` (deploy database to production) and `wp-push-production-uploads` (deploy wp-content/uploads into production) but they were deemed as too risky and removed to protect customers from accidentally making too much damage to their site.
+> **Note on wp-push- commands:**
+> In Seravo Vagrant images created before [October 5th, 2016](https://github.com/Seravo/wp-palvelu-vagrant/commit/792d6741bb734cea6fa739c7808f59eed05e991a), there used to be the commands `wp-push-production-db` (deploy database to production) and `wp-push-production-uploads` (deploy wp-content/uploads into production) but they were deemed as too risky and removed to protect customers from accidentally making too much damage to their site.
