@@ -40,7 +40,7 @@ The method above gives you a fresh new project with no prior history. You may ho
 ```bash
 $ git clone https://github.com/Seravo/wordpress ~/Projects/$SITE
 $ cd ~Projects/$SITE
-$ git add remote production ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress
+$ git remote add production ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress
 $ git push -f production master
 ```
 
