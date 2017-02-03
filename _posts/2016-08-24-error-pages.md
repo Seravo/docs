@@ -42,3 +42,7 @@ error_page 500 /wp-content/wp-error.php;
 ```
 
 With this change the `wp-error.php` will be displayed. This error page PHP file is independent of the WordPress stack and will work despite PHP errors in WordPress code.
+
+## WordPress core maintenance module
+
+Also keep in mind the built-in WordPress drop-in `maintenance.php` and `.maintenance` files can be used in Seravo's environment just like anywhere else. For details see [wp_maintenance in the WordPress codex](https://codex.wordpress.org/Function_Reference/wp_maintenance).
