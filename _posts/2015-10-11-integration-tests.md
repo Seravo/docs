@@ -21,7 +21,7 @@ So when the project is functional we have the feature described above and we wan
 Integration tests make sure that this feature works as described in the use case.
 
 ## Testing with Rspec & Capybara
-Our integration tests use Ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](http://jnicklas.github.io/capybara/).
+Our integration tests use Ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](https://github.com/teamcapybara/capybara).
 
 We use headless browser [PhantomJS](http://phantomjs.org/) with Ruby driver [Poltergeist](https://github.com/teampoltergeist/poltergeist).
 
