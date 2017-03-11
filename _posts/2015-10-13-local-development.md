@@ -1,7 +1,7 @@
 ---
 date: 2015-10-13T14:26:53.000Z
 layout: page
-title: Local development
+title: Typical workflow
 category: development
 order: 3
 published: true
@@ -80,4 +80,18 @@ When you think your code is good, commit it and push to production with:
 $ git push production master
 ```
 
-The `.git/hooks/post-receive` will run on the receiving end and run composer and gulp if configured to do so.
+The `.git/hooks/post-receive` will run on the receiving end and run Composer and Gulp if configured to do so.
+
+## Include default site database contents in the git repository
+
+To provide a seamless `vagrant up` experience for anybody who starts to develop the site using the git repository as their sole starting point, you should include in the repository file named `vagrant-base.sql` that contains a suitable minimal database with some example settings and contents.
+
+You can easily create such a database dump file by running inside Vagrant the commands
+```bash
+cd /data/wordpress
+wp db export vagrant-base.sql --path=/data/wordpress/htdocs/wordpress --skip-extended-insert --allow-root --single-transaction
+```
+
+## Customize the 'vagrant up' run
+
+If Vagrant detects that a file named `vagrant-up-customizer.sh` is present, it will automatically be run every time `vagrant up` is invoked. (Feature available in Seravo/WordPress since [Jan 29th, 2017](https://github.com/Seravo/wordpress/commit/ae51719e146615e7fcbde6b69c8a1deeb386510e)).
