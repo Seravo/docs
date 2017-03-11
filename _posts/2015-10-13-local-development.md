@@ -76,6 +76,7 @@ Now you can open in a browser http://wordpress.local/ and edit the files in you 
 
 
 When you think your code is good, commit it and push to production with:
+
 ```bash
 $ git push production master
 ```
@@ -87,6 +88,7 @@ The `.git/hooks/post-receive` will run on the receiving end and run Composer and
 To provide a seamless `vagrant up` experience for anybody who starts to develop the site using the git repository as their sole starting point, you should include in the repository file named `vagrant-base.sql` that contains a suitable minimal database with some example settings and contents.
 
 You can easily create such a database dump file by running inside Vagrant the commands
+
 ```bash
 cd /data/wordpress
 wp db export vagrant-base.sql --path=/data/wordpress/htdocs/wordpress --skip-extended-insert --allow-root --single-transaction
