@@ -23,6 +23,10 @@ production:
   domain: example.seravo.com
   ssh_port: 12345
 
+staging:
+  domain: example.seravo.com
+  ssh_port: 23456
+
 # Domains are automatically mapped to Vagrant with /etc/hosts modifications
 development:
   domains:
@@ -40,6 +44,9 @@ For example with the above config.yml [mailcatcher]({{ site.baseurl }}{% post_ur
 
 #### production
 Add `domain` and `ssh_port` to sync with your production instance.
+
+#### staging
+Optional: Add `domain` and `ssh_port` to sync with your staging (shadow) instance.
 
 #### development
 Add new domains under `domains` before first vagrant up to have extra domains.
