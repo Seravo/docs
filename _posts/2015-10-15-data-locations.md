@@ -103,11 +103,10 @@ Plain Bedrock has the following directory structure:
 ```
 
 For this to continue to work, you need to add the following symlinks:
+
 ```
 ln -s web htdocs
 ln -s app htdocs/wp-content
-
-
 ```
 
 The server expects to find the web root in `/data/wordpress/htdocs` and under it `wp-contents` with the site's files and `wordpress` with the WordPress core files.
