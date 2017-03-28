@@ -83,6 +83,15 @@ $ git push production master
 
 The `.git/hooks/post-receive` will run on the receiving end and run Composer and Gulp if configured to do so.
 
+When you are done, you can shut down Vagrant with `halt`. If you completely want to destroy the virtual image (for example to save disk space) execute `destroy`. Note that even after `destroy` you will have files under .vagrant and all the Composer installed modules etc under your project. Use `git clean` to get rid of all traces of `vagrant up`.
+
+```bash
+vagrant halt
+vagrant destroy
+git clean -fdx && git reset --hard
+```
+
+
 ## Include default site database contents in the git repository
 
 To provide a seamless `vagrant up` experience for anybody who starts to develop the site using the git repository as their sole starting point, you should include in the repository file named `vagrant-base.sql` that contains a suitable minimal database with some example settings and contents.
