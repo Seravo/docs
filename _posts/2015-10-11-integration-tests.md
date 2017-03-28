@@ -8,6 +8,7 @@ summary: "Seravo uses Rspec tests as integration tests for all sites. \nHere you
 ---
 
 ## What are integration tests?
+
 Integration tests make sure that certain features of your site work as they should work.
 
 So for example if we have a following **use case**:
@@ -21,6 +22,7 @@ So when the project is functional we have the feature described above and we wan
 Integration tests make sure that this feature works as described in the use case.
 
 ## Testing with Rspec & Capybara
+
 Our integration tests use Ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](https://github.com/teamcapybara/capybara).
 
 We use headless browser [PhantomJS](http://phantomjs.org/) with Ruby driver [Poltergeist](https://github.com/teampoltergeist/poltergeist).
@@ -32,6 +34,7 @@ Using Ruby for testing a PHP application like WordPress may sound overwhelming b
 > This way we can figure out if the site is still working after updates so that we can alarm you when something breaks and hand the updating process to be manually by the owner.
 
 ## How to run these tests
+
 You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test) in **Production** and **Vagrant box**:
 
 ```bash
@@ -40,6 +43,7 @@ $ wp-test
 ```
 
 ## Example tests
+
 The following test suite consists of 2 ```describe``` blocks.
 
 The first one tests that the frontpage is loaded correctly and has CSS styles. Then it clicks link in frontpage and expects the following page to contain text **Archives**.
@@ -107,6 +111,18 @@ end
 ## How to extend the tests
 
 All files in the path `tests/rspec/*.rb` are executed. Instead of editing the existing baseline test, we recommend creating new files for your tests. Group tests of the same features in the same files and name the test files logically, so it is easy for your collaborators to extend debug or extend the tests later.
+
+To test your new tests, run it individually with verbose output:
+
+```
+rspec -f d new-test.rb
+```
+
+Rspec also has a profiling option available if you want to measure how long the test takes, an potentially detect some execution time anomalies:
+
+```
+rspec -f d -p 10 new-test.rb
+```
 
 ## List of Helper functions
 
