@@ -109,7 +109,7 @@ ln -s web htdocs
 ln -s app htdocs/wp-content
 ```
 
-The server expects to find the web root in `/data/wordpress/htdocs` and under it `wp-contents` with the site's files and `wordpress` with the WordPress core files.
+The server expects to find the web root in `/data/wordpress/htdocs` and under it `wp-contents` with the site's files and `wordpress` with the WordPress core files. Alternatively you can simply modify your `composer.json` to use the same paths as defined in the [Seravo WordPress project template composer.json](https://github.com/Seravo/wordpress/blob/master/composer.json).
 
 ## Directory layout with Capistrano or other deploy tools
 
@@ -160,4 +160,4 @@ If you use some deploy tool that deploys multiple versions of the files on the s
 
 It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details see [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
 
-If we detect that a git repository exists while we do upkeep and edit any project files, we will commit the changes so that the changes would be less likely to be lost of overwritten then the customer later does a redeploy.
+If we detect that a git repository exists while we do upkeep and edit any project files, we will commit the changes so that the changes would be less likely to be lost or overwritten when the customer later does a redeploy.
