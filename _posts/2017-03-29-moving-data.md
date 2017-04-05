@@ -47,10 +47,11 @@ The following commands demonstrate how to use rsync via SSH to fetch the new fil
 * `-av` saves file attributes (owner, time stamp) and prints out a verbose list of all files that changed
 * `--delete-after` will delete all the files from production that did not exist in staging, in effect clearing obsolete files away
 * `--exclude=wp-content/uploads` will omit the uploads directory from being transferred from staging, and from being deleted in production
+*  in some cases you might want to have `exclude=.git` too
 *  the other options define the staging instance's SSH port and hostname and path to the `wordpress/`` directory
 
 ```
-rsync -av --delete-after --exclude=wp-content/uploads -e 'ssh -p 11320' example@example.seravo.com:/data/wordpress /data/wordpress
+rsync -av --delete-after --exclude=wp-content/uploads -e 'ssh -p 11320' example@example.seravo.com:/data/wordpress/ /data/wordpress
 example@example.seravo.com's password:
 receiving file list ... done
 ```
