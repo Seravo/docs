@@ -4,7 +4,7 @@ title: WordPress Developer Documentation
 published: true
 ---
 
-> **Note:** This documentation is primarily intended for [Seravo.com](https://seravo.com) customers. You are can however use our [project structure & Vagrant box](https://github.com/Seravo/wordpress) for any WordPress development no matter where you decide to deploy, host or maintain it. As stated in [LICENSE (GPL)](https://github.com/Seravo/wordpress/blob/master/LICENSE), the provides software and documentation is open source and can be used freely anywhere, including also commercial use.
+> **Note:** This documentation is primarily intended for [Seravo.com](https://seravo.com) customers. You are can however use our [project structure & Vagrant box](https://github.com/Seravo/wordpress) for any WordPress development no matter where you decide to deploy, host or maintain it. As stated in [LICENSE (GPL)](https://github.com/Seravo/wordpress/blob/master/LICENSE), the provided software and documentation is open source and can be used freely anywhere, including also commercial use.
 
 This contains guides and tips for developers who might want to enhance their workflow and use the best modern development tools. Feel free to pick the parts that fit your style of development best!
 
