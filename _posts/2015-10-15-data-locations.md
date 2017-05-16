@@ -5,19 +5,19 @@ category: get-started
 date: 2015-10-12 11:29:39
 order: 1
 published: true
-summary: "This page includes all default data paths for Seravo site. This includes paths to log files and htdocs."
+summary: "This page includes all default data paths for Seravo sites. This includes paths to log files and htdocs."
 ---
 
 ## Base installation
 
-Seravo uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as base installation for all sites. If you have any problems with the template please add [issue to Github](https://github.com/Seravo/wordpress/issues).
+Seravo uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as a base installation for all sites. If you have any problems with the template please add an [issue to Github](https://github.com/Seravo/wordpress/issues).
 
 ## Data locations
 
-All of your data is held under path: ```/data/```. During the updates of your site we will wipe away all unneccessary files and only preserve things in ```/data/``` directory. But don't worry because for example we have moved your home folder into ```/data/home/$USER/``` and made correct symlinks so you won't even notice it's elsewhere.
+All of your data is held under the path ```/data/```. During the updates of your site we will wipe away all unneccessary files and only preserve things in the ```/data/``` directory. No need to worry though, because we have moved your home folder into ```/data/home/$USER/```, for instance, and made correct symlinks so you won't even notice it's elsewhere.
 
 ### Web root (htdocs)
-Your content is served from: ```/data/wordpress/htdocs/```
+Your content is served from:```/data/wordpress/htdocs/```
 
 ### WordPress installation path
 
@@ -25,7 +25,7 @@ WordPress is installed in: ```/data/wordpress/htdocs/wordpress/```
 
 ### WP-content
 
-WP-content is moved outside of wordpress directory into: ```/data/wordpress/htdocs/wp-content/```
+WP-content is moved outside of the wordpress directory into: ```/data/wordpress/htdocs/wp-content/```
 
 ### Log files
 
@@ -33,7 +33,7 @@ All logs are saved in: ```/data/log/```
 
 ## Project Structure
 
-Seravo uses custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is WordPress layout which uses composer for package management. It's not advised to modify WP core files so usually your application is only what's included in **wp-content** -directory. When we use version control is much better if we have separated it to a folder which is outside of core installation. This template also includes tests, composer.json, custom nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
+Seravo uses a custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is a WordPress layout which uses Composer for package management. It is not advisable to modify any WP core files, so usually your application consists only of what's included in the **wp-content** -directory. When we use version control, it is much better if we have separated your content to a folder which is separated from the core installation. Our custom template also includes tests, composer.json, custom Nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
 
 ```
 /data/wordpress
@@ -109,7 +109,7 @@ ln -s web htdocs
 ln -s app htdocs/wp-content
 ```
 
-The server expects to find the web root in `/data/wordpress/htdocs` and under it `wp-contents` with the site's files and `wordpress` with the WordPress core files. Alternatively you can simply modify your `composer.json` to use the same paths as defined in the [Seravo WordPress project template composer.json](https://github.com/Seravo/wordpress/blob/master/composer.json).
+The server expects to find the web root in `/data/wordpress/htdocs` and under it `wp-contents` with the site's files and `wordpress` with the WordPress core files. Alternatively, you can simply modify your `composer.json` to use the same paths as defined in the [Seravo WordPress project template composer.json](https://github.com/Seravo/wordpress/blob/master/composer.json).
 
 ## Directory layout with Capistrano or other deploy tools
 
@@ -158,6 +158,6 @@ If you use some deploy tool that deploys multiple versions of the files on the s
 
 ## Git repository locations
 
-It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details see [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
+It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details, see [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
 
-If we detect that a git repository exists while we do upkeep and edit any project files, we will commit the changes so that the changes would be less likely to be lost or overwritten when the customer later does a redeploy.
+If we detect that a git repository exists while upkeeping and editing any project files, we will commit the changes so that the changes would be less likely to be lost or overwritten when the customer later does a redeploy.
