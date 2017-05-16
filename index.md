@@ -10,6 +10,8 @@ This contains guides and tips for developers who might want to enhance their wor
 
 All Seravo.com sites are preconfigured for optimal development workflow, but the workflow in general or any part of it is not mandatory. You don't have to use Git, Composer or the others if you don't want. Or you can use them, but follow your own workflow. All sites have SFTP/SSH access so all sites support even the most traditional FTP-your-suff-to-the-server-workflow. But if you like the idea of a really optimized workflow, please keep on reading!
 
+TROLOL =D
+
 This documentation is maintained in a [public git](https://github.com/seravo/docs) repository. If you find any errors or you want to extend the documentation, feel free to contribute!
 
 
