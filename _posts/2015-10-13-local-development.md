@@ -35,11 +35,11 @@ $ git clone ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress ~/Projec
 
 ## Alternative: Start by using our project template on GitHub
 
-The method above gives you a fresh new project with no prior history. You may however want to consider using [our template](https://github.com/Seravo/wordpress) as a starting point and have s shared history, which makes it easier to later merge updated versions of our project template to your project. To do that run
+The method above gives you a fresh new project with no prior history. You may however want to consider using [our template](https://github.com/Seravo/wordpress) as a starting point and have a shared history, which makes it easier to later merge updated versions of our project template to your project. To do that run
 
 ```bash
 $ git clone https://github.com/Seravo/wordpress ~/Projects/$SITE
-$ cd ~Projects/$SITE
+$ cd ~/Projects/$SITE
 $ git remote add production ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress
 $ git push -f production master
 ```
@@ -68,11 +68,11 @@ $ vagrant up
 # You can connect into vagrant
 $ vagrant ssh
 
-# You can pull the production database (not required on new sites required)
+# You can pull the production database (not required on new sites)
 $ wp-pull-production-db
 ```
 
-Now you can open in a browser http://wordpress.local/ and edit the files in you project and see the result immediately.
+Now you can open http://wordpress.local/ in a browser and edit the files in you project and see the result immediately.
 
 
 When you think your code is good, commit it and push to production with:
