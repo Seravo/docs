@@ -21,7 +21,7 @@ Bringing machine 'default' up with 'virtualbox' provider...
 ...
 ```
 
-This is indicator that you don't have the newest box available locally.
+This is an indicator that you don't have the newest box available locally.
 
 ## Download new box image
 
@@ -47,3 +47,4 @@ $ vagrant destroy --force
 
 # Then just start it again. This will use newer box image and use the earlier database and ssl certicates
 $ vagrant up
+```

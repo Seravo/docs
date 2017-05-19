@@ -22,7 +22,7 @@ By default it runs your [Rspec tests]({{ site.baseurl }}{% post_url 2015-10-11-i
 Note that we also have on the server a post-receive hook, but it is not included in the project template as it is useless (and even harmful) to have in your local copy. For details see [Deploy using git]({{ site.baseurl }}{% post_url 2015-10-12-deploy-using-git %}).
 
 ## Customizing
-You can customize the tests by editing `scripts/run-tests`. It's in bash but you can use any langauge you want to. Only important thing is the return value of your script. If you return `true` the git commit will continue and if you return `false` it will reject your commit.
+You can customize the tests by editing `scripts/run-tests`. It's in bash but you can use any language you want to. Only important thing is the return value of your script. If you return `true` the git commit will continue and if you return `false` it will reject your commit.
 
 ## Skipping pre-commit hook
 You can use **-n** flag to skip hooks.
