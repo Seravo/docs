@@ -27,6 +27,21 @@ $ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 > $ sudo apt-get install php5-composer
 > ```
 
+#### Ubuntu 16.04 and later need ruby-dev
+
+If you see this error message on Ubuntu 16.04 or later:
+
+```
+$ vagrant up
+mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
+```
+
+It means you need to install separatey the Ruby development files:
+
+```
+sudo apt-get install ruby-dev
+```
+
 ### Linux (Fedora)
 
 Add RPMFusion repositories. See  [RpmFusion](http://rpmfusion.org/). Repository is
