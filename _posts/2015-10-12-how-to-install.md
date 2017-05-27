@@ -42,6 +42,12 @@ It means you need to install separatey the Ruby development files:
 sudo apt-get install ruby-dev
 ```
 
+#### Ubuntu 17.04 and later
+
+VirtualBox sets up the `vboxnet0` virtual interface routing using the legacy `ifconfig` and `route`
+commands, instead of the modern `ip` command. For networking to work properly, you need to run
+`apt install net-tools`.
+
 ### Linux (Fedora)
 
 Add RPMFusion repositories. See  [RpmFusion](http://rpmfusion.org/). Repository is
