@@ -10,7 +10,7 @@ summary: "This page contains information for connecting into your site using **S
 
 ### Obtaining your Credentials
 
-After ordering your instance from [Seravo.com](https://seravo.com) you'll get email which include your credentials. It looks something like this:
+After ordering your instance from [Seravo.com](https://seravo.com) you'll get an email which includes your credentials. It looks something like this:
 
     SSH/SFTP:
     Host: example-site.seravo.com

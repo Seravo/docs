@@ -12,7 +12,7 @@ summary: "Restrict access to the site in various ways"
 
 ## Restricting access with built-in features of WordPress
 
-WordPress offers a multitude of user management and access control related features. We warmly recommend you use them as your primary means of managing access. You can easily protect individual posts with a password. You can activate [Maintenance Mode](https://wordpress.org/plugins/maintenance/) and allow only selected users to access the entire site.
+WordPress offers a multitude of user management and access control related features. We warmly recommend you use them as your primary means of access management. You can easily protect individual posts with a password. You can activate [Maintenance Mode](https://wordpress.org/plugins/maintenance/) and allow only selected users to access the entire site.
 
 For more complex scenarios you can install BuddyPress or use some of the groups plugins.
 
@@ -38,7 +38,7 @@ location ^~ /restricted-section/ {
 
 Remember to run `wp-restart-nginx` to make the new Nginx config file effective.
 
-> **Warning:** Do not activate HTTP Autnentication for the entire site. Otherwise you will render the `wp-test` test unusable, all automatic monitoring of your site will start to fail and Seravo's admins cannot access your site to check it and do upkeep anymore.
+> **Warning:** Do not activate HTTP Authentication for the entire site. Otherwise you will render the `wp-test` test unusable, all automatic monitoring of your site will start to fail and Seravo's admins cannot access your site to check it and do upkeep anymore.
 
 ## Restricting access by IP address
 

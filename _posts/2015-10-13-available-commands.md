@@ -10,13 +10,13 @@ summary: "Seravo.com contains a handful of additional commands for helping the d
 
 Vagrant box contains plenty of helpers for developing your site and migrating data to/from production.
 
-Production contains most of these and also command for purging cache.
+Production contains most of these and also a command for purging cache.
 
 ## List of commands
 
 ### Developer helpers
 #### wp-list-env
-```$ wp-list-env ``` - Prints list of defined environment variables. Both the Vagrant image end the production server contain ENVs which define ports and credentials for WordPress. With this command you can debug what settings you have.
+```$ wp-list-env ``` - Prints list of defined environment variables. Both the Vagrant image and the production server contain ENVs which define ports and credentials for WordPress. With this command you can debug what settings you have.
 
 #### wp-restart-nginx
 ```$ wp-restart-nginx``` - Restarts the web server and reloads any configuration at  ```/data/wordpress/nginx/*.conf```

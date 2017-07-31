@@ -10,11 +10,11 @@ summary: "This page includes all default data paths for Seravo sites. This inclu
 
 ## Base installation
 
-Seravo uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as a base installation for all sites. If you have any problems with the template please add an [issue to Github](https://github.com/Seravo/wordpress/issues).
+Seravo uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/wordpress) as a base installation for all sites. If you have any problems with the template please submit an [issue to Github](https://github.com/Seravo/wordpress/issues).
 
 ## Data locations
 
-All of your data is held under the path ```/data/```. During the updates of your site we will wipe away all unneccessary files and only preserve things in the ```/data/``` directory. No need to worry though, because we have moved your home folder into ```/data/home/$USER/```, for instance, and made correct symlinks so you won't even notice it's elsewhere.
+All of your data is held under the path ```/data/```. During the updates of your site we will wipe away all unnecessary files and only preserve things in the ```/data/``` directory. No need to worry though, because we have moved your home folder into ```/data/home/$USER/```, for instance, and made correct symlinks so you won't even notice it's elsewhere.
 
 ### Web root (htdocs)
 Your content is served from:```/data/wordpress/htdocs/```
