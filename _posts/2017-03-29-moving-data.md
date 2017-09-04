@@ -20,7 +20,7 @@ WordPress does not separate clearly between actual site contents, like the user 
 
 However, if you are certain that it is safe to do, you can simply push files from the staging (or any other instance) to production via SSH. Alternatively you can pull files and the database from production fetching from any remote instance with SSH access.
 
-Below are the steps how to do this from production, fetching data from stagning.
+Below are the steps how to do this from production, fetching data from staging.
 
 ### Preparations before moving data from staging to production
 
