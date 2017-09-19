@@ -51,7 +51,7 @@ sass:
   style: :compressed
 
 # Additional gems to use
-gems:
+plugins:
   - jekyll-sitemap # Generates sitemaps for Google
 
 # Dates are not included in permalinks
@@ -66,82 +66,11 @@ future: true
 # Exclude non-site files
 exclude: ['bin','CNAME', 'README.md']
 
-# Use the redcarpet Markdown renderer
-markdown: redcarpet
-redcarpet:
-    extensions: [
-        'no_intra_emphasis',
-        'fenced_code_blocks',
-        'autolink',
-        'strikethrough',
-        'superscript',
-        'with_toc_data',
-        'tables',
-        'hardwrap'
-    ]
+highlighter: rouge
 
-##
-# Prose settings
-##
-prose:
-  rooturl: '_posts'
-  siteurl: 'https://seravo.com/docs'
-  media: 'media'
-  ignore:
-    - _config.yml
-    - /_layouts
-    - /_posts/.gitkeep
-    - /_includes
-    - assets
-    - /bin
-    - /_pages
-    - CNAME
-    - search.json
-    - bower.json
-  metadata:
-    _posts:
-      - name: "title"
-        field:
-          element: "text"
-          label: "title"
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "page"
-      - name: "date"
-        field:
-          element: "hidden"
-          value: CURRENT_DATETIME
-      - name: "category"
-        field:
-          element: "select"
-          label: "Add Category"
-          placeholder: "Pick a category"
-          alterable: true # User can add new categories
-          options:
-            -
-              name: "Get Started"
-              value: get-started
-            -
-              name: "Configuration"
-              value: configuration
-            -
-              name: "Testing"
-              value: tests
-            -
-              name: "Development"
-              value: development
-            -
-              name: "Deployment"
-              value: deployment
-            -
-              name: "Management"
-              value: management
-
-      - name: "order"
-        field:
-          element: "number"
-          label: Page order in the category
-          help: You can order pages with this
-          value: 10
-          type: "number"
+# Use the kramdown Markdown renderer
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
