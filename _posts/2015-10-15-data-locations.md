@@ -27,6 +27,12 @@ WordPress is installed in: ```/data/wordpress/htdocs/wordpress/```
 
 WP-content is moved outside of the wordpress directory into: ```/data/wordpress/htdocs/wp-content/```
 
+### WordPress uploads
+
+It is not recommended to store anything in `wp-content/uploads` in git. If you have images in your plugin or theme, store those files inside the plugin or theme directories. The `uploads` folder is intended only for user uploaded files (in production). The real production media files or database should not be tracked in git.
+
+When a site is developed in our Seravo Vagrant box, the uploads will automatically be visible via our special uploads *asset proxy*. It will fetch on-the-fly any media file from the production site not present in the development environment. It requires the Vagrant box to have a working Internet connection and the production server address defined in the project `config.yml`. To use the production database while developing with the Seravo Vagrant box, see the command `wp-pull-production-db`.
+
 ### Log files
 
 All logs are saved in: ```/data/log/```
