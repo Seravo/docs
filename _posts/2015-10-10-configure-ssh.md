@@ -42,15 +42,15 @@ We advice you to use ssh key instead of password for accessing your site. [Read 
 
 Keep in mind when using use the `vagrant ssh` command to enter your Vagrant box, SSH ForwardAgent is automatically enabled and your personal keys are used to access the production environment. These are used for `wp-ssh-production` or `wp-pull-production-db`. The Vagrant image itself does not contain any private SSH keys.
 
-> **OS X users:** You can install *ssh-copy-id* with homebrew:
+> **OS X users:** You can install *ssh-copy-id* with Homebrew:
 
 >```bash
 $ brew install ssh-copy-id
 ```
 
->**Windows users:** Install your ssh key through **Putty** instead
+>**Windows users:** Install your ssh key through **Putty** instead. [Cygwin](https://www.cygwin.com/) is also a great choice for all your terminal tools (ssh, rsync, git..) under Windows.
 
- After the following step you have succesfully installed your ssh key into your WP instance:
+ After the following step you have successfully installed your ssh key into your WP instance:
 
 ```bash
 # This will install your ssh-key into your Seravo instance.

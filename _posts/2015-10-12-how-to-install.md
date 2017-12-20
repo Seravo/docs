@@ -10,13 +10,16 @@ published: true
 
 ## Installation
 
-### Linux (Debian)
+### Linux (Ubuntu/Debian)
 
-To use virtualbox make sure you have ```vt-x``` enabled in your bios.
+To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 
 ```bash
-$ sudo apt-get install vagrant virtualbox virtualbox-dkms git
-$ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+sudo apt-get install -y vagrant virtualbox virtualbox-dkms
+git clone https://github.com/Seravo/wordpress ~/wordpress-dev
+cd ~/wordpress-dev
+vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant up
 ```
 
 > **Optional:** If you want to have PHP Composer locally installed run:
@@ -36,7 +39,7 @@ $ vagrant up
 mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
 ```
 
-It means you need to install separatey the Ruby development files:
+It means you need to install separately the Ruby development files:
 
 ```
 sudo apt-get install ruby-dev
@@ -56,41 +59,51 @@ needed for Virtualbox.
 Clone the WordPress Git repo and run following commands:
 
 ```bash
-$ sudo yum update
-$ sudo yum install vagrant
-$ sudo yum install virtualbox
-$ sudo gem update bundler
-$ sudo yum install ruby-devel # Needed to build native ruby extensions
-$ sudo gem install hittimes -v '1.2.2'
-$ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+sudo yum install vagrant virtualbox
+sudo yum install ruby-devel # Needed to build native ruby extensions
+sudo gem update bundler
+sudo gem install hittimes -v '1.2.2'
+vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 
 # Needed to load the kernel module for virtualbox, you may want to load it automatically on boot...
-$ sudo modprobe vboxdrv
-$ vagrant up
+sudo modprobe vboxdrv
+vagrant up
 ```
 
-### OS X
+### Linux (General)
 
-1. [Install Xcode](https://developer.apple.com/xcode/downloads/)
+If you get errors related to creating host-only network adapters during vagrant up, run ```sudo vboxreload```.
+It seems that sometimes virtualbox kernel modules are not working correctly after the machine wakes up from sleep.
+
+### MacOS X
+
+1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
 2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-
-```bash
-$ vagrant plugin install vagrant-hostsupdater vagrant-triggers
+4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
+5. Run the installation in terminal:
 ```
-
+cd ~/wordpress-dev
+vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant up
+```
 > **Optional:** [Vagrant Manager for OS X](http://vagrantmanager.com/) can help you manage multiple Vagrant boxes.
 
 ### Windows (Cygwin)
 
-To use virtualbox make sure you have ```vt-x``` enabled in your bios.
-You might need to disable ```hyper-v``` in order to use virtualbox.
+To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
+You might need to disable ```hyper-v``` in order to use Virtualbox.
 
-1. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
-2. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-
-```bash
-$ vagrant plugin install vagrant-hostsupdater vagrant-triggers
+1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
+5. Run the installation in terminal:
 ```
+cd ~/wordpress-dev
+vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant up
+```
+In theory, Seravo WordPress should work even without Cygwin installed, but we strongly recommend using Cygwin for doing WordPress development on Windows machines.
 
 > **Optional:** [Vagrant Manager for Windows](http://vagrantmanager.com/windows/) can help you manage multiple Vagrant boxes.
