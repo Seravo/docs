@@ -59,7 +59,7 @@ receiving file list ... done
 After the above we rsync the uploads folder, but with different options this time so that all fiels that previously existed in the production uploads folder will remain, and the files from staging will only be added upon them.
 
 ```
-rsync -av -e 'ssh -p 11320' example@example.seravo.com:/data/wordpress/htdocs/wp-content/uploads /data/wordpress/htdocs/wp-content/uploads
+rsync -av -e 'ssh -p 11320' example@example.seravo.com:/data/wordpress/htdocs/wp-content/uploads /data/wordpress/htdocs/wp-content/
 ```
 
 ### Importing the database with wp-cli and SSH
