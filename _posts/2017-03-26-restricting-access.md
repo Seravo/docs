@@ -12,13 +12,15 @@ summary: "Restrict access to the site in various ways"
 
 ## Restricting access with built-in features of WordPress
 
-WordPress offers a multitude of user management and access control related features. We warmly recommend you use them as your primary means of access management. You can easily protect individual posts with a password. You can activate [Maintenance Mode](https://wordpress.org/plugins/maintenance/) and allow only selected users to access the entire site.
+WordPress offers a multitude of user management and access control related features. We warmly recommend you use them as your primary means of access management. You can easily protect individual pages and posts with a password by setting post visibility in WP admin to 'Password Protected'. You can activate [Maintenance Mode](https://wordpress.org/plugins/maintenance/) and allow only selected users to access the entire site.
 
 For more complex scenarios you can install BuddyPress or use some of the groups plugins.
 
 Fiddling with Nginx based access control methods should be your last resort.
 
 ## Restricting access with HTTP Basic Authentication
+
+> **Note:** This applies only to static HTML pages. If you want to restrict access to certain WordPress pages or sections, please see the previous chapter.
 
 The HTTP Authentication headers based system is quite old fashioned and not exactly the state-of-the art in cryptographic security. The list of usernames and passwords needs to be maintained manually using the `htpasswd` command line utility. First create a file with the `-c` option and then add more users as you need:
 
