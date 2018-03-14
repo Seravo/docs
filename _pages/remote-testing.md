@@ -10,7 +10,7 @@ summary: "This page contains information about how to access the Vagrant box rem
 
 ## By default the local Vagrant is not easy to access by others
 
-Out-of-the-box the settings in the Vagrant box are such, that it is not easy for anybody else than yourself to see the website that is running locally. The exact limits depend on what kind of network settings your development laptop has, and how Virtualbox machines running on it are exposed. This documentation cannot cover all of those situtions, but on the other hand it is not Seravo specific, so any generic Vagrant documentation on this topic can be useful for more information.
+Out-of-the-box the settings in the Vagrant box are such, that it is not easy for anybody else than yourself to see the website that is running locally. The exact limits depend on what kind of network settings your development laptop has, and how Virtualbox machines running on it are exposed. This documentation cannot cover all of those situations, but on the other hand it is not Seravo specific, so any generic Vagrant documentation on this topic can be useful for more information.
 
 ## Sharing the Vagrant box website via Avahi/Bonjour
 
