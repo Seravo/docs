@@ -1,1 +1,0 @@
-../_posts/2015-10-23-updating-vagrant-box.md

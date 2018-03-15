@@ -1,1 +1,0 @@
-../_posts/2015-10-10-configure-ssh.md

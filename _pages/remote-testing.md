@@ -1,1 +1,0 @@
-../_posts/2018-01-10-remote-testing.md
