@@ -8,8 +8,6 @@ order: 3
 summary: "Restrict access to the site in various ways"
 ---
 
-> **Roll-out in progress:** These features are new and they might not be available in all environments yet.
-
 ## Restricting access with built-in features of WordPress
 
 WordPress offers a multitude of user management and access control related features. We warmly recommend you use them as your primary means of access management. You can easily protect individual pages and posts with a password by setting post visibility in WP admin to 'Password Protected'. You can activate [Maintenance Mode](https://wordpress.org/plugins/maintenance/) and allow only selected users to access the entire site.
