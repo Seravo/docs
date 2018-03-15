@@ -5,7 +5,6 @@ title: "Seravo plugin - A mustuse plugin"
 category: configuration
 order: 3
 summary: "All Seravo sites contain a mustuse plugin which is installed by default. \nIt adds minor WordPress fixes, new features and helps Seravo inform clients about service outages."
-published: true
 ---
 
 ## How to download

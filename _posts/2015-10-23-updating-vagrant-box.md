@@ -5,7 +5,6 @@ category: development
 date: 2015-10-23 10:53:29
 order: 4
 summary: "New vagrant boxes are released few times in a month. Before updating you need to destroy currently active box and start a new one."
-published: true
 ---
 
 ## When to update the Vagrant Box

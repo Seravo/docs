@@ -3,7 +3,6 @@ layout: page
 title: "Custom error pages"
 category: configuration
 date: 2016-08-24 23:11:00
-published: true
 order: 3
 summary: "Customize error pages to better serve the audience of a particular site"
 ---

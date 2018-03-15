@@ -5,12 +5,10 @@
         {% assign label = section[1] %}
 
         {% for page in site.categories[attr] %}
-            {% if page.published != false %}
-                {% if forloop.first %}
-                    <li class="nav-header">{{ label }}</li>
-                {% endif %}
-                <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-            {% endif%}
+            {% if forloop.first %}
+                <li class="nav-header">{{ label }}</li>
+            {% endif %}
+            <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider

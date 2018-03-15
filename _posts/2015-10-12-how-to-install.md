@@ -4,7 +4,6 @@ title: How to install Vagrant
 category: development
 date: 2015-10-13 14:26:53
 order: 2
-published: true
 ---
 
 

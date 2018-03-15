@@ -3,7 +3,6 @@ layout: page
 title: "Restricting access"
 category: configuration
 date: 2017-03-26 19:45:00
-published: true
 order: 3
 summary: "Restrict access to the site in various ways"
 ---

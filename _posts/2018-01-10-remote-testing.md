@@ -4,7 +4,6 @@ title: "Remote testing"
 category: tests
 order: 2
 date: 2018-01-10 23:15:00
-published: true
 ---
 
 ## By default the local Vagrant is not easy to access by others

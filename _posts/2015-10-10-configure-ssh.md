@@ -4,7 +4,6 @@ title: "Configure SSH"
 category: get-started
 date: 2015-10-10 22:20:23
 order: 2
-published: true
 summary: "This page contains information for connecting into your site using **SSH**."
 ---
 

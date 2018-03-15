@@ -3,7 +3,6 @@ layout: page
 title: "Moving data between instances"
 category: deployment
 date: 2017-03-26 19:45:00
-published: true
 order: 3
 summary: "Moving data between production, staging and other instances"
 ---

@@ -4,7 +4,6 @@ title: "Data locations"
 category: get-started
 date: 2015-10-12 11:29:39
 order: 1
-published: true
 summary: "This page includes all default data paths for Seravo sites. This includes paths to log files and htdocs."
 ---
 

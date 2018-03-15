@@ -4,7 +4,6 @@ title: "Integration tests using Rspec"
 category: tests
 order: 1
 date: 2015-10-11 03:28:22
-published: true
 summary: "Seravo uses Rspec tests as integration tests for all sites. \nHere you can find examples and documentation of available functions."
 ---
 

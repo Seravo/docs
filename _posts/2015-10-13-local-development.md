@@ -4,7 +4,6 @@ layout: page
 title: Typical workflow
 category: development
 order: 3
-published: true
 ---
 
 ## Using git

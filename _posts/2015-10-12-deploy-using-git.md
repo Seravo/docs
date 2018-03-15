@@ -3,7 +3,6 @@ date: 2015-10-12T18:05:02.000Z
 layout: page
 title: Deploy using Git
 category: deployment
-published: true
 order: 1
 ---
 

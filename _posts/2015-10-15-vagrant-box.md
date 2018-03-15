@@ -4,7 +4,6 @@ title: "Vagrant box"
 category: development
 date: 2015-10-11 03:32:14
 order: 1
-published: true
 summary: "This page contains information about Vagrant box used in Seravo local development."
 ---
 

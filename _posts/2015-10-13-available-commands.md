@@ -4,7 +4,6 @@ title: "List of commands"
 category: get-started
 date: 2015-10-13 14:25:15
 order: 5
-published: true
 summary: "Seravo.com contains a handful of additional commands for helping the developer with basic tasks"
 ---
 
