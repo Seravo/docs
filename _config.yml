@@ -10,9 +10,6 @@ name: Seravo.com
 github:
     repo: Seravo/docs
 
-# if you wish to integrate disqus on pages set your shortname here
-disqus_shortname: ''
-
 # if you use google analytics, add your tracking id here
 google_analytics_id: 'UA-53086901-13'
 
