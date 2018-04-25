@@ -80,7 +80,7 @@ When you think your code is good, commit it and push to production with:
 $ git push production master
 ```
 
-The `.git/hooks/post-receive` will run on the receiving end and run Composer and Gulp if configured to do so.
+The `.git/hooks/post-receive` will run on the receiving end and run Composer and Gulp if configured to do so. Note that if you created the git repository yourself, there is no post-receive hook until you have copied it from `/usr/share/git-core/templates/hooks/post-receive`.
 
 When you are done, you can shut down Vagrant with `halt`. If you completely want to destroy the virtual image (for example to save disk space) execute `destroy`. Note that even after `destroy` you will have files under .vagrant and all the Composer installed modules etc under your project. Use `git clean` to get rid of all traces of `vagrant up`.
 

@@ -10,10 +10,10 @@ order: 5
 Basically they are scripts which allow you to run custom actions automatically on every git commit.
 They exists in your repository `.git/hooks/` and are not copied when pulling/pushing.
 
-Git hooks are explained really well in [git documentation](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks).
+Git hooks are explained really well in [git documentation](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks). Example hooks can be found on a Linux system at the path `/usr/share/git-core/templates/hooks/`.
 
 ## What's included?
-Seravo template contains one custom git hook: `pre-commit`.
+Seravo WordPress project template contains one custom git hook: `pre-commit`.
 
 By default it runs your [Rspec tests]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %}) before a new commit is allowed.
 
