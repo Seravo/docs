@@ -22,7 +22,7 @@ After ordering your instance from [Seravo.com](https://seravo.com) you'll get an
 </div>
 ### Configuring SSH
 
-We advice you to use ```~/.ssh/config``` file for easier ssh management.
+We advice you to use the ```~/.ssh/config``` file for easier ssh management.
 
 Add following lines to your config:
 
@@ -35,11 +35,11 @@ Add following lines to your config:
 > **Optional:** ```ForwardAgent yes``` - allows you to use your ssh credentials in the production machine to access private code from Github or Bitbucket.
 
 ### Using SSH-key authentication
-We advice you to use ssh key instead of password for accessing your site. [Read more about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/).
+We advice you to use a ssh key instead of a password for accessing your site. [Read more about generating ssh keys](https://help.github.com/articles/generating-ssh-keys/).
 
 ### Using Vagrant SSH
 
-Keep in mind when using use the `vagrant ssh` command to enter your Vagrant box, SSH ForwardAgent is automatically enabled and your personal keys are used to access the production environment. These are used for `wp-ssh-production` or `wp-pull-production-db`. The Vagrant image itself does not contain any private SSH keys.
+Keep in mind that when using use the `vagrant ssh` command to enter your Vagrant box, the SSH ForwardAgent is automatically enabled and your personal keys are used to access the production environment. These are used for `wp-ssh-production` or `wp-pull-production-db`. The Vagrant image itself does not contain any private SSH keys.
 
 > **OS X users:** You can install *ssh-copy-id* with Homebrew:
 
@@ -49,7 +49,7 @@ $ brew install ssh-copy-id
 
 >**Windows users:** Install your ssh key through **Putty** instead. [Cygwin](https://www.cygwin.com/) is also a great choice for all your terminal tools (ssh, rsync, git..) under Windows.
 
- After the following step you have successfully installed your ssh key into your WP instance:
+After the following step you have successfully installed your ssh key into your WP instance:
 
 ```bash
 # This will install your ssh-key into your Seravo instance.

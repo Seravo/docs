@@ -4,11 +4,11 @@ title: "Updating Vagrant Box"
 category: development
 date: 2015-10-23 10:53:29
 order: 4
-summary: "New vagrant boxes are released few times in a month. Before updating you need to destroy currently active box and start a new one."
+summary: "New vagrant boxes are released a few times in a month. Before updating you need to destroy the currently active box and start a new one."
 ---
 
 ## When to update the Vagrant Box
-When you're using vagrant, it will automatically check for updates. If an update is available you'll get a message like this:
+When you're using Vagrant, it will automatically check for updates. If an update is available you'll get a message like this:
 
 ```bash
 $ vagrant up
@@ -20,21 +20,21 @@ Bringing machine 'default' up with 'virtualbox' provider...
 ...
 ```
 
-This is an indicator that you don't have the newest box available locally.
+This is an indicator that you don't have the newest version of the box available locally.
 
 ## Download new box image
 
-Run following in your project folder so that you'll get new version of box ```seravo/wordpress```:
+Run the following command in your project folder so that you'll get new version of the box ```seravo/wordpress```:
 
 ```bash
 $ vagrant box update
 ```
 
-> **Note:** This might take a while. The image is  ~**900mb** large because it's designed to have all included for easier usage.
+> **Note:** This might take a while. The image is  ~**900mb** large because it's designed to have everything included for easier usage.
 
 ## Replace the old box with a newer one
 
-Run following in your project folder:
+Run the following commands in your project folder:
 
 ```bash
 # First make sure that the original box is online for the database dumps to work

@@ -37,9 +37,9 @@ development:
 ### Changing config.yml
 #### name
 
-Change `name` in config.yml to change your site name. This is used in quite some places in development environment.
+Change `name` in config.yml to change your site name. This is used in quite a few places in the development environment.
 
-For example with the above config.yml [mailcatcher]({{ site.baseurl }}{% post_url 2015-10-11-mailcatcher %}) is setupped in address: mailcatcher.**example**.local.
+For example, with the above config.yml [mailcatcher]({{ site.baseurl }}{% post_url 2015-10-11-mailcatcher %}) is set up in the address: mailcatcher.**example**.local.
 
 #### production
 Add `domain` and `ssh_port` to sync with your production instance.
@@ -48,7 +48,7 @@ Add `domain` and `ssh_port` to sync with your production instance.
 Optional: Add `domain` and `ssh_port` to sync with your staging (shadow) instance.
 
 #### development
-Add new domains under `domains` before first vagrant up to have extra domains.
+Add new domains under `domains` before you run vagrant up to use extra domains.
 
 See [config-sample.yml](https://github.com/Seravo/wordpress/blob/master/config-sample.yml) for more.
 
@@ -70,4 +70,4 @@ $ ll .env
 lrwxrwxrwx 1 otto otto .env -> .env.development
 ```
 
-You can have template files like `.env.development` tracked in version control, and then per location make a symbolic link from `.env` to the correct file. By default the `.env` file is and should be ignored by git via gitignore.
+You can have template files like `.env.development` tracked in version control, and then make a location-specific symbolic link from `.env` to the correct file. By default the `.env` file is and should be ignored by git via gitignore.

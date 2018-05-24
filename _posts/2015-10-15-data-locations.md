@@ -13,7 +13,7 @@ Seravo uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/word
 
 ## Data locations
 
-All of your data is held under the path ```/data/```. During the updates of your site we will wipe away all unnecessary files and only preserve things in the ```/data/``` directory. No need to worry though, because we have moved your home folder into ```/data/home/$USER/```, for instance, and made correct symlinks so you won't even notice it's elsewhere.
+All of your data is located under the path ```/data/```. During the updates of your site we will wipe away all unnecessary files and only preserve things in the ```/data/``` directory. No need to worry though, because we have moved your home folder into ```/data/home/$USER/```, for instance, and made correct symlinks so you won't even notice it's located somewhere else.
 
 ### Web root (htdocs)
 Your content is served from:```/data/wordpress/htdocs/```
@@ -30,7 +30,7 @@ WP-content is moved outside of the wordpress directory into: ```/data/wordpress/
 
 It is not recommended to store anything in `wp-content/uploads` in git. If you have images in your plugin or theme, store those files inside the plugin or theme directories. The `uploads` folder is intended only for user uploaded files (in production). The real production media files or database should not be tracked in git.
 
-When a site is developed in our Seravo Vagrant box, the uploads will automatically be visible via our special uploads *asset proxy*. It will fetch on-the-fly any media file from the production site not present in the development environment. It requires the Vagrant box to have a working Internet connection and the production server address defined in the project `config.yml`. To use the production database while developing with the Seravo Vagrant box, see the command `wp-pull-production-db`.
+When a site is developed in our Seravo Vagrant box, the uploads will automatically be visible via our special uploads *asset proxy*. It will fetch any media file from the production site not present in the development environment on-the-fly. It requires the Vagrant box to have a working Internet connection and the production server address to be defined in the project `config.yml`. To use the production database while developing with the Seravo Vagrant box, see the command `wp-pull-production-db`.
 
 ### Log files
 
@@ -38,7 +38,7 @@ All logs are saved in: ```/data/log/```
 
 ## Project Structure
 
-Seravo uses a custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is a WordPress layout which uses Composer for package management. It is not advisable to modify any WP core files, so usually your application consists only of what's included in the **wp-content** -directory. When we use version control, it is much better if we have separated your content to a folder which is separated from the core installation. Our custom template also includes tests, composer.json, custom Nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
+Seravo uses a custom directory layout which is derived from [Bedrock](https://github.com/roots/bedrock). Bedrock is a WordPress layout which uses Composer for package management. It is not advisable to modify any WP core files, so usually your application consists only of what's included in the **wp-content** -directory. When we use version control, it is much better to have your content separated to a folder which is separated from the core installation. Our custom template also includes tests, composer.json, custom Nginx rules and files for local development (Vagrantfile). Let's take a closer look at the Project directory:
 
 ```
 /data/wordpress
@@ -114,11 +114,11 @@ ln -s web htdocs
 ln -s app htdocs/wp-content
 ```
 
-The server expects to find the web root in `/data/wordpress/htdocs` and under it `wp-contents` with the site's files and `wordpress` with the WordPress core files. Alternatively, you can simply modify your `composer.json` to use the same paths as defined in the [Seravo WordPress project template composer.json](https://github.com/Seravo/wordpress/blob/master/composer.json).
+The server expects to find the web root in `/data/wordpress/htdocs` with `wp-contents` under it containing the site-specific files and `wordpress` containing the WordPress core files. Alternatively, you can simply modify your `composer.json` to use the same paths as defined in the [Seravo WordPress project template composer.json](https://github.com/Seravo/wordpress/blob/master/composer.json).
 
 ## Directory layout with Capistrano or other deploy tools
 
-If you use some deploy tool that deploys multiple versions of the files on the server, and then activates one of them by repointing a symbolic link, you could use a directory layout like this:
+If you use a deploy tool that deploys multiple versions of the files on the server, and then activates one of them by repointing a symbolic link, you could use a directory layout like this:
 
 ```
 /data/wordpress
@@ -165,4 +165,4 @@ If you use some deploy tool that deploys multiple versions of the files on the s
 
 It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details, see [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
 
-If we detect that a git repository exists while upkeeping and editing any project files, we will commit the changes so that the changes would be less likely to be lost or overwritten when the customer later does a redeploy.
+If we detect that a git repository exists while doing upkeep and editing any project files, we will commit any changes so that it's less likely that the changes would be lost or overwritten when the customer later does a redeploy.

@@ -15,7 +15,7 @@ Production contains most of these and also a command for purging cache.
 
 ### Developer helpers
 #### wp-list-env
-```$ wp-list-env ``` - Prints list of defined environment variables. Both the Vagrant image and the production server contain ENVs which define ports and credentials for WordPress. With this command you can debug what settings you have.
+```$ wp-list-env ``` - Prints a list of defined environment variables. Both the Vagrant image and the production server contain ENVs which define ports and credentials for WordPress. With this command you can debug the settings that you have.
 
 #### wp-restart-nginx
 ```$ wp-restart-nginx``` - Restarts the web server and reloads any configuration at  ```/data/wordpress/nginx/*.conf```
@@ -31,10 +31,9 @@ Production contains most of these and also a command for purging cache.
 ```$ wp-ssh-production``` - If your config.yml is set up with production details you can ssh into your production instance.
 
 #### wp-pull-production-db
-`$ wp-pull-production-db` - Copies production database into your local Vagrant box. Also replaces all production siteurls in the database with your local development siteurl.
+`$ wp-pull-production-db` - Copies the production database into your local Vagrant box. Also replaces all production siteurls in the database with your local development siteurl.
 
-
-### Vagrant internal commands (good to know, but developers won't need to use these.)
+### Vagrant internal commands (good to know, but the developers won't need to use these.)
 
 <div class="bs-callout bs-callout-info">
   <strong>Note</strong>: These commands are used in <code>vagrantfile</code> by default.
