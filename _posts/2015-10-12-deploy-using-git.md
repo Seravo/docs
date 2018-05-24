@@ -26,7 +26,7 @@ production  ssh://your-site@your-site.seravo.com:12345/data/wordpress (push)
 ```
 
 ## Deploy using git
-**Note:** This doesn't deploy database or uploads. We recommend that you don't include these in git.
+**Note:** This doesn't deploy the database or the contents of uploads. We recommend that you don't include these in git.
 
 ```bash
 $ git push production master
@@ -53,11 +53,9 @@ To your-site:/data/wordpress/.git
 ```
 
 ## Tutorials
-### If you have working site in Vagrant box and want to deploy it
+### If you have a working site in the Vagrant box and you want to deploy it
 #### Step 1 - Getting credentials
-First you need to order a site from [seravo.com](https://seravo.com/).
-
-Afterwise you'll get ssh credentials, which are described in [Configuring SSH]({{ site.baseurl }}{% post_url 2015-10-10-configure-ssh %}) section.
+First you need to order a site from [seravo.com](https://seravo.com/) in order to get ssh credentials, which are described in the [Configuring SSH]({{ site.baseurl }}{% post_url 2015-10-10-configure-ssh %}) section.
 
 #### Step 2 - Setting credentials
 
@@ -78,7 +76,7 @@ $ git remote add production ssh://your-site@your-site.seravo.com:12345/data/word
 $ git push production master --force
 ```
 
-For deploying the database contents or the uploads folder you need to roll your own solution which is safe enough to not overwrite any data created in production.
+For deploying the database contents or the contents of the uploads folder you will need to roll your own solution which is safe enough to not overwrite any data created in production.
 
 > **Note on wp-push- commands:**
 > In Seravo Vagrant images created before [October 5th, 2016](https://github.com/Seravo/wp-palvelu-vagrant/commit/792d6741bb734cea6fa739c7808f59eed05e991a), there used to be the commands `wp-push-production-db` (deploy database to production) and `wp-push-production-uploads` (deploy wp-content/uploads into production) but they were deemed as too risky and removed to protect customers from accidentally making too much damage to their site.

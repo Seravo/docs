@@ -9,25 +9,23 @@ summary: "Seravo uses Rspec tests as integration tests for all sites. \nHere you
 
 ## What are integration tests?
 
-Integration tests make sure that certain features of your site work as they should work.
+Integration tests make sure that certain features of your site work as they should.
 
-So for example if we have a following **use case**:
+For example if we have the following **use case**:
 
-> User visits your-site.com/wp-login.php and sees login form.
+> User visits your-site.com/wp-login.php and sees the login form.
 
-> When user fills correct password and username he sees WordPress dashboard including adminbar.
+> When user fills correct password and username he sees the WordPress dashboard including adminbar.
 
-So when the project is functional we have the feature described above and we want it to work always.
-
-Integration tests make sure that this feature works as described in the use case.
+When the project is functional we will have the feature described above. Integration tests can be used to make sure that the feature works as described in the use case.
 
 ## Testing with Rspec & Capybara
 
-Our integration tests use Ruby testing framework called [Rspec](http://rspec.info/) with extension [Capybara](https://github.com/teamcapybara/capybara).
+Our integration tests use a Ruby testing framework called [Rspec](http://rspec.info/) with the extension [Capybara](https://github.com/teamcapybara/capybara).
 
-We use headless browser [PhantomJS](http://phantomjs.org/) with Ruby driver [Poltergeist](https://github.com/teampoltergeist/poltergeist).
+We use the headless browser [PhantomJS](http://phantomjs.org/) with the Ruby driver [Poltergeist](https://github.com/teampoltergeist/poltergeist).
 
-Using Ruby for testing a PHP application like WordPress may sound overwhelming but in our opinion it's quite fun and effective. Our latest WordPress baseline template can be found in [Github](https://github.com/Seravo/wordpress/blob/master/tests/rspec/). It consists as a example for your own unique tests.
+Using Ruby for testing a PHP application like WordPress may sound overwhelming but in our opinion it's quite fun and effective. Our latest WordPress baseline template can be found in [Github](https://github.com/Seravo/wordpress/blob/master/tests/rspec/). It can be used as an example for your own unique tests.
 
 > **Note:** These tests are used in your production system as well *(if available)*.
 >
@@ -44,11 +42,11 @@ $ wp-test
 
 ## Example tests
 
-The following test suite consists of 2 ```describe``` blocks.
+The following test suite consists of two ```describe``` blocks.
 
-The first one tests that the frontpage is loaded correctly and has CSS styles. Then it clicks link in frontpage and expects the following page to contain text **Archives**.
+The first one tests that the front page is loaded correctly and has CSS styles. Then it clicks a link in the front page and expects the following page to contain text **Archives**.
 
-The second one tests the usecase mentioned in the top of this page.
+The second one tests the use case we talked about in the beginning of this page.
 
 
 ```ruby
@@ -110,15 +108,15 @@ end
 
 ## How to extend the tests
 
-All files in the path `tests/rspec/*.rb` are executed. Instead of editing the existing baseline test, we recommend creating new files for your tests. Group tests of the same features in the same files and name the test files logically, so it is easy for your collaborators to extend debug or extend the tests later.
+All files located in the path `tests/rspec/*.rb` will be executed. Instead of editing the existing baseline tests, we recommend creating new files for your own tests. Group the tests that test the same features and try to name the files logically to make it easier for your collaborators to debug or extend the tests later.
 
-To test your new tests, run it individually with verbose output:
+To try your new test, run it individually with verbose output:
 
 ```
 rspec -f d new-test.rb
 ```
 
-Rspec also has a profiling option available if you want to measure how long the test takes, an potentially detect some execution time anomalies:
+Rspec also has a profiling option available if you want to measure how long the test takes and potentially detect some execution time anomalies:
 
 ```
 rspec -f d -p 10 new-test.rb
@@ -127,7 +125,7 @@ rspec -f d -p 10 new-test.rb
 ## List of Helper functions
 
 ### **WP** Helper module
-These tests use helper module **WP** which is included in the project.
+These tests use the helper module **WP** which is included in the project.
 
 ```ruby
 # Returns url to your site for the following {path}
