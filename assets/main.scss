@@ -288,3 +288,38 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
       background: inherit;
     }
 }
+
+/*
+ * List of commands-page navigation
+ */
+.command-list-content {
+    max-width:75%;
+}
+@media screen and (max-width: 1200px) {
+    .command-list-content {
+        max-width: 70%;
+    }
+}
+@media screen and (max-width: 990px) {
+    .command-list-content {
+        max-width: 60%;
+    }
+}
+@media screen and (max-width: 535px) {
+    .command-list-content {
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 600px) {
+    #markdown-toc a {
+        margin: 0;
+    }
+    /* The sticky */
+    #markdown-toc {
+        font-size: 13px;
+        width: 230px;
+        float: right;
+        position: sticky;
+        top:30px;
+    }
+}
