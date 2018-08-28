@@ -16,6 +16,7 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 Production contains most of these and also a command for purging cache.
 
 ### Admin helpers
+
 #### wp-backup
 ``` wp-backup ``` - Dumps the wordpress database and backs up the ``` /data ``` directory into ``` /data/backups/data ``` using ``` rdiff-backup ```.
 
@@ -23,7 +24,7 @@ Production contains most of these and also a command for purging cache.
 ``` wp-backup-list-changes ``` - Lists all files known by ``` rdiff-backup ``` sorted by timestamp. Use this to find out what files really changed in the system, as the file attribute mtime is not a reliable source of information. Use ```rdiff-backup --exclude /data/backups --compare-at-time now /data /data/backs/data/ ``` to find out how the current data differs from latest backup.
 
 #### wp-backup-status
-``` wp-backup-status ``` - Lists all backup increments known by ``` rdiff-backup ``` sorted by timestamp. Use this to find out how many backup increments are available for your site.
+``` wp-backup-status ``` - Lists all backup increments known by ``` rdiff-backup ``` sorted by timestamp. Use this to find out what kind of backups you are able to restore. This is an alias of ``` rdiff-backup --list-increment-sizes /data/backups/data ```.
 
 #### wp-fix-checksums
 ``` wp-fix-checksums ``` - Automates fixing typical situations where ``` wp core verify-checksums ``` returns an error. Does not attempt to fix any warnings returned.
@@ -86,8 +87,11 @@ Production contains most of these and also a command for purging cache.
 #### wp-restart-php
 ``` wp-restart-php ``` - Gives user an easy way to restart all versions of php-fpm.
 
+#### wp-shadow-pull
+``` wp-shadow-pull ``` - Replaces your files and information from your production environment with your chosen shadow environment. Use with caution, as it may break your site. Makes a backup for you automatically.
+
 #### wp-shadow-reset
-``` wp-shadow-reset ``` - A simple command line tool for moving data from production to shadow instances. Will delete and replace all files in the ```/data/wordpress/``` directory of a shadow with a clone from production.
+``` wp-shadow-reset ``` - Replaces your files and information from your shadow environment with your production environment. Will delete and replace all files in the ```/data/wordpress/``` directory of a shadow with a clone from production. Use with caution, as data from your shadow can not be recovered after this process.
 
 #### wp-speed-test
 ``` wp-speed-test ``` - Measure the load time of PHP resonses.
