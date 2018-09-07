@@ -72,9 +72,12 @@ add_filter('seravo_disable_modules', '__return_false');
 add_filter('seravo_use_helpers', '__return_false');
 
 /*
- * Remove cache purge button from WP adminbar
+ * Manage which users are able to see and use the purge button in WP-adminbar.
+ * Default value is same as below: users need to have the 'edit_posts' capability.
  */
-add_filter('seravo_use_purge_cache', '__return_false');
+add_filter('seravo_purge_cache_capability', function () {
+  return 'edit_posts';
+});
 
 /*
  * Remove instance switcher from WP admin bar
