@@ -6,6 +6,7 @@ date: 2015-10-13 14:26:53
 order: 2
 ---
 
+> **Vagrant 2.1.0 changes vagrant-triggers:** Currently our Seravo WordPress Vagrant box does not work with the latest version of Vagrant due to [non-backwards compatible changes in vagrant-triggers](https://github.com/Seravo/wp-palvelu-vagrant/issues/49). The work-around is to [install Vagrant 2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/) instead of the latest version for now.
 
 ## Installation
 
