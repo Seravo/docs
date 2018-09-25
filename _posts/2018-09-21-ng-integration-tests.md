@@ -1,35 +1,53 @@
 ---
 layout: page
-title: "Acceptance tests using Codeception"
+title: "New generation testing system"
 category: tests
 order: 1
 date: 2018-09-21 11:36:22
-summary: "Seravo uses Codeception tests as acceptance tests for all sites. \nHere you can find examples and documentation of available functions."
 ---
 
-## What are acceptance tests?
+> **Roll-out in progress:** Our next-generation testing system based on [ChromeDriver](http://chromedriver.chromium.org/) and [Codeception](https://codeception.com/) is available as a technology preview using the command `wp-test-ng`. Eventually it will replace the old `wp-test` (*legacy system based on [Rspec]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %})*) but we will announce when we have reached that milestone separately.
 
-Acceptance tests make sure that certain features of your site work as they should.
 
-For example if we have the following **use case**:
+## Testing ensures WordPress updates don't break a site
 
-> User visits your-site.com/wp-login.php and sees the login form.
+Tested updates has always been an integral part of Seravo's WordPress service. Keeping software up-to-date is important for both functionality and security. Unfortunately all changes in new software releases are not always good and can cause regressions. At Seravo we run tests before and after updates to ensure the site does not break on updates.
 
-> When user fills correct password and username he sees the WordPress dashboard including adminbar.
+## Tests use the site like a real visitor would do
 
-When the project is functional we will have the feature described above. Acceptance tests can be used to make sure that the feature works as described in the use case.
+Our tests are so called acceptance tests (or integration tests) because they test the site on a high level (and not single pieces of code like unit tests would do). The goal is to browse the site like a real visitor would do and find problems that could be relevant to real users.
 
-Tests mentioned above have been already implemented by Seravo, see `/usr/share/seravo/tests/tests/acceptance/SeravoCheckWPHomeCest.php` and `/usr/share/seravo/tests/tests/acceptance/SeravoCheckWPLoginCest.php`.
+Our tests simulate among others the following **use cases**:
+1. User visits your-site.com/wp-login.php and sees the login form.
+1. When user fills correct password and username he sees the WordPress dashboard including adminbar.
 
-## Testing with Codeception
+Our system will detect if during these simulated visits any of the following problems occur:
+- The HTTP server fails and emits error code (e.g. HTTP 500)
+- WordPress/PHP code fails and does not generate a page that a browser could sensibly parse
+- CSS code fails to load or images or other assets fail to load
+- JavaScript emits warnings or errors to the JavaScript console
 
-Our acceptance tests use a PHP testing framework called [Codeception](https://codeception.com/). We use the headless browser [Google Chrome](https://www.google.com/chrome/) with the [ChromeDriver](http://chromedriver.chromium.org/).
+If any of the failures above occur, the test will end and emit an error. Sites where the tests don't pass will not proceed with updates.
 
-> **Note:** These tests are used in your production system as well *(if available)*.
->
-> This way we can figure out if the site is still working after updates so that we can alarm you when something breaks and hand the updating process to be manually by the owner.
+> **Note on security updates**: If a security update is considered critical, Seravo will ignore any test results and proceed with installing the security update anyway when necessary.
 
-## How to run these tests
+The `wp-test-ng` command and Codeception tests also make screenshots of the site, which is later used by another step in our testing system to detect visual regressions.
+
+## Testing is separate from monitoring
+
+Testing can be used by developers to verify that their code changes don't break a site. Seravo uses the tests to check that a site is OK before and after updates. Seravo also does many other kinds of testing to sites, including security testing, PHP version compatibility testing etc.
+
+Seravo monitors all sites 24/7 and our staff reacts if we detect that a site has stopped working. The monitoring is based on other tests, not these acceptance tests.
+
+## New generation testing technology: Codeception and headless Chrome
+
+Our new testing system uses a PHP testing framework called [Codeception](https://codeception.com/). This will make it easier for WordPress developers to write tests compared to how it was in our previous testing system that used Ruby.
+
+The simulated browsing of a site is done using headless [Google Chrome](https://www.google.com/chrome/) with the [ChromeDriver](http://chromedriver.chromium.org/). This is as close to the real thing as possible, and a major improvement to our previous system that used PhantomJS.
+
+Tests mentioned above in the previous chapter have been already implemented by Seravo and you can check out how the code looks like in the files `/usr/share/seravo/tests/tests/acceptance/SeravoCheckWPHomeCest.php` and `/usr/share/seravo/tests/tests/acceptance/SeravoCheckWPLoginCest.php`.
+
+## Running tests
 
 You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test-ng) in any environment (production, shadow, and Vagrant development box):
 
@@ -40,7 +58,22 @@ You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-co
 $ wp-test-ng
 ```
 
-## Example tests
+> **Note:** These tests can be run by Seravo or the client at any time, in any environment. The tests should therefore be safe and not cause any problems even when run against a live production website.
+
+## Write your own tests
+
+All files located in the path `/data/wordpress/tests/acceptance/*.php` will be executed. Group the tests that test the same features and try to name the files logically to make it easier for your collaborators to debug or extend the tests later.
+
+If this directory does not exist on your site (or the git version control of your site), then you can just go ahead and create it. The new generation testing system is much simpler and does not pollute your site git repository with many extra files like our previous system did. When you start using the new system, feel free to delete all of your old `/data/wordpress/tests/rspec`. The rspec-directory will not get any updates anymore and in the new system any updates by Seravo to the testing system will be done outside of the site directory `/data/wordpress` and thus not cause any merging issues for site developers.
+
+Note that our testing environment expects that a) your test files are named `YourTestNameHereCest.php` and include a class with exactly same name (see examples above) OR b) are named `YourTestName.php` andd are in Cept format. [See short examples in StackOverflow.](https://stackoverflow.com/a/27298882)
+
+To try your new test, run it individually with verbose output:
+
+```
+wp-test-ng --debug
+```
+### Example code
 
 The following test suite consists of two class methods that implement different tests blocks.
 
@@ -103,18 +136,6 @@ class UserCheckWPHomeCest
         $I->dontSeeElementInDOM('h3#thisshouldnotexist');
     }
 }
-```
-
-## How to extend the tests
-
-All files located in the path `/data/wordpress/tests/acceptance/*.php` will be executed. Group the tests that test the same features and try to name the files logically to make it easier for your collaborators to debug or extend the tests later.
-
-Note that our testing environment expects that a) your test files are named `YourTestNameHereCest.php` and include a class with exactly same name (see examples above) OR b) are named `YourTestName.php` andd are in Cept format. [See short examples in StackOverflow.](https://stackoverflow.com/a/27298882)
-
-To try your new test, run it individually with verbose output:
-
-```
-wp-test-ng --debug
 ```
 
 ## List of Helper functions

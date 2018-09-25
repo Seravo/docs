@@ -4,8 +4,9 @@ title: "Integration tests using Rspec"
 category: tests
 order: 1
 date: 2015-10-11 03:28:22
-summary: "Seravo uses Rspec tests as integration tests for all sites. \nHere you can find examples and documentation of available functions."
 ---
+
+> **Deprecation warning:** We are currently migrating to a new testing system based on [headless Chrome and Codeception]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}). If you are writing new tests, use the new system.
 
 ## What are integration tests?
 
@@ -13,9 +14,8 @@ Integration tests make sure that certain features of your site work as they shou
 
 For example if we have the following **use case**:
 
-> User visits your-site.com/wp-login.php and sees the login form.
-
-> When user fills correct password and username he sees the WordPress dashboard including adminbar.
+1. User visits your-site.com/wp-login.php and sees the login form.
+1. When user fills correct password and username he sees the WordPress dashboard including adminbar.
 
 When the project is functional we will have the feature described above. Integration tests can be used to make sure that the feature works as described in the use case.
 
