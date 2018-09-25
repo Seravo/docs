@@ -15,7 +15,39 @@ You can download the plugin here for testing purposes:
 <a class="btn btn-default" href="https://github.com/Seravo/seravo-plugin/releases"><i class="glyphicon glyphicon-download-alt"></i> Download plugin from Github</a>
 
 ## List of features
-<code>Version 1.5.4</code>
+<code>Version 1.9.3</code>
+
+TODO ::: Write concise, but interesting descriptions for the following features:
+
+### Sortable postboxes
+
+### Shadow reset-button
+
+### Enforce the use of https
+https://github.com/Seravo/seravo-plugin/commit/64173bcb5ef0a2bc5f830f9e84e5b21143d6c083
+
+### Disable weak passwords
+https://github.com/Seravo/seravo-plugin/commit/5218a252d866e1229e44707985b83d940bad3090
+
+### Find and remove cruft files, themes and plugins
+
+### Technical contact email setting
+
+### Database statistics-view
+
+### Moving between shadow/production
+Instance switcher is not loaded when in a development environment.
+
+### Optimize-images -page
+
+
+### Run tests on WordPress core functionalities
+You can run ``` $ wp-test ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
+
+### Logs page
+Adds an admin page where you can view all your website logs.
+
+TODO:::
 
 ### Notifications from Seravo
 These are used only for informing about service outages.
@@ -48,7 +80,7 @@ This helps the admins and clients who have multiple sites in Seravo. If you have
 
 ### List all domains associated with your account
 
-Adds an admin page where you can view all your domains.
+Adds an admin page where you can view all your domains. You can also inspect your DNS-records for each domain.
 
 ### Checks that WordPress is configured over SSL
 
