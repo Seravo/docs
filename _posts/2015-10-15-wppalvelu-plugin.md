@@ -15,7 +15,40 @@ You can download the plugin here for testing purposes:
 <a class="btn btn-default" href="https://github.com/Seravo/seravo-plugin/releases"><i class="glyphicon glyphicon-download-alt"></i> Download plugin from Github</a>
 
 ## List of features
-<code>Version 1.5.4</code>
+<code>Version 1.9.3</code>
+
+### Sortable metaboxes
+For improved usability and a unified WordPress user experience, our plugin now uses primarily metaboxes that behave similarily to the WordPress Dashboard.
+
+### Shadow reset-button
+Adds the feature for resetting a staging environment from admin pages.
+
+### Enforce the use of https
+If the site and home addresses of the WordPress site include the https-prefix, it is enforced by redirections. 
+
+### Disable weak passwords
+Strong passwords are enforced by not allowing the user to update their profile with a weak password.
+
+### Find and remove cruft files, themes and plugins
+Seravo-plugin lists files, themes and plugins that are considered unnecessary, obsolete or outright bad in the admin page with the option for removing them..
+
+### Technical contact email setting
+You can set your technical contact email from the admin view.
+
+### Database statistics-view
+Status of the database is shown in the admin view.
+
+### Moving between shadow/production
+Instance switcher is not loaded when in a development environment.
+
+### Optimize-images -page
+You can opt in to optimize your websites images and adjust the parameters. 
+
+### Run tests on WordPress core functionalities
+You can run ``` $ wp-test ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
+
+### Logs page
+Adds an admin page where you can view all your website logs.
 
 ### Notifications from Seravo
 These are used only for informing about service outages.
@@ -48,7 +81,7 @@ This helps the admins and clients who have multiple sites in Seravo. If you have
 
 ### List all domains associated with your account
 
-Adds an admin page where you can view all your domains.
+Adds an admin page where you can view all your domains. You can also inspect your DNS-records for each domain.
 
 ### Checks that WordPress is configured over SSL
 
