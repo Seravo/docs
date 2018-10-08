@@ -33,6 +33,7 @@ $ git clone ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress ~/Projec
 ```
 
 ## Alternative: Start by using our project template on GitHub
+> **Note:** Do not do this if you have existing site. Pushing to production host will overwrite your current content, and might lead to data loss.
 
 The method above gives you a fresh new project with no prior history. You may however want to consider using [our template](https://github.com/Seravo/wordpress) as a starting point and have a shared history, which makes it easier to later merge updated versions of our project template to your project. To do that run
 
