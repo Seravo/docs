@@ -23,7 +23,7 @@ The target of the rewrite can actually be any URL and the temporary view shown t
 
 ### Plain static maintenance page (not recommended)
 
-If a file named index.html is placed in the `/data/wordress/htdocs/` folder, it will take precedence over the existing `index.php` file that normally loads WordPress. A static file will always work even if PHP is broken for some reason. A static page might also be useful during a DDOS attack as static content can be served at a much higher rate than PHP generated content.
+If a file named `index.html` is placed in the `/data/wordress/htdocs/` folder, it will take precedence over the existing `index.php` file that normally loads WordPress. A static file will always work even if PHP is broken for some reason. A static page might also be useful during a DDOS attack as static content can be served at a much higher rate than PHP generated content.
 
 ### Custom database connection error page
 
