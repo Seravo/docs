@@ -204,9 +204,15 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
         padding-right: 10px;
     }
 
+    li a.is-active {
+        background-color: #eee;
+    }
+
     .nav-header {
         padding-left: 0;
         padding-right: 0;
+        margin-top: 16px;
+        font-weight: 700;
     }
 }
 

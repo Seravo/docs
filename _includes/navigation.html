@@ -4,11 +4,17 @@
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
 
-        {% for page in site.categories[attr] %}
+        {% for link in site.categories[attr] %}
             {% if forloop.first %}
                 <li class="nav-header">{{ label }}</li>
             {% endif %}
-            <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+            <li data-order="{{ link.order }}">
+                {% if link.url == page.url %}
+                    <a class="is-active" href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                {% else %}
+                    <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                {% endif %}
+            </li>
         {% endfor %}
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
