@@ -40,6 +40,10 @@ Unfortunately Vagrant is somewhat brittle and many people experience issues with
 
 Run `vagrant global-status` and check that you don't have too many Vagrant images running in parallel. You can also fire up the VirtualBox main window to get an overview what VirtualBox machines are active on your system.
 
+Inside the Vagrant box you may also want to try turning of the [Xdebug profiler]({{ site.baseurl }}{% post_url 2015-10-11-xdebug %}) by running `wp-xdebug-off`. Xdebug can sometimes be quite heavy even when running in the background.
+
+> **Note:** The Vagrant box will never be as fast as the live production site. This is intentional and helps WordPress site developers detect performance issues before they go into production. Both our Vagrant box and testing shadows have less available resources than the real production site, so that even a single user (the developer testing his/her code) might notice performance issues if the code has severe bugs. If the development environments are too powerful, badly performing code will go undetected into production.
+
 ### If you have startup issues
 
 If during startup there are issues, you can simply try again a few times running `vagrant up`. If your Vagrant box is already running and you run `vagrant up` again it does no harm.
