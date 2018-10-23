@@ -45,41 +45,96 @@ Our new testing system uses a PHP testing framework called [Codeception](https:/
 
 The simulated browsing of a site is done using headless [Google Chrome](https://www.google.com/chrome/) with the [ChromeDriver](http://chromedriver.chromium.org/). This is as close to the real thing as possible, and a major improvement to our previous system that used PhantomJS.
 
-Tests mentioned above in the previous chapter have been already implemented by Seravo and you can check out how the code looks like in the files `/usr/share/seravo/tests/tests/acceptance/SeravoCheckWPHomeCest.php` and `/usr/share/seravo/tests/tests/acceptance/SeravoCheckWPLoginCest.php`.
+Tests mentioned above in the previous chapter have been already implemented by Seravo and forms the baseline of the tests for each site.
 
 ## Running tests
 
-You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test-ng) in any environment (production, shadow, and Vagrant development box):
+You can use the [command wp-test-ng]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test-ng) in any environment (production, testing/staging shadow, and Vagrant development box):
 
 ```bash
-# Runs first global tests from /usr/share/seravo/tests/tests/acceptance/*.php and
-# then **if successful**,
-# runs all tests in /data/wordpress/tests/acceptance/*.php if any available
 $ wp-test-ng
+I: Starting wp-test-ng...
+I: Using URL 'https://www.example.com' for pre-flight checks.
+I: Pre-flight test for https://www.example.com returned HTTP code 200
+I: Executing ChromeDriver...
+Starting ChromeDriver 2.41.578700 (2f1ed5f9343c13f73144538f15c00b370eda6706) on port 9515
+Only local connections are allowed.
+I: Ensure test user exists...
+I: Updated permission and password for existing test user...
+I: Running Codecept test suite 1/1..
+Codeception PHP Testing Framework v2.5.0
+Powered by PHPUnit 6.5.13 by Sebastian Bergmann and contributors.
+Running with seed:
+
+
+Acceptance Tests (2) ------------------------------------------------------------------------------------
+⏺ Recording ⏺ step-by-step screenshots will be saved to /data/reports/tests/
+Directory Format: record_5bcf04ca2322c_{testname} ----
+✔ SeravoCheckWPHomeCest: Try to open home (1.86s)
+✔ SeravoCheckWPLoginCest: Try to login and access wp admin (10.60s)
+---------------------------------------------------------------------------------------------------------
+⏺ Records saved into: file:///data/reports/tests/records.html
+
+
+Time: 12.76 seconds, Memory: 12.00MB
+
+OK (2 tests, 3 assertions)
+I: Lower test user privileges as test ended...
+I: Finished running wp-test-ng
 ```
 
-> **Note:** These tests can be run by Seravo or the client at any time, in any environment. The tests should therefore be safe and not cause any problems even when run against a live production website.
+> **Note:** These tests can be run by Seravo or our customer at any time, in any environment. The tests should therefore be safe and not cause any problems even when run against a live production website.
 
 ## Write your own tests
 
-All files located in the path `/data/wordpress/tests/acceptance/*.php` will be executed. Group the tests that test the same features and try to name the files logically to make it easier for your collaborators to debug or extend the tests later.
+Test suite files located in the path `/data/wordpress/tests/codeception/` will be executed. Group the tests that test the same features and try to name the files logically to make it easier for your collaborators to debug or extend the tests later.
 
-If this directory does not exist on your site (or the git version control of your site), then you can just go ahead and create it. The new generation testing system is much simpler and does not pollute your site git repository with many extra files like our previous system did. When you start using the new system, feel free to delete all of your old `/data/wordpress/tests/rspec`. The rspec-directory will not get any updates anymore and in the new system any updates by Seravo to the testing system will be done outside of the site directory `/data/wordpress` and thus not cause any merging issues for site developers.
+If this directory does not exist on your site (or the git version control of your site), then you can just go ahead and create it. The new generation testing system is much simpler and does not pollute your site git repository with many extra files like our previous system did. When you start using the new system, feel free to delete all of your old `/data/wordpress/tests/rspec`. The *rspec* directory will not get any updates anymore and in the new system any updates by Seravo to the testing system will be done outside of the site directory `/data/wordpress` and thus not cause any merging issues for site developers.
 
-Note that our testing environment expects that a) your test files are named `YourTestNameHereCest.php` and include a class with exactly same name (see examples above) OR b) are named `YourTestName.php` andd are in Cept format. [See short examples in StackOverflow.](https://stackoverflow.com/a/27298882)
+There are three types of customs tests supported:
+1. Tests written in procedural PHP code in files at `/data/wordpress/codeception/acceptance/*Cept.php`
+1. Tests written in object-oriented PHP classes in files at `/data/wordpress/codeception/acceptance/*Cest.php`
+1. Custom Codeception test suite defined in `/data/wordpress/codeception/custom.yml`
 
-To try your new test, run it individually with verbose output:
+### 1. Simplest version: \*Cept.php files
 
+This is very straight forward and simple to write and maintain for a small set of tests.
+
+Example filename: `/data/wordpress/tests/codeception/acceptance/ExampleCept.php`
+
+```php
+<?php
+
+$I = new AcceptanceTester($scenario);
+$I->amOnPage('/');
+$I->checkBrowserConsole();
+$I->see('WordPress');
 ```
-wp-test-ng --debug
+
+[See short examples in StackOverflow.](https://stackoverflow.com/a/27298882)
+
+### 2. Elegant version: \*Cest.php files
+
+Using proper PHP classes offer control on what tests output and how they are executed. **Note that each file can contain only one PHP class and the class name must match the filename.**
+
+Example filename: `/data/wordpress/tests/codeception/acceptance/ExampleCest.php`
+
+```php
+<?php
+
+class ExampleCest {
+    /**
+     * Open front page (/)
+     **/
+    public function openFrontPage(\AcceptanceTester $I) {
+        $I->amOnPage('/');
+	      $I->checkBrowserConsole();
+        $I->see('WordPress');
+    }
+}
 ```
-### Example code
 
-The following test suite consists of two class methods that implement different tests blocks.
-
-First one checks that we see some elements on home page and then submits a search form & checks that we see expected string on the result page.
-
-Second one just checks that we see/don't see some elements in DOM.
+Example filename: `/data/wordpress/tests/codeception/acceptance/UserCheckWPHomeCest.php`
 
 ```php
 <?php
@@ -93,6 +148,9 @@ class UserCheckWPHomeCest
     {
         // Navigate to homepage (/)
         $I->amOnPage('/');
+
+        // Check that the browser console is empty (e.g no JavaScript errors)
+        $I->checkBrowserConsole();
 
         // Check that string 'Lorem ipsum' is found
         $I->see('Lorem ipsum');
@@ -138,38 +196,97 @@ class UserCheckWPHomeCest
 }
 ```
 
+To try your new test, simply run:
+
+```
+wp-test-ng --debug --fail-fast
+```
+
+> **Note:** Tested Wordpress updates are included in all plans at [Seravo.com](https://seravo.com/plans/), even in the most affordable one. Writing custom tests, or debugging custom test that somebody else wrote, is not included in the monthly fee. You can however at any time buy at an hourly rate bespoke work for your site, including writing custom tests for it.
+
+### 3. Complete custom Codeception test definition: custom.yml
+
+Our tests also support fully customized Codeception test suites. Put the test suite files in the path `/data/wordpress/tests/codeception` and ensure there is a definition file called `custom.yml` that can be run by `codecept run`.
+
 ## List of Helper functions
 
-### **WP** Helper module
+### WordPress Helper module
+
 These tests use the helper module **SeravoAcceptanceHelper** which is included in the project.
 
 ```php
-$I->getEnvironment(); // returns current environment (production, development, staging, update)
-$I->isProduction(), $I->isDevelopment(); // are we in specific environment
-$I->getLogs(); // get logs from browser console
+// return current environment (production, development, staging, update)
+$I->getEnvironment();
+// return true or false if tests run in specific environment
+$I->isProduction();
+$I->isDevelopment();
+// get an array containing the browser console contents
+$I->getConsoleLog();
 ```
 
 ### List of Codeception functions
+
 See also [Codeception documentation for acceptance tests](https://codeception.com/docs/03-AcceptanceTests) to learn more.
+
 ```php
-# Navigating
+// Navigating
 $I->amOnPage('/path/to/navigate?value=1');
 
-# Clicking links and buttons
+// Clicking links and buttons
 $I->click('#elementId');
 $I->click('a.classnamehere');
 $I->click('input[name=ok]');
 
-# Interacting with forms
+// Interacting with forms
 $I->fillField('field-identifier', 'value');
 
-
-# Querying
+// Querying
 $I->seeInTitle('this should be in <title> tag');
 $I->see('My title');
-$I->seeElement('//table/tr'); // xpath
+$I->seeElement('//table/tr'); // XPath
 $I->seeElement('h1'); // by tag
 $I->seeElement('#id'); // by id
 $I->seeElement('.classname'); // by class
-$I->seeElement('div#main p.intro'); // css selectors
+$I->seeElement('div#main p.intro'); // CSS selectors
+
+// Check that browser console is empty
+$I->checkBrowserConsole();
+
+// Check that browser console is empty ignoring warnings
+$I->checkBrowserConsole(true);
+
+// Check that browser console is empty ignoring warnings
+// and ignoring one specified severe message
+$I->checkBrowserConsole(true, array(
+  array(
+		"level" => "SEVERE",
+		"message" => ".* Uncaught DOMException: play() failed because the user didn't interact with the document first.",
+		"regex" => true
+	)
+);
 ```
+
+### Howto whitelist specific harmless Chrome console errors
+
+As a rule of thumb, **if the Chrome developer console outputs anything, our testing system considers it an error**, regardless of being related to JavaScript, CSS loading, image loading, Mixed content security warnings or whatever.
+
+However, sometimes the Chrome console messages can be false positives and not actual errors that need to be addressed. To handle those we offer console message whitelisting.
+
+A typical example of a false positive would be this JQuery deprecation warning which most website developers have seen in the wild somewhere:
+> WARNING: https://example/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1 44:11 "JQMIGRATE: jQuery.browser is deprecated"
+
+To ignore this messge site-wide, create a file with the name and path `/data/wordpress/tests/codeception/acceptance/console-whitelist.json` and add the following contents to it:
+
+```json
+[
+	{
+		"level": "WARNING",
+		"message": ".* JQMIGRATE: .* is deprecated",
+		"regex": true
+	}
+]
+```
+
+The field *messge* is compulsory and it must either be a string to be whitelisted, or a regular expression. If regular expressions are used, then there the field *regex* must also be set to *true*. The field *level* is not compulsory.
+
+You can also whitelist console messages per test by passing a custom array as second parameter to the assertion `$I->checkBrowserConsole()`. Using the site-wide whitelist has the benefit that it affects all invocations of `checkBrowserConsole()`, including the baseline tests Seravo runs for your site.
