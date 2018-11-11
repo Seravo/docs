@@ -13,7 +13,7 @@ order: 4
 # Configuration for Vagrant
 ###
 
-# This is used for domain mapping
+# This is used as the hostname of the Vagrant box
 name: wordpress
 
 # These are used for migrating database and uploads back and forth with production
@@ -32,6 +32,11 @@ development:
     - wordpress.local
     - example.dev
     - www.example.dev
+
+  # If you want other sin your local network (e.g. office) to be able to access
+  # the site running on your laptop, activate Avahi / Bonjour / Zeroconf that
+  # will advertice *.local domains on the network.
+  avahi: true
 ```
 
 ### Changing config.yml
@@ -42,32 +47,15 @@ Change `name` in config.yml to change your site name. This is used in quite a fe
 For example, with the above config.yml [mailcatcher]({{ site.baseurl }}{% post_url 2015-10-11-mailcatcher %}) is set up in the address: mailcatcher.**example**.local.
 
 #### production
+
 Add `domain` and `ssh_port` to sync with your production instance.
 
 #### staging
-Optional: Add `domain` and `ssh_port` to sync with your staging (shadow) instance.
+
+Optional: Add `domain` and `ssh_port` to sync with your staging (testing shadow) instance.
 
 #### development
-Add new domains under `domains` before you run vagrant up to use extra domains.
+
+Add new domains under `domains` before you run `vagrant up` to use extra domains.
 
 See [config-sample.yml](https://github.com/Seravo/wordpress/blob/master/config-sample.yml) for more.
-
-## Using dotenv
-
-The `wp-config.php` file uses [Dotenv](https://github.com/vlucas/phpdotenv) by default which enables you to create a file called `.env` in the root of your project to override default environment variables.
-
-Example:
-
-```bash
-$ cat .env.development
-# Run 'ln -s .env.development .env' in project root to activate this
-WP_TEST_URL=https://example.dev
-DOMAIN_CURRENT_SITE=example.dev
-NOBLOGREDIRECT=https://example.dev
-COOKIE_DOMAIN=.example.dev
-
-$ ll .env
-lrwxrwxrwx 1 otto otto .env -> .env.development
-```
-
-You can have template files like `.env.development` tracked in version control, and then make a location-specific symbolic link from `.env` to the correct file. By default the `.env` file is and should be ignored by git via gitignore.
