@@ -79,3 +79,24 @@ fi
 This script will see if the `composer.json` or any files in `nginx/*.conf` were modified in the commit, and if that was the case it will run `composer install` or reload Nginx.
 
 Note that while there is a post-receive hook on the server, it's not included in the project template as it's useless (and potentially even harmful) to have in your local copy. For details see [Deploy using git]({{ site.baseurl }}{% post_url 2015-10-12-deploy-using-git %}).
+
+## Testing git hooks
+
+Since the git hooks are just regular scripts, you can easily test them by simply running them e.g. like this:
+
+```
+$ /data/wordpress/.git/hooks/post-receive
+Seravo: composer.json was updated, installing...
+Loading composer repositories with package information
+Installing dependencies from lock file
+Nothing to install or update
+Generating autoload files
+> WordPress\Installer::symlinkWPContent
+Seravo: Nginx configs were changed, reloading nginx...
+testing nginx configuration...
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+Nginx restarted!
+```
+
+One common reason for scripts to fail is the lack of the executable bit. That is easily fixed by `chmod +x /data/wordpress/.git/hooks/post-receive`.
