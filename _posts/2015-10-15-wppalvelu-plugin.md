@@ -77,7 +77,7 @@ This makes migration and switching the site URL easier when publishing your site
 
 ### Enables login to wp-admin with a secure SSL client certificate
 
-This helps the admins and clients who have multiple sites in Seravo. If you have multiple sites in Seravo, you can request a personal SSL-certificate from our [admins](mailto:wordpress@seravo.com).
+This helps the admins and clients who have multiple sites in Seravo. If you have multiple sites in Seravo, you can request a personal SSL-certificate from our [admins](mailto:help@seravo.com).
 
 ### List all domains associated with your account
 
