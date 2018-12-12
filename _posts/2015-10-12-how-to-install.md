@@ -78,7 +78,7 @@ It seems that sometimes the virtualbox kernel modules are not working correctly 
 ### MacOS X
 
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version 2.0.4, or any other release before 2.1.0!)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
@@ -95,7 +95,7 @@ To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 You might need to disable ```hyper-v``` in order to use Virtualbox.
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version 2.0.4, or any other release before 2.1.0!)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
