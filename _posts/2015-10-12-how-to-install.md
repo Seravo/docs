@@ -93,6 +93,8 @@ vagrant up
 
 To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 You might need to disable ```hyper-v``` in order to use Virtualbox.
+On Windows 10 you need to run Cygwin as an administrator so vagrant-hostsupdater can write the necessary entries to ```/system32/drivers/etc/hosts```. Otherwise you need to add the vagrant-hostsupdater entries manually.
+Note that in some cases you can't modify the ```hosts``` file without administrative access. In that case you need to ask the administrator to give you access to the file.
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
 2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version 2.0.4, or any other release before 2.1.0!)
@@ -103,6 +105,15 @@ You might need to disable ```hyper-v``` in order to use Virtualbox.
 cd ~/wordpress-dev
 vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 vagrant up
+```
+Cygwin will give you the following message and the necessary entries you need to add to the ```hosts``` file, if you try to vagrant up without administrative access.
+
+Note that this is just an example. Your message will be different.
+```
+[vagrant-hostsupdater] Writing the following entries to (system32/drivers/etc/hosts)
+[vagrant-hostsupdater] exampleIP-address examplehostname
+[vagrant-hostsupdater] This operation requires administrative access. 
+You may skip it by manually adding equivalent entries to the hosts file.
 ```
 In theory, Seravo WordPress should work even without Cygwin installed, but we strongly recommend using Cygwin for doing WordPress development on Windows machines.
 
