@@ -70,6 +70,9 @@ $ vagrant ssh
 
 # You can pull the production database (not required on new sites)
 $ wp-pull-production-db
+
+# You can also pull the production plugins (not required on new sites)
+$ wp-pull-production-plugins
 ```
 
 Now you can open http://wordpress.local/ in a browser and edit the files in you project and see the result immediately.
