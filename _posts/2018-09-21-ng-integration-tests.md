@@ -92,9 +92,9 @@ Test suite files located in the path `/data/wordpress/tests/codeception/` will b
 If this directory does not exist on your site (or the git version control of your site), then you can just go ahead and create it. The new generation testing system is much simpler and does not pollute your site git repository with many extra files like our previous system did. When you start using the new system, feel free to delete all of your old `/data/wordpress/tests/rspec`. The *rspec* directory will not get any updates anymore and in the new system any updates by Seravo to the testing system will be done outside of the site directory `/data/wordpress` and thus not cause any merging issues for site developers.
 
 There are three types of customs tests supported:
-1. Tests written in procedural PHP code in files at `/data/wordpress/codeception/acceptance/*Cept.php`
-1. Tests written in object-oriented PHP classes in files at `/data/wordpress/codeception/acceptance/*Cest.php`
-1. Custom Codeception test suite defined in `/data/wordpress/codeception/custom.yml`
+1. Tests written in procedural PHP code in files at `/data/wordpress/tests/codeception/acceptance/*Cept.php`
+1. Tests written in object-oriented PHP classes in files at `/data/wordpress/tests/codeception/acceptance/*Cest.php`
+1. Custom Codeception test suite defined in `/data/wordpress/tests/codeception/custom.yml`
 
 ### 1. Simplest version: \*Cept.php files
 
