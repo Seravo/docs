@@ -6,8 +6,9 @@ order: 1
 date: 2018-09-21 11:36:22
 ---
 
-> **Roll-out in progress:** Our next-generation testing system based on [ChromeDriver](http://chromedriver.chromium.org/) and [Codeception](https://codeception.com/) is available as a technology preview using the command `wp-test-ng`. Eventually it will replace the old `wp-test` (*legacy system based on [Rspec]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %})*) but we will announce when we have reached that milestone separately.
+> **Roll-out in progress:** Our next-generation testing system based on [ChromeDriver](http://chromedriver.chromium.org/) and [Codeception](https://codeception.com/) (using the command `wp-test-ng`) has replaced our legacy legacy system based on [Rspec]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %}) for all new sites starting as of January 21st, 2019.
 
+> To activate the new testing system on an old site, simply delete the file `/data/wordpress/scripts/run-tests` from the site, and all update tests will use this new system.
 
 ## Testing ensures WordPress updates don't break a site
 
