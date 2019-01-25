@@ -276,7 +276,7 @@ However, sometimes the Chrome console messages can be false positives and not ac
 A typical example of a false positive would be this JQuery deprecation warning which most website developers have seen in the wild somewhere:
 > WARNING: https://example/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1 44:11 "JQMIGRATE: jQuery.browser is deprecated"
 
-To ignore this messge site-wide, create a file with the name and path `/data/wordpress/tests/codeception/acceptance/console-whitelist.json` and add the following contents to it:
+To ignore this message site-wide, create a file with the name and path `/data/wordpress/tests/codeception/acceptance/console-whitelist.json` and add the following contents to it:
 
 ```json
 [
@@ -288,6 +288,6 @@ To ignore this messge site-wide, create a file with the name and path `/data/wor
 ]
 ```
 
-The field *messge* is compulsory and it must either be a string to be whitelisted, or a regular expression. If regular expressions are used, then there the field *regex* must also be set to *true*. The field *level* is not compulsory.
+The field *message* is compulsory and it must either be a string to be whitelisted, or a regular expression. If regular expressions are used, then there the field *regex* must also be set to *true*. The field *level* is not compulsory.
 
 You can also whitelist console messages per test by passing a custom array as second parameter to the assertion `$I->checkBrowserConsole()`. Using the site-wide whitelist has the benefit that it affects all invocations of `checkBrowserConsole()`, including the baseline tests Seravo runs for your site.
