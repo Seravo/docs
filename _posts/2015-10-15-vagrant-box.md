@@ -80,3 +80,15 @@ vagrant up
 ```
 
 The VVV project also has some good [docs on typical Vagrant problems and how to troubleshoot](https://varyingvagrantvagrants.org/docs/en-US/troubleshooting/) them.
+
+### Cleaning away excess VirtualBox boxes/files and local network interfaces
+
+VirtualBox seems to create a new network interface on every invocation of `vagrant up` which is not removed on `vagrant destroy`, and thus lots of VBoxnet interfaces keep accumulating. You can clean up VirtualBox cruft with these steps:
+
+1. Run `vagrant destroy` in all your project folders to stop and delete all Vagrant boxes. It is safe, since you can later restart boxes with identical content with `vagrant up` thanks to the automatic WP database exports and imports.
+2. Run `vagrant global-status --prune` to ensure no Vagrant boxes exist anymore.
+3. Clean up outdated and exess boxes from your system with `vagrant box prune` and `vagrant box outdated --global`. You can always download new ones from the Vagrant cloud, and you most likely will do that anyway for all images that were anyway already outdated on your local computer.
+4. You can review the list of boxes with `vagrant box list` and manually remove more boxes you are sure you don't need anymore (or are willing to re-download later). Check the disk space consumption of `~/.vagrant.d/` to see which images are biggest.
+5. Remove all temporary files with `rm -rf ~/.vagrant.d/tmp/*`.
+3. Fire up the VirtualBox UI and check that the list of virtual machines is empty.
+4. Delete all virtual network interfaces with this one-liner: `for x in {1..99}; do VBoxManage hostonlyif remove vboxnet$x; done`
