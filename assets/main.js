@@ -22,7 +22,7 @@
       json: '/docs/search.json',
       fuzzy: false,
       searchResultTemplate: '<li><a href="{url}">{title}</a><small> in <strong>{category}</strong></small<div class="search-content" data-content={content}></div></li>',
-      noResultsText: 'No results found, Sorry! Please try again or add an issue <a href="{{site.github_url}}/issues/">in Github</a>.'
+      noResultsText: 'No results found, Sorry! Please try again or add an issue <a href="https://github.com/{{site.github.repo}}/issues/">in Github</a>.'
     });
   });
 })(jQuery);
