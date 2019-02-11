@@ -1,8 +1,8 @@
 ---
-date: 2015-10-15T17:51:38.000Z
 layout: page
 title: "Seravo plugin - A must-use plugin"
 category: configuration
+date: 2015-10-15T17:51:38.000Z
 order: 3
 summary: "All Seravo sites contain a must-use plugin which is installed by default. \nIt adds minor WordPress fixes, new features and helps Seravo inform clients about service outages."
 ---
@@ -24,7 +24,7 @@ For improved usability and a unified WordPress user experience, our plugin now u
 Adds the feature for resetting a staging environment from admin pages.
 
 ### Enforce the use of https
-If the site and home addresses of the WordPress site include the https-prefix, it is enforced by redirections. 
+If the site and home addresses of the WordPress site include the https-prefix, it is enforced by redirections.
 
 ### Disable weak passwords
 Strong passwords are enforced by not allowing the user to update their profile with a weak password.
@@ -42,7 +42,7 @@ Status of the database is shown in the admin view.
 Instance switcher is not loaded when in a development environment.
 
 ### Optimize-images -page
-You can opt in to optimize your websites images and adjust the parameters. 
+You can opt in to optimize your websites images and adjust the parameters.
 
 ### Run tests on WordPress core functionalities
 You can run ``` $ wp-test ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
