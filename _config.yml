@@ -10,8 +10,8 @@ name: Seravo.com
 github:
     repo: Seravo/docs
 
-# if you use google analytics, add your tracking id here
-google_analytics_id: 'UA-53086901-13'
+# Seravo.com/docs entity (former docs.wp-palvelu.fi)
+google_analytics_id: 'UA-53086901-9'
 
 # Site verification for webmasters
 google_site_verification: "urAsJ1u3OTw8C7-KQnc2GxU7rJb7i4DAbbPxUv-eT9k"
