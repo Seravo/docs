@@ -78,7 +78,7 @@ It seems that sometimes the virtualbox kernel modules are not working correctly 
 ### MacOS X
 
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version 2.0.4, or any other release before 2.1.0!)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
@@ -97,7 +97,7 @@ On Windows 10 you need to run Cygwin as an administrator so vagrant-hostsupdater
 Note that in some cases you can't modify the ```hosts``` file without administrative access. In that case you need to ask the administrator to give you access to the file.
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version 2.0.4, or any other release before 2.1.0!)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
@@ -112,7 +112,7 @@ Note that this is just an example. Your message will be different.
 ```
 [vagrant-hostsupdater] Writing the following entries to (system32/drivers/etc/hosts)
 [vagrant-hostsupdater] exampleIP-address examplehostname
-[vagrant-hostsupdater] This operation requires administrative access. 
+[vagrant-hostsupdater] This operation requires administrative access.
 You may skip it by manually adding equivalent entries to the hosts file.
 ```
 In theory, Seravo WordPress should work even without Cygwin installed, but we strongly recommend using Cygwin for doing WordPress development on Windows machines.
