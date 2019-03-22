@@ -48,13 +48,11 @@ When frequently using SSH it can be annoying to constantly have to enter the pas
 
 ### Generate a SSH key pair
 
-SSH keys use public key cryptography, which means that there is one key to encrypt, and one to decrypt. The other key is secret, and the other public. With OpenSSH, the keys are generated using the command `ssh-keygen`. Running it will generate a pair of keys which with the default settings are named `id_rsa` (private) and `id_rsa.pub` (public) and placed the directory `.ssh` in your home directory.
-
-Alternatively, if you create keys using elliptic key cryptography and the command `ssh-keygen -t ed25519` the keys will be named `id_ed25519` and `id_ed25519.pub`.
+SSH keys use public key cryptography, which means that there is one key to encrypt, and one to decrypt. The other key is secret, and the other public. With OpenSSH, the keys are generated using the command `ssh-keygen -t ed25519`. Running it will generate a pair of keys which with the default settings are named `id_ed25519` (private) and `id_ed25519.pub` (public) and placed the directory `.ssh` in your home directory. If you have an old version of SSH your keys might be named `id_rsa` and `id_rsa.pub`. Modern elliptic key cryptography is recommended. Check out [Seravo's Linux blog article](https://seravo.fi/2019/how-to-create-good-ssh-keys) on how to create good SSH keys.
 
 **You need to make sure you never loose or leak your private key!** The public key is the one you install on remote servers you want to access using keys. The private key never leaves your own computer and is used only to decrypt challenges sent by the remote server, proving to the remote server that you are the holder of the private key.
 
-See also [Github's article on generating ssh keys](https://help.github.com/articles/generating-ssh-keys/).
+See also [Github's article on generating ssh keys](https://help.github.com/articles/generating-ssh-keys/)
 
 ### Install your public key on the remote server
 
@@ -81,7 +79,7 @@ $ brew install ssh-copy-id
 If `ssh-copy-id` does not work for you, it is also possible to manually install them simply by editing the `.ssh/authorized_keys` file on the remote server, and add there your public key as a new line in the file.
 
 ```bash
-my-laptop$ cat ~/.ssh/id_rsa.pub
+my-laptop$ cat ~/.ssh/id_ed25519.pub
 asdfasdfasdfasdfasdfasdfasdf
 
 my-laptop$ ssh ssh -p 12345 example-site@example-site.seravo.com
