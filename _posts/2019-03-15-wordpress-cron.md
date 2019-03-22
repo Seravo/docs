@@ -64,3 +64,11 @@ Success: Executed a total of 1 cron event.
 ```
 
 If the function executes and there are no errors immediately visible, or in the `/data/log/php-error.log`, then the code in that function probably works.
+
+## Triggering WordPress Cron from system Cron
+
+This is not recommended practice, but if you for some reason really want to trigger the WP cron from the system cron, this is the line you would add to crontab:
+
+```
+* * * * * /usr/local/bin/wp cron event run --due-now >> /data/log/wp-cron.log 2>&1
+```
