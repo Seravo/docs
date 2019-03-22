@@ -72,3 +72,20 @@ This is not recommended practice, but if you for some reason really want to trig
 ```
 * * * * * /usr/local/bin/wp cron event run --due-now >> /data/log/wp-cron.log 2>&1
 ```
+
+# Time zones
+
+When doing time sensitive things, please keep in mind that Seravo's servers all have their hardware clock set to UTC time, and the system time zone setting is according to the location of the server cluster.
+
+Further, keep in mind that WordPress resets all time zone data and inside WordPress the timezone is always UTC. For printing times inside WordPress use the special [WordPress time functions](https://codex.wordpress.org/Formatting_Date_and_Time) `the_date()` and `the_time()`. Please consider the examples below:
+
+```
+$ date -R
+Fri, 22 Mar 2019 10:00:00 +0200
+
+$ php -r "echo date('r');"
+Fri, 22 Mar 2019 10:00:00 +0200
+
+$ wp eval "echo date('r');"
+Fri, 22 Mar 2019 08:00:00 +0000
+```
