@@ -6,7 +6,7 @@ order: 1
 date: 2015-10-11 03:28:22
 ---
 
-> **Deprecated:** The legacy Rspec-based test system described on this page has been replaced by our a new testing system based on [headless Chrome and Codeception]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}) on all new sites on January 21st, 2019. Old sites that still have the `/data/wordpress/scripts/run-tests` script will continue to use this testing system until March 31st, 2019. If you have old customized tests, please rewrite them using the new system and delete the system above. If you don't have any customized tests, it is safe to simply delete `scripts/run-tests` and `tests/rspec` from your site directly.
+> **Deprecated:** The legacy Rspec-based test system described on this page has been replaced by our a new testing system based on [headless Chrome and Codeception]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}). This page is kept purely for historical reference and will be deleted later in 2019..
 
 > For more information see [new testing system announcement at Seravo.com](https://seravo.com/blog/the-next-generation-wordpress-testing-system/).
 

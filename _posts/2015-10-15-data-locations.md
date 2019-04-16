@@ -49,9 +49,10 @@ Seravo uses a custom directory layout which is derived from [Bedrock](https://gi
 ├── Vagrantfile # Advanced vagrant environment and scripts packaged in Vagrantfile
 │
 ├── tests # Here you can include tests for your WordPress instance
-│   └── rspec
-│       └── baseline.rb # Our baseline tests use rspec/poltergeist/phantomjs since we have found them very effective.
-│       └── anything.rb # Your own test suite files can be named anything *.rb.
+│   └── codeception
+│       └── acceptance
+│           ├── console-whitelist.json # Your custom whitelists
+│           └── MyTestCept.php         # Your custom tests
 |
 ├── nginx # Here you can have your custom modifications to nginx which are also used in production
 │   └── examples.conf # Some examples to get started

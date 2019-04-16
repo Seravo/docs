@@ -6,10 +6,6 @@ order: 1
 date: 2018-09-21 11:36:22
 ---
 
-> **Roll-out in progress:** Our next-generation testing system based on [ChromeDriver](http://chromedriver.chromium.org/) and [Codeception](https://codeception.com/) (using the command `wp-test-ng`) has replaced our legacy legacy system based on [Rspec]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %}) for all new sites starting as of January 21st, 2019.
-
-> To activate the new testing system on an old site, simply delete the file `/data/wordpress/scripts/run-tests` from the site, and all update tests will use this new system.
-
 ## Testing ensures WordPress updates don't break a site
 
 Tested updates has always been an integral part of Seravo's WordPress service. Keeping software up-to-date is important for both functionality and security. Unfortunately all changes in new software releases are not always good and can cause regressions. At Seravo we run tests before and after updates to ensure the site does not break on updates.
@@ -90,7 +86,7 @@ I: Finished running wp-test-ng
 
 Test suite files located in the path `/data/wordpress/tests/codeception/` will be executed. Group the tests that test the same features and try to name the files logically to make it easier for your collaborators to debug or extend the tests later.
 
-If this directory does not exist on your site (or the git version control of your site), then you can just go ahead and create it. The new generation testing system is much simpler and does not pollute your site git repository with many extra files like our previous system did. When you start using the new system, feel free to delete all of your old `/data/wordpress/tests/rspec`. The *rspec* directory will not get any updates anymore and in the new system any updates by Seravo to the testing system will be done outside of the site directory `/data/wordpress` and thus not cause any merging issues for site developers.
+If this directory does not exist on your site (or the git version control of your site), then you can just go ahead and create it. The new generation testing system is much simpler and does not pollute your site git repository with many extra files like our previous system did.
 
 There are three types of customs tests supported:
 1. Tests written in procedural PHP code in files at `/data/wordpress/tests/codeception/acceptance/*Cept.php`

@@ -90,10 +90,7 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 `wp-shadow-reset` - Replace files and database in a shadow environment with data from the production environment. Will delete and replace all files in the `/data/wordpress/` directory of a shadow with a clone from production. Use with caution, as data from your shadow can not be recovered after this process.
 
 #### wp-test
-`wp-test` - Run the [Rspec tests]({{ site.baseurl }}{% post_url 2015-10-11-integration-tests %}) from `/data/wordpress/tests/rspec/*.rb`.
-
-#### wp-test-ng
-`wp-test-ng` - Run the [next generation tests]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}) on the website.
+`wp-test` - Run the [Codeception integration tests]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}).
 
 #### wp-watch-logs
 `wp-watch-logs` - Print all new linest written to any of the logs under `/data/log/`. Press Ctrl+C to exit.
