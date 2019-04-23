@@ -101,7 +101,13 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     border: 1px solid $highlight;
     display: inline-block;
     padding: 20px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+}
+
+#dev-training-banner {
+  text-align: center;
+  background-color: #eee;
+  padding: 12px 12px 6px 12px;
 }
 
 #footer {
@@ -132,7 +138,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
         font-size: 16px;
 
         strong {
-            font-size: 17px;   
+            font-size: 17px;
         }
     }
 
@@ -148,10 +154,10 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
     h4 {
        margin-top: 10px;
-       font-size: 19px; 
+       font-size: 19px;
     }
     .page-header {
-        padding-top: 20px; 
+        padding-top: 20px;
         padding-bottom: 20px;
     }
     .page-header h1 {
@@ -186,7 +192,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     .page-header .edit-buttons {
         margin-top: 10px;
     }
-    
+
     #search-results-box {
         margin: auto;
         width: 100%;
@@ -261,7 +267,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
                    -moz-border-radius: 3px;
         }
     table th, table td {
-        box-shadow: inset 0 -1px rgba(0,0,0,0.25), 
+        box-shadow: inset 0 -1px rgba(0,0,0,0.25),
             inset 0 1px rgba(0,0,0,0.25);
     }
     table th {
