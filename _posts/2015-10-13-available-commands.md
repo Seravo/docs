@@ -98,6 +98,9 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 
 ### Database helpers
 
+#### wp-db-optimize
+`wp-db-optimize` - Run the CHECK and OPTIMIZE tasks for the WordPress database.
+
 #### wp-db-cleanup
 `wp-db-cleanup` - Remove older than current year post revisions from database. Use with caution, this is destructive operation. Operation is cancelable within 10 seconds by typing Ctrl+C.
 
