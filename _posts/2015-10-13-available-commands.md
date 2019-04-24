@@ -96,6 +96,27 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 `wp-watch-logs` - Print all new linest written to any of the logs under `/data/log/`. Press Ctrl+C to exit.
 
 
+### Database helpers
+
+#### wp-db-cleanup
+`wp-db-cleanup` - Remove older than current year post revisions from database. Use with caution, this is destructive operation. Operation is cancelable within 10 seconds by typing Ctrl+C.
+
+#### wp-db-info
+`wp-db-info` - Display database table size in bytes and wp_option record lenghts.
+
+#### wp-db-dump
+`wp-db-dump` - Dump current database into /data/db/. This file will normally be the daily backup database dump.
+
+#### wp-db-load
+`wp-db-load` - Replace current database with existing dump from /data/db/
+
+#### wp-db-update
+`wp-db-update` - Apply all pending wordpress database schema updates, if any
+
+#### wp-db-admin
+`wp-db-admin` - Access the MariaDB Proxy admin console
+
+
 ### Vagrant commands
 
 > **Note:** These are only available inside the Vagrant box.
