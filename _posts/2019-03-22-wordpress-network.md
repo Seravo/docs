@@ -98,3 +98,19 @@ The main site of a Network will work out-of-the-box in local development with Va
 ## Installation
 
 Setting up a Network requries special settings in the `wp-config.php` file, potentially the installation of a domain mapper (Seravo prefers [Mercator](https://github.com/humanmade/Mercator) at the moment). In addition the web server needs to have some custom routing (at Seravo we put a `nginx/network.conf` file). In a subdomain installation also preparations regarding HTTPS certificates are needeed. Seravo's customers don't need to worry about these as Seravo takes care of them and it is included in the price of the service anyway.
+
+## Local development with Vagrant and WordPress Network
+
+On the production site the `wp-config.php` contains the Network address hard coded in `DOMAIN_CURRENT_SITE`. When doing local development this needs to be something else. A typical way to solve this is by having something like the following in the `wp-config.php`:
+
+```
+if ( 'development' === getenv('WP_ENV') ) {
+  define('DOMAIN_CURRENT_SITE', 'example.local');
+} else {
+  define( 'DOMAIN_CURRENT_SITE', 'example.com' );
+}
+```
+
+When using the Seravo WordPress Vagrant box the hard coded string `example.local` can be replaced with `getenv('DEFAULT_DOMAIN')` so the value automatically follows whatever was set in the `config.yml` as the development site domain address.
+
+Also note, that our Vagrant box command `wp-pull-production-db` only works for the primary domain. There is no automation to scan all the subdomains or any domain mapping used on the Network and automatically search-replace those domains to something else. This is something the site developer needs to take care of with custom scripts that do whatever is suitable for the site in question.
