@@ -58,3 +58,19 @@ location ^~ /restricted-section/ {
 ## Use two factor authentication and don't waste time on implementing IP based restrictions
 
 Many people want IP based restrictions because they are afraid that their users use subpar passwords or they want to increase the barrier for unauthorized access for other reasons. Rather than resort to IP based restrictions, look into WordPress plugins that implement two factor authentication (2FA). The primary plugin to research is the [Two Factor plugin](https://wordpress.org/plugins/two-factor/), a feature project for WordPress Core. It will most likely become a part of [WordPress itself in the future](https://make.wordpress.org/meta/2018/02/27/two-factor-authentication-on-wp-org/).
+
+## Restricting access to WordPress admin panel (wp-admin)
+
+Occasionally WordPress website developers want to allow users to log in to the site, but not see the WordPress admin area (`/wp-admin`) or admin bar. This is feature WordPress isn't officially designed for, but the user experience can be achieved with suitable user roles and some CSS rules to hide the admin area.
+
+## Avoiding hitting existing restrictions
+
+For security reasons Seravo deploys an array of restrictions that are designed to never interfere with legitimate usage of any WordPress site. However, in some rare cases certain WordPress plugins that function incorrectly may hit the Seravo's security limits if the conditions listed below are **all true at the same time**:
+
+* making over 200 HTTP requests per minute
+* to WordPress/PHP scripts
+* from a the same IP address.
+
+If this limit is hit, the symptom is a HTTP response with code 429 to the browser/bot, warnings about PHP flood restrictions in the log at `/data/log/nginx-error.log`. If you for whatever reason hit these limits, please investigate the HTTP access logs on what the requests are and why the plugin or other piece of code is bombarding the site with so many requests.
+
+There should never be any real need for a legitimate user or WordPress plugin to exceed this limit. Note, that this limitation does not apply to static assets (JS, CSS, images) nor to cached PHP responses.
