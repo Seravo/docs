@@ -79,7 +79,7 @@ It seems that sometimes the virtualbox kernel modules are not working correctly 
 
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
 2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
 ```
@@ -98,7 +98,7 @@ Note that in some cases you can't modify the ```hosts``` file without administra
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
 2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
 ```
@@ -127,7 +127,7 @@ Note that PowerShell also needs to be run in administrator mode.
 
 1. [Install Git](https://git-scm.com/downloads)
 2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) (version 5.2.26, or lower!)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)  (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
 4. Clone this repo with PowerShell: `git clone https://github.com/Seravo/wordpress wordpress-dev`
 5. Run the installation in terminal:
 ```
