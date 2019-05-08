@@ -35,5 +35,8 @@ order: 4
 * Major updates to wp-test-ng command and Codeception framework
 * Includes also all the improvements available in Seravo's production and testing environments in last 4 months
 
+# Test Seravo/WordPress-beta
 
-> **What's next?** If you want to test the next Vagrant box version before it is released, modify your `Vagrantfile` provider to use box `seravo/wordpress-beta` instead of the official `seravo/wordpress` box.
+If you want to test the next Vagrant box version before it is released, modify your `Vagrantfile` provider to use box `seravo/wordpress-beta` instead of the official `seravo/wordpress` box.
+
+![Activate Seravo/WordPress-beta in Vagrantfile]({{site.baseurl}}/images/seravo-wordpress-beta.png)
