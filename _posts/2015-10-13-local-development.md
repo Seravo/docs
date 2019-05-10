@@ -29,7 +29,7 @@ git commit -am "Initial commit"
 Now you can simply clone the remote git repository to your machine and start working.
 
 ```bash
-$ git clone ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress ~/Projects/$SITE --origin production
+$ git clone ssh://$SSH_USER@$SITE.seravo.com:$SSH_PORT/data/wordpress ~/Projects/$SITE --origin production
 ```
 
 ## Alternative: Start by using our project template on GitHub
