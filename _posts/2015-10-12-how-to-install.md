@@ -14,7 +14,8 @@ order: 2
 
 To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 
-[Install Vagrant 2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/). Don't install the latest version, as there is compatability issues with the current version of Seravo WordPress Vagrant box.
+[Install Vagrant 2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/). Don't install the latest 
+version, as there is compatability issues with the current version of Seravo WordPress Vagrant box.
 
 ```bash
 sudo apt-get install -y virtualbox virtualbox-dkms
@@ -58,10 +59,13 @@ commands, instead of the modern `ip` command. For networking to work properly, y
 Add RPMFusion repositories. See  [RpmFusion](http://rpmfusion.org/). Repository is
 needed for Virtualbox.
 
+[Install Vagrant 2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/). Don't install the latest 
+version, as there is compatability issues with the current version of Seravo WordPress Vagrant box.
+
 Clone the WordPress Git repo and run following commands:
 
 ```bash
-sudo yum install vagrant virtualbox
+sudo yum install virtualbox
 sudo yum install ruby-devel # Needed to build native ruby extensions
 sudo gem update bundler
 sudo gem install hittimes -v '1.2.2'
