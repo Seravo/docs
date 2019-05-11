@@ -14,8 +14,10 @@ order: 2
 
 To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 
+[Install Vagrant 2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/). Don't install the latest version, as there is compatability issues with the current version of Seravo WordPress Vagrant box.
+
 ```bash
-sudo apt-get install -y vagrant virtualbox virtualbox-dkms
+sudo apt-get install -y virtualbox virtualbox-dkms
 git clone https://github.com/Seravo/wordpress ~/wordpress-dev
 cd ~/wordpress-dev
 vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
