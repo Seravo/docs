@@ -49,8 +49,10 @@ The following commands demonstrate how to use rsync via SSH to fetch new files a
 *  In some cases you might want to use `exclude=.git` too
 *  The other options define the SSH port and hostname of the staging instance and the path to the `wordpress/`` directory
 
+Ensure that a SSH port of staging environment is used in the following commands!
+
 ```
-rsync -av --delete-after --exclude=wp-content/uploads -e 'ssh -p 11320' example@example.seravo.com:/data/wordpress/ /data/wordpress
+example@production:~$ rsync -av --delete-after --exclude=wp-content/uploads -e 'ssh -p 11111' example@example.seravo.com:/data/wordpress/ /data/wordpress
 example@example.seravo.com's password:
 receiving file list ... done
 ```
@@ -58,7 +60,7 @@ receiving file list ... done
 After the operation above we will rsync the uploads folder, but with different options to make sure that all files that exist in the uploads folder in production will remain intact and we will only add any additional files from staging.
 
 ```
-rsync -av -e 'ssh -p 11320' example@example.seravo.com:/data/wordpress/htdocs/wp-content/uploads /data/wordpress/htdocs/wp-content/
+example@production:~$ rsync -av -e 'ssh -p 11111' example@example.seravo.com:/data/wordpress/htdocs/wp-content/uploads /data/wordpress/htdocs/wp-content/
 ```
 
 ### Importing the database with wp-cli and SSH
