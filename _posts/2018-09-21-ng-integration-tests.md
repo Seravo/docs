@@ -28,7 +28,7 @@ If any of the failures above occur, the test will end and emit an error. Sites w
 
 > **Note on security updates**: If a security update is considered critical, Seravo will ignore any test results and proceed with installing the security update anyway when necessary.
 
-The `wp-test-ng` command and Codeception tests also make screenshots of the site, which is later used by another step in our testing system to detect visual regressions.
+The `wp-test` command and Codeception tests also make screenshots of the site, which is later used by another step in our testing system to detect visual regressions.
 
 ## Testing is separate from monitoring
 
@@ -46,11 +46,11 @@ Tests mentioned above in the previous chapter have been already implemented by S
 
 ## Running tests
 
-You can use the [command wp-test-ng]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test-ng) in any environment (production, testing/staging shadow, and Vagrant development box):
+You can use the [command wp-test]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test) in any environment (production, testing/staging shadow, and Vagrant development box):
 
 ```bash
-$ wp-test-ng
-I: Starting wp-test-ng...
+$ wp-test
+I: Starting wp-test...
 I: Using URL 'https://www.example.com' for pre-flight checks.
 I: Pre-flight test for https://www.example.com returned HTTP code 200
 I: Executing ChromeDriver...
@@ -77,7 +77,7 @@ Time: 12.76 seconds, Memory: 12.00MB
 
 OK (2 tests, 3 assertions)
 I: Lower test user privileges as test ended...
-I: Finished running wp-test-ng
+I: Finished running wp-test
 ```
 
 > **Note:** These tests can be run by Seravo or our customer at any time, in any environment. The tests should therefore be safe and not cause any problems even when run against a live production website.
@@ -120,14 +120,14 @@ Example filename: `/data/wordpress/tests/codeception/acceptance/ExampleCest.php`
 <?php
 
 class ExampleCest {
-    /**
-     * Open front page (/)
-     **/
-    public function openFrontPage(\AcceptanceTester $I) {
-        $I->amOnPage('/');
-	      $I->checkBrowserConsole();
-        $I->see('WordPress');
-    }
+  /**
+   * Open front page (/)
+   **/
+  public function openFrontPage(\AcceptanceTester $I) {
+    $I->amOnPage('/');
+    $I->checkBrowserConsole();
+    $I->see('WordPress');
+  }
 }
 ```
 
@@ -138,65 +138,65 @@ Example filename: `/data/wordpress/tests/codeception/acceptance/UserCheckWPHomeC
 
 class UserCheckWPHomeCest
 {
-    /**
-     * Try to do search using form on homepage (/)
-     **/
-    public function trySubmittingSearch(\AcceptanceTester $I)
-    {
-        // Navigate to homepage (/)
-        $I->amOnPage('/');
+  /**
+   * Try to do search using form on homepage (/)
+   **/
+  public function trySubmittingSearch(\AcceptanceTester $I)
+  {
+    // Navigate to homepage (/)
+    $I->amOnPage('/');
 
-        // Check that the browser console is empty (e.g no JavaScript errors)
-        $I->checkBrowserConsole();
+    // Check that the browser console is empty (e.g no JavaScript errors)
+    $I->checkBrowserConsole();
 
-        // Check that string 'Lorem ipsum' is found
-        $I->see('Lorem ipsum');
+    // Check that string 'Lorem ipsum' is found
+    $I->see('Lorem ipsum');
 
-        // Check that we see h1 level header with id 'maintitle'
-        $I->seeElement('h1#maintitle');
+    // Check that we see h1 level header with id 'maintitle'
+    $I->seeElement('h1#maintitle');
 
-        // Check that we see from with name 'searchform'
-        $I->seeElement('form[name=searchform]');
+    // Check that we see from with name 'searchform'
+    $I->seeElement('form[name=searchform]');
 
-        // Fil field with name 'search' with value 'mysearchtermgoeshere'
-        $I->fillField('input[name=search]', 'mysearchtermgoeshere');
+    // Fil field with name 'search' with value 'mysearchtermgoeshere'
+    $I->fillField('input[name=search]', 'mysearchtermgoeshere');
 
-        // Submit the form by clicking element with id 'submitSearchForm'
-        $I->click('#submitSearchForm');
+    // Submit the form by clicking element with id 'submitSearchForm'
+    $I->click('#submitSearchForm');
 
-        // Check that we see string 'Search results:' on the page after clicking submit above ^
-        $I->see('Search results:');
+    // Check that we see string 'Search results:' on the page after clicking submit above ^
+    $I->see('Search results:');
 
-        // Make screenshot of the result page
-        $I->makeScreenshot('searchresults');
-    }
+    // Make screenshot of the result page
+    $I->makeScreenshot('searchresults');
+  }
 
-    /**
-     * Check that hidden element exists on a page
-     *
-     * Backend used by our testing environment doesn't "see" elements that are hidden to user,
-     * but we can check if these elements exists by looking at DOM.
-     */
-    public function tryIfNonVisibleElementExists(\AcceptanceTester $I) {
-        // navigate to page /example
-        $I->amOnPage('/example');
+  /**
+   * Check that hidden element exists on a page
+   *
+   * Backend used by our testing environment doesn't "see" elements that are hidden to user,
+   * but we can check if these elements exists by looking at DOM.
+   */
+  public function tryIfNonVisibleElementExists(\AcceptanceTester $I) {
+    // navigate to page /example
+    $I->amOnPage('/example');
 
-        // Search element in DOM (by id, yet again)
-        $I->seeElementInDOM('#myhiddenelement');
+    // Search element in DOM (by id, yet again)
+    $I->seeElementInDOM('#myhiddenelement');
 
-        // Navigate to another page
-        $I->amOnPage('/example2');
+    // Navigate to another page
+    $I->amOnPage('/example2');
 
-        // Make sure we DON'T see unwanted element that should be on this page
-        $I->dontSeeElementInDOM('h3#thisshouldnotexist');
-    }
+    // Make sure we DON'T see unwanted element that should be on this page
+    $I->dontSeeElementInDOM('h3#thisshouldnotexist');
+  }
 }
 ```
 
 To try your new test, simply run:
 
 ```
-wp-test-ng --debug --fail-fast
+wp-test --debug --fail-fast
 ```
 
 > **Note:** Tested Wordpress updates are included in all plans at [Seravo.com](https://seravo.com/plans/), even in the most affordable one. Writing custom tests, or debugging custom test that somebody else wrote, is not included in the monthly fee. You can however at any time buy at an hourly rate bespoke work for your site, including writing custom tests for it.
@@ -256,10 +256,10 @@ $I->checkBrowserConsole(true);
 // and ignoring one specified severe message
 $I->checkBrowserConsole(true, array(
   array(
-		"level" => "SEVERE",
-		"message" => ".* Uncaught DOMException: play() failed because the user didn't interact with the document first.",
-		"regex" => true
-	)
+    "level" => "SEVERE",
+    "message" => ".* Uncaught DOMException: play() failed because the user didn't interact with the document first.",
+    "regex" => true
+  )
 );
 ```
 
@@ -276,11 +276,11 @@ To ignore this message site-wide, create a file with the name and path `/data/wo
 
 ```json
 [
-	{
-		"level": "WARNING",
-		"message": ".* JQMIGRATE: .* is deprecated",
-		"regex": true
-	}
+  {
+    "level": "WARNING",
+    "message": ".* JQMIGRATE: .* is deprecated",
+    "regex": true
+  }
 ]
 ```
 

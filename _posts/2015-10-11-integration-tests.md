@@ -35,11 +35,11 @@ Using Ruby for testing a PHP application like WordPress may sound overwhelming b
 
 ## How to run these tests
 
-You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test) in **Production** and **Vagrant box**:
+You can use this [command]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}#wp-test-legacy) in **Production** and **Vagrant box**:
 
 ```bash
 # Runs all tests in /data/wordpress/tests/rspec/*.rb
-$ wp-test
+$ wp-test-legacy
 ```
 
 ## Example tests
