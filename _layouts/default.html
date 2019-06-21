@@ -29,11 +29,11 @@
                     </div>
 
                     <div id="content" class="col-sm-10">
-                        {{ content }}
+                        {% include anchor_headings.html html=content %}
                     </div>
                 {% else %}
                     <div id="content" class="col-sm-12">
-                        {{ content }}
+                        {% include anchor_headings.html html=content %}
                     </div>
                 {% endif %}
             </div>
