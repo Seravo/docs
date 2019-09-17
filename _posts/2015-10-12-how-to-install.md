@@ -77,9 +77,11 @@ It seems that sometimes the virtualbox kernel modules are not working correctly 
 
 ### MacOS X
 
+
+
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release *before* 2.1.0!)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or any other release *before* 6.0)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
 ```
@@ -89,6 +91,7 @@ vagrant up
 ```
 
 > **Note:** If `vagrant up` fails with an error including ` failed to open /dev/vboxnetctl` you will need to [grant more permissions to Virtualbox](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) via MacOS X System Preferences > Security & Privacy > General and restart or reinstall Virtualbox.
+
 > **Optional:** [Vagrant Manager for OS X](http://vagrantmanager.com/) can help you manage multiple Vagrant boxes.
 
 ### Windows (Cygwin)
@@ -99,9 +102,9 @@ On Windows 10 you need to run Cygwin as an administrator so vagrant-hostsupdater
 Note that in some cases you can't modify the ```hosts``` file without administrative access. In that case you need to ask the administrator to give you access to the file.
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
-    > **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`). 
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
+    > **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`).
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.x](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
 ```

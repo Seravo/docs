@@ -24,8 +24,8 @@ Please file an issue or make a pull request if you have suggestions how to make 
 ## Requirements
 
 * Knowledge of using terminal
-* Vagrant **1.7.4 or later** installed
-* Virtualbox **4.2 or later** installed
+* Vagrant **1.7.4 or later** installed (but no 2.1.x series or newer)
+* Virtualbox **4.2 or later** installed (but not 6.x series or newer)
 
 ## Tested up to
 
