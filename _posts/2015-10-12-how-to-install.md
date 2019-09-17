@@ -87,6 +87,8 @@ cd ~/wordpress-dev
 vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 vagrant up
 ```
+
+> **Note:** If `vagrant up` fails with an error including ` failed to open /dev/vboxnetctl` you will need to [grant more permissions to Virtualbox](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) via MacOS X System Preferences > Security & Privacy > General and restart or reinstall Virtualbox.
 > **Optional:** [Vagrant Manager for OS X](http://vagrantmanager.com/) can help you manage multiple Vagrant boxes.
 
 ### Windows (Cygwin)
