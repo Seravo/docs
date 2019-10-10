@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Integration tests using Rspec"
+title: "Legacy integration tests using Rspec"
 category: tests
 order: 1
 date: 2015-10-11 03:28:22
 ---
 
 > **Deprecated:** The legacy Rspec-based test system described on this page has been replaced by our a new testing system based on [headless Chrome and Codeception]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}). This page is kept purely for historical reference and will be deleted later in 2019..
-
+>
 > For more information see [new testing system announcement at Seravo.com](https://seravo.com/blog/the-next-generation-wordpress-testing-system/).
 
 ## What are integration tests?

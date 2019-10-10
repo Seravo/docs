@@ -30,9 +30,10 @@ Now you can simply clone the remote git repository to your machine and start wor
 
 ```bash
 $ git clone ssh://$SSH_USER@$SITE.seravo.com:$SSH_PORT/data/wordpress ~/Projects/$SITE --origin production
+$ cd $SITE
 ```
 
-## Alternative: Start by using our project template on GitHub
+### Alternative: Start by using our project template on GitHub
 > **Note:** Do not do this if you have existing site. Pushing to production host will overwrite your current content, and might lead to data loss.
 
 The method above gives you a fresh new project with no prior history. You may however want to consider using [our template](https://github.com/Seravo/wordpress) as a starting point and have a shared history, which makes it easier to later merge updated versions of our project template to your project. To do that run
@@ -107,4 +108,4 @@ wp db export vagrant-base.sql --path=/data/wordpress/htdocs/wordpress --skip-ext
 
 ## Customize the 'vagrant up' run
 
-If Vagrant detects that a file named `vagrant-up-customizer.sh` is present, it will automatically be run every time `vagrant up` is invoked. (Feature available in Seravo/WordPress since [Jan 29th, 2017](https://github.com/Seravo/wordpress/commit/ae51719e146615e7fcbde6b69c8a1deeb386510e)).
+If Vagrant detects that a file named `vagrant-up-customizer.sh` is present, it will automatically be run every time `vagrant up` is invoked.

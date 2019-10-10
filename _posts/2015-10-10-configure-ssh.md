@@ -8,7 +8,7 @@ order: 2
 
 ## Obtaining your credentials
 
-After ordering your instance from [Seravo.com](https://seravo.com/) you'll get an email which includes your credentials. It looks something like this:
+After ordering your instance from [Seravo](https://seravo.com/) you'll get an email which includes your credentials. It looks something like this:
 
     SSH/SFTP:
     Host: example-site.seravo.com

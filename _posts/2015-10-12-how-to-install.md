@@ -14,21 +14,14 @@ order: 2
 
 To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 
-```bash
-sudo apt-get install -y vagrant virtualbox virtualbox-dkms
-git clone https://github.com/Seravo/wordpress ~/wordpress-dev
+1. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
+2. Run the installation in terminal:
+```
 cd ~/wordpress-dev
+sudo apt-get install -y vagrant virtualbox virtualbox-dkms
 vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
 vagrant up
 ```
-
-> **Optional:** If you want to have PHP Composer locally installed run:
->
-> ```bash
-> $ sudo apt-add-repository -y ppa:duggan/composer
-> $ sudo apt-get update
-> $ sudo apt-get install php5-composer
-> ```
 
 #### Ubuntu 16.04 and later need ruby-dev
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "New generation testing system"
+title: "Integration tests using Codeception"
 category: tests
 order: 1
 date: 2018-09-21 11:36:22

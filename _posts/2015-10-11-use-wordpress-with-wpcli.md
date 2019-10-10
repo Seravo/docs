@@ -3,7 +3,7 @@ layout: page
 title: "Manage with wp-cli"
 category: management
 date: 2015-10-11 03:39:48
-summary: "All Seravo sites come with wp-cli preinstalled and configured for easier commandline management."
+summary: "All Seravo sites come with wp-cli preinstalled and configured for easier command-line management."
 ---
 
 ## Basics
@@ -33,7 +33,7 @@ $ wp db import your-dump-filename.sql
 This creates a new administrator user **'admin'** with password **'admin'**:
 
 ```bash
-$ wp user create admin admin@wordpress.dev --user_role=administrator --user_pass=admin
+$ wp user create admin admin@example.test --user_role=administrator --user_pass=admin
 ```
 
 ### Search-Replace database contents
@@ -41,5 +41,5 @@ $ wp user create admin admin@wordpress.dev --user_role=administrator --user_pass
 After you have pulled database from production it's useful to regex replace urls:
 
 ```bash
-$ wp search-replace http://original.com http://original.dev
+$ wp search-replace http://example.com http://example.test
 ```
