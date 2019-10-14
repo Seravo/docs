@@ -6,15 +6,26 @@ date: 2018-11-12 11:26:00
 order: 4
 ---
 
+## Vagrant box seravo/wordpress 20191008.0.0
+
+* WP-CLI upgraded to version 2.3, and many other minor version upgrades across the box
+* XDebug is disabled by default to improve PHP speed. Run `wp-xdebug-on` to enable it
+* SASS and webpack-cli are now pre-installed since they are so common
+* Deprecated `wp-makepot` in favor of new `wp i18n makepot`
+* Automatically run 'wp cache flush' after database imports so new contents always takes effect
+* Fixed bug in Adminer and Webgrind PHP 7.3 compatibility
+* Multiple bugfixes to make the box startup more reliable
+
+
 ## Vagrant box seravo/wordpress 20190513.0.0
 
 * Includes latest versions of PHP and modules, wp-cli and in general all software
 * Latest version of [wp-test using headless Chrome and Codeception]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}) while old and deprecated Rspec based testing system version is still available under the name `wp-test-legacy`.
 * Many new commands:
-* Improved `wp-pull-production-db` that is also capable of doing an automatic rename of the main site in a WordPress Network installation. Subdomain renames still need to be taken care manually by the developer, e.g. using a small custom rename script. Network users will also enjoy the handy `wp-network-status` which will describe the state of a WordPress Network install and help to quickly identify mismatches in config files and database.
-* New commands `wp-pull-production-plugins` and `wp-pull-production-themes` for automating bootstrapping a local development environment for sites that don't have a custom `composer.json` already set up.
-* New command `wp-fix-project` to help update and compare base project files to those of the upstream [Seravo/WordPress](https://github.com/Seravo/wordpress) project template.
-* New command `wp-remote-db` exposes the MariaDB database to be accessible outside the virtual machine for developers who want to use database management tools on their own machine.
+  * Improved `wp-pull-production-db` that is also capable of doing an automatic rename of the main site in a WordPress Network installation. Subdomain renames still need to be taken care manually by the developer, e.g. using a small custom rename script. Network users will also enjoy the handy `wp-network-status` which will describe the state of a WordPress Network install and help to quickly identify mismatches in config files and database.
+  * New commands `wp-pull-production-plugins` and `wp-pull-production-themes` for automating bootstrapping a local development environment for sites that don't have a custom `composer.json` already set up.
+  * New command `wp-fix-project` to help update and compare base project files to those of the upstream [Seravo/WordPress](https://github.com/Seravo/wordpress) project template.
+  * New command `wp-remote-db` exposes the MariaDB database to be accessible outside the virtual machine for developers who want to use database management tools on their own machine.
 * A long list of small bug fixes and minor updates, including getting rid of the annoying extra `htdocs/htdocs` symlink.
 
 ## Vagrant box seravo/wordpress 20190122.0.0
