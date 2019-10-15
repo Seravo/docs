@@ -73,6 +73,8 @@ This is not recommended practice, but if you for some reason really want to trig
 * * * * * /usr/local/bin/wp cron event run --due-now >> /data/log/wp-cron.log 2>&1
 ```
 
+The crontab syntax can be a bit confusing, so we recommend playing around with [crontab.guru's](https://crontab.guru/) interactive helper tool before adding crontab. One should also consider logging both stdout and stderr like done in the exampe above, or using a `MAILTO` definition to get crontab event notifications per e-mail.
+
 # Time zones
 
 When doing time sensitive things, please keep in mind that Seravo's servers all have their hardware clock set to UTC time, and the system time zone setting is according to the location of the server cluster.
