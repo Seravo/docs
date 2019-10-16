@@ -101,7 +101,8 @@ Setting up a Network requries special settings in the `wp-config.php` file, pote
 
 ## Local development with Vagrant and WordPress Network
 
-On the production site the `wp-config.php` contains the Network address hard coded in `DOMAIN_CURRENT_SITE`. When doing local development this needs to be something else. A typical way to solve this is by having something like the following in the `wp-config.php`:
+### Value for DOMAIN_CURRENT_SITE
+On the production site the `wp-config.php` file contains the Network address hard coded in the global variable `DOMAIN_CURRENT_SITE`. When doing local development, the value needs to be a local development domain instead. A typical way to solve this is by using a different value for `DOMAIN_CURRENT_SITE` different environments in the `wp-config.php` file:
 
 ```
 if ( 'development' === getenv('WP_ENV') ) {
@@ -111,6 +112,16 @@ if ( 'development' === getenv('WP_ENV') ) {
 }
 ```
 
-When using the Seravo WordPress Vagrant box the hard coded string `example.local` can be replaced with `getenv('DEFAULT_DOMAIN')` so the value automatically follows whatever was set in the `config.yml` as the development site domain address.
+When using the Seravo WordPress Vagrant box the hard coded string `example.local` can be replaced with `getenv('DEFAULT_DOMAIN')` so the value automatically follows whatever was set in the `config.yml` file as the development site domain address.
 
-Also note, that our Vagrant box command `wp-pull-production-db` only works for the primary domain. There is no automation to scan all the subdomains or any domain mapping used on the Network and automatically search-replace those domains to something else. This is something the site developer needs to take care of with custom scripts that do whatever is suitable for the site in question.
+### WordPress Network subdomain installation
+If you wish to run a WordPress network subdomain installation locally, please be sure to include all subdomains you wish to use in `config.yml` as development domains before running `vagrant up`:
+```
+...
+  development:
+    domains:
+      - wordpress.local
+      - site1.wordpress.local
+      - site2.wordpress.local
+```
+When running the Vagrant box command `wp-pull-production-db`, subdomains are automatically mapped to the local development URL if a subdomain network installation is detected. When using the configuration above, site1.example.com would be searched replaced to site1.wordpress.local. However, custom domain mappings to domains other than subdomains (for instance site1.com instead of site1.example.com) are not handled, and this is something the site developer needs to take care of with custom scripts that do whatever is suitable for the site in question.
