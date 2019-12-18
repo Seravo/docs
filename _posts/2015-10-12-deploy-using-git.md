@@ -9,9 +9,9 @@ order: 1
 
 ## Requirements
 1. You need to [setup your ssh settings]({{ site.baseurl }}{% post_url 2015-10-10-configure-ssh %}) first.
-2. You need to have a git repository initialized on the server and a local copy of it as described in [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
+2. You need to a local git chekcout of the site as described in [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
 3. You need to be in your project directory: `cd ~/Projects/your-site/`
-4. You need to have production set as git remote:
+4. You need to have `production` set as git remote:
 
 ```bash
 # Here we are using custom alias 'your-site' in ~/.ssh/config
@@ -72,8 +72,7 @@ $ git remote add production ssh://your-site@your-site.seravo.com:12345/data/word
 #### Step 3 - Push into production
 
 ```bash
-# First push doesn't share anything with the fresh site so you need to force push it
-$ git push production master --force
+$ git push production master
 ```
 
 For deploying the database contents or the contents of the uploads folder you will need to roll your own solution which is safe enough to not overwrite any data created in production.

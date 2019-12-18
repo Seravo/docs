@@ -12,37 +12,25 @@ Git is available on our platform, but there is no git repository by default. Thi
 
 ### Start a fresh repo from the server contents
 
-Log in to the server via SSH and initialize the project. You can use `git add .` to add all current files to the project as the default `.gitignore` file will omit everything that does not belong to be tracked by version control.
-
-Example:
-
-```bash
-ssh my-site.seravo.com -p <port>
-cd /data/wordpress/
-git config --global user.name "<Full Name>"
-git config --global user.email <email>
-git init
-git add .
-git commit -am "Initial commit"
-```
-
-Now you can simply clone the remote git repository to your machine and start working.
+You can simply clone the remote git repository to your machine and start working. All new sites deployed at Seravo have git initialized by default, so one can directly run `git pull` and `git push` commands against it.
 
 ```bash
 $ git clone ssh://$SSH_USER@$SITE.seravo.com:$SSH_PORT/data/wordpress ~/Projects/$SITE --origin production
 $ cd $SITE
 ```
 
-### Alternative: Start by using our project template on GitHub
-> **Note:** Do not do this if you have existing site. Pushing to production host will overwrite your current content, and might lead to data loss.
+A fresh new WordPress site at Seravo has the git history from [our WordPress project template](https://github.com/Seravo/wordpress). This is a good starting point, as it is easier to later merge updated versions of our project template to your project.
 
-The method above gives you a fresh new project with no prior history. You may however want to consider using [our template](https://github.com/Seravo/wordpress) as a starting point and have a shared history, which makes it easier to later merge updated versions of our project template to your project. To do that run
+### Alternative: Start by using your own project template
+> **Note:** Do not do this if you have existing site in production. Pushing to production site will overwrite your current content, and might lead to data loss.
+
+If you don't want to use the Seravo project template as a starting point for your repository, you can also use your own WordPress project template for a new site and simply force push it to the newly created site, so that the git history is overwritten with your own custom project template history and contents.
 
 ```bash
-$ git clone https://github.com/Seravo/wordpress ~/Projects/$SITE
+$ git clone https://github.com/<customer>/wordpress-project ~/Projects/$SITE
 $ cd ~/Projects/$SITE
 $ git remote add production ssh://$SSH_USER@$SITE.seravo.com:[$SSH_PORT]/data/wordpress
-$ git push -f production master
+$ git push --force production master
 ```
 
 ### Tip: you can have multiple git remotes:
@@ -90,9 +78,9 @@ The `.git/hooks/post-receive` will run on the receiving end and run Composer and
 When you are done, you can shut down Vagrant with `halt`. If you completely want to destroy the virtual image (for example to save disk space) execute `destroy`. Note that even after `destroy` you will have files under .vagrant and all the Composer installed modules etc under your project. Use `git clean` to get rid of all traces of `vagrant up`.
 
 ```bash
-vagrant halt
-vagrant destroy
-git clean -fdx && git reset --hard
+$ vagrant halt
+$ vagrant destroy
+$ git clean -fdx && git reset --hard
 ```
 
 ## Include default site database contents in the git repository
@@ -102,10 +90,24 @@ To provide a seamless `vagrant up` experience for anybody who starts to develop 
 You can easily create such a database dump file by running inside Vagrant the commands
 
 ```bash
-cd /data/wordpress
-wp db export vagrant-base.sql --path=/data/wordpress/htdocs/wordpress --skip-extended-insert --allow-root --single-transaction
+$ cd /data/wordpress
+$ wp db export vagrant-base.sql --path=/data/wordpress/htdocs/wordpress --skip-extended-insert --allow-root --single-transaction
 ```
 
 ## Customize the 'vagrant up' run
 
 If Vagrant detects that a file named `vagrant-up-customizer.sh` is present, it will automatically be run every time `vagrant up` is invoked.
+
+## Removing git from the WordPress site
+
+If you want, you can remove the whole git repository simply by running:
+
+```bash
+$ rm -rf /data/wordpress/.git
+```
+
+This is however not recommended. Using git for version control greatly improves the productivity of programmers, decreases the number of mistakes made, provides an audit log of code changes and helps to verify that the code on the site does not have any unwanted changes.
+
+## Git helps track changes – also if made by Seravo
+
+Seravo's WordPress upkeep includes 24/7 monitoring. If a site goes down, Seravo will check what is wrong and attempt to recover the site. Details depend on what was the root cause of the failure. While coding work is not included in our fixed monthly fees, in some cases Seravo's staff might still do some small code changes if that is urgently needed to restore the site back in operation. If Seravo makes such changes and the site is using git for version control, Seravo will commit the changes to git.
