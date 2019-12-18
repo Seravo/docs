@@ -44,6 +44,10 @@ VirtualBox sets up the `vboxnet0` virtual interface routing using the legacy `if
 commands, instead of the modern `ip` command. For networking to work properly, you need to run
 `apt install net-tools`.
 
+#### Ubuntu 18.04
+
+The Vagrant version in Ubuntu 18.04 is rather old (Vagrant version 2.0.2) and the Vagrant plugin installations might fail due to that. If that happens, the only known way to resolve it is to simply install the latest Vagrant version directly from [Vagrantup.com](https://www.vagrantup.com/downloads.html).
+
 ### Linux (Fedora)
 
 Add RPMFusion repositories. See  [RpmFusion](http://rpmfusion.org/). Repository is
