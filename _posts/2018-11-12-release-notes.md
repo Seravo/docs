@@ -6,6 +6,16 @@ date: 2018-11-12 11:26:00
 order: 4
 ---
 
+## Vagrant box seravo/wordpress 20191227.0.0
+
+* WP-CLI upgraded to version 2.4, and many other minor version upgrades across the box
+* Codeception upgraded to version 3.1.2 and the headless Chrome to version 79
+* New command `wp-db-size` to show how much disk space the database uses per table, and updated `wp-db-info` to show what the tables contain most of
+* Command `wp-test` extended to automatically show PHP error log contents on failure
+* Bugfix: calling `phpcbf` now launches the correct binary
+* Multiple improvements in 'vagrant up' speed and reliability
+* This was the last box to ship PHP 5.6 and Bower (JavaScript dependency manager)
+
 ## Vagrant box seravo/wordpress 20191008.0.0
 
 * WP-CLI upgraded to version 2.3, and many other minor version upgrades across the box
@@ -15,6 +25,7 @@ order: 4
 * Automatically run 'wp cache flush' after database imports so new contents always takes effect
 * Fixed bug in Adminer and Webgrind PHP 7.3 compatibility
 * Multiple bugfixes to make the box startup more reliable
+* This was the last version to ship the Ruby based `wp-test-legacy` tool
 
 
 ## Vagrant box seravo/wordpress 20190513.0.0
