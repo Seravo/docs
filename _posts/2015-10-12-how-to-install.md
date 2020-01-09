@@ -6,7 +6,9 @@ date: 2015-10-13 14:26:53
 order: 2
 ---
 
-> **Vagrant 2.1.0 changes vagrant-triggers:** Currently our Seravo WordPress Vagrant box does not work with the latest version of Vagrant due to [non-backwards compatible changes in vagrant-triggers](https://github.com/Seravo/wp-palvelu-vagrant/issues/49). The work-around is to [install Vagrant 2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/) instead of the latest version for now.
+> **Vagrant 2.1.0 changes vagrant-triggers:** If you are using Vagrant 2.0.4 or older, you need to also run `vagrant plugin install vagrant-triggers`. Users with Vagrant 2.1.0 or newer, and with the latest Vagrantfile from [Seravo/WordPress](https://github.com/Seravo/wordpress), don't need to install the legacy Vagrant triggers plugin anymore.
+
+> **VirtualBox 6.1 incompatible with Vagrant:** Latest VirtualBox version 6.1 is not supported by latest Vagrant version 2.2.6. Do not install 6.1 but instead keep to the older VirtualBox 6.0 version. VirtualBox 5.2 also works fine.
 
 ## Installation
 
@@ -19,7 +21,7 @@ To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
 ```
 cd ~/wordpress-dev
 sudo apt-get install -y vagrant virtualbox virtualbox-dkms
-vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 vagrant up
 ```
 
@@ -74,20 +76,25 @@ It seems that sometimes the virtualbox kernel modules are not working correctly 
 
 ### MacOS X
 
-
-
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release *before* 2.1.0!)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or any other release *before* 6.0)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or any other release *before* 6.1)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
 ```
 cd ~/wordpress-dev
-vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 vagrant up
 ```
 
-> **Note:** If `vagrant up` fails with an error including ` failed to open /dev/vboxnetctl` you will need to [grant more permissions to Virtualbox](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) via MacOS X System Preferences > Security & Privacy > General and restart or reinstall Virtualbox.
+> **Note:** If `vagrant up` fails with an error including `failed to open /dev/vboxnetctl` you will need to [grant more permissions to Virtualbox](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) via MacOS X System Preferences > Security & Privacy > General and restart or reinstall Virtualbox.
+
+Variants on how to restart VirtualBox (not just the UI window, but the whole service):
+```
+sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart
+sudo /Library/StartupItems/VirtualBox/VirtualBox restart
+sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist
+```
 
 > **Optional:** [Vagrant Manager for OS X](http://vagrantmanager.com/) can help you manage multiple Vagrant boxes.
 
@@ -100,13 +107,13 @@ Note that in some cases you can't modify the ```hosts``` file without administra
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
     > **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`).
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.x](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
 ```
 cd ~/wordpress-dev
-vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 vagrant up
 ```
 Cygwin will give you the following message and the necessary entries you need to add to the ```hosts``` file, if you try to vagrant up without administrative access.
@@ -129,13 +136,13 @@ Seravo WordPress installation with PowerShell:
 Note that PowerShell also needs to be run in administrator mode.
 
 1. [Install Git](https://git-scm.com/downloads)
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version [2.0.4](https://releases.hashicorp.com/vagrant/2.0.4/), or any other release before 2.1.0!)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
 3. [Install Virtualbox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)  (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
 4. Clone this repo with PowerShell: `git clone https://github.com/Seravo/wordpress wordpress-dev`
 5. Run the installation in terminal:
 ```
 cd wordpress-dev
-vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 vagrant up
 ```
 
