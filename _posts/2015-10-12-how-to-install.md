@@ -8,7 +8,9 @@ order: 2
 
 > **Vagrant 2.1.0 changes vagrant-triggers:** If you are using Vagrant 2.0.4 or older, you need to also run `vagrant plugin install vagrant-triggers`. Users with Vagrant 2.1.0 or newer, and with the latest Vagrantfile from [Seravo/WordPress](https://github.com/Seravo/wordpress), don't need to install the legacy Vagrant triggers plugin anymore.
 
-> **VirtualBox 6.1 incompatible with Vagrant:** Latest VirtualBox version 6.1 is not supported by latest Vagrant version 2.2.6. Do not install 6.1 but instead keep to the older VirtualBox 6.0 version. VirtualBox 5.2 also works fine.
+> **VirtualBox 6.1 incompatible with Vagrant:** Latest VirtualBox version 6.1 is not supported by latest Vagrant version 2.2.6. There is no known workaround at the moment, we can only wait for upstream Vagrant to add compatibility.
+
+> **VirtualBox 6.0 very slow on some environments:** Many users have reported that VirtualBox version 6.0 is very slow, even 10x slower than the previous VirtualBox 5.2. Therefore our installation steps below recommend VirtualBox 5.2.
 
 ## Installation
 
@@ -58,7 +60,7 @@ needed for Virtualbox.
 Clone the WordPress Git repo and run following commands:
 
 ```bash
-sudo yum install vagrant virtualbox
+sudo yum install vagrant virtualbox # Version 5.2 is recommended
 sudo yum install ruby-devel # Needed to build native ruby extensions
 sudo gem update bundler
 sudo gem install hittimes -v '1.2.2'
@@ -77,8 +79,8 @@ It seems that sometimes the virtualbox kernel modules are not working correctly 
 ### MacOS X
 
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or any other release *before* 6.1)
+2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
+3. [Install Virtualbox](https://www.virtualbox.org) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
 ```
@@ -107,8 +109,8 @@ Note that in some cases you can't modify the ```hosts``` file without administra
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
     > **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`).
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) (version [5.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
+2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
+3. [Install Virtualbox](https://www.virtualbox.org/) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
 ```
@@ -136,8 +138,8 @@ Seravo WordPress installation with PowerShell:
 Note that PowerShell also needs to be run in administrator mode.
 
 1. [Install Git](https://git-scm.com/downloads)
-2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)  (version [5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) or older)
+2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
+3. [Install Virtualbox](https://www.virtualbox.org/) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
 4. Clone this repo with PowerShell: `git clone https://github.com/Seravo/wordpress wordpress-dev`
 5. Run the installation in terminal:
 ```
