@@ -17,11 +17,11 @@ Basically the hooks are just shell scripts and it should be fairly easy for any 
 
 ### During development: pre-commit hook
 
-The pre-commit hook script is run by `git` on every commit attempt. If the hook returns any exit code whatsoever, the commit is aborted and the developer alerted that they need to fix their code before a commit can be accepted.
+The `pre-commit` hook script is run by `git` on every commit attempt. If the hook returns any exit code whatsoever, the commit is aborted and the developer alerted that they need to fix their code before a commit can be accepted.
 
 The purpose of this hooks is to help with quality control, preventing developers from committing code that has clear mistakes in them.
 
-Our WordPress project template contains one custom git hook example you can find in [scripts/hooks/pre-commit](https://github.com/Seravo/wordpress/blob/master/scripts/hooks/pre-commit).
+Our WordPress project template contains one custom git hook example you can find in [scripts/git-hooks/pre-commit](https://github.com/Seravo/wordpress/tree/master/scripts/git-hooks).
 
 By default our example pre-commit hooks script runs `php -l` to check if there are any syntax errors in the modified PHP files, and then it runs the [Codeception tests]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}) to check that the integration tests pass.
 
@@ -34,51 +34,11 @@ $ git commit -n -m "commit message"
 ```
 ### During deployment: post-receive hook
 
-When a developer runs `git push production` or similar to push the code to the remote server, the remote server will trigger the hook `.git/hooks/post-receive`. At Seravo this hooks is preinstalled and contains the following:
+When a developer runs `git push production` or similar to push the code to the remote server, the remote server will trigger the hook `.git/hooks/post-receive`. At Seravo the [post-receive hook is preinstalled](https://github.com/Seravo/wordpress/tree/master/scripts/git-hooks) for convenience, but developers are naturally free to remove it if it is not needed.
 
-```
-#!/bin/bash
-##
-# This is run after successful push to this repo
-# Useful for automating grunt work using local development
-##
+This script will see if the `composer.json` or any files in `nginx/*.conf` were modified in the commit, and if that was the case it will run `composer install` or reload Nginx. Feel free to extend the script to run any asset builder (npm, yarn etc) if used in the project.
 
-##
-# This script can be called from anywhere so it's good to be in the correct location
-# This can also be called in .git/hooks dir and we need to get into project root
-##
-cd "$( dirname "${BASH_SOURCE[0]}" )"/../..
-
-# Hack: Somehow this script won't understand that git is in current directory
-GIT_DIR="$(pwd)/.git"
-
-# Loop through all changed files
-changed_files=$(git diff --name-only --diff-filter=ACM HEAD HEAD^)
-
-# Check files which have triggers
-while read -r line; do
-    if [ "$line" = "composer.json" ] || [ "$line" = "composer.lock" ]; then
-      COMPOSER_CHANGED=true
-    elif [ "$line" = "nginx/*.conf" ]; then
-      NGINX_CHANGED=true
-    fi
-done <<< "$changed_files"
-
-# Do stuff with the triggers
-if $COMPOSER_CHANGED; then
-  echo "Seravo: composer.json was updated, installing..."
-  composer install --no-dev
-fi
-
-if $NGINX_CHANGED; then
-  echo "Seravo: Nginx configs were changed, reloading nginx..."
-  wp-restart-nginx
-fi
-```
-
-This script will see if the `composer.json` or any files in `nginx/*.conf` were modified in the commit, and if that was the case it will run `composer install` or reload Nginx.
-
-Note that while there is a post-receive hook on the server, it's not included in the project template as it's useless (and potentially even harmful) to have in your local copy. For details see [Deploy using git]({{ site.baseurl }}{% post_url 2015-10-12-deploy-using-git %}).
+Note that while there is a post-receive hook on the server, it's not installed on local development environments, as it's useless (and potentially even harmful). Even if the script is in version control, it is only active if there is a link from `.git/hooks/post-receive -> scripts/git-hooks/post-receive`.
 
 ## Testing git hooks
 
@@ -99,4 +59,4 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 Nginx restarted!
 ```
 
-One common reason for scripts to fail is the lack of the executable bit. That is easily fixed by `chmod +x /data/wordpress/.git/hooks/post-receive`.
+One common reason for scripts to fail is the lack of the executable bit. That is easily fixed by `chmod +x /data/wordpress/.git/hooks/post-receive` or if it is a link, with `chmod +x /data/wordpress/scripts/git-hooks/post-receive`.

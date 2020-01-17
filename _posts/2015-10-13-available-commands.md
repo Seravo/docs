@@ -142,7 +142,7 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 > **Note**: These commands are used by the `Vagrantfile`. These are not intended for manual invocation by any WordPress site developer.
 
 #### wp-activate-git-hooks
-`wp-activate-git-hooks` - Adds files to local `.git/hooks` for test automation on every local `git commit`.
+`wp-activate-git-hooks` - Adds files to local `.git/hooks` for test automation on every local `git commit`. Read more about [git hooks]({{ site.baseurl }}{% post_url 2015-10-12-using-git-hooks %})
 
 #### wp-generate-ssl
 `wp-generate-ssl` - Generate SSL self-signed certificates for domains defined in `config.yml`.

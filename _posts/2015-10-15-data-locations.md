@@ -59,9 +59,9 @@ Seravo uses a custom directory layout which is derived from [Bedrock](https://gi
 │   └── anything.conf # Your own config files can be named anything *.conf.
 │
 ├── scripts
-│   ├── hooks # Git hooks for your project
-│   │   ├── pre-commit # This is run after every commit
-│   │   └──
+│   ├── git-hooks # Git hooks for your project
+│   │   ├── post-receive # This is run in production/shadow when new commits are pushed to it
+│   │   └── pre-commit # This is run after every commit
 │   │
 │   ├── wordpress
 │   │   └── Installer.php #Additional composer scripts
