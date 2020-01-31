@@ -70,7 +70,7 @@ After all files have been transferred, the next step is to bring over the databa
 First we make a fresh database export in staging directly over SSH and import it with one single command:
 
 ```
-ssh example@example.seravo.com -p 11111 'wp db export -' | wp db import
+ssh example@example.seravo.com -p 11111 'wp db export -' | wp db import -
 ```
 
 After this step you are done and can proceed to peruse `wp-watch-logs` and browse the site to make sure everything looks good. If not, repeat the steps above or revert to backups.
