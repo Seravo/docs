@@ -8,13 +8,13 @@ order: 6
 
 WordPress Network (aka multisite) is a special setup of WordPress, where one single database and set of files are used to serve multiple WordPress sites. This is useful for example:
 - if there is a need to allow admins to use all sites with a single set of credentials and single login
-- if the sites are thigtly connected, e.g. use the same theme and plugins and those want to be maintained and released in lockstep
+- if the sites are tightly connected, e.g. use the same theme and plugins and those want to be maintained and released in lockstep
 - if there is a need to create multiple sites quickly or dynamically that share the baseline code
 - if there needs to be multiple WordPress sites at the same domain, eg. example.com/a and example.com/b
 
 One very typical use case is that an international company that is centrally managed has one marketing department managing multiple international sites that all share the same user database, theme and most parts of the plugins or site code. There could be a main site example.com and a site for Finnish markets at example.com/fi and one for German markets at example.com/de and so on.
 
-In many cases when people think about setting up a Network site they realize after some thinking that multiple separate sites is a better idea based on non-technical reasons, for example that each site has a different marketing person handling it or the separate sites have different life-spans and theme/plugin development cycles.
+In many cases when people think about setting up a Network site they realize after some thinking that multiple separate sites is a better idea based on non-technical reasons, for example that each site has a different marketing person handling it or the separate sites have different lifespans and theme/plugin development cycles.
 
 > **Don't try this at home!** Setting up WordPress Network (aka multisite) correctly can be a bit tricky at times. Customers should not attempt to do it themselves but ask Seravo to do it for them. The setup of a Network is included in the plan prices that allow Network setups. All sites running a WordPress Network needs to have prior approval from Seravo so that Seravo's upkeep can be adapted to cover the entire multisite with subsites correctly.
 
@@ -33,7 +33,7 @@ Example:
 - subsite a.example.com, domain alias example.net
 - subsite b.example.com, domain alias example.org
 
-If is possible to mix different domains and folder structures and the WordPress Network will initially look like it is working, but later reveal severe bugs like authentication issues and redirect loops. The most robust structure is not to mix different domains and folders, but use a clean setup like the example above.
+It is possible to mix different domains and folder structures and the WordPress Network will initially look like it is working, but later reveal severe bugs like authentication issues and redirect loops. The most robust structure is not to mix different domains and folders, but use a clean setup like the example above.
 
 ## Subfolder installation in subfolder
 
@@ -65,7 +65,7 @@ Indeed, it is actually technically possible to have a WordPress Super Network th
 
 ## Super admins
 
-On an individual site the admin is still called _admin_. However the user accounts that can make changes to the Network itself and manage all other users are calles _super admins_.
+On an individual site the admin is still called _admin_. However the user accounts that can make changes to the Network itself and manage all other users are called _super admins_.
 
 ## WP-CLI and Networks
 
@@ -97,7 +97,7 @@ The main site of a Network will work out-of-the-box in local development with Va
 
 ## Installation
 
-Setting up a Network requries special settings in the `wp-config.php` file, potentially the installation of a domain mapper (Seravo prefers [Mercator](https://github.com/humanmade/Mercator) at the moment). In addition the web server needs to have some custom routing (at Seravo we put a `nginx/network.conf` file). In a subdomain installation also preparations regarding HTTPS certificates are needeed. Seravo's customers don't need to worry about these as Seravo takes care of them and it is included in the price of the service anyway.
+Setting up a Network requires special settings in the `wp-config.php` file, potentially the installation of a domain mapper (Seravo prefers [Mercator](https://github.com/humanmade/Mercator) at the moment). In addition the web server needs to have some custom routing (at Seravo we put a `nginx/network.conf` file). In a subdomain installation also preparations regarding HTTPS certificates are needed. Seravo's customers don't need to worry about these as Seravo takes care of them and it is included in the price of the service anyway.
 
 ## Local development with Vagrant and WordPress Network
 
