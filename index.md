@@ -14,7 +14,7 @@ This documentation is maintained in a [public git](https://github.com/seravo/doc
 
 
 ### Fast-track guide for developing your site:
->**Hint:** Read the other topics to have better understanding what's happening over here. The git repository must be initialized as described in [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
+>**Hint:** Read the other topics to have better understanding what's happening over here. The git repository must be initialized which all new sites deployed at Seravo have as default, read more about this on our section about [Local development]({{ site.baseurl }}{% post_url 2015-10-13-local-development %}).
 
 ```bash
 # Clone your site to your computer and name the git remote as 'production'

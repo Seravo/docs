@@ -8,7 +8,7 @@ order: 3
 
 ## Using git
 
-Git is available on our platform, but there is no git repository by default. This is because most users want to create their own projects, and having a git repository initialized by default might create confusion. An even bigger source of confusion would be a git repository with hundreds of untracked or modified by uncommitted files, a situation we want to avoid. From the server administration point of view the fact that there is a git repository somewhere is a signal that it is there intentionally and any uncommitted changes are real anomalies that need to be addressed.
+Git is available on our platform and all new sites deployed at Seravo have git initialized by default. Using git for version control greatly improves the productivity of programmers, decreases the number of mistakes made, provides an audit log of code changes and helps to verify that the code on the site does not have any unwanted changes.
 
 ### Start a fresh repo from the server contents
 
