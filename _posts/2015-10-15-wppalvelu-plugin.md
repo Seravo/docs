@@ -14,11 +14,9 @@ You can download the plugin here for testing purposes:
 
 <a class="btn btn-default" href="https://github.com/Seravo/seravo-plugin/releases"><i class="glyphicon glyphicon-download-alt"></i> Download plugin from Github</a>
 
-## List of features
-<code>Version 1.9.3</code>
+## Examples of features
 
-### Sortable metaboxes
-For improved usability and a unified WordPress user experience, our plugin now uses primarily metaboxes that behave similarily to the WordPress Dashboard.
+For full documentation, see the plugin [README on Github](https://github.com/Seravo/seravo-plugin).
 
 ### Shadow reset-button
 Adds the feature for resetting a staging environment from admin pages.
@@ -35,13 +33,13 @@ Seravo-plugin lists files, themes and plugins that are considered unnecessary, o
 ### Technical contact email setting
 You can set your technical contact email from the admin view.
 
-### Database statistics-view
+### Database statistics view
 Status of the database is shown in the admin view.
 
 ### Moving between shadow/production
 Instance switcher is not loaded when in a development environment.
 
-### Optimize-images -page
+### Optimize images
 You can opt in to optimize your websites images and adjust the parameters.
 
 ### Run tests on WordPress core functionalities
@@ -50,9 +48,6 @@ You can run ``` $ wp-test ``` as seen in [commands]({{ site.baseurl }}{% post_ur
 ### Logs page
 Adds an admin page where you can view all your website logs.
 
-### Notifications from Seravo
-These are used only for informing about service outages.
-
 ### Appends all logins to a log file and returns a 401 (unauthorized) http status code after a failed login
 All logins are logged to <code>/data/log/wp-login.log</code>. This enables more relevant logging.
 
@@ -60,22 +55,17 @@ All logins are logged to <code>/data/log/wp-login.log</code>. This enables more 
 All updates are handled by Seravo so your clients don't need to worry about them. However,
 Seravo updates can be manually disabled from the WordPress admin <b>Tools->Updates</b> page.
 
-### Uses nocache headers if the site is in development mode
+### Use nocache headers if the site is in development mode
 Makes development with clients so much easier.
 
 Imagine a situation where your client sees the page in development and then doesn't know how to empty the browser cache later on.
 
-### Adds a Purge Cache button to the admin bar
+### Add a Purge Cache button to the admin bar
 This feature simplifies emptying your cached pages.
 
 Purging the cache is also achievable via command line: ``` $ wp-purge-cache ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
 
-### Makes URLs content relative
-This makes migration and switching the site URL easier when publishing your site.
-
-> **Note:** relative URLs are automatically changed into absolute URLs when using feeds (rss, atom, etc...)
-
-### Enables login to wp-admin with a secure SSL client certificate
+### Enable login to wp-admin with a secure SSL client certificate
 
 This helps the admins and clients who have multiple sites in Seravo. If you have multiple sites in Seravo, you can request a personal SSL-certificate from our [admins](mailto:help@seravo.com).
 
@@ -116,11 +106,6 @@ add_filter('seravo_purge_cache_capability', function () {
  * Remove instance switcher from WP admin bar
  */
 add_filter('seravo_show_instance_switcher', '__return_false');
-
-/*
- * Disable: relative URLs in post content
- */
-add_filter('seravo_use_relative_urls', '__return_false');
 
 /*
  * Prevent hiding the domain alias from search engines
