@@ -35,11 +35,12 @@ development:
 
   # If you want other sin your local network (e.g. office) to be able to access
   # the site running on your laptop, activate Avahi / Bonjour / Zeroconf that
-  # will advertice *.local domains on the network.
+  # will advertise *.local domains on the network.
   avahi: true
 ```
 
-### Changing config.yml
+### Customizing config.yml
+
 #### name
 
 Change `name` in config.yml to change your site name. This is used in quite a few places in the development environment.
@@ -59,3 +60,15 @@ Optional: Add `domain` and `ssh_port` to sync with your staging (testing shadow)
 Add new domains under `domains` before you run `vagrant up` to use extra domains.
 
 See [config-sample.yml](https://github.com/Seravo/wordpress/blob/master/config-sample.yml) for more.
+
+#### Automatic operations on local development startup
+
+The following items help automate typical steps in starting the development environment:
+
+```
+pull_production_db: always
+pull_production_plugins: always
+pull_production_themes: always
+```
+
+If you want to automatically pull stuff from production use `always` or set to `never` to just silence the yes/no question during `vagrant up` or `docker-compose run`.
