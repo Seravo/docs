@@ -34,7 +34,9 @@ Please file an issue or make a pull request if you have suggestions how to make 
 
 ## Debugging Vagrant issues
 
-Unfortunately Vagrant is somewhat brittle and many people experience issues with it from time to time. Here are some general tips on how to debug if Vagrant isn't working for you:
+Unfortunately Vagrant is somewhat brittle and many people experience issues with it from time to time. The [vagrantup.com documentation on debugging](https://www.vagrantup.com/docs/other/debugging.html) might be helpful.
+
+Below are also some general tips on how to debug if Vagrant isn't working for you.
 
 ### If you experience slowness
 
