@@ -100,12 +100,31 @@ sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist
 
 > **Optional:** [Vagrant Manager for OS X](http://vagrantmanager.com/) can help you manage multiple Vagrant boxes.
 
-### Windows (Cygwin)
+### Seravo WordPress installation on Windows:
 
 To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
-You might need to disable ```hyper-v``` in order to use Virtualbox.
 On Windows 10 you need to run Cygwin as an administrator so vagrant-hostsupdater can write the necessary entries to ```/system32/drivers/etc/hosts```. Otherwise you need to add the vagrant-hostsupdater entries manually.
 Note that in some cases you can't modify the ```hosts``` file without administrative access. In that case you need to ask the administrator to give you access to the file.
+
+On some versions of Windows (Windows 8) you might get a "Vt-x is not available" error. You'll need to disable Hyper-V in bios to proceed with the installation.
+Most bios setups have the option under "Security".
+
+#### Powershell (recommended)
+
+Note that PowerShell needs to be run in administrator mode.
+
+1. [Install Git](https://git-scm.com/downloads)
+2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
+3. [Install Virtualbox](https://www.virtualbox.org/) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
+4. Clone this repo with PowerShell: `git clone https://github.com/Seravo/wordpress wordpress-dev`
+5. Run the installation in terminal:
+```
+cd wordpress-dev
+vagrant plugin install vagrant-hostsupdater vagrant-bindfs
+vagrant up
+```
+
+#### Cygwin
 
 1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
     > **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`).
@@ -126,26 +145,6 @@ Note that this is just an example. Your message will be different.
 [vagrant-hostsupdater] exampleIP-address examplehostname
 [vagrant-hostsupdater] This operation requires administrative access.
 You may skip it by manually adding equivalent entries to the hosts file.
-```
-
-On some versions of Windows (Windows 8) you might get a "Vt-x is not available" error. You'll need to disable Hyper-V in bios to proceed with the installation.
-Most bios setups have the option under "Security".
-
-In theory, Seravo WordPress should work even without Cygwin installed, but we strongly recommend using Cygwin for doing WordPress development on Windows machines.
-
-Seravo WordPress installation with PowerShell:
-
-Note that PowerShell also needs to be run in administrator mode.
-
-1. [Install Git](https://git-scm.com/downloads)
-2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org/) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
-4. Clone this repo with PowerShell: `git clone https://github.com/Seravo/wordpress wordpress-dev`
-5. Run the installation in terminal:
-```
-cd wordpress-dev
-vagrant plugin install vagrant-hostsupdater vagrant-bindfs
-vagrant up
 ```
 
 > **Optional:** [Vagrant Manager for Windows](http://vagrantmanager.com/windows/) can help you manage multiple Vagrant boxes.
