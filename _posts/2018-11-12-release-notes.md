@@ -5,6 +5,13 @@ category: get-started
 date: 2018-11-12 11:26:00
 order: 4
 ---
+## Vagrant box seravo/wordpress 20200707.0.0
+
+* Many minor version upgrades across the box, e.g the headless Chrome updated to version 83
+* Tools such as Adminer, Mailcatcher and Webgrind now all run under `/.seravo/`, e.g. `https://wordpress.local/.seravo/mailcatcher/`. This unifies the address at which the services are available in Vagrant, Docker, staging shadows and in production.
+* In the wp-test system the Seravo Codeception library had `getWPSiteURL()` renamed into `getWPURL()` to clarify that it is not the WordPress `siteurl` value but actually the `home` value, which always tell what is tha front page of the WordPress site.
+* PHP 5.6 is no longer available. If you need PHP 5.6, use the previous Vagrant box [v20200130.0.0](https://app.vagrantup.com/seravo/boxes/wordpress/versions/20200130.0.0)  or the Docker image tagged with [-last-with-php5](https://hub.docker.com/r/seravo/wordpress/tags).
+* To align local development environment with production and shadow environment capabilities, the GCC compiler has been removed. In rare cases some NodeJS modules cannot be built anymore, but it should not be an issue since npm should always install pre-build modules as long as the `package.json` contents is up-to-date with recent NodeJS versions and module versions. If Gulp or node-sass fails to install, please check that your `package.json` is recent enough (compare to [Seravo/WordPress template](https://github.com/Seravo/wordpress/blob/master/package.json)) or run `wp-fix-project`.
 
 ## Vagrant box seravo/wordpress 20200130.0.0
 
