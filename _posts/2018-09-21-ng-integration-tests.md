@@ -286,4 +286,6 @@ To ignore this message site-wide, create a file with the name and path `/data/wo
 
 The field *message* is compulsory and it must either be a string to be whitelisted, or a regular expression. If regular expressions are used, then there the field *regex* must also be set to *true*. The field *level* is not compulsory.
 
+Please note, because JSON uses the backslash character as an escape character, backslashes used in regular expressions should be escaped. This means, the regular expression `jquery\.com` must be typed as `jquery\\.com`, for example.
+
 You can also whitelist console messages per test by passing a custom array as second parameter to the assertion `$I->checkBrowserConsole()`. Using the site-wide whitelist has the benefit that it affects all invocations of `checkBrowserConsole()`, including the baseline tests Seravo runs for your site.
