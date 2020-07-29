@@ -272,7 +272,13 @@ However, sometimes the Chrome console messages can be false positives and not ac
 A typical example of a false positive would be this JQuery deprecation warning which most website developers have seen in the wild somewhere:
 > WARNING: https://example/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1 44:11 "JQMIGRATE: jQuery.browser is deprecated"
 
-To ignore this message site-wide, create a file with the name and path `/data/wordpress/tests/codeception/acceptance/console-whitelist.json` and add the following contents to it:
+#### Whitelist messages with `wp-test-whitelist`
+
+To ignore a message site-wide, the preferred way is to use the command `wp-test-whitelist`. Let's take the message above as an example. To ignore it, you can run the command `wp-test-whitelist --add ".* JQMIGRATE: .* is deprecated" --regex`. This command alters the Codeception whitelist file presented below. You can find more about this command by running `wp-test-whitelist --help`.
+
+#### Edit the whitelist file manually
+
+You can ignore a message also by manually editing the whitelist file. Create a file with the name and path `/data/wordpress/tests/codeception/acceptance/console-whitelist.json` and add the following contents to it:
 
 ```json
 [

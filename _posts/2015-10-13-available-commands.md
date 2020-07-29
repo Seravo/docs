@@ -92,6 +92,9 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-test
 `wp-test` - Run the [Codeception integration tests]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}).
 
+#### wp-test-whitelist
+`wp-test-whitelist` - Add an error or warning message to the [Codeception whitelist]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}).
+
 #### wp-watch-logs
 `wp-watch-logs` - Print all new linest written to any of the logs under `/data/log/`. Press Ctrl+C to exit.
 
