@@ -26,40 +26,52 @@
     });
   });
 
+  // Webinar banner identifier should be updated for each new webinar
+  // so visitors will always see a banner for new webinars
+  next_webinar_date = $("#webinar-banner").data("date");
+  webinar_id = 'webinar_' + next_webinar_date;
+
+  // Check if webinar is today or in future
+  next = new Date(next_webinar_date);
+  now = new Date();
+  if (now <= next) {
+    webinar_in_future = true;
+  }
+
   // Show trainings banner if visitor hasn't dismissed it so far
-  if ( localStorage.getItem('dev-training-banner') != 'closed' ) {
+  if ( localStorage.getItem(webinar_id) != 'closed' && webinar_in_future === true ) {
 
     // Show the banner
-    $("#dev-training-banner").show();
+    $("#webinar-banner").show();
 
     if ( jQuery.inArray('fi', window.navigator.languages) > -1 ||
          jQuery.inArray('fi-FI', window.navigator.languages) > -1 ) {
 
        // Show text in Finnish for Finnish visitors
-       $("#dev-training-banner *[lang=fi]").show();
+       $("#webinar-banner *[lang=fi]").show();
 
      } else if ( jQuery.inArray('sv', window.navigator.languages) > -1 ||
                  jQuery.inArray('sv-se', window.navigator.languages) > -1 ) {
 
        // Show text in Swedish for Swedish visitors
-       $("#dev-training-banner *[lang=sv]").show();
+       $("#webinar-banner *[lang=sv]").show();
 
      } else {
 
        // Show text in English for other visitors
-       $("#dev-training-banner *[lang=en]").show();
+       $("#webinar-banner *[lang=en]").show();
 
      }
 
   } else {
-    $("#dev-training-banner").hide();
+    $("#webinar-banner").hide();
   }
 
   // Enable closing the trainings banner if it annoys
-  $('#dev-training-banner .close').click( function (e){
-    $("#dev-training-banner").hide();
+  $('#webinar-banner .close').click(function (e){
+    $("#webinar-banner").hide();
     // Store selection and never show the banner again
-    localStorage.setItem('dev-training-banner', 'closed');
+    localStorage.setItem(webinar_id, 'closed');
     // Use localStorage.clear(); to reset selection
   });
 
