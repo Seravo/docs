@@ -104,14 +104,23 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     margin-bottom: 20px;
 }
 
+/* Prominent banner using Seravo orange and button look */
 #webinar-banner {
   text-align: center;
-  background-color: #eee;
+  font-weight: bold;
+  color: white;
+  background-color: #ef7c1a;
   padding: 12px 12px 6px 12px;
-  display: none
+  border-radius: 26px;
+  text-shadow: none;
+  display: none;
 }
 #webinar-banner p {
   display: none
+}
+#webinar-banner a {
+  color: white;
+  text-decoration: underline;
 }
 
 #footer {

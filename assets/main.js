@@ -29,7 +29,7 @@
   // Webinar banner identifier should be updated for each new webinar
   // so visitors will always see a banner for new webinars
   next_webinar_date = $("#webinar-banner").data("date");
-  webinar_id = 'webinar_' + next_webinar_date;
+  webinar_id = 'webinar-' + next_webinar_date;
 
   // Check if webinar is today or in future
   next = new Date(next_webinar_date);
