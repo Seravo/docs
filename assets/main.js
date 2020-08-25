@@ -21,7 +21,7 @@
       resultsContainer: document.getElementById('results-container'),
       json: '/docs/search.json',
       fuzzy: false,
-      searchResultTemplate: '<li><a href="{url}">{title}</a><small> in <strong>{category}</strong></small<div class="search-content" data-content={content}></div></li>',
+      searchResultTemplate: '<li><a href="{url}">{title}</a><small> in <strong>{category}</strong></small></li>',
       noResultsText: 'No results found, Sorry! Please try again or add an issue <a href="https://github.com/{{site.github.repo}}/issues/">in Github</a>.'
     });
   });
