@@ -10,7 +10,7 @@ name: Seravo.com
 github:
     repo: Seravo/docs
 
-# Seravo.com/docs entity (former docs.wp-palvelu.fi)
+# Seravo.com/docs entity
 google_analytics_id: 'UA-53086901-9'
 
 # Site verification for webmasters

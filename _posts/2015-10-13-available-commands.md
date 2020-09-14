@@ -63,7 +63,7 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 [`wp-reset-ssh-password`](/docs/man/wp-reset-ssh-password) - Reset the SSH passwords. This is the only way to change the SSH password for a site at Seravo.
 
 #### wp-seravo-plugin-update
-[`wp-seravo-plugin-update`](/docs/man/wp-seravo-plugin-update) - Update the must-use Seravo Plugin to the latest version. It also cleans up all legacy remnants of the `wp-palvelu-plugin`. Use `--dev` parameter to pull latest git master instead of the latest stable release.
+[`wp-seravo-plugin-update`](/docs/man/wp-seravo-plugin-update) - Update the must-use Seravo Plugin to the latest version. Use `--dev` parameter to pull latest git master instead of the latest stable release.
 
 
 ### Developer helpers
