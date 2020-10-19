@@ -6,9 +6,9 @@ published: true
 
 > **Note:** This documentation is primarily intended for [Seravo.com](https://seravo.com) customers. You can however use our [project structure & Vagrant box](https://github.com/Seravo/wordpress) for any WordPress development no matter where you decide to deploy, host or maintain it. As stated in [LICENSE (GPL)](https://github.com/Seravo/wordpress/blob/master/LICENSE), the provided software and documentation is open source and can be used freely anywhere, including also commercial use.
 
-This contains guides and tips for developers who might want to enhance their workflow and use the best modern development tools. Feel free to pick the parts that fit your style of development best!
+This guide contains tips and instructions for developers who want to enhance their workflow, through the use of best practice and modern development tools. Please feel free to choose the practices and methods that best suit your current workflow, and your style of development!
 
-All Seravo.com sites are preconfigured for optimal development workflow, but the workflow in general or any part of it is not mandatory. You don't have to use Git, Composer or the others if you don't want. Or you can use them, but follow your own workflow. All sites have SFTP/SSH access so all sites support even the most traditional FTP-your-stuff-to-the-server-workflow. But if you like the idea of a really optimized workflow, please keep on reading!
+All Seravo.com sites are preconfigured for optimal development workflow. However, the suggested workflow is not mandatory. You don't have to use Git, Composer or any other recommend tools if you don't want. Or you can use them, but follow your own workflow. All sites have SFTP/SSH access so all sites support even the most traditional FTP-your-stuff-to-the-server-workflow. But if you like the idea of a really optimized workflow, please keep on reading!
 
 This documentation is maintained in a [public git](https://github.com/seravo/docs) repository. If you find any errors or you want to extend the documentation, feel free to contribute!
 
