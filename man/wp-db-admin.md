@@ -5,7 +5,7 @@ title: "wp-db-admin"
 
 # NAME
 
-wp-db-admin - manual page for wp-db-admin git version fba2a66
+wp-db-admin - manual page for wp-db-admin git version 8ecb3f3
 
 # SYNOPSIS
 
@@ -13,7 +13,7 @@ wp-db-admin - manual page for wp-db-admin git version fba2a66
 
 # DESCRIPTION
 
-Access the MariaDB Proxy admin console.
+Access the database proxy admin console.
 
 In the console you can then run queries like:
 

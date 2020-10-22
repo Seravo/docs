@@ -56,12 +56,6 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-list-files-mtime
 [`wp-list-files-mtime`](/docs/man/wp-list-files-mtime) - List all recently changed filed based on modification time (mtime attribute). Files modified during the last 30 days are listed. This is less reliable than `wp-backup-list-changes` as files can have their mtime attribute set to anything.
 
-#### wp-php-compatibility-check
-[`wp-php-compatibility-check`](/docs/man/wp-php-compatibility-check) - Check that the PHP code of the current WordPress installation, including themes and plugins, is compatible with the PHP specified. This is based on phpcs and its PHP compatibility rulesets.
-
-#### wp-speed-test
-[`wp-speed-test`](/docs/man/wp-speed-test) - Measure the load time of WordPress (PHP) page loads. Tests site front page by default, but other URLs can be given as an argument. Supports parameter `--cache` which will test how fast the sites load from front proxy (not PHP) if the tested URL supports HTTP level caching.
-
 #### wp-load-test
 [`wp-load-test`](/docs/man/wp-load-test) - A simple command line tool to measure how many consecutive PHP requests the site can handle in a minute. Accepts same parameters as `wp-speed-test`.
 
@@ -107,6 +101,12 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-check-php-version
 [`wp-check-php-version`](/docs/man/wp-check-php-version) - Returns the PHP version.
 
+#### wp-check-php-compatibility
+[`wp-check-php-compatibility`](/docs/man/wp-check-php-compatibility) - Check that the PHP code of the current WordPress installation, including themes and plugins, is compatible with the PHP specified. This is based on phpcs and its PHP compatibility rulesets.
+
+#### wp-speed-test-check
+[`wp-speed-test`]/man/wp-speed-test) - Measure the load time of WordPress (PHP) page loads. Tests site front page by default, but other URLs can be given as an argument. Supports parameter `--cache` which will test how fast the sites load from front proxy (not PHP) if the tested URL supports HTTP level caching.
+
 #### wp-check-remote-failure
 [`wp-check-remote-failure`](/docs/man/wp-check-remote-failure) - Test if WordPress continues to work without remote connections. Block connection to remote servers to test if WordPress continues to run as expected.
 
@@ -150,7 +150,10 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 [`wp-test-whitelist`](/docs/man/wp-test-whitelist) - Add an error or warning message to the [Codeception whitelist]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}).
 
 #### wp-watch-logs
-[`wp-watch-logs`](/docs/man/wp-watch-logs) - Print all new linest written to any of the logs under `/data/log/`. Press Ctrl+C to exit.
+[`wp-watch-logs`](/docs/man/wp-watch-logs) - Print all new lines written to most useful logs under `/data/log/*.log`. Press Ctrl+C to exit.
+
+#### wp-watch-php
+[`wp-watch-php`](/docs/man/wp-watch-php) - Print all new lines written to any of the logs under `/data/log/php-*`. Press Ctrl+C to exit.
 
 #### wp-git-status
 [`wp-git-status`](/docs/man/wp-git-status) - Show a quick summary of state of the files in `/data/wordpress`, based on git status.

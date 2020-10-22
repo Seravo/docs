@@ -5,7 +5,7 @@ title: "wp-db-cli"
 
 # NAME
 
-wp-db-cli - manual page for wp-db-cli git version fba2a66
+wp-db-cli - manual page for wp-db-cli git version 8ecb3f3
 
 # SYNOPSIS
 
@@ -14,7 +14,9 @@ wp-db-cli - manual page for wp-db-cli git version fba2a66
 # DESCRIPTION
 
 Quickly access the MariaDB console without having to manually enter
-credentials.
+credentials. Unlike 'wp db cli', this command accesses the database
+directly and does not depend on if wp-cli or the site PHP in general
+works or not.
 
 ## optional arguments:
 

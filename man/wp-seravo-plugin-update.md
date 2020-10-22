@@ -6,15 +6,14 @@ title: "wp-seravo-plugin-update"
 # NAME
 
 wp-seravo-plugin-update - manual page for wp-seravo-plugin-update git
-version fba2a66
+version 8ecb3f3
 
 # DESCRIPTION
 
 usage: wp-seravo-plugin-update \[-h\] \[--version\] \[--dev\]
 \[--reinstall\]
 
-Update the must-use seravo-plugin to the latest version. It also cleans
-up all legacy remnants of the wp-palvelu-plugin.
+Update the must-use seravo-plugin to the latest version.
 
 ## optional arguments:
 

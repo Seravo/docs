@@ -1,16 +1,16 @@
 ---
-title: "wp-php-compatibility-check"
+title: "wp-check-php-compatibility"
 ---
 
 
 # NAME
 
-wp-php-compatibility-check - manual page for wp-php-compatibility-check
-git version fba2a66
+wp-check-php-compatibility - manual page for wp-check-php-compatibility
+git version 8ecb3f3
 
 # DESCRIPTION
 
-usage: wp-php-compatibility-check \[-h\] \[--version\] \[path
+usage: wp-check-php-compatibility \[-h\] \[--version\] \[path
 \[phpversion\]\]
 
 Check that the PHP code of the current WordPress installation, including
@@ -25,7 +25,7 @@ This is based on phpcs and it's PHP compatibility rulesets.
     */data/wordpress/htdocs/wordpress/wp-content*
 
   - phpversion  
-    PHP version. Defaults to 7.4.
+    PHP version. Defaults to 8.0.
 
 ## optional arguments:
 

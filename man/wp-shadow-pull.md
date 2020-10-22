@@ -5,14 +5,14 @@ title: "wp-shadow-pull"
 
 # NAME
 
-wp-shadow-pull - manual page for wp-shadow-pull git version fba2a66
+wp-shadow-pull - manual page for wp-shadow-pull git version 8ecb3f3
 
 # DESCRIPTION
 
 usage: wp-shadow-pull \[-h\] \[--version\] \[--force\]
 \[shadow\_to\_pull\]
 
-Move data from production to shadow instances. Given a shadow the tool
+Move data from a shadow instance to production. Given a shadow the tool
 will overwrite almost all of the files located in the path
 /data/wordpress/ on your production site. You may choose to import the
 database from the shadow when given a user prompt. Before executing the

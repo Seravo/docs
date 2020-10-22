@@ -6,18 +6,27 @@ title: "wp-last-wp-logins"
 # NAME
 
 wp-last-wp-logins - manual page for wp-last-wp-logins git version
-fba2a66
+8ecb3f3
 
 # DESCRIPTION
 
-usage: wp-last-wp-logins \[options\]
+usage: wp-last-wp-logins \[-h\] \[--version\]
 
-List last logins based on wp-login.log
+  - \[--max-unsuccessful MAX\_UNSUCCESSFUL\]  
+    \[--max-days MAX\_DAYS\]
+
+'List last logins based on */data/log/wp-login*.log\*.
 
 ## optional arguments:
 
   - **-h**, **--help**  
-    display this help and exit
+    show this help message and exit
 
   - **--version**  
-    display version and exit
+    show program's version number and exit
+
+  - **--max-unsuccessful** MAX\_UNSUCCESSFUL  
+    Display at maximum given many unsuccessful logins
+
+  - **--max-days** MAX\_DAYS  
+    Read at least given many days logs
