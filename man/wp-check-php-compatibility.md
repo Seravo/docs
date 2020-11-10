@@ -6,12 +6,12 @@ title: "wp-check-php-compatibility"
 # NAME
 
 wp-check-php-compatibility - manual page for wp-check-php-compatibility
-git version 8ecb3f3
+git version 13adb08
 
 # DESCRIPTION
 
-usage: wp-check-php-compatibility \[-h\] \[--version\] \[path
-\[phpversion\]\]
+usage: wp-check-php-compatibility \[-h\] \[--version\] \[--php
+\<phpversion\>\] \[path\]
 
 Check that the PHP code of the current WordPress installation, including
 themes and plugins, is compatible with the PHP specified.
@@ -24,13 +24,13 @@ This is based on phpcs and it's PHP compatibility rulesets.
     Path to site. Defaults to
     */data/wordpress/htdocs/wordpress/wp-content*
 
-  - phpversion  
-    PHP version. Defaults to 8.0.
-
 ## optional arguments:
 
   - **-h**, **--help**  
     display this help and exit
+
+  - **--php** \<version\>  
+    PHP version. Defaults to 7.4.
 
   - **--version**  
     display version and exit
