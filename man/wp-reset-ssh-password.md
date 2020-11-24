@@ -3,21 +3,26 @@ title: "wp-reset-ssh-password"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-reset-ssh-password - manual page for wp-reset-ssh-password git
-version fba2a66
+version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-reset-ssh-password \[-h\] \[--version\]
+usage: wp-reset-ssh-password \[-h\] \[\--version\]
 
 Reset all ssh passwords.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
+
+**\--version**
+
+:   show program\'s version number and exit

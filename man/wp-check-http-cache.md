@@ -3,32 +3,40 @@ title: "wp-check-http-cache"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-check-http-cache - manual page for wp-check-http-cache git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-check-http-cache \[-h\] \[--version\] \[--no-https-verify\]
+usage: wp-check-http-cache \[-h\] \[\--version\] \[\--no-https-verify\]
 \[url\]
 
 Seravo HTTP cache checker.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - url  
-    The URL you want to check. If not provided, the command will attempt
+url
+
+:   The URL you want to check. If not provided, the command will attempt
     to construct the URL using the domain from the WordPress
     installation.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
 
-  - **--no-https-verify**  
-    Do not verify https request certificate.
+**\--version**
+
+:   show program\'s version number and exit
+
+**\--no-https-verify**
+
+:   Do not verify https request certificate.

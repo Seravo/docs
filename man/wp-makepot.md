@@ -3,18 +3,23 @@ title: "wp-makepot"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-makepot - manual page for wp-makepot git version fba2a66
+wp-makepot - manual page for wp-makepot git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-makepot \[options\]
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

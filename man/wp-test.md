@@ -3,16 +3,19 @@ title: "wp-test"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-test - manual page for wp-test git version fba2a66
+wp-test - manual page for wp-test git version 8235fae
 
-# SYNOPSIS
+SYNOPSIS
+========
 
-**wp-test** \[*-h*\] \[*--version*\] \[*--insecure*\] \[*--debug*\]
-\[*--fail-fast*\]
+**wp-test** \[*-h*\] \[*\--version*\] \[*\--insecure*\] \[*\--debug*\]
+\[*\--fail-fast*\]
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 Test that the WordPress installation works. Runs a set of standard
 Seravo tests and any custom tests the site might have. Note, that if the
@@ -22,21 +25,27 @@ For full documentation please read
 https://seravo.com/docs/tests/ng-integration-tests/
 
 Based on Codeception PHP testing framework. Any additional arguments are
-passed as-is to 'codecept'.
+passed as-is to \'codecept\'.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **--insecure**  
-    ignore HTTPS certificate issues
+**\--insecure**
 
-  - **--fail-fast**  
-    stop tests on first error that occurred
+:   ignore HTTPS certificate issues
 
-  - **--debug**  
-    display verbose debug information
+**\--fail-fast**
 
-  - **-h**, **--help**  
-    display this help and exit
+:   stop tests on first error that occurred
 
-  - **--version**  
-    display version and exit
+**\--debug**
+
+:   display verbose debug information
+
+**-h**, **\--help**
+
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

@@ -3,28 +3,35 @@ title: "wp-check-remote-failure"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-check-remote-failure - manual page for wp-check-remote-failure git
-version fba2a66
+version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-check-remote-failure \[-h\] \[--version\] \[url\]
+usage: wp-check-remote-failure \[-h\] \[\--version\] \[url\]
 
 Test if WordPress continues to work without remote connections. Block
 connection to remote servers to test if WordPress continues to run as
 expected.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - url  
-    URL of page to test
+url
 
-## optional arguments:
+:   URL of page to test
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show program's version number and exit
+**-h**, **\--help**
+
+:   show this help message and exit
+
+**\--version**
+
+:   show program\'s version number and exit

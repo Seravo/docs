@@ -3,32 +3,39 @@ title: "wp-fix-checksums"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-fix-checksums - manual page for wp-fix-checksums git version fba2a66
+wp-fix-checksums - manual page for wp-fix-checksums git version 8235fae
 
-# SYNOPSIS
+SYNOPSIS
+========
 
-**wp-fix-checksums** \[*-h*\] \[*--version*\]
+**wp-fix-checksums** \[*-h*\] \[*\--version*\]
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 Checks the WordPress core installation for modified files, and if any
 are found, automatically re-installs the same WordPress version to
 ensure the core files are unmodified.
 
-Based on 'wp core verify-checksums' with some additional logic. Only 'wp
-core verify-checksum' errors are addressed. Warnings are shown but not
-fixed automatically.
+Based on \'wp core verify-checksums\' with some additional logic. Only
+\'wp core verify-checksum\' errors are addressed. Warnings are shown but
+not fixed automatically.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
 
-# SEE ALSO
+**\--version**
+
+:   display version and exit
+
+SEE ALSO
+========
 
 *wp core*(1)

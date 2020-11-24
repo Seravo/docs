@@ -3,30 +3,37 @@ title: "wp-theme-security-check"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-theme-security-check - manual page for wp-theme-security-check git
-version fba2a66
+version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-theme-security-check \[--force\] \[-h\] \[--version\]
+usage: wp-theme-security-check \[\--force\] \[-h\] \[\--version\]
 
 Check WordPress theme security with phpcs and log each run. Makes the
 check if a prior check has not been made or if files have been changed
 since last check.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **--force**  
-    Force running security check
+**\--force**
 
-  - **-h**, **--help**  
-    display this help and exit
+:   Force running security check
 
-  - **--version**  
-    display version and exit
+**-h**, **\--help**
 
-# SEE ALSO
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit
+
+SEE ALSO
+========
 
 *phpcs*(1)

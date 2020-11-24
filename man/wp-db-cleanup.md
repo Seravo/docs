@@ -3,27 +3,34 @@ title: "wp-db-cleanup"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-db-cleanup - manual page for wp-db-cleanup git version fba2a66
+wp-db-cleanup - manual page for wp-db-cleanup git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-db-cleanup \[-h\] \[--version\] \[--delay DELAY\]
-\[--dry-run\]
+usage: wp-db-cleanup \[-h\] \[\--version\] \[\--delay DELAY\]
+\[\--dry-run\]
 
 Safe cleanup of cruft from database.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
 
-  - **--delay** DELAY  
-    Safety period in seconds before cleanup
+**\--version**
 
-  - **--dry-run**  
-    Print only how many rows would be deleted in each table
+:   show program\'s version number and exit
+
+**\--delay** DELAY
+
+:   Safety period in seconds before cleanup
+
+**\--dry-run**
+
+:   Print only how many rows would be deleted in each table

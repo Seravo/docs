@@ -3,20 +3,25 @@ title: "wp-watch-logs"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-watch-logs - manual page for wp-watch-logs git version fba2a66
+wp-watch-logs - manual page for wp-watch-logs git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-watch-logs \[-h\] \[--version\]
+usage: wp-watch-logs \[-h\] \[\--version\]
 
 Start watching all the logs under /data/log/.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

@@ -3,25 +3,32 @@ title: "wp-db-dump"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-db-dump - manual page for wp-db-dump git version fba2a66
+wp-db-dump - manual page for wp-db-dump git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-db-dump \[options\] \[dumpfile\]
 
 Make a database dump in the standardized Seravo way.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - dumpfile  
-    Path to an SQL dump file
+dumpfile
 
-## optional arguments:
+:   Path to an SQL dump file
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show version and exit
+**-h**, **\--help**
+
+:   show this help message and exit
+
+**\--version**
+
+:   show version and exit

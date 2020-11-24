@@ -3,30 +3,38 @@ title: "wp-last-wp-logins-ng"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-last-wp-logins-ng - manual page for wp-last-wp-logins-ng git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-last-wp-logins-ng \[-h\] \[--version\]
+usage: wp-last-wp-logins-ng \[-h\] \[\--version\]
 
-  - \[--max-unsuccessful MAX\_UNSUCCESSFUL\]  
-    \[--max-days MAX\_DAYS\]
+\[\--max-unsuccessful MAX\_UNSUCCESSFUL\]
 
-'List last logins based on */data/log/wp-login*.log\*.
+:   \[\--max-days MAX\_DAYS\]
 
-## optional arguments:
+\'List last logins based on */data/log/wp-login*.log\*.
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show program's version number and exit
+**-h**, **\--help**
 
-  - **--max-unsuccessful** MAX\_UNSUCCESSFUL  
-    Display at maximum given many unsuccessful logins
+:   show this help message and exit
 
-  - **--max-days** MAX\_DAYS  
-    Read at least given many days logs
+**\--version**
+
+:   show program\'s version number and exit
+
+**\--max-unsuccessful** MAX\_UNSUCCESSFUL
+
+:   Display at maximum given many unsuccessful logins
+
+**\--max-days** MAX\_DAYS
+
+:   Read at least given many days logs

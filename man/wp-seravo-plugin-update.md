@@ -3,28 +3,35 @@ title: "wp-seravo-plugin-update"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-seravo-plugin-update - manual page for wp-seravo-plugin-update git
-version 8ecb3f3
+version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-seravo-plugin-update \[-h\] \[--version\] \[--dev\]
-\[--reinstall\]
+usage: wp-seravo-plugin-update \[-h\] \[\--version\] \[\--dev\]
+\[\--reinstall\]
 
 Update the must-use seravo-plugin to the latest version.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
 
-  - **--dev**  
-    Install the latest Git version
+**\--version**
 
-  - **--reinstall**  
-    Reinstall the plugin even if the latest version is already installed
+:   show program\'s version number and exit
+
+**\--dev**
+
+:   Install the latest Git version
+
+**\--reinstall**
+
+:   Reinstall the plugin even if the latest version is already installed

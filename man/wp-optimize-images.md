@@ -3,18 +3,21 @@ title: "wp-optimize-images"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-optimize-images - manual page for wp-optimize-images git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-optimize-images \[-h\] \[--version\] \[--enable\]
+usage: wp-optimize-images \[-h\] \[\--version\] \[\--enable\]
 
-  - \[--set-max-resolution-width MAX\_RESOLUTION\_WIDTH\]  
-    \[--set-max-resolution-height MAX\_RESOLUTION\_HEIGHT\] \[-f\]
-    \[--strip-metadata\] \[path\]
+\[\--set-max-resolution-width MAX\_RESOLUTION\_WIDTH\]
+
+:   \[\--set-max-resolution-height MAX\_RESOLUTION\_HEIGHT\] \[-f\]
+    \[\--strip-metadata\] \[path\]
 
 Optimize images on a WordPress site. Can be given a path, scans
 \*/data/wordpress/htdocs/wp-content/uploads/\* as default. Runs only if
@@ -24,35 +27,46 @@ width and height saved in the datadase. Maximum image quality for JPEG
 is set to 90. Image quality for PNG files is set to 7. Prints the output
 to terminal and */data/log/wpoptimize-images.log*
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - path  
-    File or directory of images to optimize
+path
 
-## optional arguments:
+:   File or directory of images to optimize
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show program's version number and exit
+**-h**, **\--help**
 
-  - **--enable**  
-    Enable image optimization even if seravo-enableoptimize-images is
-    not "on"
+:   show this help message and exit
 
-  - **--set-max-resolution-width** MAX\_RESOLUTION\_WIDTH  
-    Set to override seravo-image-max-resolution-width.
+**\--version**
 
-  - **--set-max-resolution-height** MAX\_RESOLUTION\_HEIGHT  
-    Set to override seravo-image-max-resolution-height.
+:   show program\'s version number and exit
 
-  - **-f**, **--force**  
-    Force optimization.
+**\--enable**
 
-  - **--strip-metadata**  
-    Remove metadata from images
+:   Enable image optimization even if seravo-enableoptimize-images is
+    not \"on\"
 
-# SEE ALSO
+**\--set-max-resolution-width** MAX\_RESOLUTION\_WIDTH
+
+:   Set to override seravo-image-max-resolution-width.
+
+**\--set-max-resolution-height** MAX\_RESOLUTION\_HEIGHT
+
+:   Set to override seravo-image-max-resolution-height.
+
+**-f**, **\--force**
+
+:   Force optimization.
+
+**\--strip-metadata**
+
+:   Remove metadata from images
+
+SEE ALSO
+========
 
 *jpegoptim*(1), *optipng*(1)

@@ -3,35 +3,44 @@ title: "wp-shadow-reset"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-shadow-reset - manual page for wp-shadow-reset git version fba2a66
+wp-shadow-reset - manual page for wp-shadow-reset git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-shadow-reset \[-h\] \[--version\] \[--force\]
+usage: wp-shadow-reset \[-h\] \[\--version\] \[\--force\]
 \[shadow\_to\_reset\]
 
 Move data from production to shadow instances. Delete and replace all
 files in the /data/wordpress/ directory of a shadow with a clone from
 production.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - shadow\_to\_reset  
-    Name of the shadow to reset
+shadow\_to\_reset
 
-## optional arguments:
+:   Name of the shadow to reset
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show program's version number and exit
+**-h**, **\--help**
 
-  - **--force**  
-    Skip user prompt
+:   show this help message and exit
 
-# SEE ALSO
+**\--version**
+
+:   show program\'s version number and exit
+
+**\--force**
+
+:   Skip user prompt
+
+SEE ALSO
+========
 
 *wp-shadow-pull*(1), *wp-backup*(1)

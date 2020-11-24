@@ -3,28 +3,34 @@ title: "wp-find-code"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-find-code - manual page for wp-find-code git version fba2a66
+wp-find-code - manual page for wp-find-code git version 8235fae
 
-# SYNOPSIS
+SYNOPSIS
+========
 
 **wp-find-code** *\<serach term\>*
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 Search for given string in the PHP files under */data/wordpress*.
 
-This is a simple wrapper for 'grep' with the purpose of saving
-developers the effor of having to manually enter 'grep' arguments.
+This is a simple wrapper for \'grep\' with the purpose of saving
+developers the effor of having to manually enter \'grep\' arguments.
 
-However, if there are extra arguments, they will be passed to 'grep'
+However, if there are extra arguments, they will be passed to \'grep\'
 along with the default ones.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

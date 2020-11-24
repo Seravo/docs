@@ -3,11 +3,13 @@ title: "wp-backup-status"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-backup-status - manual page for wp-backup-status git version fba2a66
+wp-backup-status - manual page for wp-backup-status git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-backup-status \[options\]
 
@@ -16,16 +18,20 @@ List all backup increments currently available.
 wp-backup-status is a shell program which lists all increments echo
 known by rdiff-backup sorted by timestamp. Use this to find out what
 kind of backups you are able to restore. This is an alias of
-"rdiff-backup **--list-increment-sizes** /data/backups/data".
+\"rdiff-backup **\--list-increment-sizes** /data/backups/data\".
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
 
-# SEE ALSO
+**\--version**
+
+:   display version and exit
+
+SEE ALSO
+========
 
 *wp-backup-status*(1), *wp-backup*(1), *rdiff-backup*(1)

@@ -3,13 +3,15 @@ title: "wp-load-test"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-load-test - manual page for wp-load-test git version fba2a66
+wp-load-test - manual page for wp-load-test git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-load-test \[--cache\] \[-h\] \[--version\] \[URL\]
+usage: wp-load-test \[\--cache\] \[-h\] \[\--version\] \[URL\]
 
 wp-load-test is a simple command line tool to measure many consecutive
 PHP requests the site can handle in a minute while still serving each
@@ -23,13 +25,17 @@ yield 429 responses.
 
 Defaults to using output of wp-url if URL argument is not given.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **--cache**  
-    Measures cached results. This does not measure actual PHP speed.
+**\--cache**
 
-  - **-h**, **--help**  
-    display this help and exit
+:   Measures cached results. This does not measure actual PHP speed.
 
-  - **--version**  
-    display version and exit
+**-h**, **\--help**
+
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

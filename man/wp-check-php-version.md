@@ -3,21 +3,26 @@ title: "wp-check-php-version"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-check-php-version - manual page for wp-check-php-version git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-check-php-version \[options\]
 
 Check PHP version.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

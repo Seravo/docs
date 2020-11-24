@@ -3,29 +3,37 @@ title: "wp-db-load"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-db-load - manual page for wp-db-load git version fba2a66
+wp-db-load - manual page for wp-db-load git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-db-load \[-h\] \[--version\] \[--yes\] \[PATH\]
+usage: wp-db-load \[-h\] \[\--version\] \[\--yes\] \[PATH\]
 
 Load a database dump in the standardized Seravo way
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - PATH  
-    DB dump (SQL file) to load
+PATH
 
-## optional arguments:
+:   DB dump (SQL file) to load
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show program's version number and exit
+**-h**, **\--help**
 
-  - **--yes**  
-    Do not ask confirmation. Note: the tool will not ask for
+:   show this help message and exit
+
+**\--version**
+
+:   show program\'s version number and exit
+
+**\--yes**
+
+:   Do not ask confirmation. Note: the tool will not ask for
     confirmation if run from a non-interactive terminal.

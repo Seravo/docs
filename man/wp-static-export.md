@@ -3,33 +3,41 @@ title: "wp-static-export"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-static-export - manual page for wp-static-export git version fba2a66
+wp-static-export - manual page for wp-static-export git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-static-export \[-h\] \[--version\] \[URL \[OUTPUT\_DIR\]\]
+usage: wp-static-export \[-h\] \[\--version\] \[URL \[OUTPUT\_DIR\]\]
 
 Export a static version of the site. All pages and assets of the
 WordPress site will be crawled and saved as static HTML files, which
 might be useful in certain static file use cases.
 
-Note\! This tool is experimental and currently useful only to developers
+Note! This tool is experimental and currently useful only to developers
 who will further process the static files generated at */data/static*.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - URL  
-    Site URL to export. Defaults to the output of wp-url command.
+URL
 
-  - OUTPUT\_DIR  
-    Defaults to */data/static*.
+:   Site URL to export. Defaults to the output of wp-url command.
 
-## optional arguments:
+OUTPUT\_DIR
 
-  - **-h**, **--help**  
-    display this help and exit
+:   Defaults to */data/static*.
 
-  - **--version**  
-    display version and exit
+optional arguments:
+-------------------
+
+**-h**, **\--help**
+
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

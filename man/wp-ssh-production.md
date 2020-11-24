@@ -3,21 +3,26 @@ title: "wp-ssh-production"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-ssh-production - manual page for wp-ssh-production git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-ssh-production \[-h\] \[--version\]"
+usage: wp-ssh-production \[-h\] \[\--version\]\"
 
 SSH into production container.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

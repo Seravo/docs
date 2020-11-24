@@ -3,26 +3,32 @@ title: "wp-check-passwords"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-check-passwords - manual page for wp-check-passwords git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-check-passwords \[-h\] \[--version\] \[-f FILE\]
+usage: wp-check-passwords \[-h\] \[\--version\] \[-f FILE\]
 
-Scan the wp\_user table for weak passwords. @TODO: Highlight users with
+Scan the wp\_user table for weak passwords. \@TODO: Highlight users with
 admin, editor, writer privileges?
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
 
-  - **-f** FILE, **--file** FILE  
-    Tab separated file with a user login, email and password on each
+**\--version**
+
+:   show program\'s version number and exit
+
+**-f** FILE, **\--file** FILE
+
+:   Tab separated file with a user login, email and password on each
     line

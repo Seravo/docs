@@ -3,29 +3,37 @@ title: "wp-pomo-compile"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-pomo-compile - manual page for wp-pomo-compile git version fba2a66
+wp-pomo-compile - manual page for wp-pomo-compile git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-pomo-compile \[-h\] \[--version\] \[path\]
+usage: wp-pomo-compile \[-h\] \[\--version\] \[path\]
 
 Compile clear text PO translation files into binary MO files.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - path  
-    Path to wp-content. Defaults to */data/wordpress/htdocs/wp-content*.
+path
 
-## optional arguments:
+:   Path to wp-content. Defaults to */data/wordpress/htdocs/wp-content*.
 
-  - **-h**, **--help**  
-    display this help and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    display version and exit
+**-h**, **\--help**
 
-# SEE ALSO
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit
+
+SEE ALSO
+========
 
 *msgfmt*(1), *wp-makepot*(1), *wp i18n*(1)
