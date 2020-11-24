@@ -3,23 +3,29 @@ title: "wp-git-status"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-git-status - manual page for wp-git-status git version fba2a66
+wp-git-status - manual page for wp-git-status git version 8235fae
 
-# SYNOPSIS
+SYNOPSIS
+========
 
-**wp-git-status** \[*-h*\] \[*--version*\]
+**wp-git-status** \[*-h*\] \[*\--version*\]
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 Show a quick summary of state of the files in */data/wordpress*, based
 on git status.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

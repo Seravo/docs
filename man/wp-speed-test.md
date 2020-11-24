@@ -3,33 +3,42 @@ title: "wp-speed-test"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-speed-test - manual page for wp-speed-test git version fba2a66
+wp-speed-test - manual page for wp-speed-test git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-speed-test \[--cache\] \[-h\] \[--version\] \[URL\]
+usage: wp-speed-test \[\--cache\] \[-h\] \[\--version\] \[URL\]
 
 wp-speed-test measures the load time of PHP responses.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - URL  
-    The site URL to be tested. Defaults to using output of wp-url if the
+URL
+
+:   The site URL to be tested. Defaults to using output of wp-url if the
     argument is not given.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **--cache**  
-    Measures cached results. This does not measure actual PHP speed.
+**\--cache**
 
-  - **-h**, **--help**  
-    display this help and exit
+:   Measures cached results. This does not measure actual PHP speed.
 
-  - **--version**  
-    display version and exit
+**-h**, **\--help**
 
-# SEE ALSO
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit
+
+SEE ALSO
+========
 
 *wp-load-test*(1)

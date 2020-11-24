@@ -3,21 +3,26 @@ title: "wp-vagrant-activation"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-vagrant-activation - manual page for wp-vagrant-activation git
-version fba2a66
+version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-vagrant-activation \[-h\] \[--version\]"
+usage: wp-vagrant-activation \[-h\] \[\--version\]\"
 
 Runs commands needed during vagrant up.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

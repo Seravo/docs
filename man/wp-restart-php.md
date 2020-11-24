@@ -3,24 +3,30 @@ title: "wp-restart-php"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-restart-php - manual page for wp-restart-php git version fba2a66
+wp-restart-php - manual page for wp-restart-php git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-restart-php \[-h\] \[--quiet\] \[--version\]
+usage: wp-restart-php \[-h\] \[\--quiet\] \[\--version\]
 
 Restart all PHP processes. Any PHP running that is stuck, will be thus
 down.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **--quiet**  
-    Do not show config changes
+**\--quiet**
 
-  - **-h**, **--help**  
-    display this help and exit
+:   Do not show config changes
 
-  - **--version**  
-    display version and exit
+**-h**, **\--help**
+
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

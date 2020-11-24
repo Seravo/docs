@@ -3,21 +3,26 @@ title: "wp-pull-staging-db"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-pull-staging-db - manual page for wp-pull-staging-db git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-pull-staging-db \[-h\] \[--version\]
+usage: wp-pull-staging-db \[-h\] \[\--version\]
 
 Pull database from shadow site.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
+
+**\--version**
+
+:   show program\'s version number and exit

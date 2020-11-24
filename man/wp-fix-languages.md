@@ -3,21 +3,26 @@ title: "wp-fix-languages"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-fix-languages - manual page for wp-fix-languages git version fba2a66
+wp-fix-languages - manual page for wp-fix-languages git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-fix-languages \[options\]
 
 Automates fixing typical situations where language packs are missing or
 not installed.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

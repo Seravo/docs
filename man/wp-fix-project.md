@@ -3,15 +3,18 @@ title: "wp-fix-project"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-fix-project - manual page for wp-fix-project git version fba2a66
+wp-fix-project - manual page for wp-fix-project git version 8235fae
 
-# SYNOPSIS
+SYNOPSIS
+========
 
-**wp-fix-project** \[*-h*\] \[*--version*\]
+**wp-fix-project** \[*-h*\] \[*\--version*\]
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 Compares the current WordPress project at */data/wordpress* to the
 upstream Seravo/WordPress project template and attempts to apply all
@@ -21,10 +24,13 @@ as up-to-date as possible.
 For changes that cannot be automatically applied, a diff and/or git
 patch files are provided for easier manual application.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

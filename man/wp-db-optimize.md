@@ -3,23 +3,29 @@ title: "wp-db-optimize"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-db-optimize - manual page for wp-db-optimize git version fba2a66
+wp-db-optimize - manual page for wp-db-optimize git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-db-optimize \[-h\] \[--version\] \[--force\]
+usage: wp-db-optimize \[-h\] \[\--version\] \[\--force\]
 
 Optimize databases the correct way.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
 
-  - **--force**  
-    Run the optimization despite system load.
+**\--version**
+
+:   show program\'s version number and exit
+
+**\--force**
+
+:   Run the optimization despite system load.

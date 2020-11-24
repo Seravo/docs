@@ -3,30 +3,38 @@ title: "wp-check-haveibeenpwned"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-check-haveibeenpwned - manual page for wp-check-haveibeenpwned git
-version fba2a66
+version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-check-haveibeenpwned \[-h\] \[--version\] \[--json\] passhash
+usage: wp-check-haveibeenpwned \[-h\] \[\--version\] \[\--json\]
+passhash
 
 Quick pwnedpasswords.com checker. Using
 https://haveibeenpwned.com/API/v3\#SearchingPwnedPasswordsByRange Has
 both cli and JSON interface and can be used via Seravo Plugin.
 
-## positional arguments:
+positional arguments:
+---------------------
 
-  - passhash  
-    SHA1 of password
+passhash
 
-## optional arguments:
+:   SHA1 of password
 
-  - **-h**, **--help**  
-    show this help message and exit
+optional arguments:
+-------------------
 
-  - **--version**  
-    show program's version number and exit
+**-h**, **\--help**
 
-**--json**
+:   show this help message and exit
+
+**\--version**
+
+:   show program\'s version number and exit
+
+**\--json**

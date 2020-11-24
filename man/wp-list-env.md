@@ -3,23 +3,29 @@ title: "wp-list-env"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-list-env - manual page for wp-list-env git version fba2a66
+wp-list-env - manual page for wp-list-env git version 8235fae
 
-# SYNOPSIS
+SYNOPSIS
+========
 
-**wp-list-env** \[*-h*\] \[*--version*\]
+**wp-list-env** \[*-h*\] \[*\--version*\]
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 List environment variables that affect the WordPress installation at
 */data/wordpress*
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

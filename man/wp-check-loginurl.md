@@ -3,22 +3,28 @@ title: "wp-check-loginurl"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-check-loginurl - manual page for wp-check-loginurl git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-check-loginurl \[-h\] \[--version\] \[-p\]
+usage: wp-check-loginurl \[-h\] \[\--version\] \[-p\]
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
 
-  - **-p**, **--only-path**  
-    Return only path (default: full URL).
+**\--version**
+
+:   show program\'s version number and exit
+
+**-p**, **\--only-path**
+
+:   Return only path (default: full URL).

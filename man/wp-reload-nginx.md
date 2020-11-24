@@ -3,13 +3,15 @@ title: "wp-reload-nginx"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-reload-nginx - manual page for wp-reload-nginx git version fba2a66
+wp-reload-nginx - manual page for wp-reload-nginx git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-reload-nginx \[-h\] \[--version\]
+usage: wp-reload-nginx \[-h\] \[\--version\]
 
 Reload Nginx configuration. If the configuration is invalid, the script
 returns with error and Nginx continues with the old (valid) config.
@@ -17,14 +19,18 @@ returns with error and Nginx continues with the old (valid) config.
 Note: User specific Nginx configuration is located at
 /data/wordpress/nginx/\*.conf.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
 
-# SEE ALSO
+**\--version**
+
+:   display version and exit
+
+SEE ALSO
+========
 
 *wp-restart-nginx*(1)

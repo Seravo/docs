@@ -3,21 +3,26 @@ title: "wp-mail-test"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-mail-test - manual page for wp-mail-test git version fba2a66
+wp-mail-test - manual page for wp-mail-test git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-mail-test \[-h\] \[--version\] to \[from\]
+usage: wp-mail-test \[-h\] \[\--version\] to \[from\]
 
 A simple command line tool to test that mail() works as expected.
 Combine with mail-tester.com for most comprehensive results.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

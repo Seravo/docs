@@ -3,18 +3,23 @@ title: "wp-fix-backups"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-fix-backups - manual page for wp-fix-backups git version fba2a66
+wp-fix-backups - manual page for wp-fix-backups git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-fix-backups \[options\]
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

@@ -3,21 +3,26 @@ title: "wp-vagrant-dump-db"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-vagrant-dump-db - manual page for wp-vagrant-dump-db git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-vagrant-dump-db \[-h\] \[--version\]
+usage: wp-vagrant-dump-db \[-h\] \[\--version\]
 
 Dump WordPress DB into .vagrant folder.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

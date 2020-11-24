@@ -3,21 +3,26 @@ title: "wp-network-status"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-network-status - manual page for wp-network-status git version
-fba2a66
+8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
 usage: wp-network-status \[options\]
 
 List status of WordPress Network.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit

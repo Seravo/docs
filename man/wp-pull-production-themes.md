@@ -3,21 +3,26 @@ title: "wp-pull-production-themes"
 ---
 
 
-# NAME
+NAME
+====
 
 wp-pull-production-themes - manual page for wp-pull-production-themes
-git version fba2a66
+git version 8235fae
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-pull-production-themes \[-h\] \[--version\]
+usage: wp-pull-production-themes \[-h\] \[\--version\]
 
 Pull themes from production site.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    show this help message and exit
+**-h**, **\--help**
 
-  - **--version**  
-    show program's version number and exit
+:   show this help message and exit
+
+**\--version**
+
+:   show program\'s version number and exit
