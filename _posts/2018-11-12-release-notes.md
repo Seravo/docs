@@ -5,6 +5,22 @@ category: get-started
 date: 2018-11-12 11:26:00
 order: 4
 ---
+## Vagrant box seravo/wordpress 20201127.0.0
+
+* [PHP version 8.0](https://seravo.com/blog/whats-new-in-php8/) is now available. Note that this is only for testing and *we do not recommend PHP 8 for production use yet**. Currently the best advice is to use PHP 7.4 on all sites where the plugin and theme code support it, and ensure that when running with PHP 7.4 there should not be notifications or warnings emitted in `/data/log/php-error.log`, as many of those warnings will be fatal errors in PHP 8.
+* Command `wp-php-compatibility-check` renamed to `wp-check-php-compatibility` and usage changed for better developer experience. Now supports running with `--php 8.0` but still defaults to PHP 7.4.
+* New command `wp-watch-php` to make it easier to see specifically PHP errors as they happend.
+* New command `wp-test-whitelist` to help listing, adding and deleting [wp-test]({{ site.baseurl }}{% post_url 2018-09-21-ng-integration-tests %}) visible errors that are safe to ignore (e.g. plugin JavaScript warnings that don't really affect the site)
+* Ensure all Seravo commands support the `--help` argument for quick access to instructions on how to use the command in question
+* The [man pages for all Seravo commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}) have been revised and extended.
+* Fix `wp-pull-production-core` to not fail on locales that were not found
+* Improved `wp-fix-project` to have better developer experience and make it [easier to apply changes in the project template](https://github.com/Seravo/wordpress/commits) on an existing project
+* Include [PHPUnit 7.5](https://phpunit.de/) (which is WordPress compatible) by default in the local development environment so developers don't need to install it themselves manually. Also introduce a new command `convert` that is compatible with [GraphicsMagic](http://www.graphicsmagick.org/) (and not just ImageMagick). New command `catimg` can be used to view images directly on the command-line.
+* Upgrade [MariaDB](https://mariadb.org/) to version 10.5
+* Upgrade [jpegoptim](https://github.com/tjko/jpegoptim) to 1.4.6 and [optipng](http://optipng.sourceforge.net/) to 0.7.7
+* Many minor version upgrades across the box, e.g the headless Chrome updated to version 87
+* This is the last release to still include Composer 1.x series by default, and also the last release to be built with VirtualBox 5.2.
+
 ## Vagrant box seravo/wordpress 20200707.0.0
 
 * Many minor version upgrades across the box, e.g the headless Chrome updated to version 83
