@@ -5,6 +5,11 @@ category: get-started
 date: 2018-11-12 11:26:00
 order: 4
 ---
+## Vagrant box seravo/wordpress 20201205.0.0
+
+* Switch from Virtualbox 5.2 to Virtualbox 6.1. Please update your Virtualbox, because [Virtualbox 5.2 is no longer supported](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2).
+* Disable serial port output during boot.
+
 ## Vagrant box seravo/wordpress 20201127.0.0
 
 * [PHP version 8.0](https://seravo.com/blog/whats-new-in-php8/) is now available. Note that this is only for testing and *we do not recommend PHP 8 for production use yet**. Currently the best advice is to use PHP 7.4 on all sites where the plugin and theme code support it, and ensure that when running with PHP 7.4 there should not be notifications or warnings emitted in `/data/log/php-error.log`, as many of those warnings will be fatal errors in PHP 8.
