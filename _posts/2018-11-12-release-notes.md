@@ -7,8 +7,8 @@ order: 4
 ---
 ## Vagrant box seravo/wordpress 20201205.0.0
 
-* Switch from Virtualbox 5.2 to Virtualbox 6.1. Please update your Virtualbox, because [Virtualbox 5.2 is no longer supported](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2).
-* Disable serial port output during boot.
+* Virtualbox 6.1 compatibility on all platforms. Old [Virtualbox 5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) and 6.0 still work, but using latest 6.1 is now recommended.
+* Serial port output during boot has been disabled to improve VirtualBox 6.1 compatibility.
 
 ## Vagrant box seravo/wordpress 20201127.0.0
 

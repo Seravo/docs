@@ -8,15 +8,13 @@ order: 2
 
 > **Vagrant 2.1.0 changes vagrant-triggers:** If you are using Vagrant 2.0.4 or older, you need to also run `vagrant plugin install vagrant-triggers`. Users with Vagrant 2.1.0 or newer, and with the latest Vagrantfile from [Seravo/WordPress](https://github.com/Seravo/wordpress), don't need to install the legacy Vagrant triggers plugin anymore.
 
-> **VirtualBox 6.1 incompatible with Vagrant:** Latest VirtualBox version 6.1 is not supported by latest Vagrant version 2.2.6. There is no known workaround at the moment, we can only wait for upstream Vagrant to add compatibility.
-
-> **VirtualBox 6.0 very slow on some environments:** Many users have reported that VirtualBox version 6.0 is very slow, even 10x slower than the previous VirtualBox 5.2. Therefore our installation steps below recommend VirtualBox 5.2.
+> **VirtualBox 6.1 compatiblity** requires Seravo/WordPress [version 20201205.0.0](https://app.vagrantup.com/seravo/boxes/wordpress/versions/20201205.0.0) and the latest Vagrantfile from the [Seravo/WordPress project template](https://github.com/Seravo/wordpress).
 
 ## Installation
 
 ### Linux (Ubuntu/Debian)
 
-To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
+To use Virtualbox make sure you have `vt-x` enabled in your BIOS.
 
 1. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 2. Run the installation in terminal:
@@ -60,7 +58,7 @@ needed for Virtualbox.
 Clone the WordPress Git repo and run following commands:
 
 ```bash
-sudo yum install vagrant virtualbox # Version 5.2 is recommended
+sudo yum install vagrant virtualbox
 sudo yum install ruby-devel # Needed to build native ruby extensions
 sudo gem update bundler
 sudo gem install hittimes -v '1.2.2'
@@ -73,14 +71,14 @@ vagrant up
 
 ### Linux (General)
 
-If you get errors related to creating host-only network adapters during vagrant up, run ```sudo vboxreload```.
+If you get errors related to creating host-only network adapters during vagrant up, run `sudo vboxreload`.
 It seems that sometimes the virtualbox kernel modules are not working correctly after the machine wakes up from sleep.
 
 ### MacOS X
 
 1. [Install Xcode](https://developer.apple.com/xcode/downloads/): `xcode-select --install`
 2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
+3. [Install Virtualbox](https://www.virtualbox.org)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in Terminal:
 ```
@@ -100,22 +98,18 @@ sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist
 
 > **Optional:** [Vagrant Manager for OS X](http://vagrantmanager.com/) can help you manage multiple Vagrant boxes.
 
-### Seravo WordPress installation on Windows:
+### Windows (PowerShell – recommended)
 
-To use Virtualbox make sure you have ```vt-x``` enabled in your BIOS.
-On Windows 10 you need to run Cygwin as an administrator so vagrant-hostsupdater can write the necessary entries to ```/system32/drivers/etc/hosts```. Otherwise you need to add the vagrant-hostsupdater entries manually.
-Note that in some cases you can't modify the ```hosts``` file without administrative access. In that case you need to ask the administrator to give you access to the file.
+To use Virtualbox make sure you have `vt-x` enabled in your BIOS. On Windows 10 you need to run Cygwin as an administrator so `vagrant-hostsupdater` can write the necessary entries to `/system32/drivers/etc/hosts`. Otherwise you need to add the vagrant-hostsupdater entries manually. Note that in some cases you can't modify the `hosts` file without administrative access. In that case you need to ask the administrator to give you access to the file.
 
 On some versions of Windows (Windows 8) you might get a "Vt-x is not available" error. You'll need to disable Hyper-V in bios to proceed with the installation.
 Most bios setups have the option under "Security".
-
-#### Powershell (recommended)
 
 Note that PowerShell needs to be run in administrator mode.
 
 1. [Install Git](https://git-scm.com/downloads)
 2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org/) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
+3. [Install Virtualbox](https://www.virtualbox.org/)
 4. Clone this repo with PowerShell: `git clone https://github.com/Seravo/wordpress wordpress-dev`
 5. Run the installation in terminal:
 ```
@@ -124,12 +118,13 @@ vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 vagrant up
 ```
 
-#### Cygwin
+### Windows (Cygwin)
 
-1. [Install Cygwin](https://www.cygwin.com/) and via Cygwin `openssh` and `git`
-    > **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`).
+> **Note:** Cygwin doesn't include a package manager, so in order to install extra packages like `openssh` and `git`, you have to select them during the Cygwin setup. To add packages to an existing Cygwin installation, you can just re-run the setup binary (i.e. `setup-x86_64.exe`).
+
+1. [Install Cygwin](https://www.cygwin.com/) and remember to select `openssh` and `git` during the Cygwin setup.
 2. [Install Vagrant](https://www.vagrantup.com/docs/installation/)
-3. [Install Virtualbox](https://www.virtualbox.org/) (version [5.2 is strongly recommended](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2))
+3. [Install Virtualbox](https://www.virtualbox.org/)
 4. Clone this repo: `git clone https://github.com/Seravo/wordpress ~/wordpress-dev`
 5. Run the installation in terminal:
 ```
@@ -137,7 +132,8 @@ cd ~/wordpress-dev
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 vagrant up
 ```
-Cygwin will give you the following message and the necessary entries you need to add to the ```hosts``` file, if you try to vagrant up without administrative access.
+
+Cygwin will give you the following message and the necessary entries you need to add to the `hosts` file, if you try to vagrant up without administrative access.
 
 Note that this is just an example. Your message will be different.
 ```

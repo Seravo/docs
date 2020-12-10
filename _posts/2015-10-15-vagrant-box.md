@@ -11,7 +11,7 @@ summary: "This page contains information about Vagrant box used in Seravo local 
 
 You can do development for your site locally in your own computer. This is done using Vagrant.
 
-All of our sites are pre-configured with a Vagrantfile so you can just clone your site to your computer and start developing locally. We have mimicked the production environment as much as possible and bundled many development tools into the Vagrant image.
+All of our sites are pre-configured with a `Vagrantfile` so you can just clone your site to your computer and start developing locally. We have mimicked the production environment as much as possible and bundled many development tools into the Vagrant image.
 
 The virtual machine image is based on Ubuntu and it can be downloaded from [Hashicorp Atlas](https://vagrantcloud.com/seravo/boxes/wordpress).
 
@@ -24,13 +24,13 @@ Please file an issue or make a pull request if you have suggestions how to make 
 ## Requirements
 
 * Knowledge of using terminal
-* Vagrant **1.7.4 or later** installed (but not 2.1.x series or newer)
-* Virtualbox **4.2 or later** installed (but not 6.x series or newer)
+* Vagrant **1.7.4 or later** (latest 2.2.x recommended)
+* Virtualbox **4.2 or later** (latest 6.1.x recommended)
 
 ## Tested up to
 
-* Vagrant 2.0
-* Virtualbox 5.2
+* Vagrant 2.2.4
+* Virtualbox 6.1.16
 
 ## Debugging Vagrant issues
 
