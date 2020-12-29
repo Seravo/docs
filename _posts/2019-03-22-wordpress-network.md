@@ -101,6 +101,12 @@ The main site of a Network will work out-of-the-box in local development with Va
 
 Setting up a Network requires special settings in the `wp-config.php` file, potentially the installation of a domain mapper (Seravo prefers [Mercator](https://github.com/humanmade/Mercator) at the moment). In addition the web server needs to have some custom routing (at Seravo we put a `nginx/network.conf` file). In a subdomain installation also preparations regarding HTTPS certificates are needed. Seravo's customers don't need to worry about these as Seravo takes care of them and it is included in the price of the service anyway.
 
+## Note on wp-cli use
+
+Note that all **wp-cli commands acts only on the main WP Network site by default**. For example the command `wp user list` would only list the users of the primary site. To list all users one would need to run `wp user list --network` or to list the users of a specific site `wp user list --url=https://example.com/example1/`.
+
+Always keep this in mind when manipulating a WP Network site from the command line and rember to append `--url=` always when needed. To list all site urls, run `wp site list`.
+
 ## Local development with Vagrant and WordPress Network
 
 ### Value for DOMAIN_CURRENT_SITE
