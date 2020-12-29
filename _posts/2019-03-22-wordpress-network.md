@@ -107,6 +107,20 @@ Note that all **wp-cli commands acts only on the main WP Network site by default
 
 Always keep this in mind when manipulating a WP Network site from the command line and rember to append `--url=` always when needed. To list all site urls, run `wp site list`.
 
+### Listing active plugins on a Network
+
+Due to the above reason, a simple `wp plugin list` will only show what plugins are **active on the primary site**. Currently [wp-cli](https://wp-cli.org/) does not have any built-in method of listing what plugins are active on what sites. In order to do that, one must install the [WP-CLI Plugin Active on Sites](https://github.com/iandunn/wp-cli-plugin-active-on-sites) extension for wp-cli and run the following commands:
+
+```
+$ https://github.com/iandunn/wp-cli-plugin-active-on-sites
+$ for p in $(wp plugin list --field=name); do wp plugin active-on-sites $p; done
+```
+
+Only uninstall plugins that this listing says that a plugin is not active on any site.
+
+There is[ also a visual plugin for WordPress](https://github.com/Seravo/wp-multisite-plugin-statistics) that can list what plugins are used on what sites.
+
+
 ## Local development with Vagrant and WordPress Network
 
 ### Value for DOMAIN_CURRENT_SITE
