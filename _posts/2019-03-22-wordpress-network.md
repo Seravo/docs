@@ -30,10 +30,12 @@ If the Network is intended to have individual domains for each subsite, then the
 
 Example:
 - main site example.com
-- subsite a.example.com, domain alias example.net
-- subsite b.example.com, domain alias example.org
+- subsite a.example.com, domain mapping example.net
+- subsite b.example.com, domain mapping example.org
 
 It is possible to mix different domains and folder structures and the WordPress Network will initially look like it is working, but later reveal severe bugs like authentication issues and redirect loops. The most robust structure is not to mix different domains and folders, but use a clean setup like the example above.
+
+To list the domains mapped and other information about the WP Network installation, run the command `wp-network-status` or alternatively `wp site list` and `wp mercator mapping list <id>`.
 
 ## Subfolder installation in subfolder
 
@@ -57,7 +59,7 @@ Each subsite has its own content tables that are prefixed with a number, for exa
 - wp_3_posts
 - ...
 
-The `wp_posts` includes all post contents of the main site, while `wp_2_posts` includes all post contents of the first subsite.
+The `wp_posts` includes all post contents of the main site, while `wp_2_posts` includes all post contents of the first subsite. Run `wp db tables --all-tables` to see a list of all tables in the current WordPress installation.
 
 ### Network of networks
 
