@@ -46,17 +46,41 @@ Since the git hooks are just regular scripts, you can easily test them by simply
 
 ```
 $ /data/wordpress/.git/hooks/post-receive
+
+Seravo: running post-receive git hook
+*** Seems the stdin is empty, executing git hook as is all files changed ***
 Seravo: composer.json was updated, installing...
 Loading composer repositories with package information
 Installing dependencies from lock file
 Nothing to install or update
 Generating autoload files
+3 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
 > WordPress\Installer::symlinkWPContent
-Seravo: Nginx configs were changed, reloading nginx...
-testing nginx configuration...
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-Nginx restarted!
+Seravo: SASS files changed, running Gulp...
+[22:14:20] Using gulpfile /data/wordpress/gulpfile.js
+[22:14:20] Starting 'default'...
+[22:14:20] Starting 'build'...
+[22:14:20] Starting 'sass'...
+[22:14:20] Finished 'sass' after 270 ms
+[22:14:20] Starting 'js'...
+[22:14:21] Finished 'js' after 1.14 s
+[22:14:21] Finished 'build' after 1.41 s
+[22:14:21] Finished 'default' after 1.41 s
+Found Tideways API key: abc123
+{"apiKey": "abc123", "name": "894405ac", "type": "release", "environment": "production", "service": "web", "compareAfterMinutes":90}
+==> Tideways event registered successfully!
+Seravo: Flushing all caches...
+----> Purging WordPress object cache...
+Success: The cache was flushed.
+----> Flush WordPress rewrites...
+Success: Rewrite rules flushed.
+----> Flush the entire Redis cache (includes Nginx PageSpeed cache etc)...
+OK
+----> Success
+----> Purging Nginx page cache...
+Cache purged successfully for example_123xyz.
+Error: Couldn't purge cache. Could be empty already.
 ```
 
 One common reason for scripts to fail is the lack of the executable bit. That is easily fixed by `chmod +x /data/wordpress/.git/hooks/post-receive` or if it is a link, with `chmod +x /data/wordpress/scripts/git-hooks/post-receive`.
