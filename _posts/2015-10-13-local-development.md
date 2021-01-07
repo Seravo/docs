@@ -98,6 +98,43 @@ $ wp db export vagrant-base.sql --path=/data/wordpress/htdocs/wordpress --skip-e
 
 If Vagrant detects that a file named `vagrant-up-customizer.sh` is present, it will automatically be run every time `vagrant up` is invoked.
 
+## Configuring git push settings
+
+By default Git does not accept pushes on a non-bare repository and emits this warning:
+
+```
+laptop$ git push production
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 667 bytes | 667.00 KiB/s, done.
+Total 8 (delta 7), reused 0 (delta 0)
+remote: error: refusing to update checked out branch: refs/heads/master
+remote: error: By default, updating the current branch in a non-bare repository
+remote: is denied, because it will make the index and work tree inconsistent
+remote: with what you pushed, and will require 'git reset --hard' to match
+remote: the work tree to HEAD.
+remote:
+remote: You can set the 'receive.denyCurrentBranch' configuration variable
+remote: to 'ignore' or 'warn' in the remote repository to allow pushing into
+remote: its current branch; however, this is not recommended unless you
+remote: arranged to update its work tree to match what you pushed in some
+remote: other way.
+remote:
+remote: To squelch this message and still keep the default behaviour, set
+remote: 'receive.denyCurrentBranch' configuration variable to 'refuse'.
+To production:/data/wordpress
+ ! [remote rejected]   master -> master (branch is currently checked out)
+```
+
+Git settings can be overridden to allow pushing with [receive.denyCurrentBranch updateInstead](https://git-scm.com/docs/git-config#Documentation/git-config.txt-receivedenyCurrentBranch). See also [longer explanation on Stackoverflow](https://stackoverflow.com/a/28262104/1151722).
+
+```
+laptop$ ssh production
+production$ cd /data/wordpress
+production:/data/wordpress$ git config receive.denyCurrentBranch updateInstead
+```
+
 ## Removing git from the WordPress site
 
 If you want, you can remove the whole git repository simply by running:
