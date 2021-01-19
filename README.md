@@ -19,7 +19,7 @@ TODO
 
 ## Publishing the pages
 
-The head of the gh-pages branch will automatically be built by GitHub and the result visible at [https://seravo.com/docs](https://seravo.com/docs).
+The head of the `master` branch will automatically be built by GitHub and the result visible at [https://seravo.com/docs](https://seravo.com/docs).
 
 ## Template source
 This is based on template: http://bruth.github.io/jekyll-docs-template
