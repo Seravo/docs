@@ -6,7 +6,7 @@ The repository uses Jekyll to generate HTML of the Markdown text files.
 
 ## Adding pages
 
-You can add new pages using included ```bin/jekyll-page```
+You can add new pages using included `bin/jekyll-page`
 
 For example add SSH page to get started
 ```bash

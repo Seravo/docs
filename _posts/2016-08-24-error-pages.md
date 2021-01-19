@@ -13,7 +13,7 @@ In some maintenance scenarios it might be handy to be able to show custom error 
 
 ### Flexible maintenance page
 
-If there is a need to temporarily divert all traffic to a single static page (for example to show an error message or a maintenance message) the best way to accomplish this is by adding to your ```/data/wordpress/nginx/custom.conf``` a line like:
+If there is a need to temporarily divert all traffic to a single static page (for example to show an error message or a maintenance message) the best way to accomplish this is by adding to your `/data/wordpress/nginx/custom.conf` a line like:
 
 ```
 rewrite ^(.*)$ /maintenance.html break;
@@ -31,7 +31,7 @@ If a file named `index.html` is placed in the `/data/wordress/htdocs/` folder, i
 
 ### Custom database connection error page
 
-If WordPress is unable to connect to the database, the PHP file ```/data/wordpress/htdocs/wp-content/db-error.php``` will be displayed instead. This file may be customized to show any static or dynamic content instead of the default template.
+If WordPress is unable to connect to the database, the PHP file `/data/wordpress/htdocs/wp-content/db-error.php` will be displayed instead. This file may be customized to show any static or dynamic content instead of the default template.
 
 ### Custom PHP fatal error and parse error pages
 

@@ -43,7 +43,7 @@ Instance switcher is not loaded when in a development environment.
 You can opt in to optimize your websites images and adjust the parameters.
 
 ### Run tests on WordPress core functionalities
-You can run ``` $ wp-test ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
+You can run `wp-test` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
 
 ### Logs page
 Adds an admin page where you can view all your website logs.
@@ -63,7 +63,7 @@ Imagine a situation where your client sees the page in development and then does
 ### Add a Purge Cache button to the admin bar
 This feature simplifies emptying your cached pages.
 
-Purging the cache is also achievable via command line: ``` $ wp-purge-cache ``` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
+Purging the cache is also achievable via command line: `wp-purge-cache` as seen in [commands]({{ site.baseurl }}{% post_url 2015-10-13-available-commands %}).
 
 ### Enable login to wp-admin with a secure SSL client certificate
 
@@ -80,7 +80,7 @@ Notifies you if you have forgotten to enable SSL in the WordPress siteurl or hom
 ## Configuration by using filters
 Our plugin contains multiple filters which can be used to turn off the features mentioned above.
 
-Add any of the filters below to the ```functions.php``` file of your theme:
+Add any of the filters below to the `functions.php` file of your theme:
 
 ```php
 <?php

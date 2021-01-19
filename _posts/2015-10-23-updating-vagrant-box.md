@@ -24,7 +24,7 @@ This is an indicator that you don't have the newest version of the box available
 
 ## Download new box image
 
-Run the following command in your project folder so that you'll get new version of the box ```seravo/wordpress```:
+Run the following command in your project folder so that you'll get new version of the box `seravo/wordpress`:
 
 ```bash
 $ vagrant box update

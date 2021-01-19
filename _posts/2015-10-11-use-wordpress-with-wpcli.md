@@ -13,7 +13,7 @@ You can use wp-cli in **Vagrant box** and **Production**. Just run this to see a
 $ wp --help
 ```
 
-> **Note:** You can call ```wp``` command anywhere without ```--path``` parameter because the environment handles paths for you.
+> **Note:** You can call `wp` command anywhere without `--path` parameter because the environment handles paths for you.
 
 More information about wp-cli can be found in [wp-cli.org](http://wp-cli.org)
 

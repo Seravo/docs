@@ -13,18 +13,18 @@ Seravo uses [https://github.com/Seravo/wordpress](https://github.com/Seravo/word
 
 ## Data locations
 
-All of your data is located under the path ```/data/```. During the updates of your site we will wipe away all unnecessary files and only preserve things in the ```/data/``` directory. No need to worry though, because we have moved your home folder into ```/data/home/$USER/```, for instance, and made correct symlinks so you won't even notice it's located somewhere else.
+All of your data is located under the path `/data/`. During the updates of your site we will wipe away all unnecessary files and only preserve things in the `/data/` directory. No need to worry though, because we have moved your home folder into `/data/home/$USER/`, for instance, and made correct symlinks so you won't even notice it's located somewhere else.
 
 ### Web root (htdocs)
-Your content is served from:```/data/wordpress/htdocs/```
+Your content is served from:`/data/wordpress/htdocs/`
 
 ### WordPress installation path
 
-WordPress is installed in: ```/data/wordpress/htdocs/wordpress/```
+WordPress is installed in: `/data/wordpress/htdocs/wordpress/`
 
 ### WP-content
 
-WP-content is moved outside of the wordpress directory into: ```/data/wordpress/htdocs/wp-content/```
+WP-content is moved outside of the wordpress directory into: `/data/wordpress/htdocs/wp-content/`
 
 ### WordPress uploads
 
@@ -34,7 +34,7 @@ When a site is developed in our Seravo Vagrant box, the uploads will automatical
 
 ### Log files
 
-All logs are saved in: ```/data/log/```
+All logs are saved in: `/data/log/`
 
 ## Project Structure
 

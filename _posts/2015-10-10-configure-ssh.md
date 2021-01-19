@@ -69,10 +69,7 @@ and check to make sure that only the key(s) you wanted were added.
 
 When you are done installing your SSH key, test that it works and you actually can SSH into the server without being prompted for a password.
 
-> **OS X users:** You can install *ssh-copy-id* with Homebrew:
->```bash
-$ brew install ssh-copy-id
-```
+> **OS X users:** You can install *ssh-copy-id* with Homebrew: `brew install ssh-copy-id`
 
 > **Windows users:** Install your ssh key through **Putty** instead. **[Cygwin](https://www.cygwin.com/)** is also a great choice for all your terminal tools (ssh, rsync, git..) under Windows.
 
@@ -105,7 +102,7 @@ Add following lines to `~/.ssh/config`:
       Port 12345
       ForwardAgent yes
 
-> **Optional:** ```ForwardAgent yes``` - allows you to use your ssh credentials in the production machine to access private code from Github or Bitbucket.
+> **Optional:** `ForwardAgent yes` - allows you to use your ssh credentials in the production machine to access private code from Github or Bitbucket.
 
 ## Using Vagrant SSH
 
