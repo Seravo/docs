@@ -29,6 +29,29 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-backup-status
 [`wp-backup-status`](/docs/man/wp-backup-status) - List all backup increments known by `rdiff-backup` by date. Use this to find out what backups exists. This is an alias of `rdiff-backup --list-increment-sizes /data/backups/data`.
 
+#### wp-check-haveibeenpwned
+[`wp-check-haveibeenpwned`](/docs/man/wp-check-haveibeenpwned) - Use haveibeenpwned.com to check if the given password hash can be found in password leak databases.
+
+#### wp-check-http-cache
+[`wp-check-http-cache`](/docs/man/wp-check-http-cache) - Check if HTTP cache is working on the site. Makes three requests and checks whether resources were loaded from cache.
+
+#### wp-check-https
+[`wp-check-https`](/docs/man/wp-check-https) - Check the status of site's HTTPS setup and create an in-depth report.
+
+#### wp-check-passwords
+[`wp-check-passwords`](/docs/man/wp-check-passwords) - Checks the strengths of WordPress user passwords. Shows a warning if a user has a weak password.
+
+#### wp-check-php-version
+[`wp-check-php-version`](/docs/man/wp-check-php-version) - Returns the PHP version.
+
+#### wp-check-php-compatibility
+[`wp-check-php-compatibility`](/docs/man/wp-check-php-compatibility) - Check that the PHP code of the current WordPress installation, including themes and plugins, is compatible with the PHP specified. This is based on phpcs and its PHP compatibility rulesets.
+
+#### wp-check-remote-failure
+[`wp-check-remote-failure`](/docs/man/wp-check-remote-failure) - Test if WordPress continues to work without remote connections. Block connection to remote servers to test if WordPress continues to run as expected.
+
+#### wp-find-code
+
 #### wp-fix-checksums
 [`wp-fix-checksums`](/docs/man/wp-fix-checksums) - Automatically fix typical situations where `wp core verify-checksums` has detected an error (core files changed/tampered). Does not attempt to fix any warnings returned.
 
@@ -50,6 +73,9 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-last-ssh-logins
 [`wp-last-ssh-logins`](/docs/man/wp-last-ssh-logins) - List last logins according to system status history and failed logins based on wtmp and btmp logs.
 
+#### wp-last-wp-logins
+[`wp-last-wp-logins`](/docs/man/wp-last-wp-logins) - Shows a summary of successful WordPress logins and unsuccessful WordPress login attempts with relevant information fetched from `wp-login.log`.
+
 #### wp-list-files-ctime
 [`wp-list-files-ctime`](/docs/man/wp-list-files-ctime) - List all recently changed filed based on change time (ctime attribute). Files modified during the last 30 days are listed. This is less reliable than `wp-backup-list-changes` as files can have their ctime attribute set to anything.
 
@@ -65,6 +91,9 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-optimize-images
 [`wp-optimize-images`](/docs/man/wp-optimize-images) - Optimize images on site. Can be given a path as a parameter but scans `/data/wordpress/htdocs/wp-content/uploads/\` but default. Runs only if the `seravo-enable-optimize-images` value in the database is set to true. Reduces the resolution of all JPEG files according to maximum width and height saved in the database table `wp_options`as`seravo-image-max-resolution-width`and`seravo-image-max-resolution-width`. Maximum image quality for JPEG is set to 90. Image quality for PNG files is set to 7. Prints the output to terminal and `/data/log/wp-optimize-images.log`.
 
+#### wp-network-status
+[`wp-network-status`](/docs/man/wp-network-status) - Show status of WordPress Network (multisite) installation. If the site this command is run on is not a WordPress Network, a notification is shown.
+
 #### wp-purge-cache
 [`wp-purge-cache`](/docs/man/wp-purge-cache) - Purge all server caches: Nginx proxy cache, WordPress object cache, WordPress rewrite cache and PageSpeed cache.
 
@@ -77,42 +106,18 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-reset-ssh-password
 [`wp-reset-ssh-password`](/docs/man/wp-reset-ssh-password) - Reset the SSH passwords. This is the only way to change the SSH password for a site at Seravo.
 
-#### wp-last-wp-logins
-[`wp-last-wp-logins`](/docs/man/wp-last-wp-logins) - Shows a summary of successful WordPress logins and unsuccessful WordPress login attempts with relevant information fetched from `wp-login.log`.
-
-#### wp-network-status
-[`wp-network-status`](/docs/man/wp-network-status) - Show status of WordPress Network (multisite) installation. If the site this command is run on is not a WordPress Network, a notification is shown.
-
-#### wp-check-haveibeenpwned
-[`wp-check-haveibeenpwned`](/docs/man/wp-check-haveibeenpwned) - Use haveibeenpwned.com to check if the given password hash can be found in password leak databases.
-
 #### wp-seravo-plugin-update
 [`wp-seravo-plugin-update`](/docs/man/wp-seravo-plugin-update) - Update the must-use Seravo Plugin to the latest version. Use `--dev` parameter to pull latest git master instead of the latest stable release.
 
-#### wp-check-http-cache
-[`wp-check-http-cache`](/docs/man/wp-check-http-cache) - Check if HTTP cache is working on the site. Makes three requests and checks whether resources were loaded from cache.
-
-#### wp-check-https
-[`wp-check-https`](/docs/man/wp-check-https) - Check the status of site's HTTPS setup and create an in-depth report.
-
-#### wp-check-passwords
-[`wp-check-passwords`](/docs/man/wp-check-passwords) - Checks the strengths of WordPress user passwords. Shows a warning if a user has a weak password.
-
-#### wp-check-php-version
-[`wp-check-php-version`](/docs/man/wp-check-php-version) - Returns the PHP version.
-
-#### wp-check-php-compatibility
-[`wp-check-php-compatibility`](/docs/man/wp-check-php-compatibility) - Check that the PHP code of the current WordPress installation, including themes and plugins, is compatible with the PHP specified. This is based on phpcs and its PHP compatibility rulesets.
-
 #### wp-speed-test-check
-[`wp-speed-test`]/man/wp-speed-test) - Measure the load time of WordPress (PHP) page loads. Tests site front page by default, but other URLs can be given as an argument. Supports parameter `--cache` which will test how fast the sites load from front proxy (not PHP) if the tested URL supports HTTP level caching.
-
-#### wp-check-remote-failure
-[`wp-check-remote-failure`](/docs/man/wp-check-remote-failure) - Test if WordPress continues to work without remote connections. Block connection to remote servers to test if WordPress continues to run as expected.
+[`wp-speed-test`](/docs/man/wp-speed-test) - Measure the load time of WordPress (PHP) page loads. Tests site front page by default, but other URLs can be given as an argument. Supports parameter `--cache` which will test how fast the sites load from front proxy (not PHP) if the tested URL supports HTTP level caching.
 
 #### wp-theme-security-check
 [`wp-theme-security-check`](/docs/man/wp-theme-security-check) - Check WordPress theme security with phpcs and log each run. Makes the check if a check has not been made before or if files have changed since the last check.
 
+#### wp-static-export
+
+#### wp-stats
 
 ### Developer helpers
 
@@ -164,23 +169,23 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-db-cli
 [`wp-db-cli`](/docs/man/wp-db-cli) - Access the MariaDB console interface.
 
-#### wp-db-optimize
-[`wp-db-optimize`](/docs/man/wp-db-optimize) - Run the CHECK and OPTIMIZE tasks for the WordPress database.
-
 #### wp-db-cleanup
 [`wp-db-cleanup`](/docs/man/wp-db-cleanup) - Remove older than current year post revisions from database. Use with caution, this is destructive operation. Operation is cancelable within 10 seconds by typing Ctrl+C.
-
-#### wp-db-info
-[`wp-db-info`](/docs/man/wp-db-info) - Display database table size in bytes and wp_option record lenghts.
-
-#### wp-db-size
-[`wp-db-size`](/docs/man/wp-db-size) - Display database size by tables.
 
 #### wp-db-dump
 [`wp-db-dump`](/docs/man/wp-db-dump) - Dump current database into /data/db/. This file will normally be the daily backup database dump.
 
 #### wp-db-load
 [`wp-db-load`](/docs/man/wp-db-load) - Replace current database with existing dump from /data/db/
+
+#### wp-db-info
+[`wp-db-info`](/docs/man/wp-db-info) - Display database table size in bytes and wp_option record lenghts.
+
+#### wp-db-optimize
+[`wp-db-optimize`](/docs/man/wp-db-optimize) - Run the CHECK and OPTIMIZE tasks for the WordPress database.
+
+#### wp-db-size
+[`wp-db-size`](/docs/man/wp-db-size) - Display database size by tables.
 
 #### wp-db-update
 [`wp-db-update`](/docs/man/wp-db-update) - Apply all pending wordpress database schema updates, if any

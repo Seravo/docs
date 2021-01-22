@@ -3,27 +3,33 @@ title: "wp-watch-php"
 ---
 
 
-# NAME
+NAME
+====
 
-wp-watch-php - manual page for wp-watch-php git version 8ecb3f3
+wp-watch-php - manual page for wp-watch-php git version ef6893b
 
-# DESCRIPTION
+DESCRIPTION
+===========
 
-usage: wp-watch-php \[-h\] \[--version\]
+usage: wp-watch-php \[-h\] \[\--version\]
 
 Start watching all PHP logs under /data/log/.
 
-## This includes among others:
+This includes among others:
+---------------------------
 
 > \- php-error.log - php-mail.log - php-compatibility.log (if found) -
 > php-slow.log (if found)
 
 Also show latest 100 lines to reveal any recent PHP issues.
 
-## optional arguments:
+optional arguments:
+-------------------
 
-  - **-h**, **--help**  
-    display this help and exit
+**-h**, **\--help**
 
-  - **--version**  
-    display version and exit
+:   display this help and exit
+
+**\--version**
+
+:   display version and exit
