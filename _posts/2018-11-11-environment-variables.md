@@ -70,6 +70,16 @@ lrwxrwxrwx 1 otto otto .env -> .env.development
 
 You can have template files like `.env.development` tracked in version control, and then make a location-specific symbolic link from `.env` to the correct file. By default the `.env` file is and should be ignored by git via gitignore.
 
+## Note on Dotenv version 5.0.0
+
+With the latest [version 5.0.0 the syntax of Dotenv changed again](https://github.com/Seravo/wordpress/commit/88d3a0201da14b935f50f27ba49f1aeb51ae726c). In new instances of `wp-config.php` you will find lines like:
+```
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable($root_dir);
+$dotenv->load();
+```
+
+The `Unsafe` in the function name looks bad, but indeed necessary for `getenv('NAME')` to work in WordPress/PHP.
+
 ## Note on Dotenv version 2.4.0
 
 In the [version 2.4.0 the syntax of Dotenv changed](https://github.com/Seravo/wordpress/commit/f28fd089197c7e09ce44a78e74c1cf59d05385e8). In new instances of `wp-config.php` you will find lines like:
@@ -85,3 +95,5 @@ Dotenv::load($root_dir);
 ```
 
 The version of Dotenv on your site (and syntax in your `wp-config.php`) is what was at the time when the site was created. If you later run `composer update` and thus update Dotenv to version &gt; 2.4.0, you need to update the lines in your `wp-config.php` manually, otherwise your WordPress will just display a blank page and your `/data/log/php-error.log` will have fatal error messages about Dotenv.
+
+For more information, see the [Dotenv UPGRADING documentation](https://github.com/vlucas/phpdotenv/blob/master/UPGRADING.md) that lists major changes across all versions.
