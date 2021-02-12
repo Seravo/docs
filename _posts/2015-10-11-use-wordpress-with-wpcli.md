@@ -33,7 +33,7 @@ $ wp db import your-dump-filename.sql
 This creates a new administrator user **'admin'** with password **'admin'**:
 
 ```bash
-$ wp user create admin admin@example.test --user_role=administrator --user_pass=admin
+$ wp user create username email --user_pass=newpassword --role=administrator
 ```
 
 ### Search-Replace database contents
