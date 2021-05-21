@@ -25,16 +25,6 @@ navigation: 1
 # URL to source code, used in _includes/footer.html
 codeurl: 'https://seravo.com'
 
-# Default categories (in order) to appear in the navigation
-sections: [
-    ['get-started', 'Get Started'],
-    ['configuration', 'Configuration'],
-    ['tests', 'Testing'],
-    ['development', 'Development'],
-    ['deployment', 'Deployment'],
-    ['management', 'Management']
-]
-
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: '/docs'
@@ -51,9 +41,6 @@ sass:
 plugins:
   - jekyll-sitemap # Generates sitemaps for Google
 
-# Dates are not included in permalinks
-permalink: /:categories/:title/
-
 # Syntax highlighting
 highlighter: pygments
 
@@ -62,6 +49,53 @@ future: true
 
 # Exclude non-site files
 exclude: ['bin','CNAME', 'README.md']
+
+# Path to subpages, ordered by 'sequence' in navigation
+collections_dir: pages
+
+# Page categories
+collections:
+  get-started:
+    title: "Get Started"
+    output: true
+    permalink: /:collection/:name
+    sequence: 1
+    searchable: true
+  configuration:
+    title: "Configuration"
+    output: true
+    permalink: /:collection/:name
+    sequence: 2
+    searchable: true
+  tests:
+    title: "Tests"
+    output: true
+    permalink: /:collection/:name
+    sequence: 3
+    searchable: true
+  development:
+    title: "Development"
+    output: true
+    permalink: /:collection/:name
+    sequence: 4
+    searchable: true
+  deployment:
+    title: "Deployment"
+    output: true
+    permalink: /:collection/:name
+    sequence: 5
+    searchable: true
+  management:
+    title: "Management"
+    output: true
+    permalink: /:collection/:name
+    sequence: 6
+    searchable: true
+  man:
+    title: "Man pages"
+    output: true
+    permalink: /:collection/:name
+    searchable: true
 
 highlighter: rouge
 
