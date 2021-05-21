@@ -1,20 +1,20 @@
 <ul class="nav nav-list">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
-    {% for section in site.sections %}
-        {% assign attr = section[0] %}
-        {% assign label = section[1] %}
-
-        {% for link in site.categories[attr] %}
-            {% if forloop.first %}
-                <li class="nav-header">{{ label }}</li>
-            {% endif %}
-            <li data-order="{{ link.order }}">
-                {% if link.url == page.url %}
-                    <a class="is-active" href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
-                {% else %}
-                    <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+    {% assign collections = site.collections | sort: 'sequence' %}
+    {% for collection in collections %}
+        {% for link in site.[collection.label] %}
+            {% if collection.title and collection.sequence > 0 %}
+                {% if forloop.first %}
+                    <li class="nav-header">{{ collection.title }}</li>
                 {% endif %}
-            </li>
+                <li data-order="{{ link.order }}">
+                    {% if link.url == page.url %}
+                        <a class="is-active" href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                    {% else %}
+                        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                    {% endif %}
+                </li>
+            {% endif %}
         {% endfor %}
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
