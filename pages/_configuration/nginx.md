@@ -225,9 +225,13 @@ function securelink($path) {
 PageSpeed sniffs through your html documents and rewrites them to be faster. This process is very site specific, so make sure that you test everything carefully before enabling PageSpeed in production. You can find more about all the filters available in [Google documentation](https://developers.google.com/speed/pagespeed/module/filters).
 
 #### Turn pagespeed on
+
+Create a new Nginx config file for PageSpeed `/data/wordpress/nginx/pagespeed.conf` and add the following to enable the module.
 ```
 pagespeed on;
 ```
+
+Below you can find PageSpeed filters that you can enable by appending to the created config file. After you have made changes and saved them, you should restart Nginx with `wp-restart-nginx`.
 
 #### Add some PageSpeed filters
 
@@ -237,5 +241,14 @@ We have created a list of filters that might be beneficial to you in our environ
 # Optimize resource loading
 pagespeed EnableFilters rewrite_css,combine_css,inline_css,flatten_css_imports,inline_javascript,combine_javascript,inline_google_font_css,canonicalize_javascript_libraries;
 ```
+
+- `rewrite_css` minifies css by removing comments and whitespace as well as shortening some parts of the css files
+- `combine_css` combines site's css files into a large common .css file in order to reduce the number of HTTP requests
+- `inline_css` places small external css styles directly into the html document in order to reduce the number of HTTP requests
+- `flatten_css_imports` replaces css @import rules with the styles defined in the imported stylesheet combining all into the same file
+- `inline_javascript` places small external JavaScript snippets directly into the html document in order to reduce the number of HTTP requests
+- `combine_javascript` combines site's JavaScript files into a large common .js file in order to reduce the number of HTTP requests
+- `inline_google_font_css` on sites with Google Fonts, inlines the css directly into the page reducing the number of HTTP requests
+- `canonicalize_javascript_libraries` fetches some popular JavaScript libraries from Google Hosted Libraries and speedifies webpage load time if the libraries were fetched from a slower external server before
 
 Note that with the introduction of HTTP/2, many of the techniques used by PageSpeed have become obsolete. Currently very few of our customers use PageSpeed because of the limited benefits it brings but also due to the alternative site optimization methods we provide. For example, the image optimization filters provided in PageSpeed can be replaced by [Seravo Plugin](/docs/configuration/wppalvelu-plugin/#optimize-images) and using [an alternative way to show WebP images](/docs/configuration/webp-images/).
