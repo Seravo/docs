@@ -31,7 +31,7 @@ development:
     - example.dev
     - www.example.dev
 
-  # If you want other sin your local network (e.g. office) to be able to access
+  # If you want others in your local network (e.g. office) to be able to access
   # the site running on your laptop, activate Avahi / Bonjour / Zeroconf that
   # will advertise *.local domains on the network.
   avahi: true
@@ -41,7 +41,7 @@ development:
 
 #### name
 
-Change `name` in config.yml to change your site name. This is used in quite a few places in the development environment.
+Change `name` in config.yml to change your site name. This is used in quite a few places in the development environment. Commands like `wp-pull-staging-db` use this as the username for ssh connections.
 
 For example, with the above config.yml [mailcatcher]({{ site.baseurl }}/development/mailcatcher ) is set up in the address: mailcatcher.**example**.local.
 
