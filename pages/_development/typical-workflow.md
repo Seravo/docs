@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Typical workflow
-order: 3
+order: 4
 ---
 
 ## Using git
