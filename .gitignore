@@ -4,5 +4,10 @@ _site/
 # Ignore cache
 .sass-cache/
 .jekyll-metadata
+.jekyll-cache
+.bundle
+vendor
 
+# IDE files
+.idea
 .DS_Store
