@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Vagrant introduction"
+title: "Introduction"
 order: 1
 ---
 
@@ -18,14 +18,14 @@ All sites with Seravo are pre-configured with a `Vagrantfile` and a site specifi
 ## Getting started
 
 To begin, install the environment by following the
-[requirements installation]({{ site.baseurl }}/local-environment/vagrant-installation/) guide. See the
-[common workflows]({{ site.baseurl }}/local-environment/workflows/) and
-[configuration]({{ site.baseurl }}/local-environment/configuration/) after you've confirmed a functional installation
+[requirements installation]({{ site.baseurl }}/local-development/installation/) guide. See the
+[common workflows]({{ site.baseurl }}/local-development/workflows/) and
+[configuration]({{ site.baseurl }}/local-development/configuration/) after you've confirmed a functional installation
 by running an empty test site. Learn the [tools](#credentials-and-urls) and
-[commands]({{ site.baseurl }}/get-started/available-commands/#developer-helpers)
+[commands]({{ site.baseurl }}/environment/available-commands/#developer-helpers)
 you'll need to optimize your development process.
 
-If you encounter any problems, consult the [troubleshooting]({{ site.baseurl }}/local-environment/troubleshooting/) guide
+If you encounter any problems, consult the [troubleshooting]({{ site.baseurl }}/local-development/troubleshooting/) guide
 for instructions on debugging and reporting the problem.
 
 ## Credentials and URLs

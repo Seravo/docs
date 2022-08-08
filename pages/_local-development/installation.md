@@ -44,7 +44,7 @@ On Linux:
 # Installation
 
 If something goes wrong at any point, consult the software documentation
-specified and the [Vagrant troubleshooting]({{ site.baseurl }}/local-environment/troubleshooting/) guide.
+specified and the [Vagrant troubleshooting]({{ site.baseurl }}/local-development/troubleshooting/) guide.
 
 ## Windows
 
@@ -70,16 +70,16 @@ see the [VirtualBox troubleshooting](https://www.virtualbox.org/manual/ch12.html
 - Under the Windows tab, download the [Vagrant installer](https://www.vagrantup.com/downloads).
 - If necessary, restart the system after installation.
 
-If you need to run multiple sites locally or are uncomfortable with Cygwin terminal,
-you should also install graphical [Vagrant manager](https://www.vagrantmanager.com/downloads/).
+If you need to run multiple sites locally or are uncomfortable with the Cygwin terminal,
+you should also install a graphical [Vagrant manager](https://www.vagrantmanager.com/downloads/).
 
 If you run into any problems during the installation,
 see the [Vagrant installation](https://www.vagrantup.com/docs/installation) guide.
 
 **4. Verify the installation**
 
-Verify the installation by running Cygwin **as an administrator** and proceeding to
-[testing the installation](#testing-the-installation)
+Verify the installation by running Cygwin **as an administrator** and proceed to
+[test the installation](#testing-the-installation)
 
 ---
 
@@ -176,4 +176,4 @@ Once the environment is up and running, navigate to [https://wordpress.local](ht
 Finally, use `vagrant halt` and `vagrant destroy` to bring the test site to a halt and remove it.
 
 If the `vagrant up` command appears to be stuck for an extended period of time or prints an error,
-follow the [Vagrant troubleshooting]({{ site.baseurl }}/local-environment/troubleshooting/) guide.
+follow the [Vagrant troubleshooting]({{ site.baseurl }}/local-development/troubleshooting/) guide.

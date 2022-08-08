@@ -17,7 +17,7 @@ If you haven't [updated the Vagrantfile](#update-vagrantfile) in a while, do so 
 
 A project can only have one machine running at any given time. If you have other projects running,
 [stop them all](#stop-all-machines) before starting a new one to avoid problems and save system resources. If you need
-to have multiple projects at once, make sure the [config.yml]({{ site.baseurl }}/local-environment/configuration/) has
+to have multiple projects at once, make sure the [config.yml]({{ site.baseurl }}/local-development/configuration/) has
 a unique name and domains.
 
 Run `vagrant up` in the project directory to start the machine. On Windows, always run

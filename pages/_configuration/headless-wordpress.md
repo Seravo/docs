@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Headless WordPress"
-order: 12
+order: 7
 ---
 In the WordPress context, headless means that the website visitor is always server a static, single-page application type of HTML page instead of the normal WordPress PHP generated HTML page from a WordPress theme. On a headless site WordPress is still kept in the background and used to manage the contents of the site.
 

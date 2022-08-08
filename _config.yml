@@ -55,47 +55,41 @@ collections_dir: pages
 
 # Page categories
 collections:
-  get-started:
-    title: "Get Started"
+  environment:
+    title: "Environment"
     output: true
     permalink: /:collection/:name/
     sequence: 1
-    searchable: true
-  configuration:
-    title: "Configuration"
-    output: true
-    permalink: /:collection/:name/
-    sequence: 2
-    searchable: true
-  tests:
-    title: "Tests"
-    output: true
-    permalink: /:collection/:name/
-    sequence: 3
-    searchable: true
-  development:
-    title: "Development"
-    output: true
-    permalink: /:collection/:name/
-    sequence: 4
-    searchable: true
-  local-environment:
-    title: "Local Development"
-    output: true
-    permalink: /:collection/:name/
-    sequence: 5
-    searchable: true
-  data-syncing:
-    title: "Data Syncing"
-    output: true
-    permalink: /:collection/:name/
-    sequence: 6
     searchable: true
   management:
     title: "Management"
     output: true
     permalink: /:collection/:name/
-    sequence: 7
+    sequence: 2
+    searchable: true
+  configuration:
+    title: "Configuration"
+    output: true
+    permalink: /:collection/:name/
+    sequence: 3
+    searchable: true
+  local-development:
+    title: "Local Development"
+    output: true
+    permalink: /:collection/:name/
+    sequence: 4
+    searchable: true
+  data-syncing:
+    title: "Data Syncing"
+    output: true
+    permalink: /:collection/:name/
+    sequence: 5
+    searchable: true
+  developer-tools:
+    title: "Development Tooling"
+    output: true
+    permalink: /:collection/:name/
+    sequence: 6
     searchable: true
   man:
     title: "Man pages"

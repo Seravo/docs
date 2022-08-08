@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Custom error pages"
-order: 3
+order: 7
 summary: "Customize error pages to better serve the audience of a particular site"
 ---
 

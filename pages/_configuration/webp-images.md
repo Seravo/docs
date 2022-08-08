@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Serve WebP images"
-order: 11
+order: 8
 ---
 One way to serve images in WebP format is by using the [WebP Converter for Media](https://wordpress.org/plugins/webp-converter-for-media) plugin.
 

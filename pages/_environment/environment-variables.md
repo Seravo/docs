@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Environment variables"
-order: 4
+order: 3
 ---
 
 ## System environment variables at Seravo

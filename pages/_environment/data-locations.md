@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Data locations"
-order: 1
 summary: "This page includes all default data paths for Seravo sites. This includes paths to log files and htdocs."
+order: 1
 ---
 
 ## Base installation
@@ -183,6 +183,6 @@ If you use a deploy tool that deploys multiple versions of the files on the serv
 
 ## Git repository locations
 
-It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details, see [Local development]({{ site.baseurl }}/development/local-development ).
+It is intended that customers initialize a git repository in the `/data/wordpress` directory. For details, see [Local development]({{ site.baseurl }}/local-development/introduction/).
 
 If we detect that a git repository exists while doing upkeep and editing any project files, we will commit any changes so that it's less likely that the changes would be lost or overwritten when the customer later does a redeploy.

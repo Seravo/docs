@@ -7,7 +7,7 @@ order: 4
 > It is not recommended to change the configuration in `Vagrantfile`.
 The file should only be used to toggle the beta version of the Vagrant box.
 
-A `config.yml` file in the project directory is used to set up the local development environment.
+The `config.yml` file in the project directory is used to set up the local development environment.
 Seravo sites should come with one pre-configured. When you run the site for the first time with an
 [empty project template](https://github.com/seravo/wordpress), the default `config.yml` file is generated from
 the `config-sample.yml`.
@@ -43,9 +43,9 @@ development:
 
 ## Customizing config.yml
 
-The changes take effect after [stopping]({{ site.baseurl }}/local-environment/workflows/#stop-a-machine) and
-[restarting]({{ site.baseurl }}/local-environment/workflows/#start-a-machine) the machine. Some changes may require
-the [removal of the machine]({{ site.baseurl }}/local-environment/workflows/#remove-a-machine) before restarting.
+The changes take effect after [stopping]({{ site.baseurl }}/local-development/workflows/#stop-a-machine) and
+[restarting]({{ site.baseurl }}/local-development/workflows/#start-a-machine) the machine. Some changes may require
+the [removal of the machine]({{ site.baseurl }}/local-development/workflows/#remove-a-machine) before restarting.
 
 ### Properties
 

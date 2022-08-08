@@ -6,12 +6,12 @@ order: 6
 
 ## Debugging steps
 
-1. Find the [VirtualBox]({{ site.baseurl }}/local-environment/workflows/#find-virtualbox-version) and
-[Vagrant]({{ site.baseurl }}/local-environment/workflows/#find-vagrant-version) versions. Make sure
-they are up-to-date and fit the [requirements]({{ site.baseurl }}/local-environment/vagrant-installation/#software).
+1. Find the [VirtualBox]({{ site.baseurl }}/local-development/workflows/#find-virtualbox-version) and
+[Vagrant]({{ site.baseurl }}/local-development/workflows/#find-vagrant-version) versions. Make sure
+they are up-to-date and fit the [requirements]({{ site.baseurl }}/local-development/installation/#software).
 
 2. Make sure you have installed Vagrant from the source specified in
-[installation guide]({{ site.baseurl }}/local-environment/vagrant-installation). If you haven't, remove all Vagrant
+[installation guide]({{ site.baseurl }}/local-development/installation). If you haven't, remove all Vagrant
 related software and follow the guide.
 
 4. Examine the [common issues](#common-issues) to see if you can find a match. Check the
@@ -20,25 +20,25 @@ related software and follow the guide.
 has been already reported.
 
 5. Complete a thorough Vagrant cleanup and test with an empty project.
-- Remove all Vagrant [machines]({{ site.baseurl }}/local-environment/workflows/#remove-all-machines)
-and [plugins]({{ site.baseurl }}/local-environment/workflows/#remove-all-plugins).
+- Remove all Vagrant [machines]({{ site.baseurl }}/local-development/workflows/#remove-all-machines)
+and [plugins]({{ site.baseurl }}/local-development/workflows/#remove-all-plugins).
 - Clone the up-to-date [template](https://github.com/Seravo/wordpress) with
 `git clone https://github.com/Seravo/wordpress`.
-- [Enable the beta box]({{ site.baseurl }}/local-environment/workflows/#toggle-beta-version), run `vagrant box update` and
-[remove the old boxes]({{ site.baseurl }}/local-environment/workflows/#remove-old-boxes).
+- [Enable the beta box]({{ site.baseurl }}/local-development/workflows/#toggle-beta-version), run `vagrant box update` and
+[remove the old boxes]({{ site.baseurl }}/local-development/workflows/#remove-old-boxes).
 - Start the machine with `vagrant up`. If the problem persists, consider [reporting it](#reporting-an-issue).
 
 ## Reporting an issue
 
 After you've completed the [debugging steps](#debugging-steps), you can either
-[file a bug report](https://github.com/Seravo/wordpress/issues/new) or contact
+[file a bug report](https://github.com/Seravo/wordpress/issues/new) or contact the
 [Seravo customer service](https://seravo.com/en/contact/). If you need to include sensitive information with
 the report, the latter is recommended.
 
 Include the following with your report to expedite the resolution of the problem:
 - Operating system and version
-- [Vagrant version]({{ site.baseurl }}/local-environment/workflows/#find-vagrant-version) and
-[VirtualBox version]({{ site.baseurl }}/local-environment/workflows/#find-virtualbox-version)
+- [Vagrant version]({{ site.baseurl }}/local-development/workflows/#find-vagrant-version) and
+[VirtualBox version]({{ site.baseurl }}/local-development/workflows/#find-virtualbox-version)
 - The output from `vagrant up` command.
 
 ## Common issues

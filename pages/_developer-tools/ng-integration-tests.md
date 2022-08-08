@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Integration tests using Codeception"
-order: 1
+order: 6
 ---
 
 ## Testing ensures WordPress updates don't break a site
@@ -44,7 +44,7 @@ Tests mentioned above in the previous chapter have been already implemented by S
 
 ## Running tests
 
-You can use the [command wp-test]({{ site.baseurl }}/get-started/available-commands #wp-test) in any environment (production, testing/staging shadow, and Vagrant development box):
+You can use the [command wp-test]({{ site.baseurl }}/environment/available-commands#wp-test) in any environment (production, testing/staging shadow, and Vagrant development box):
 
 ```bash
 $ wp-test

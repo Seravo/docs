@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Using Git hooks"
-order: 5
+order: 1
 ---
 
 ## Git hooks

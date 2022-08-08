@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Compile assets & automate with Gulp"
-order: 8
+order: 2
 ---
 
 ## Using Gulp

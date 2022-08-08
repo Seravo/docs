@@ -7,7 +7,7 @@ order: 2
 
 ## Requirements
 
-1. You need to [setup your ssh settings]({{ site.baseurl }}/get-started/configure-ssh ) first.
+1. You need to [setup your ssh settings]({{ site.baseurl }}/management/configure-ssh ) first.
 2. You need to a local git checkout of the site as described in [Local development]({{ site.baseurl }}/development/local-development ).
 3. You need to be in your project directory: `cd ~/Projects/your-site/`
 4. You need to have `production` set as git remote:
@@ -71,7 +71,7 @@ If you have a working site in the Vagrant box and you want to deploy it
 
 ### Step 1 - Get SSH credentials
 
-First you need to order a site from [seravo.com](https://seravo.com/) in order to get SSH credentials. Once you recieve the SSH credentials, you can configure SSH keys and such as are described in the [Configuring SSH]({{ site.baseurl }}/get-started/configure-ssh ) section.
+First you need to order a site from [seravo.com](https://seravo.com/) in order to get SSH credentials. Once you recieve the SSH credentials, you can configure SSH keys and such as are described in the [Configuring SSH]({{ site.baseurl }}/management/configure-ssh ) section.
 
 ### Step 2 - Configure git remote 'production'
 

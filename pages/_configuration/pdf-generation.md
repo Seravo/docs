@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Server-side PDF printing"
-order: 5
+order: 9
 ---
 
 > **Please contribute!** This document is a stub. If you have recently implemented a PDF generator that works well with modern WordPress in Seravo's environment, please contribute to this page via the Github link in top right corner.

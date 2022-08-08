@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Profiling with Tideways"
-order: 11
+order: 5
 ---
 
 > **Recent PHP version required:** To use the Tideways integration, make sure you have PHP 7.2 (or newer) activated (with `set $mode php7.2;`). You want your site to be as fast as possible, right?

@@ -2,6 +2,7 @@
 layout: page
 title: "Manage with wp-cli"
 summary: "All Seravo sites come with wp-cli preinstalled and configured for easier command-line management."
+order: 2
 ---
 
 ## Basics

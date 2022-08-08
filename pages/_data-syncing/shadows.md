@@ -19,13 +19,11 @@ Email us at [help@seravo.com](mailto:help@seravo.com) and ask us for a shadow in
 
 It's also possible to have your own domain or subdomain for the staging environment. Please note that this shadows with their own domain is still in development so some functionalities are not yet fully implemented and there are known bugs. For example the command `wp-shadow-reset` and the **Exit Staging** button do not currently work with a staging environment using its own domain.
 
-In later revisions of this feature, you will be able to create on-demand shadows via the WordPress admin dashboard and the [Seravo plugin]({{ site.baseurl }}/configuration/wppalvelu-plugin ).
-
 ## Using a Shadow
 
 ### The Seravo Plugin
 
-The Instance Switcher module in the [Seravo plugin]({{ site.baseurl }}/configuration/wppalvelu-plugin ) adds a simple interface to your WP-admin view, that allows you to easily switch between your Shadow and Production instances.
+The Instance Switcher module in the Seravo plugin adds a simple interface to your WP-admin view, that allows you to easily switch between your Shadow and Production instances.
 
 ![Screenshot from the Seravo plugin]({{site.baseurl}}/images/instance-switcher.png)
 
@@ -87,7 +85,7 @@ example_456def (staging)
 
 Setting a cookie `seravo_shadow=456def;path=/` will return the staging instance to your browser.
 
-The [Seravo plugin]({{ site.baseurl }}/configuration/wppalvelu-plugin ) handles these cookies easily for you.
+The Seravo plugin handles these cookies easily for you.
 
 You can also use GET parameters to set these cookies as described below.
 

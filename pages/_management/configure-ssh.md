@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Configure SSH"
-order: 2
+order: 1
 ---
 
 ## Obtaining your credentials

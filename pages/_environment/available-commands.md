@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "List of commands"
-order: 5
 summary: "Seravo.com contains a handful of additional commands for helping the admin and developer with basic tasks"
+order: 2
 ---
 
 * TOC

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "WordPress Cron"
-order: 5
+order: 4
 ---
 
 > **Beware of bad advice!** There are a lot of old guides out there that recommend putting something like `*/1 * * * * curl https://example.com/wp/wp-cron.php` in your system cron. _Never do that!_ It is outdated advice and will only do harm to any modern WordPress project.

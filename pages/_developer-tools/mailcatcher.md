@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Debug mails with MailCatcher"
-order: 9
+order: 3
 ---
 
 ## MailCatcher

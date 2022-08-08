@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "WordPress Rewrites"
-order: 6
+order: 5
 ---
 > **Note:** In most cases [redirects are better done in WordPress/PHP](https://help.seravo.com/en/knowledgebase/13/docs/33-how-do-i-add-custom-configurations-to-the-web-server) e.g. the [Redirection plugin](https://wordpress.org/plugins/redirection/), using the [https://codex.wordpress.org/Rewrite_API](https://codex.wordpress.org/Rewrite_API) or with custom code in e.g. theme functions.php. Use Nginx redirects only if there is no WordPress way to do it, for example when diverting traffic from the index.php to another custom PHP script on the same site.
 

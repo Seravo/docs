@@ -1,8 +1,7 @@
 ---
 layout: page
 title: "Composer - Plugins & Themes"
-order: 1
-summary: "Seravo uses **Composer** by default to install plugins and themes. You don't have to use it, but it's pre-installed for you in case you want to have better management of your PHP code dependencies."
+order: 3
 ---
 
 ## What is it?
