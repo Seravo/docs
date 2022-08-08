@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Staging instances (Shadows)"
-order: 2
+order: 3
 ---
 
 ## Shadows

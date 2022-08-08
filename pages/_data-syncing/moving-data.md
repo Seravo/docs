@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Moving data between instances"
-order: 3
+order: 4
 ---
 
 > **Warning:** Unlike some other publishing systems, in WordPress there is a lot of valuable content in the database (user accounts, comments, statistics) and among the files (mainly uploads). Bluntly pushing the database or files from staging to production will most likely destroy some valuable data, so please plan your deployments carefully.

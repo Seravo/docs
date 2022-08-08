@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Deploy using Git
-order: 1
+order: 2
 ---
 
 

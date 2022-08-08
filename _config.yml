@@ -79,17 +79,23 @@ collections:
     permalink: /:collection/:name/
     sequence: 4
     searchable: true
-  deployment:
-    title: "Deployment"
+  local-environment:
+    title: "Local Development"
     output: true
     permalink: /:collection/:name/
     sequence: 5
+    searchable: true
+  data-syncing:
+    title: "Data Syncing"
+    output: true
+    permalink: /:collection/:name/
+    sequence: 6
     searchable: true
   management:
     title: "Management"
     output: true
     permalink: /:collection/:name/
-    sequence: 6
+    sequence: 7
     searchable: true
   man:
     title: "Man pages"

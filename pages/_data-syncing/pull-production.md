@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Typical workflow
-order: 3
+title: Pulling production
+order: 1
 ---
 
 ## Using git
