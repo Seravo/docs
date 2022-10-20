@@ -5,7 +5,7 @@ order: 8
 ---
 One way to serve images in WebP format is by using the [WebP Converter for Media](https://wordpress.org/plugins/webp-converter-for-media) plugin.
 
-In addition to installing and activating the plugin some additional configuration for NGINX is required.
+In addition to installing and activating the plugin some additional configuration for NGINX is required. Original configuration can be found [here](https://wordpress.org/plugins/webp-converter-for-media/#configuration%20for%20nginx).
 
 Create a file `webp.conf` inside the folder `/data/wordpress/nginx` and copy this configuration inside it:
 
