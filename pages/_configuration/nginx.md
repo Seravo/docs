@@ -21,7 +21,7 @@ Our default Nginx configuration includes:
 * Automatic expiration headers for static content
 * The [Pagespeed](https://developers.google.com/speed/pagespeed/module/) module
 * User configurable API
-* Gzip
+* gzip
 * And lots more...
 
 
