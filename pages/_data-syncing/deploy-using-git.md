@@ -8,7 +8,7 @@ order: 2
 ## Requirements
 
 1. You need to [setup your ssh settings]({{ site.baseurl }}/management/configure-ssh ) first.
-2. You need to a local git checkout of the site as described in [Local development]({{ site.baseurl }}/development/local-development ).
+2. You need to a local git checkout of the site as described in [Local development]({{ site.baseurl }}/local-development/introduction ).
 3. You need to be in your project directory: `cd ~/Projects/your-site/`
 4. You need to have `production` set as git remote:
 
@@ -91,7 +91,7 @@ $ git remote add production ssh://your-site@your-site.seravo.com:12345/data/word
 $ git push production master
 ```
 
-If you have [git hooks]({{ site.baseurl }}/development/using-git-hooks ) configured they will trigger automatically on the `git push`.
+If you have [git hooks]({{ site.baseurl }}/developer-tools/using-git-hooks ) configured they will trigger automatically on the `git push`.
 
 For deploying the database contents or the contents of the uploads folder you will need to roll your own solution which is safe enough to not overwrite any data created in production.
 

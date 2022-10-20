@@ -21,7 +21,7 @@ The purpose of this hooks is to help with quality control, preventing developers
 
 Our WordPress project template contains one custom git hook example you can find in [scripts/git-hooks/pre-commit](https://github.com/Seravo/wordpress/tree/master/scripts/git-hooks).
 
-By default our example pre-commit hooks script runs `php -l` to check if there are any syntax errors in the modified PHP files, and then it runs the [Codeception tests]({{ site.baseurl }}/tests/ng-integration-tests ) to check that the integration tests pass.
+By default our example pre-commit hooks script runs `php -l` to check if there are any syntax errors in the modified PHP files, and then it runs the [Codeception tests]({{ site.baseurl }}/developer-tools/ng-integration-tests ) to check that the integration tests pass.
 
 #### How to temporarily skip the pre-commit hook
 

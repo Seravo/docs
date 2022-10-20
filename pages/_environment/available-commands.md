@@ -147,10 +147,10 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 [`wp-shadow-reset`](/docs/man/wp-shadow-reset) - Replace files and database in a shadow environment with data from the production environment. Will delete and replace all files in the `/data/wordpress/` directory of a shadow with a clone from production. Use with caution, as data from your shadow can not be recovered after this process.
 
 #### wp-test
-[`wp-test`](/docs/man/wp-test) - Run the [Codeception integration tests]({{ site.baseurl }}/tests/ng-integration-tests).
+[`wp-test`](/docs/man/wp-test) - Run the [Codeception integration tests]({{ site.baseurl }}/developer-tools/ng-integration-tests).
 
 #### wp-test-whitelist
-[`wp-test-whitelist`](/docs/man/wp-test-whitelist) - Add an error or warning message to the [Codeception whitelist]({{ site.baseurl }}/tests/ng-integration-tests ).
+[`wp-test-whitelist`](/docs/man/wp-test-whitelist) - Add an error or warning message to the [Codeception whitelist]({{ site.baseurl }}/developer-tools/ng-integration-tests/#whitelist-messages-with-wp-test-whitelist ).
 
 #### wp-watch-logs
 [`wp-watch-logs`](/docs/man/wp-watch-logs) - Print all new lines written to most useful logs under `/data/log/*.log`. Press Ctrl+C to exit.
@@ -200,7 +200,7 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 > **Note:** These are only available inside the Vagrant box.
 
 #### wp-xdebug-on/off
-[`wp-xdebug-on`](/docs/man/wp-xdebug-on) and [`wp-xdebug-off`](/docs/man/wp-xdebug-off) - Activate and deactivates the [Xdebug profiler]({{ site.baseurl }}/development/xdebug ). Run `wp-xdebug-off` if the Vagrant box seems sluggish to speed it up, as Xdebug can sometimes be quite heavy on the virtual machine load.
+[`wp-xdebug-on`](/docs/man/wp-xdebug-on) and [`wp-xdebug-off`](/docs/man/wp-xdebug-off) - Activate and deactivates the [Xdebug profiler]({{ site.baseurl }}/developer-tools/xdebug ). Run `wp-xdebug-off` if the Vagrant box seems sluggish to speed it up, as Xdebug can sometimes be quite heavy on the virtual machine load.
 
 #### wp-ssh-production
 [`wp-ssh-production`](/docs/man/wp-ssh-production) - Log into production with SSH. Requires the config.yml to have the `production` section defined.
@@ -232,7 +232,7 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 > **Note**: These commands are used by the `Vagrantfile`. These are not intended for manual invocation by any WordPress site developer.
 
 #### wp-activate-git-hooks
-[`wp-activate-git-hooks`](/docs/man/wp-activate-git-hooks) - Adds files to local `.git/hooks` for test automation on every local `git commit`. Read more about [git hooks]({{ site.baseurl }}/development/using-git-hooks )
+[`wp-activate-git-hooks`](/docs/man/wp-activate-git-hooks) - Adds files to local `.git/hooks` for test automation on every local `git commit`. Read more about [git hooks]({{ site.baseurl }}/developer-tools/using-git-hooks )
 
 #### wp-generate-ssl
 [`wp-generate-ssl`](/docs/man/wp-generate-ssl) - Generate SSL self-signed certificates for domains defined in `config.yml`.
