@@ -10,16 +10,26 @@ In addition to installing and activating the plugin some additional configuratio
 Create a file `webp.conf` inside the folder `/data/wordpress/nginx` and copy this configuration inside it:
 
 ```php
-# NGINX config for WebP Converter for media
-# https://wordpress.org/plugins/webp-converter-for-media/
-location ~ /wp-content/(?<path>.+)\.(?<ext>jpe?g|png|gif)$ {
-  if ($http_accept !~* "image/webp") {
-    break;
-  }
-  add_header Vary Accept;
-  expires 365d;
-  try_files /wp-content/uploads-webpc/$path.$ext.webp $uri =404;
+# BEGIN Converter for Media
+set $ext_avif ".avif";
+if ($http_accept !~* "image/avif") {
+    set $ext_avif "";
 }
+
+set $ext_webp ".webp";
+if ($http_accept !~* "image/webp") {
+    set $ext_webp "";
+}
+
+location ~ /wp-content/(?<path>.+)\.(?<ext>jpe?g|png|gif|webp)$ {
+    add_header Vary Accept;
+    expires 365d;
+    try_files
+        /wp-content/uploads-webpc/$path.$ext$ext_avif
+        /wp-content/uploads-webpc/$path.$ext$ext_webp
+        $uri =404;
+}
+# END Converter for Media
 ```
 
 > **REMEMBER!** NGINX has to be restarted after adding a config file. Run command `wp-restart-nginx` to restart.
