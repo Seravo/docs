@@ -4,7 +4,7 @@ title: "Profile runtime with Xdebug & Webgrind"
 order: 4
 ---
 
-> **Note:** Xdebug is only for development sites. Use [Tideways]({{ site.baseurl }}/development/tideways ) on live production websites.
+> **Note:** Xdebug is only for development sites. Use [Tideways]({{ site.baseurl }}/developer-tools/tideways ) on live production websites.
 
 ## What is Xdebug?
 

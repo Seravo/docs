@@ -8,7 +8,7 @@ order: 5
 
 ## Xdebug is not for production use
 
-We have provided a [pre-installed Xdebug]({{ site.baseurl }}/development/xdebug ) configuration in our Seravo WordPress Vagrant images for a number of years already, but not in our production or staging environments. The reason for this is that the instrumentation Xdebug does is quite heavy and it can be performed only in a separate development environment. For production environments something more lightweight is needed, a tool that does not slow down the site. Also to complement long running in-production tests one needs a good dashboard and tools to extract useful information from the profiling data collected. Therefore we decided to cooperate with [Tideways](https://tideways.com/profiler/pricing/seravo-wordpress-premium-hosting) and integrate their profiling tool into our system.
+We have provided a [pre-installed Xdebug]({{ site.baseurl }}/developer-tools/xdebug ) configuration in our Seravo WordPress Vagrant images for a number of years already, but not in our production or staging environments. The reason for this is that the instrumentation Xdebug does is quite heavy and it can be performed only in a separate development environment. For production environments something more lightweight is needed, a tool that does not slow down the site. Also to complement long running in-production tests one needs a good dashboard and tools to extract useful information from the profiling data collected. Therefore we decided to cooperate with [Tideways](https://tideways.com/profiler/pricing/seravo-wordpress-premium-hosting) and integrate their profiling tool into our system.
 
 ## Tideways can be safely used in both production and staging all the time
 
@@ -35,7 +35,7 @@ Tideways offers the same timeline and execution path visualizations as XDebug+We
 * In the Tideways dashboard, create a new application and get the application API key (e.g. A0A0A0A0A0A0A0A0).
 * Create a file /data/wordpress/.tideways.key in your project and save the application API key in it (e.g. `echo 'A0A0A0A0A0A0A0A0' > .tideways.key`).
 * In your production site environment, run `wp-restart-php` to active the PHP module and the Tideways daemon with your Tideways key.
-* Double check that you are running [PHP 7.2 or newer]({{ site.baseurl }}/configuration/php7-hhvm ).
+* Double check that you are running [PHP 7.2 or newer]({{ site.baseurl }}/configuration/php-versions ).
 * Go back to your Tideways dashboard to see the data start pouring in!
 
 Seravo's customer support is available to help you with the Tideways key activation if the steps above didn't work for you as expected.
