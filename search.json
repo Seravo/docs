@@ -3,7 +3,7 @@ layout: null
 ---
 [
   {% for collection in site.collections %}
-    {% if collection.searchable %}
+    {% if collection.searchable and site[collection.label].size > 0 %}
       {% for page in site[collection.label] %}
         {% if page.title %}
           {
