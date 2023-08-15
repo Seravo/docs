@@ -18,4 +18,5 @@ layout: null
       {% unless forloop.last %},{% endunless %}
     {% endif %}
   {% endfor %}
+  {}
 ]
