@@ -22,6 +22,7 @@ To use the local development environment, you need to have Docker, Docker Compos
 ### Relevant files and their contents
 There are certain files in the Seravo project template that have something to do with local development. Here is a short explanation of each.
 
+
 #### docker-compose.yml
 This is related to Docker help tool Docker Compose, as the name suggests. This file defines a service called wordpress, and then a container with a certain name is created in it. This container then tries to read the environmental variable called SITE. If it is unable to find the variable, it will default to use "wordpress". The next line "hostname" does the same. After that the Docker image in use is defined, and then ports that the environment can be accessed through. Volumes defines which directories from the local system we want to bring inside the container. At the end of the file two environmental variables are declared: WP_USER_UID and DEBUG. The former has to do with user rights and the latter, default as "true", makes logging more extensive. 
     
@@ -45,6 +46,15 @@ This is related to Docker help tool Docker Compose, as the name suggests. This f
         environment:
         #- WP_USER_UID=${WP_USER_UID:-1000}
         - DEBUG="true"
+Note: 
+If you have trouble locating the ports, try declaring them like this: 
+
+    - 80:80
+    - 443:443 
+    - 22:22 
+
+... and so on. This may fix your port issues. 
+
 
 #### config-sample.yml and config.yml
 Config-sample.yml is the base version of config.yml, and if you want to customize your own config.yml or don't have one yet you can just copy this to a new config.yml file. So even if you customize config.yml, config-sample.yml still exists if you need to see what the original was like. This file defines URL:s such as where content is pulled from and what is the development environment's domain. Note that if you want to be able to use your local site with a browser, you may need to set the line "avahi: true" uncommented. 
@@ -89,16 +99,19 @@ If everything works correctly, you should be able to open that link in the brows
 You can check all the running containers with
 
     $ docker-compose ps
+ 
 In Seravo environment this usually only shows one container, even though there are several services inside that container. And if you add -a to this, it will also show containers that have been turned off. This is useful, if there has been a problem with the container start where the container has been created but it has been shut down for some reason.
 
 You can check the logs with
 
     $ docker-compose logs
+
 Of course, if you ran the docker-compose up without -d, then you have the one terminal reserved for logs anyway.
 
 And finally, to turn off the container(s), run
 
     $ docker-compose down
+
 If you want to change the container name and the domain it uses, you need to make changes to both config.yml and docker-compose.yml. In config.yml you need to modify the lines "name" and the domain under the line "domains":
 
     name: wordpress
@@ -112,6 +125,7 @@ And in docker-compose.yml you need to modify the lines container_name and hostna
       wordpress:
         container_name: ${SITE:-wordpress}
         hostname: ${SITE:-wordpress}
+
 So you just change the word "wordpress" to whatever you want the container to be called. If all of these in both files are not changed, it will not work properly. Also remember that you have to start a new container with the new name, so stop the container before making changes and then start it again for the change to show. You also may need to run $ wp search-replace to change the site's address.
 
 ### Accessing the container
