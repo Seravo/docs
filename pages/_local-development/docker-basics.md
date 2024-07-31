@@ -46,6 +46,7 @@ This is related to Docker help tool Docker Compose, as the name suggests. This f
         environment:
         #- WP_USER_UID=${WP_USER_UID:-1000}
         - DEBUG="true"
+
 Note: 
 If you have trouble locating the ports, try declaring them like this: 
 
