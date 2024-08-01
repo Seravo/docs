@@ -3,31 +3,40 @@ layout: default
 ---
 
 <div class="page-header">
-      <div class="row">
-        <div class="col-md-7">
-          <h1>{{ page.title }}
-              {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
-          </h1>
-        </div>
-        <div class="col-md-5 edit-buttons">
-          <!-- Hide Prose.io: it allows edits but result cannot be saved in any way (message "Error connecting to Github") so it is
+  <div class="row">
+    <div class="col-md-7">
+      <h1>{{ page.title }}
+        {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
+      </h1>
+    </div>
+    <div class="col-md-5 edit-buttons">
+      <!-- Hide Prose.io: it allows edits but result cannot be saved in any way (message "Error connecting to Github") so it is
                more annoying than useful. Actually not useful at all, but misleading. Fix the whole process before enabling again. -->
-          <!-- a href="http://prose.io/#{{site.github.repo}}/edit/master/{{page.path}}" class="btn btn-default pull-right-md pull-left-sm">
+      <!-- a href="http://prose.io/#{{site.github.repo}}/edit/master/{{page.path}}" class="btn btn-default pull-right-md pull-left-sm">
             <i class="glyphicon glyphicon-edit"></i> Edit in Prose.io
           </a -->
-          <a href="https://seravo.com/" class="btn btn-default pull-right-md pull-left-sm">
-            <i class="glyphicon glyphicon-arrow-right"></i> Go to seravo.com
-          </a>
-          <a href="https://github.com/{{site.github.repo}}/edit/master/{{page.path}}" class="btn btn-default pull-right-md pull-left-sm">
-            <i class="glyphicon glyphicon-file"></i> Edit on GitHub.com
-          </a>
-        </div>
-      </div>
+      <a href="https://seravo.com/" class="btn btn-default pull-right-md pull-left-sm">
+        <i class="glyphicon glyphicon-arrow-right"></i> Go to seravo.com
+      </a>
+      {% if page.path == "index.md" %}
+      <a href="https://github.com/{{site.github.repo}}/edit/master/{{page.path}}"
+        class="btn btn-default pull-right-md pull-left-sm">
+        <i class="glyphicon glyphicon-file"></i> Edit on GitHub.com
+      </a>
+      {% else %}
+      <a href="https://github.com/{{site.github.repo}}/edit/master/pages/{{page.path}}"
+        class="btn btn-default pull-right-md pull-left-sm">
+        <i class="glyphicon glyphicon-file"></i> Edit on GitHub.com
+      </a>
+      {% endif %}
+    </div>
+  </div>
 </div>
 
 {% if page.summary %}
 <div class="bs-callout bs-callout-primary">
-  <p><strong>Summary: </strong>{{ page.summary | newline_to_br | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p><strong>Summary: </strong>{{ page.summary | newline_to_br | markdownify | remove: '
+  <p>' | remove: '</p>' }}</p>
 </div>
 {% endif %}
 
