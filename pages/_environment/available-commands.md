@@ -65,9 +65,6 @@ Vagrant box contains plenty of helpers for developing your site and migrating da
 #### wp-fix-wp-content-symlink
 [`wp-fix-wp-content-symlink`](/docs/man/wp-fix-wp-content-symlink) - Fixes a typical problem where the symlink from `wordpress/wp-content` to the correct WordPress wp-content is lost or broken.
 
-#### wp-flush-cache
-[`wp-flush-cache`](/docs/man/wp-purge-cache) - Wrapper for `wp-purge-cache` with flush cache terminology in line with what wp-cli uses. See `wp-purge-cache`.
-
 #### wp-last-ssh-logins
 [`wp-last-ssh-logins`](/docs/man/wp-last-ssh-logins) - List last logins according to system status history and failed logins based on wtmp and btmp logs.
 
