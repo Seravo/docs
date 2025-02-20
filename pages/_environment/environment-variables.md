@@ -21,10 +21,6 @@ This is the name of a particular environment instance. For example `example_1ab2
 
 This is the internal domain name given to a live production site given by Seravo. An example could be example.fi.seravo.com. It is used in cases when the real external domain (e.g. example.com) has not yet been registered, does not point to the site or might have some other issue and does not work.
 
-### REDIS_HOST and REDIS_PORT
-
-These always contain the Redis server address and port.
-
 ### DB_HOST, DB_NAME, DB_USER, DB_PASSWORD
 
 These always contain the database credentials. Please rely on these and the database connection will always work even when you have different passwords in production and in testing. Avoid from hardcoding any passwords or server addresses in your code.
