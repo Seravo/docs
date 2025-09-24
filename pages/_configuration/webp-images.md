@@ -23,6 +23,7 @@ if ($http_accept !~* "image/webp") {
 
 location ~ /wp-content/(?<path>.+)\.(?<ext>jpe?g|png|gif|webp)$ {
     add_header Vary Accept;
+    add_header Cache-Control "private";
     expires 365d;
     try_files
         /wp-content/uploads-webpc/$path.$ext$ext_avif
